@@ -359,9 +359,16 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
         if (elMaximoFecha.matches("1")) {
             Log.i(TAG, " =====> El numero inicial: " + elMaximoFecha);
             Log.i(TAG, " =====> El nombre de la encuesta: " + nombreEncuesta);
-            catalogoUsuariosWS();
-            catalogoSeccionesWS(nombreEncuesta);
-            dialogoFecha();
+            if (!verificaConexion(this)) {
+                Toast.makeText(getBaseContext(), "Sin conexión\n Inténtelo de nuevo",
+                        Toast.LENGTH_LONG).show();
+                //this.finish();
+            } else {
+                catalogoUsuariosWS();
+                catalogoSeccionesWS(nombreEncuesta);
+                dialogoFecha();
+            }
+
         }
 
 //        if (!verificaConexion(this)) {
