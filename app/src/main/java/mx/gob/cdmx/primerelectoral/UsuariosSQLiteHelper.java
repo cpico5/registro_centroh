@@ -112,34 +112,62 @@ public static String COLUMNA_pregunta_1="pregunta_1";
         public static String COLUMNA_pregunta_7="pregunta_7";
         public static String COLUMNA_pregunta_8="pregunta_8";
         public static String COLUMNA_pregunta_9="pregunta_9";
-        public static String COLUMNA_pregunta_c1="pregunta_c1";
-        public static String COLUMNA_pregunta_c2="pregunta_c2";
-        public static String COLUMNA_pregunta_c3="pregunta_c3";
-        public static String COLUMNA_pregunta_c4="pregunta_c4";
-        public static String COLUMNA_pregunta_c5="pregunta_c5";
-        public static String COLUMNA_pregunta_c6="pregunta_c6";
-        public static String COLUMNA_pregunta_c7="pregunta_c7";
-        public static String COLUMNA_pregunta_c7a="pregunta_c7a";
-        public static String COLUMNA_pregunta_c7b="pregunta_c7b";
-        public static String COLUMNA_pregunta_c7c="pregunta_c7c";
-        public static String COLUMNA_pregunta_c7d="pregunta_c7d";
-        public static String COLUMNA_pregunta_c7e="pregunta_c7e";
-        public static String COLUMNA_pregunta_c7f="pregunta_c7f";
-        public static String COLUMNA_pregunta_c8="pregunta_c8";
-        public static String COLUMNA_pregunta_c9="pregunta_c9";
-        public static String COLUMNA_pregunta_c10="pregunta_c10";
-        public static String COLUMNA_pregunta_c11="pregunta_c11";
-        public static String COLUMNA_pregunta_c12="pregunta_c12";
-        public static String COLUMNA_pregunta_c13="pregunta_c13";
-        public static String COLUMNA_pregunta_c14="pregunta_c14";
-        public static String COLUMNA_pregunta_c15="pregunta_c15";
-        public static String COLUMNA_pregunta_c16="pregunta_c16";
-        public static String COLUMNA_pregunta_c16a="pregunta_c16a";
-        public static String COLUMNA_pregunta_c16b="pregunta_c16b";
-        public static String COLUMNA_pregunta_c17="pregunta_c17";
-        public static String COLUMNA_pregunta_c17a="pregunta_c17a";
-        public static String COLUMNA_pregunta_c17b="pregunta_c17b";
-        public static String COLUMNA_pregunta_c18="pregunta_c18";
+        public static String COLUMNA_pregunta_10="pregunta_10";
+        public static String COLUMNA_pregunta_11="pregunta_11";
+        public static String COLUMNA_pregunta_12="pregunta_12";
+        public static String COLUMNA_pregunta_13="pregunta_13";
+        public static String COLUMNA_pregunta_14="pregunta_14";
+        public static String COLUMNA_pregunta_15="pregunta_15";
+        public static String COLUMNA_pregunta_16="pregunta_16";
+        public static String COLUMNA_pregunta_16a="pregunta_16a";
+        public static String COLUMNA_pregunta_16b="pregunta_16b";
+        public static String COLUMNA_pregunta_17="pregunta_17";
+        public static String COLUMNA_pregunta_17a="pregunta_17a";
+        public static String COLUMNA_pregunta_18="pregunta_18";
+        public static String COLUMNA_pregunta_19="pregunta_19";
+        public static String COLUMNA_pregunta_19a="pregunta_19a";
+        public static String COLUMNA_pregunta_19b="pregunta_19b";
+        public static String COLUMNA_pregunta_20="pregunta_20";
+        public static String COLUMNA_pregunta_21="pregunta_21";
+        public static String COLUMNA_pregunta_22="pregunta_22";
+        public static String COLUMNA_pregunta_23="pregunta_23";
+        public static String COLUMNA_pregunta_24="pregunta_24";
+        public static String COLUMNA_pregunta_24_1="pregunta_24_1";
+        public static String COLUMNA_pregunta_24_1a="pregunta_24_1a";
+        public static String COLUMNA_pregunta_24_1b="pregunta_24_1b";
+        public static String COLUMNA_pregunta_24_2="pregunta_24_2";
+        public static String COLUMNA_pregunta_24_2a="pregunta_24_2a";
+        public static String COLUMNA_pregunta_24_2b="pregunta_24_2b";
+        public static String COLUMNA_pregunta_24_3="pregunta_24_3";
+        public static String COLUMNA_pregunta_24_3a="pregunta_24_3a";
+        public static String COLUMNA_pregunta_24_3b="pregunta_24_3b";
+        public static String COLUMNA_pregunta_25="pregunta_25";
+        public static String COLUMNA_pregunta_26="pregunta_26";
+        public static String COLUMNA_pregunta_27="pregunta_27";
+        public static String COLUMNA_pregunta_27_1="pregunta_27_1";
+        public static String COLUMNA_pregunta_27_1a="pregunta_27_1a";
+        public static String COLUMNA_pregunta_27_1b="pregunta_27_1b";
+        public static String COLUMNA_pregunta_27_2="pregunta_27_2";
+        public static String COLUMNA_pregunta_27_2a="pregunta_27_2a";
+        public static String COLUMNA_pregunta_27_2b="pregunta_27_2b";
+        public static String COLUMNA_pregunta_27_3="pregunta_27_3";
+        public static String COLUMNA_pregunta_27_3a="pregunta_27_3a";
+        public static String COLUMNA_pregunta_27_3b="pregunta_27_3b";
+        public static String COLUMNA_pregunta_28="pregunta_28";
+        public static String COLUMNA_pregunta_29="pregunta_29";
+        public static String COLUMNA_pregunta_30="pregunta_30";
+        public static String COLUMNA_pregunta_30_1="pregunta_30_1";
+        public static String COLUMNA_pregunta_30_1a="pregunta_30_1a";
+        public static String COLUMNA_pregunta_30_1b="pregunta_30_1b";
+        public static String COLUMNA_pregunta_30_2="pregunta_30_2";
+        public static String COLUMNA_pregunta_30_2a="pregunta_30_2a";
+        public static String COLUMNA_pregunta_30_2b="pregunta_30_2b";
+        public static String COLUMNA_pregunta_30_3="pregunta_30_3";
+        public static String COLUMNA_pregunta_30_3a="pregunta_30_3a";
+        public static String COLUMNA_pregunta_30_3b="pregunta_30_3b";
+        public static String COLUMNA_pregunta_31="pregunta_31";
+        public static String COLUMNA_pregunta_32="pregunta_32";
+
 
         public static String COLUMNA_aporta  		="aporta";
         public static String COLUMNA_ocupacion  	="ocupacion";
@@ -191,34 +219,62 @@ public static String COLUMNA_pregunta_1="pregunta_1";
             + TablaEncuestas.COLUMNA_pregunta_7 +  " text, "
             + TablaEncuestas.COLUMNA_pregunta_8 +  " text, "
             + TablaEncuestas.COLUMNA_pregunta_9 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c1 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c2 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c3 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c4 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c5 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c6 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c7 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c7a +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c7b +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c7c +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c7d +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c7e +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c7f +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c8 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c9 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c10 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c11 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c12 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c13 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c14 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c15 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c16 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c16a +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c16b +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c17 +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c17a +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c17b +  " text, "
-            + TablaEncuestas.COLUMNA_pregunta_c18 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_10 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_11 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_12 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_13 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_14 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_15 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_16 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_16a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_16b +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_17 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_17a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_18 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_19 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_19a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_19b +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_20 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_21 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_22 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_23 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_24 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_24_1 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_24_1a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_24_1b +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_24_2 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_24_2a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_24_2b +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_24_3 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_24_3a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_24_3b +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_25 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_26 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_27 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_27_1 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_27_1a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_27_1b +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_27_2 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_27_2a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_27_2b +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_27_3 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_27_3a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_27_3b +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_28 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_29 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_30 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_30_1 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_30_1a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_30_1b +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_30_2 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_30_2a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_30_2b +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_30_3 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_30_3a +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_30_3b +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_31 +  " text, "
+            + TablaEncuestas.COLUMNA_pregunta_32 +  " text, "
+
 
             + TablaEncuestas.COLUMNA_aporta  +  " text, "
             + TablaEncuestas.COLUMNA_ocupacion  +  " text, "

@@ -622,7 +622,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
         Log.i(TAG, " =====> El nombre de la encuesta: " + nombreEncuesta);
         catalogoSeccionesWS(nombreEncuesta);
-        finishAffinity();
+        Intent intent = new Intent(getApplicationContext(), Bienvenida.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
     }
 
 

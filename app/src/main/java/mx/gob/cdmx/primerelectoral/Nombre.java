@@ -24,7 +24,7 @@ public class Nombre  {
 
     public static final String customURL = "https://opinion.cdmx.gob.mx/encuestas/";
     public static final String customURLcatalogos = "https://opinion.cdmx.gob.mx/encuestas/catalogos/";
-    public static final String encuesta = "semanal_20200919";
+    public static final String encuesta = "primer_electoral";
     public static final String USUARIO = "usuario";
     public static final String ALCALDIA = "Todas";
     public static final String PADRON = "padron";
@@ -34,13 +34,13 @@ public class Nombre  {
 
     public String nombreEncuesta(){
 
-        final String nombreEncuesta = "semanal_20200919";
+        final String nombreEncuesta = "primer_electoral";
         return nombreEncuesta;
     }
 
     public String nombreDatos(){
 
-        final String nombreEncuesta = "datos_semanal_20200919";
+        final String nombreEncuesta = "datos_primer_electoral";
         return nombreEncuesta;
     }
 

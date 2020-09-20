@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Semanal_20200919 v4.0</string>
+    <string name="app_name">PrimerElectoral v1.0</string>
     <string name="action_settings">Settings</string>
 
     <string name="url_aplicacion">https://opinion.cdmx.gob.mx</string>
@@ -59,6 +59,36 @@
     <string name="Mejores">Mejores</string>
     <string name="Peores">Peores</string>
     <string name="Mpeores">Mucho peores</string>
+    <string name="C_1_alcalde">CandidatoAlcalde - 1</string>
+    <string name="C_2_alcalde">CandidatoAlcalde - 2</string>
+    <string name="C_3_alcalde">CandidatoAlcalde - 3</string>
+    <string name="C_4_alcalde">CandidatoAlcalde - 4</string>
+
+    <string name="C_1_Morenaalcalde">CandidatoMorenaAlcalde - 1</string>
+    <string name="C_2_Morenaalcalde">CandidatoMorenaAlcalde - 2</string>
+    <string name="C_3_Morenaalcalde">CandidatoMorenaAlcalde - 3</string>
+    <string name="C_4_Morenaalcalde">CandidatoMorenaAlcalde - 4</string>
+
+    <string name="C_1_local">CandidatoLocal - 1</string>
+    <string name="C_2_local">CandidatoLocal - 2</string>
+    <string name="C_3_local">CandidatoLocal - 3</string>
+    <string name="C_4_local">CandidatoLocal - 4</string>
+
+    <string name="C_1_Morenalocal">CandidatoMorenaLocal - 1</string>
+    <string name="C_2_Morenalocal">CandidatoMorenaLocal - 2</string>
+    <string name="C_3_Morenalocal">CandidatoMorenaLocal - 3</string>
+    <string name="C_4_Morenalocal">CandidatoMorenaLocal - 4</string>
+
+    <string name="C_1_federal">CandidatoFederal - 1</string>
+    <string name="C_2_federal">CandidatoFederal - 2</string>
+    <string name="C_3_federal">CandidatoFederal - 3</string>
+    <string name="C_4_federal">CandidatoFederal - 4</string>
+
+    <string name="C_1_Morenafederal">CandidatoMorenaFederal - 1</string>
+    <string name="C_2_Morenafederal">CandidatoMorenaFederal - 2</string>
+    <string name="C_3_Morenafederal">CandidatoMorenaFederal - 3</string>
+    <string name="C_4_Morenafederal">CandidatoMorenaFederal - 4</string>
+
 
     <string name="quickstart_message">Click the SUBSCRIBE TO WEATHER button below to subscribe to the
         weather topic. Messages sent to the weather topic will be received. The LOG TOKEN button logs the
@@ -75,41 +105,68 @@
     <string name="PREGUNTA2">Sólo como información, NO le voy a solicitar datos o sus cuentas ¿Usted tiene cuenta personal en Facebook?</string>
     <string name="PREGUNTA3">¿Tiene cuenta personal en Twitter?</string>
     <string name="PREGUNTA4">¿Usted utiliza WhatsApp?</string>
-    <string name="PREGUNTA5">Con lo que usted sabe ¿está de acuerdo, o en desacuerdo con el trabajo realizado hasta ahora por el Presidente de la República, Andrés Manuel López Obrador?</string>
-    <string name="PREGUNTA6">Con lo que usted sabe, ¿piensa que el presidente Andrés Manuel López Obrador tiene las riendas del país en la mano?</string>
-    <string name="PREGUNTA7">Hablando ahora de la Ciudad de México y de su gobierno, con lo que Ud. sabe, ¿está de acuerdo o en desacuerdo con el trabajo realizado hasta ahora por la Jefa de Gobierno, Claudia Sheinbaum?</string>
-    <string name="PREGUNTA8">En una escala del 1 al 10, donde 1 es muy mala y 10 muy buena, ¿cómo califica la labor realizada hasta hoy por la Jefa de Gobierno, Claudia Sheinbaum, en la Ciudad de México?</string>
-    <string name="PREGUNTA9">En su opinión, ¿la Jefa de Gobierno Claudia Sheinbaum tiene mucha, poca o ninguna capacidad para resolver los problemas de la Ciudad de México?</string>
-    <string name="PREGUNTAc1">¿Usted vio o escucho la ceremonia del Grito de Independencia?</string>
-    <string name="PREGUNTAc2">¿Usted considera que fue igual a ceremonias anteriores o fue diferente?</string>
-    <string name="PREGUNTAc3">¿Qué fue lo que más le gustó de esta ceremonia?</string>
-    <string name="PREGUNTAc4">¿Qué fue lo que menos le gustó de esta ceremonia?</string>
-    <string name="PREGUNTAc5">¿Qué tan probable cree sea contagiarse de coronavirus en algún momento de este año, muy probable, probable, poco probable o nada probable? </string>
-    <string name="PREGUNTAc6">En este momento ¿qué le preocupa más el coronavirus o su situación económica? (no leer ambas)</string>
-    <string name="PREGUNTAc7">En los últimos quince días usted a asistido a: </string>
-    <string name="PREGUNTAc7a">Restaurantes</string>
-    <string name="PREGUNTAc7b">Centros comerciales</string>
-    <string name="PREGUNTAc7c">Tiendas de ropa o zapatos</string>
-    <string name="PREGUNTAc7d">El Centro de la Ciudad</string>
-    <string name="PREGUNTAc7e">Cines</string>
-    <string name="PREGUNTAc7f">Reuniones con familiares y amigos donde haya más de 10 personas </string>
-    <string name="PREGUNTAc8">¿Se enteró usted de que el pasado 17 de septiembre la Jefa de Gobierno, Claudia Sheinbaum, dio su segundo informe de gobierno al Congreso local?</string>
-    <string name="PREGUNTAc9"> Con lo que usted sabe o ha escuchado, ¿qué es lo que recuerda más del mensaje de la Jefa de Gobierno, Claudia Sheinbaum? </string>
-    <string name="PREGUNTAc10">De lo que recuerda que informó la Jefa de Gobierno, Claudia Sheinbaum, ¿usted le cree o no? ( no leer le cree en parte)</string>
-    <string name="PREGUNTAc11">¿Se enteró usted de que el pasado 14 de septiembre la Jefa de Gobierno, Claudia Sheinbaum, dio un informe sobre la estrategia de la Ciudad de México frente al COVID-19?</string>
-    <string name="PREGUNTAc12"> Con lo que usted sabe o ha escuchado, ¿qué es lo que recuerda más del mensaje de la Jefa de Gobierno, Claudia Sheinbaum sobre la estrategia frente al COVID-19? </string>
-    <string name="PREGUNTAc13">De lo que recuerda que informó la Jefa de Gobierno, sobre la estrategia frente al Covid 19 ¿usted le cree o no? (no leer le cree en parte)</string>
-    <string name="PREGUNTAc14">En los últimos tres meses,  ¿ha visitado su hogar personal del Gobierno de la Ciudad para informarle a usted o algún familiar sobre medidas de prevención y cuidado durante la pandemia de Coronavirus?</string>
-    <string name="PREGUNTAc15">En los últimos tres meses ¿Usted ha visto en su colonia trípticos, folletos o carteles del Gobierno de la Ciudad para informar sobre medidas de prevención y cuidado durante la pandemia de Coronavirus?</string>
-    <string name="PREGUNTAc16">Antes de que yo se lo mencionara, ¿usted sabía que ya se permite que haya reelección de cargos populares?</string>
-    <string name="PREGUNTAc16a">En general ¿está usted de acuerdo o no con la reelección de alcaldes y diputados? (No leer ni de acuerdo ni en desacuerdo)</string>
-    <string name="PREGUNTAc16b">¿Usted votaría por algún candidato que buscara la reelección para alcalde o diputado: Si, sin importar el candidato, Si, dependiendo del candidato, No, nunca votaría para que alguien se reeligiera?</string>
-    <string name="PREGUNTAc17">Solo para estadística, ¿me podría decir por quién votó para Jefe de Gobierno en las elecciones de 2018? Espontáneo</string>
-    <string name="PREGUNTAc17a">A dos años de la elección ¿sigue pensando que fue la mejor elección para la Jefatura de Gobierno? (espontáneo)</string>
-    <string name="PREGUNTAc17b">Después de dos años de la elección  ¿cómo cree que está haciendo su trabajo la Jefa de Gobierno, Claudia Sheinbaum, bien o mal? (no leer regular)</string>
-    <string name="PREGUNTAc18">Si hoy fueran las elecciones para elegir alcaldes y diputados ¿por qué partido votaría usted? (espontáneo)</string>
+    <string name="PREGUNTA5">Comparada con la situación que tenía el país hace un año, ¿cómo diría usted que está la situación actual del país, mejor o peor? (no leer igual de bien, igual de mal)</string>
+    <string name="PREGUNTA6">¿Cuál considera usted que es el principal problema de la Ciudad (ESTADO)?(REGISTRAR PRIMER RESPUESTA ESPONTÁNEA, NO LEA OPCIONES)</string>
+<string name="PREGUNTA7">Pasando a otro tema ¿Cuál considera usted que es el principal problema de su colonia? (REGISTRAR PRIMER RESPUESTA ESPONTÁNEA, NO LEA OPCIONES) </string>
+<string name="PREGUNTA8">Con lo que usted sabe ¿está de acuerdo, o en desacuerdo con el trabajo realizado hasta ahora por el Presidente de la República, Andrés Manuel López Obrador? (no leer ni de acuerdo ni en desacuerdo)</string>
+<string name="PREGUNTA9">Hablando ahora de la Ciudad de México y de su gobierno, con lo que Ud. sabe, ¿está de acuerdo o en desacuerdo con el trabajo realizado hasta ahora por la Jefa de Gobierno, Claudia Sheinbaum?  ( no leer ni de acuerdo ni en desacuerdo)</string>
+<string name="PREGUNTA10">Con lo que Ud. sabe, ¿está de acuerdo o en desacuerdo con el trabajo realizado hasta ahora por su Alcalde (antes delegado)? (no leer ni de acuerdo ni en desacuerdo)</string>
+<string name="PREGUNTA11">Con lo que Ud. sabe, ¿está de acuerdo o en desacuerdo con el trabajo realizado hasta ahora por sus Diputados en este distrito electoral? (no leer ni de acuerdo ni en desacuerdo)</string>
+<string name="PREGUNTA12">Podría decirme el nombre del Alcalde de su Alcaldía (antes delegación) (MUNICIPIO)</string>
+<string name="PREGUNTA13">Actualmente ¿tiene usted credencial de elector?</string>
+<string name="PREGUNTA14">En junio próximo habrá elecciones para elegir alcalde, diputados locales y federales. ¿Qué tan interesado está usted de ir a votar en estas elecciones: totalmente interesado, bastante interesado, poco interesado o nada interesado?</string>
+<string name="PREGUNTA15">Y dígame, ¿qué tan seguro está usted de ir a votar en estas elecciones: totalmente seguro, bastante seguro, poco seguro o nada seguro?</string>
+<string name="PREGUNTA16">Solamente para las estadísticas ¿Usted votó en las pasadas elecciones del 2018?</string>
+<string name="PREGUNTA16a">¿Y en esas las elecciones del año 2018, por cuál partido votó para alcalde (antes delegado)? (ESPONTÁNEA) </string>
+<string name="PREGUNTA16b">Y si hubiera podido votar, ¿por cuál partido hubiera votado usted para alcalde (antes delegado) en julio del 2018?</string>
+<string name="PREGUNTA17">Independientemente del partido por el que usted vota, ¿usted normalmente se considera panista, priísta, perredista, morenista o de otro partido? [SI MENCIONA ALGUN PARTIDO, PREGUNTAR SI "MUY" O "ALGO"] </string>
+<string name="PREGUNTA17a">¿Está usted completamente seguro de que votará por ese partido o cree que pudiera cambiar de opción de aquí a la elección?</string>
+<string name="PREGUNTA18">¿Por cuál partido nunca votaría? (registrar primera mención)</string>
+<string name="PREGUNTA19">Solo para estadística, ¿me podría decir por quien voto para Jefe de Gobierno en las elecciones de 2018? 8espontánea)</string>
+<string name="PREGUNTA19a">A dos años de la elección ¿sigue pensando que fue la mejor elección para la Jefatura de Gobierno? (espontáneo)</string>
+<string name="PREGUNTA19b">Después de dos años de la elección ¿cómo cree que está haciendo su trabajo la Jefa de Gobierno, Claudia Sheinbaum, bien o mal? (no leer regular)</string>
+<string name="PREGUNTA20">A usted que cree que beneficie más a su alcaldía, ¿qué continúe el mismo partido tres años más o que se alterne el partido que gobierna la alcaldía?</string>
+<string name="PREGUNTA21">Actualmente se permite que alcaldes y/o diputados locales tengan oportunidad de reelegirse, ¿Usted ya lo sabía antes que se lo mencionara?</string>
+<string name="PREGUNTA22">Actualmente se permite que alcaldes y/o diputados locales tengan oportunidad de reelegirse, ¿Qué tan de acuerdo está usted con esta disposición?</string>
+<string name="PREGUNTA23">Si su alcalde actual (Insertar nombre por sistema)  buscara la reelección en el 2021 por un periodo de tres años más en su puesto  ¿Qué tan dispuesto estaría a votar por él (ella)?</string>
+<string name="PREGUNTA24">Le voy a leer una lista de personas. ¿Ha oído mencionar a...? (ENCUESTADOR: SI NO HA OÍDO MENCIONAR EL NOMBRE, CONTINÚE CON EL CANDIDATO SIGUIENTE) </string>
+<string name="PREGUNTA24_1">CANDIDATO 1</string>
+<string name="PREGUNTA24_1a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA24_1b">¿Estaría usted dispuesto o no a votar por él para... alcalde?</string>
+<string name="PREGUNTA24_2">CANDIDATO 2</string>
+<string name="PREGUNTA24_2a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA24_2b">¿Estaría usted dispuesto o no a votar por él para... alcalde?</string>
+<string name="PREGUNTA24_3">CANDIDATO 3</string>
+<string name="PREGUNTA24_3a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA24_3b">¿Estaría usted dispuesto o no a votar por él para... alcalde?</string>
+<string name="PREGUNTA25">Si los únicos candidatos a alcalde fueran CANDIDATO 1 por el PAN, CANDIDATO 2 por el PRI, CANDIDATO 3 por MORENA, CANDIDATO 4 por el PRD, ¿por cuál votaría usted?</string>
+<string name="PREGUNTA26">Usted a quién de los siguientes candidatos prefiere que sea el candidato MORENA a la alcaldía? </string>
+<string name="PREGUNTA27">Le voy a leer una lista de personas. ¿Ha oído mencionar a...? (ENCUESTADOR: SI NO HA OÍDO MENCIONAR EL NOMBRE, CONTINÚE CON EL CANDIDATO SIGUIENTE) </string>
+<string name="PREGUNTA27_1">CANDIDATO 1</string>
+<string name="PREGUNTA27_1a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA27_1b">¿Estaría usted dispuesto o no a votar por él para... diputado federal?</string>
+<string name="PREGUNTA27_2">CANDIDATO 2</string>
+<string name="PREGUNTA27_2a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA27_2b">¿Estaría usted dispuesto o no a votar por él para... diputado federal?</string>
+<string name="PREGUNTA27_3">CANDIDATO 3</string>
+<string name="PREGUNTA27_3a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA27_3b">¿Estaría usted dispuesto o no a votar por él para... diputado federal?</string>
+<string name="PREGUNTA28">Si los únicos candidatos a diputado federal fueran CANDIDATO 1 por el PAN, CANDIDATO 2 por el PRI, CANDIDATO 3 por MORENA, CANDIDATO 4 por el PRD, ¿por cuál votaría usted?</string>
+<string name="PREGUNTA29">Usted a quién de los siguientes candidatos prefiere que sea el candidato MORENA a diputado federal? </string>
+<string name="PREGUNTA30">Le voy a leer una lista de personas. ¿Ha oído mencionar a...? (ENCUESTADOR: SI NO HA OÍDO MENCIONAR EL NOMBRE, CONTINÚE CON EL CANDIDATO SIGUIENTE) </string>
+<string name="PREGUNTA30_1">CANDIDATO 1</string>
+<string name="PREGUNTA30_1a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA30_1b">¿Estaría usted dispuesto o no a votar por él para... diputado local?</string>
+<string name="PREGUNTA30_2">CANDIDATO 2</string>
+<string name="PREGUNTA30_2a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA30_2b">¿Estaría usted dispuesto o no a votar por él para... diputado local?</string>
+<string name="PREGUNTA30_3">CANDIDATO 3</string>
+<string name="PREGUNTA30_3a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA30_3b">¿Estaría usted dispuesto o no a votar por él para... diputado local?</string>
+<string name="PREGUNTA31">Si los únicos candidatos a diputado local fueran CANDIDATO 1 por el PAN, CANDIDATO 2 por el PRI, CANDIDATO 3 por MORENA, CANDIDATO 4 por el PRD, ¿por cuál votaría usted?</string>
+<string name="PREGUNTA32">Usted a quién de los siguientes candidatos prefiere que sea el candidato MORENA a diputado local? </string>
 
-    <string name="PREGUNTAATRIBUTOS">De los siguientes atributos personales, ¿cuáles cree usted que sí o que no tiene la Jefa de Gobierno, Claudia Sheinbaum?</string>
+<string name="PREGUNTAATRIBUTOS">De los siguientes atributos personales, ¿cuáles cree usted que sí o que no tiene la Jefa de Gobierno, Claudia Sheinbaum?</string>
     <string name="PREGUNTAEST">Para terminar le voy a realizar algunas preguntas para la estadística</string>
     <string name="PREGUNTAHIJOS">Tiene hijos</string>
     <string name="PREGUNTAAPORTA">Pensando en el jefe o jefa de hogar, ¿cuál fue el último año de estudios que aprobó en la escuela?</string>
