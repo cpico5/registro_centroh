@@ -75,7 +75,7 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Muy priista"
+            android:text="Priista"
             />
             
           <RadioButton
@@ -87,7 +87,7 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Algo priista"
+            android:text="Morenista"
             />
             
           <RadioButton
@@ -99,7 +99,7 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Muy morenista"
+            android:text="Panista"
             />
             
           <RadioButton
@@ -111,7 +111,7 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Algo morenista"
+            android:text="Perredista"
             />
             
           <RadioButton
@@ -123,7 +123,7 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Muy panista"
+            android:text="PT"
             />
             
           <RadioButton
@@ -135,7 +135,7 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Algo panista"
+            android:text="Partido Verde"
             />
             
           <RadioButton
@@ -147,7 +147,7 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Muy perredista"
+            android:text="Movimiento Ciudadano"
             />
             
           <RadioButton
@@ -159,8 +159,8 @@
           android:textColor="@drawable/radiobutton_color_selector"
           android:textSize="16sp"
           android:theme="@style/RadioButton"
-          android:text=""
-          android:visibility="gone"
+          android:text="De ningún partido"
+
           />
           
           <RadioButton
@@ -172,7 +172,8 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Algo perredista"
+            android:text=""
+              android:visibility="gone"
             />
             
           <RadioButton
@@ -184,7 +185,8 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="De otro partido"
+              android:text=""
+              android:visibility="gone"
             />
             
           <RadioButton
@@ -196,7 +198,8 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="De ningún partido"
+              android:text=""
+              android:visibility="gone"
             />
             
           <RadioButton

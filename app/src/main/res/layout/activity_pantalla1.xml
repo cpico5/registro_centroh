@@ -82,6 +82,11 @@
             <include layout="@layout/preg05"/>
             <include layout="@layout/preg06"/>
             <include layout="@layout/preg07"/>
+            <include layout="@layout/pregpc"/>
+            <include layout="@layout/pregpc_1"/>
+            <include layout="@layout/pregpc_2"/>
+            <include layout="@layout/pregpc_3"/>
+            <include layout="@layout/pregpc_4"/>
             <include layout="@layout/preg08"/>
             <include layout="@layout/preg09"/>
             <include layout="@layout/preg10"/>
