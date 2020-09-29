@@ -37,6 +37,7 @@ import androidx.fragment.app.FragmentActivity;
 //import com.google.firebase.iid.FirebaseInstanceId;
 //import com.google.firebase.iid.InstanceIdResult;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.MySSLSocketFactory;
@@ -48,28 +49,41 @@ import org.json.JSONObject;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 import cz.msebera.android.httpclient.Header;
+import mx.gob.cdmx.estudiosopinion.db.DaoManager;
+import mx.gob.cdmx.estudiosopinion.model.candidatos_cdmx;
 
-import static mx.gob.cdmx.estudiosopinion.Nombre.customURL;
 import static mx.gob.cdmx.estudiosopinion.Nombre.ALCALDIA;
+import static mx.gob.cdmx.estudiosopinion.Nombre.customURL;
+import static mx.gob.cdmx.estudiosopinion.Nombre.customURLcatalogos;
 
 public class Bienvenida extends AppCompatActivity {
 
     private static final String TAG = Bienvenida.class.getName();
+    UsuariosSQLiteHelper usdbh;
+    private SQLiteDatabase db;
+    UsuariosSQLiteHelper2 usdbh2;
+    private SQLiteDatabase db2;
     UsuariosSQLiteHelper3 usdbh3;
     private SQLiteDatabase db3;
     double latitude;
     double longitude;
+    private DaoManager daoManager;
+
+    public String maximo = "";
+    int elMaximo;
 
     private View mProgressView;
 
@@ -91,6 +105,9 @@ public class Bienvenida extends AppCompatActivity {
 
     SimpleDateFormat df3 = new SimpleDateFormat("yyy-MM-dd");
     String formattedDate3 = df3.format(c.getTime());
+
+    SimpleDateFormat df4 = new SimpleDateFormat("yyy-MM-dd");
+    String formattedDateFecha = df4.format(c.getTime());
 
     public String sacaImei() {
         TelephonyManager TelephonyMgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
@@ -169,6 +186,22 @@ public class Bienvenida extends AppCompatActivity {
         Log.i(TAG, "cqs ------------->> Número de usuarios onCreate: " + sacaUsuario());
 
         Thread.setDefaultUncaughtExceptionHandler(new UnCaughtException(this,this));
+
+        ///////////////// actualiza catalogos
+        elMaximo = Integer.parseInt(sacaMaximo().toString()) + 1;
+        String elMaximoFecha = String.valueOf(elMaximo);
+
+        if (elMaximoFecha.matches("1")) {
+            Log.i(TAG, " =====> El numero inicial: " + elMaximoFecha);
+            Log.i(TAG, " =====> El nombre de la encuesta: " + nombreEncuesta);
+            Log.i(TAG, " =====> Cuantas secciones hay: " + sacaCuantosSecciones());
+            int haySecciones = Integer.parseInt(sacaCuantosSecciones());
+            if (haySecciones == 0) {
+                catalogoCandidatosWS(nombreEncuesta);
+            }
+        }
+
+        ////////// finaliza actualiza catalogos
 
 
         if (!verificaConexion(this)) {
@@ -557,7 +590,7 @@ public class Bienvenida extends AppCompatActivity {
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 //                showProgress(false);
                 try {
-                    Log.e(TAG, "cqs ----------------->> existe un error en la conexión -----> " + error.getMessage());
+                    Log.e(TAG, "cqs ----------------->> existe un error en la conexión on failure 1-----> " + error.getMessage());
                     if (responseBody != null)
                         Log.d(TAG, "cqs ----------->> " + new String(responseBody));
 
@@ -566,7 +599,7 @@ public class Bienvenida extends AppCompatActivity {
                 }
 
                 if (statusCode != 200) {
-                    Log.e(TAG, "Existe un error en la conexión -----> " + error.getMessage());
+                    Log.e(TAG, "Existe un error en la conexión on failure != 200-----> " + error.getMessage());
                     if (responseBody != null)
                         Log.d(TAG, "pimc -----------> " + new String(responseBody));
 
@@ -718,7 +751,7 @@ public class Bienvenida extends AppCompatActivity {
                 }
 
                 if (statusCode != 200) {
-                    Log.e(TAG, "Existe un error en la conexión secciones-----> " + error.getMessage());
+                    Log.e(TAG, "Existe un error en la conexión secciones != 200 -----> " + error.getMessage());
                     if (responseBody != null)
                         Log.d(TAG, "cqs ----------->> " + new String(responseBody));
 
@@ -802,7 +835,7 @@ public class Bienvenida extends AppCompatActivity {
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 //                showProgress(false);
                 try {
-                    Log.e(TAG, "cqs ----------------->> existe un error en la conexión -----> " + error.getMessage());
+                    Log.e(TAG, "cqs ----------------->> existe un error en la conexión on failure tokenWS-----> " + error.getMessage());
                     if (responseBody != null)
                         Log.d(TAG, "cqs ----------->> " + new String(responseBody));
 
@@ -811,7 +844,7 @@ public class Bienvenida extends AppCompatActivity {
                 }
 
                 if (statusCode != 200) {
-                    Log.e(TAG, "Existe un error en la conexión -----> " + error.getMessage());
+                    Log.e(TAG, "Existe un error en la conexión on failure tokenWS != 200  -----> " + error.getMessage());
                     if (responseBody != null)
                         Log.d(TAG, "cqs -----------> " + new String(responseBody));
 
@@ -1502,6 +1535,141 @@ public class Bienvenida extends AppCompatActivity {
             mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
         }
     }
+
+    ////////////// ´para actulizal los catalogo por fecha y si están vacios
+
+    private String sacaMaximo() {
+        Set<String> set = new HashSet<String>();
+        final String F = "File dbfile";
+        // Abrimos la base de datos 'DBUsuarios' en modo escritura
+        String DATABASE_NAME = Environment.getExternalStorageDirectory() +"/Mis_archivos/" +nombreEncuesta+"_"+sacaImei()+"";
+        usdbh = new UsuariosSQLiteHelper(this, "F", null, 1,DATABASE_NAME);
+        db = usdbh.getReadableDatabase();
+        String selectQuery = "SELECT count(*) FROM encuestas where fecha='" + formattedDate3 + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                maximo = cursor.getString(0);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return maximo;
+    }
+
+    private String sacaCuantosSecciones() {
+        String cuantos = null;
+        // Abrimos la base de datos en modo lectura
+        usdbh2 = new UsuariosSQLiteHelper2(this);
+        db2 = usdbh2.getReadableDatabase();
+        String selectQuery = "SELECT count(*) FROM candidatos_cdmx";
+        Cursor cursor = db2.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                cuantos = cursor.getString(0);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db2.close();
+        return cuantos;
+    }
+
+
+    private void catalogoCandidatosWS(String laEncuesta){
+
+        RequestParams params = new RequestParams();
+        params.put("api", "candidatoscdmx");
+        params.put("encuesta", laEncuesta);
+        params.put("tabla", "candidatos_cdmx");
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.setSSLSocketFactory(MySSLSocketFactory.getFixedSocketFactory());
+        //client.addHeader("Authorization", "Bearer " + usuario.getToken());
+        client.setTimeout(60000);
+
+        RequestHandle requestHandle = client.post(customURLcatalogos, params, new AsyncHttpResponseHandler() {
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+//                showProgress(false);
+                Log.d(TAG, "cqs -----------> Respuesta catalogo Candidatos OK ");
+                Log.d(TAG, "cqs -----------> " + new String(responseBody));
+
+                try {
+
+                    String json = new String(responseBody);
+
+                    if (json != null && !json.isEmpty()) {
+
+                        Gson gson = new Gson();
+                        JSONObject jsonObject = new JSONObject(json);
+                        Log.d(TAG, "cqs ----------->> Data: " + jsonObject.get("data"));
+
+                        String login = jsonObject.getJSONObject("response").get("code").toString();
+                        Log.d(TAG, "cqs ----------->> Code: " + login);
+                        if (Integer.valueOf(login) == 1) {
+
+                            Log.d(TAG, "cqs ----------->> Code estoy dentro Candidatos:  " + login);
+                            //obtiene usuarios
+                            String jsonCandidatos = jsonObject.getJSONObject("data").getJSONArray("candidatos").toString();
+                            Type collectionType = new TypeToken<List<candidatos_cdmx>>() {}.getType();
+                            List<candidatos_cdmx> listacandidatos = gson.fromJson(jsonCandidatos, collectionType);
+
+                            Log.d(TAG, "cqs ----------->> listaCandidatos:  " + listacandidatos);
+
+                            usdbh2 = new UsuariosSQLiteHelper2(Bienvenida.this);
+                            db2 = usdbh2.getReadableDatabase();
+                            daoManager = new DaoManager(db2);
+                            if(listacandidatos != null && !listacandidatos.isEmpty()){
+                                daoManager.delete(candidatos_cdmx.class);
+                                for(candidatos_cdmx candidatos_cdmx :listacandidatos ){
+                                    daoManager.insert(candidatos_cdmx);
+                                }
+                            }
+
+                        } else {
+                            Toast.makeText(Bienvenida.this, "Consulta incorrecta", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                } catch (Exception e) {
+//                    showProgress(false);
+                    Log.e(TAG, e.getMessage());
+                    Toast.makeText(Bienvenida.this, "Response Incorrecto", Toast.LENGTH_SHORT).show();
+                    String stackTrace = Log.getStackTraceString(e);
+                    Log.i(TAG,"cqs ----------->> Response incorrecto: "+ stackTrace);
+                }
+
+
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                showProgress(false);
+                try {
+                    Log.e(TAG, "cqs-----------------> existe un error en la conexion catalogoCandidatosWS  -----> " + error.getMessage());
+                    if (responseBody != null)
+                        Log.d(TAG, "cqs -----------> " + new String(responseBody));
+
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+                if (statusCode != 200) {
+                    Log.e(TAG, "Existe un error en la conexion catalogoCandidatosWS !=200 -----> " + error.getMessage());
+                    if (responseBody != null)
+                        Log.d(TAG, "cqs -----------> " + new String(responseBody));
+
+                }
+
+                Toast.makeText(Bienvenida.this, "Error de conexion al servidor\n inténtelo de nuevo", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+    }
+
 
 
 }

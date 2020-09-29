@@ -18,7 +18,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import mx.gob.cdmx.estudiosopinion.db.DaoManager;
-import mx.gob.cdmx.estudiosopinion.model.Datos;
+import mx.gob.cdmx.estudiosopinion.model.candidatos_cdmx;
 
 import static mx.gob.cdmx.estudiosopinion.UsuariosSQLiteHelper2.TablaUsuarios.TABLA_USUARIOS;
 
@@ -53,7 +53,7 @@ public class UsuariosSQLiteHelper2 extends SQLiteOpenHelper {
     static String prefix = "listado";
 
     private static final String DATABASE_NAME = Environment.getExternalStorageDirectory() + "/Mis_archivos/" + nombreD + "_" + prefix + "";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 10;
 
     public UsuariosSQLiteHelper2(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -96,6 +96,70 @@ public class UsuariosSQLiteHelper2 extends SQLiteOpenHelper {
     + TablaDatos.COLUMNA_COORDINADOR + " text not null, "
     + TablaDatos.COLUMNA_nombre_encuesta + " text not null); ";
 
+    //////////////////////TABLA DATOS  //////////////////////////////////////////////////////////////
+
+    public String partido_alcalde;
+    public String paterno_alcalde;
+    public String materno_alcalde;
+    public String nombre_alcalde;
+    public String nombre_completo_alcalde;
+    public String partido_federal;
+    public String paternofederale;
+    public String materno_federal;
+    public String nombre_federal;
+    public String nombre_completo_federal;
+    public String partido_local;
+    public String paterno_local;
+    public String materno_local;
+    public String nombre_local;
+    public String nombre_completo_local;
+    public Integer seccion;
+
+
+    public static class TablaCandidatosCDMX {
+        public static String TABLA_candidatos_cdmx = "candidatos_cdmx";
+        public static String COLUMNA_id = "id";
+        public static String COLUMNA_alcaldia = "alcaldia";
+        public static String COLUMNA_partido_alcalde = "partido_alcalde";
+        public static String COLUMNA_paterno_alcalde = "paterno_alcalde";
+        public static String COLUMNA_materno_alcalde = "materno_alcalde";
+        public static String COLUMNA_nombre_alcalde = "nombre_alcalde";
+        public static String COLUMNA_nombre_completo_alcalde = "nombre_completo_alcalde";
+        public static String COLUMNA_partido_federal = "partido_federal";
+        public static String COLUMNA_paterno_federal = "paterno_federal";
+        public static String COLUMNA_materno_federal = "materno_federal";
+        public static String COLUMNA_nombre_federal = "nombre_federal";
+        public static String COLUMNA_nombre_completo_federal = "nombre_completo_federal";
+        public static String COLUMNA_partido_local = "partido_local";
+        public static String COLUMNA_paterno_local = "paterno_local";
+        public static String COLUMNA_materno_local = "materno_local";
+        public static String COLUMNA_nombre_local = "nombre_local";
+        public static String COLUMNA_nombre_completo_local = "nombre_completo_local";
+        public static String COLUMNA_seccion = "seccion";
+
+    }
+
+    private static final String DATABASE_CandidatosCdmx = "create table "
+            + TablaCandidatosCDMX.TABLA_candidatos_cdmx + "("
+            + TablaCandidatosCDMX.COLUMNA_id + " INTEGER not null, "
+            + TablaCandidatosCDMX.COLUMNA_alcaldia + " text not null, "
+            + TablaCandidatosCDMX.COLUMNA_partido_alcalde + " text, "
+            + TablaCandidatosCDMX.COLUMNA_paterno_alcalde + " text, "
+            + TablaCandidatosCDMX.COLUMNA_materno_alcalde + " text, "
+            + TablaCandidatosCDMX.COLUMNA_nombre_alcalde + " text, "
+            + TablaCandidatosCDMX.COLUMNA_nombre_completo_alcalde + " text, "
+            + TablaCandidatosCDMX.COLUMNA_partido_federal + " text, "
+            + TablaCandidatosCDMX.COLUMNA_paterno_federal + " text, "
+            + TablaCandidatosCDMX.COLUMNA_materno_federal + " text, "
+            + TablaCandidatosCDMX.COLUMNA_nombre_federal + " text, "
+            + TablaCandidatosCDMX.COLUMNA_nombre_completo_federal + " text, "
+            + TablaCandidatosCDMX.COLUMNA_partido_local + " text, "
+            + TablaCandidatosCDMX.COLUMNA_paterno_local + " text, "
+            + TablaCandidatosCDMX.COLUMNA_materno_local + " text, "
+            + TablaCandidatosCDMX.COLUMNA_nombre_local + " text, "
+            + TablaCandidatosCDMX.COLUMNA_nombre_completo_local + " text, "
+            + TablaCandidatosCDMX.COLUMNA_seccion + " INTEGER not null); ";
+
 ///////////////////////////  TABLA USUARIOS	 /////////////////////////////////////////////////////////
 
     public static class TablaUsuarios {
@@ -116,10 +180,12 @@ public class UsuariosSQLiteHelper2 extends SQLiteOpenHelper {
 // TODO Auto-generated method stub
 //        db.execSQL(DATABASE_DATOS);
         db.execSQL(DATABASE_USUARIOS);
+//        db.execSQL(DATABASE_CandidatosCdmx);
 
 
 //            db.execSQL(DaoManager.generateCreateQueryString(Usuarios.class));
-            db.execSQL(DaoManager.generateCreateQueryString(Datos.class));
+//            db.execSQL(DaoManager.generateCreateQueryString(Datos.class));
+        db.execSQL(DaoManager.generateCreateQueryString(candidatos_cdmx.class));
 
 
 //        db.execSQL(DaoManager.generateCreateQueryString(Datos.class));
@@ -192,9 +258,9 @@ public class UsuariosSQLiteHelper2 extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 // TODO Auto-generated method stub
-        db.execSQL("DROP table if exists " + TablaDatos.TABLA_DATOS);
+        db.execSQL("DROP table if exists " + TablaCandidatosCDMX.TABLA_candidatos_cdmx);
         db.execSQL("DROP table if exists " + TABLA_USUARIOS);
-//        db.execSQL(DaoManager.generateDropIfExistsQueryString(Usuarios.class));
+//        db.execSQL(DaoManager.generateDropIfExistsQueryString(CandidatosCdmx.class));
         onCreate(db);
     }
 

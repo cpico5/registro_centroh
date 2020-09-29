@@ -78,6 +78,7 @@ import mx.gob.cdmx.estudiosopinion.db.DaoManager;
 import mx.gob.cdmx.estudiosopinion.model.DatoContent;
 import mx.gob.cdmx.estudiosopinion.model.Datos;
 import mx.gob.cdmx.estudiosopinion.model.Usuarios;
+import mx.gob.cdmx.estudiosopinion.model.candidatos_cdmx;
 
 import static mx.gob.cdmx.estudiosopinion.Nombre.USUARIO;
 import static mx.gob.cdmx.estudiosopinion.Nombre.customURL;
@@ -295,7 +296,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
         usdbh2 = new UsuariosSQLiteHelper2(this);
         ArrayList<String> set = new ArrayList<String>();
         db2 = usdbh2.getWritableDatabase();
-        String selectQuery1 = "SELECT DISTINCT seccion FROM datos";
+        String selectQuery1 = "SELECT DISTINCT seccion FROM candidatos_cdmx";
         Cursor c = db2.rawQuery(selectQuery1, null);
         if (c.moveToFirst()) {
             do {
@@ -369,7 +370,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                 if(Integer.parseInt(sacaCatalogoDatos())>=1){
 
                 }else{
-                    catalogoSeccionesWS(nombreEncuesta);
+                    catalogoCandidatosWS(nombreEncuesta);
                 }
                 catalogoUsuariosWS();
                 dialogoFecha();
@@ -621,7 +622,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
     public void catalogos(View view){
 
         Log.i(TAG, " =====> El nombre de la encuesta: " + nombreEncuesta);
-        catalogoSeccionesWS(nombreEncuesta);
+        catalogoCandidatosWS(nombreEncuesta);
         Intent intent = new Intent(getApplicationContext(), Bienvenida.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
@@ -777,7 +778,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
             equipo = spinner2.getSelectedItem().toString().toLowerCase();
 
             db2 = usdbh2.getWritableDatabase();
-            String selectQuery1 = " SELECT delegacion FROM datos  WHERE seccion='" + seccion + "'";
+            String selectQuery1 = " SELECT delegacion FROM candidatos_cdmx  WHERE seccion='" + seccion + "'";
             Cursor c = db2.rawQuery(selectQuery1, null);
 
             c.moveToFirst();
@@ -808,10 +809,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
         equipo = spinner2.getSelectedItem().toString().toLowerCase();
 
         // db = usdbh.getWritableDatabase();
-        // // String selectQuery1 = " SELECT a.equipo FROM datos as a, delegados
+        // // String selectQuery1 = " SELECT a.equipo FROM candidatos_cdmx as a, delegados
         // as
         // // b WHERE a.seccion=b.seccion and a.seccion='"+seccion+"'";
-        // String selectQuery1 = " SELECT equipo FROM datos WHERE seccion='" +
+        // String selectQuery1 = " SELECT equipo FROM candidatos_cdmx WHERE seccion='" +
         // seccion + "'";
         // Cursor c = db.rawQuery(selectQuery1, null);
         //
@@ -1078,79 +1079,79 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
     }
 
-    private void SeccionesSpinner() {
-
-        usdbh2 = new UsuariosSQLiteHelper2(this);
-
-        Set<String> set = new HashSet<String>();
-
-        equipo = spinner2.getSelectedItem().toString().toLowerCase();
-        System.out.println(equipo);
-
-        db2 = usdbh2.getWritableDatabase();
-
-        // Para llenar el spinner solo con los datos del equipo
-        // PARA QUITAR LOS REGISTROS SELECT t1.seccion FROM (SELECT seccion FROM
-        // datos where equipo='"+equipo+"' union ALL SELECT seccion FROM
-        // encuestas )t1 GROUP BY t1.seccion HAVING count(*) <=3 ORDER BY
-        // t1.seccion asc
-        // String selectQuery1 = "SELECT * FROM datos WHERE equipo='"+equipo+"'
-        // and seccion NOT IN (SELECT seccion FROM encuestas GROUP BY seccion
-        // HAVING COUNT(*) >= 4 ORDER BY seccion)";
-        String selectQuery1 = "SELECT * FROM datos WHERE equipo='" + equipo + "'";
-
-        // Otra consulta Select seccion from datos where equipo ='eddy' and not
-        // exists (select seccion from encuestas where encuestas.seccion =
-        // datos.seccion) GROUP BY datos.seccion HAVING count(*) <=4;
-        Cursor c = db2.rawQuery(selectQuery1, null);
-
-        if (c.moveToFirst()) {
-            do {
-
-                set.add(c.getString(0));
-
-                String secc = c.getString(0);
-
-            } while (c.moveToNext());
-        }
-
-        else {
-            Toast toast2 = Toast.makeText(getApplicationContext(), "NO CORRESPONDE ESTE NÚMERO DE SECCIÓN...!",
-                    Toast.LENGTH_LONG);
-
-            toast2.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
-
-            toast2.show();
-
-        }
-
-        c.close();
-		db.close();
-        // here i used Set Because Set doesn't allow duplicates.
-        Set<String> set1 = set;
-        List<String> list = new ArrayList<String>(set1);
-
-        adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item, list);
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        Collections.sort(list);
-        spinner_seccion.setAdapter(adapter);
-
-        // ACCIÓN QUE SE REALIZA CUANDO ES SELECCIOANDO UN ELEMENTO DEL SPINNER
-        spinner_seccion.setOnItemSelectedListener(new OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-                btnSiguiente.setEnabled(false);// desactiva el botón siguiente
-                txtResultado.setText("");// limpia el cuadro de texto
-            }
-
-            public void onNothingSelected(AdapterView<?> parent) {
-                // txtEquipo.setText("");
-            }
-        });
-        spinner_seccion.setWillNotDraw(false);
-
-    }
+//    private void SeccionesSpinner() {
+//
+//        usdbh2 = new UsuariosSQLiteHelper2(this);
+//
+//        Set<String> set = new HashSet<String>();
+//
+//        equipo = spinner2.getSelectedItem().toString().toLowerCase();
+//        System.out.println(equipo);
+//
+//        db2 = usdbh2.getWritableDatabase();
+//
+//        // Para llenar el spinner solo con los datos del equipo
+//        // PARA QUITAR LOS REGISTROS SELECT t1.seccion FROM (SELECT seccion FROM
+//        // datos where equipo='"+equipo+"' union ALL SELECT seccion FROM
+//        // encuestas )t1 GROUP BY t1.seccion HAVING count(*) <=3 ORDER BY
+//        // t1.seccion asc
+//        // String selectQuery1 = "SELECT * FROM datos WHERE equipo='"+equipo+"'
+//        // and seccion NOT IN (SELECT seccion FROM encuestas GROUP BY seccion
+//        // HAVING COUNT(*) >= 4 ORDER BY seccion)";
+//        String selectQuery1 = "SELECT * FROM datos WHERE equipo='" + equipo + "'";
+//
+//        // Otra consulta Select seccion from datos where equipo ='eddy' and not
+//        // exists (select seccion from encuestas where encuestas.seccion =
+//        // datos.seccion) GROUP BY datos.seccion HAVING count(*) <=4;
+//        Cursor c = db2.rawQuery(selectQuery1, null);
+//
+//        if (c.moveToFirst()) {
+//            do {
+//
+//                set.add(c.getString(0));
+//
+//                String secc = c.getString(0);
+//
+//            } while (c.moveToNext());
+//        }
+//
+//        else {
+//            Toast toast2 = Toast.makeText(getApplicationContext(), "NO CORRESPONDE ESTE NÚMERO DE SECCIÓN...!",
+//                    Toast.LENGTH_LONG);
+//
+//            toast2.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+//
+//            toast2.show();
+//
+//        }
+//
+//        c.close();
+//		db.close();
+//        // here i used Set Because Set doesn't allow duplicates.
+//        Set<String> set1 = set;
+//        List<String> list = new ArrayList<String>(set1);
+//
+//        adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item, list);
+//
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        Collections.sort(list);
+//        spinner_seccion.setAdapter(adapter);
+//
+//        // ACCIÓN QUE SE REALIZA CUANDO ES SELECCIOANDO UN ELEMENTO DEL SPINNER
+//        spinner_seccion.setOnItemSelectedListener(new OnItemSelectedListener() {
+//            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+//                btnSiguiente.setEnabled(false);// desactiva el botón siguiente
+//                txtResultado.setText("");// limpia el cuadro de texto
+//            }
+//
+//            public void onNothingSelected(AdapterView<?> parent) {
+//                // txtEquipo.setText("");
+//            }
+//        });
+//        spinner_seccion.setWillNotDraw(false);
+//
+//    }
 
     private String sacaMaximo() {
 
@@ -1852,11 +1853,13 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
     }
 
-    private void catalogoSeccionesWS(String laEncuesta){
+
+    private void catalogoCandidatosWS(String laEncuesta){
 
         RequestParams params = new RequestParams();
-        params.put("api", "secciones");
+        params.put("api", "candidatoscdmx");
         params.put("encuesta", laEncuesta);
+        params.put("tabla", "candidatos_cdmx");
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.setSSLSocketFactory(MySSLSocketFactory.getFixedSocketFactory());
@@ -1868,7 +1871,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 //                showProgress(false);
-                Log.d(TAG, "cqs -----------> Respuesta catalogo secciones OK ");
+                Log.d(TAG, "cqs -----------> Respuesta catalogo Candidatos OK ");
                 Log.d(TAG, "cqs -----------> " + new String(responseBody));
 
                 try {
@@ -1885,49 +1888,23 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
                         Log.d(TAG, "cqs ----------->> Code: " + login);
                         if (Integer.valueOf(login) == 1) {
 
-                            Log.d(TAG, "cqs ----------->> Code estoy dentro secciones:  " + login);
+                            Log.d(TAG, "cqs ----------->> Code estoy dentro Candidatos:  " + login);
                             //obtiene usuarios
-                            String jsonSecciones = jsonObject.getJSONObject("data").getJSONArray("secciones").toString();
-                            Type collectionType = new TypeToken<List<Datos>>() {}.getType();
-                            List<Datos> listaSecciones = gson.fromJson(jsonSecciones, collectionType);
+                            String jsonCandidatos = jsonObject.getJSONObject("data").getJSONArray("candidatos").toString();
+                            Type collectionType = new TypeToken<List<candidatos_cdmx>>() {}.getType();
+                            List<candidatos_cdmx> listacandidatos = gson.fromJson(jsonCandidatos, collectionType);
 
-                            Log.d(TAG, "cqs ----------->> listaSecciones:  " + listaSecciones);
+                            Log.d(TAG, "cqs ----------->> listaCandidatos:  " + listacandidatos);
 
+                            usdbh2 = new UsuariosSQLiteHelper2(MainActivity.this);
+                            db2 = usdbh2.getReadableDatabase();
                             daoManager = new DaoManager(db2);
-                            if(listaSecciones != null && !listaSecciones.isEmpty()){
-                                daoManager.delete(Datos.class);
-                                for(Datos secciones :listaSecciones ){
-                                    daoManager.insert(secciones);
+                            if(listacandidatos != null && !listacandidatos.isEmpty()){
+                                daoManager.delete(candidatos_cdmx.class);
+                                for(candidatos_cdmx candidatos_cdmx :listacandidatos ){
+                                    daoManager.insert(candidatos_cdmx);
                                 }
                             }
-
-
-            /*
-            //obtiene alcaldias
-            jsonStatus = jsonObject.getJSONObject("data").getJSONArray("alcaldias").toString();
-            collectionType = new TypeToken<List<Alcaldia>>() {}.getType();
-            List<Alcaldia> listaAlcaldias = gson.fromJson(jsonStatus, collectionType);
-
-            if(listaAlcaldias != null && !listaAlcaldias.isEmpty()){
-            daoManager.delete(Alcaldia.class);
-            for(Alcaldia alcaldia : listaAlcaldias ){
-            daoManager.insert(alcaldia);
-            }
-            }
-
-            //obtiene colonia
-            jsonStatus = jsonObject.getJSONObject("data").getJSONArray("colonias").toString();
-            collectionType = new TypeToken<List<Colonia>>() {}.getType();
-            List<Colonia> listaColonias = gson.fromJson(jsonStatus, collectionType);
-
-            if(listaColonias != null && !listaColonias.isEmpty()){
-            daoManager.delete(Colonia.class);
-            for(Colonia colonia : listaColonias){
-            daoManager.insert(colonia);
-            }
-            }
-            */
-
 
                         } else {
                             Toast.makeText(MainActivity.this, "Consulta incorrecta", Toast.LENGTH_SHORT).show();
@@ -1942,24 +1919,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
                     Log.i(TAG,"cqs ----------->> Response incorrecto: "+ stackTrace);
                 }
 
-//                try {
-//
-//                    String result = null;
-//                    JSONArray ja = new JSONArray(result);
-//                    JSONObject jo = null;
-//
-//                    listUsuario = new ArrayList<String>();
-//                    listPassword = new ArrayList<String>();
-//
-//                    for(int i=0; i<ja.length(); i++) {
-//
-//                        jo = ja.getJSONObject(i);
-//                        listUsuario.add(jo.getString("usuario"));
-//                        listPassword.add(jo.getString("password"));
-//                    }
-//                }catch (Exception e) {
-//                    Log.e("Webservice usuarios", e.toString());
-//                }
+
 
             }
 
@@ -1967,7 +1927,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 showProgress(false);
                 try {
-                    Log.e(TAG, "cqs-----------------> existe un error en la conexion -----> " + error.getMessage());
+                    Log.e(TAG, "cqs-----------------> existe un error en la conexion catalogoCandidatosWS  -----> " + error.getMessage());
                     if (responseBody != null)
                         Log.d(TAG, "cqs -----------> " + new String(responseBody));
 
@@ -1976,7 +1936,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
                 }
 
                 if (statusCode != 200) {
-                    Log.e(TAG, "Existe un error en la conexion -----> " + error.getMessage());
+                    Log.e(TAG, "Existe un error en la conexion catalogoCandidatosWS !=200 -----> " + error.getMessage());
                     if (responseBody != null)
                         Log.d(TAG, "cqs -----------> " + new String(responseBody));
 
@@ -2741,7 +2701,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
         // Abrimos la base de datos 'DBUsuarios' en modo escritura
         usdbh2 = new UsuariosSQLiteHelper2(this);
         db2 = usdbh2.getReadableDatabase();
-        String selectQuery = "select count(*) from datos";
+        String selectQuery = "select count(*) FROM candidatos_cdmx";
         Cursor cursor = db2.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
