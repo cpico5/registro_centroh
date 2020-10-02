@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">PrimerElectoral v1.0</string>
+    <string name="app_name">Estudios.mx v1.0</string>
     <string name="action_settings">Settings</string>
 
     <string name="url_aplicacion">https://opinion.cdmx.gob.mx</string>
@@ -127,7 +127,7 @@
 <string name="PREGUNTA17">Independientemente del partido por el que usted vota, ¿usted normalmente se considera panista, priísta, perredista, morenista o de otro partido?</string>
 <string name="PREGUNTA17a">¿Está usted completamente seguro de que votará por ese partido o cree que pudiera cambiar de opción de aquí a la elección?</string>
 <string name="PREGUNTA18">¿Por cuál partido nunca votaría? (registrar primera mención)</string>
-<string name="PREGUNTA19">Solo para estadística, ¿me podría decir por quien voto para Jefe de Gobierno en las elecciones de 2018? 8espontánea)</string>
+<string name="PREGUNTA19">Solo para estadística, ¿me podría decir por quien voto para Jefe de Gobierno en las elecciones de 2018? (espontánea)</string>
 <string name="PREGUNTA19a">A dos años de la elección ¿sigue pensando que fue la mejor elección para la Jefatura de Gobierno? (espontáneo)</string>
 <string name="PREGUNTA19b">Después de dos años de la elección ¿cómo cree que está haciendo su trabajo la Jefa de Gobierno, Claudia Sheinbaum, bien o mal? (no leer regular)</string>
 <string name="PREGUNTA20">A usted que cree que beneficie más a su alcaldía (INSERTAR ALCALDÍA CORRESPODIENTE), ¿qué continúe el mismo partido tres años más o que cambie el partido que gobierna la alcaldía?</string>
@@ -135,6 +135,7 @@
 <string name="PREGUNTA22">¿Qué tan de acuerdo está usted con esta disposición que permite que alcaldes y/o diputados locales tengan oportunidad de reelegirse?</string>
 <string name="PREGUNTA23">Si su alcalde actual (Insertar nombre por sistema)  buscara la reelección en el 2021 por un periodo de tres años más en su puesto  ¿Qué tan dispuesto estaría a votar por él (ella)?</string>
 <string name="PREGUNTA24">Le voy a leer una lista de personas. ¿Ha oído mencionar a...? (ENCUESTADOR: SI NO HA OÍDO MENCIONAR EL NOMBRE, CONTINÚE CON EL CANDIDATO SIGUIENTE) </string>
+
 <string name="PREGUNTA24_1">CANDIDATO 1</string>
 <string name="PREGUNTA24_1a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
 <string name="PREGUNTA24_1b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para alcalde/ alcaldesa de...(ALCALDÍA CORRESPONDIENTE) ?</string>
@@ -144,9 +145,32 @@
 <string name="PREGUNTA24_3">CANDIDATO 3</string>
 <string name="PREGUNTA24_3a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
 <string name="PREGUNTA24_3b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para alcalde/ alcaldesa de...(ALCALDÍA CORRESPONDIENTE) ?</string>
+<string name="PREGUNTA24_4">CANDIDATO 3</string>
+<string name="PREGUNTA24_4a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA24_4b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+<string name="PREGUNTA24_5">CANDIDATO 3</string>
+<string name="PREGUNTA24_5a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA24_5b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA24_6">CANDIDATO 1</string>
+    <string name="PREGUNTA24_6a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA24_6b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para alcalde/ alcaldesa de...(ALCALDÍA CORRESPONDIENTE) ?</string>
+    <string name="PREGUNTA24_7">CANDIDATO 2</string>
+    <string name="PREGUNTA24_7a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA24_7b">¿Estaría usted dispuesto o no a votar por él para... alcalde?</string>
+    <string name="PREGUNTA24_8">CANDIDATO 3</string>
+    <string name="PREGUNTA24_8a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA24_8b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para alcalde/ alcaldesa de...(ALCALDÍA CORRESPONDIENTE) ?</string>
+    <string name="PREGUNTA24_9">CANDIDATO 3</string>
+    <string name="PREGUNTA24_9a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA24_9b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA24_10">CANDIDATO 3</string>
+    <string name="PREGUNTA24_10a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA24_10b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    
 <string name="PREGUNTA25">Si los únicos candidatos a alcalde fueran CANDIDATO 1 por el PAN, CANDIDATO 2 por el PRI, CANDIDATO 3 por MORENA, CANDIDATO 4 por el PRD, ¿por cuál votaría usted?</string>
 <string name="PREGUNTA26">Usted a quién de los siguientes candidatos prefiere que sea el candidato MORENA a la alcaldía? </string>
 <string name="PREGUNTA27">Le voy a leer una lista de personas. ¿Ha oído mencionar a...? (ENCUESTADOR: SI NO HA OÍDO MENCIONAR EL NOMBRE, CONTINÚE CON EL CANDIDATO SIGUIENTE) </string>
+
 <string name="PREGUNTA27_1">CANDIDATO 1</string>
 <string name="PREGUNTA27_1a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
 <string name="PREGUNTA27_1b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
@@ -156,9 +180,32 @@
 <string name="PREGUNTA27_3">CANDIDATO 3</string>
 <string name="PREGUNTA27_3a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
 <string name="PREGUNTA27_3b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+<string name="PREGUNTA27_4">CANDIDATO 3</string>
+<string name="PREGUNTA27_4a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA27_4b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+<string name="PREGUNTA27_5">CANDIDATO 3</string>
+<string name="PREGUNTA27_5a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA27_5b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA27_6">CANDIDATO 1</string>
+    <string name="PREGUNTA27_6a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA27_6b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA27_7">CANDIDATO 2</string>
+    <string name="PREGUNTA27_7a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA27_7b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA27_8">CANDIDATO 3</string>
+    <string name="PREGUNTA27_8a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA27_8b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA27_9">CANDIDATO 3</string>
+    <string name="PREGUNTA27_9a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA27_9b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA27_10">CANDIDATO 3</string>
+    <string name="PREGUNTA27_10a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA27_10b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    
 <string name="PREGUNTA28">Si los únicos candidatos a diputado federal fueran CANDIDATO 1 por el PAN, CANDIDATO 2 por el PRI, CANDIDATO 3 por MORENA, CANDIDATO 4 por el PRD, ¿por cuál votaría usted?</string>
 <string name="PREGUNTA29">Usted a quién de los siguientes candidatos prefiere que sea el candidato MORENA a diputado federal? </string>
 <string name="PREGUNTA30">Le voy a leer una lista de personas. ¿Ha oído mencionar a...? (ENCUESTADOR: SI NO HA OÍDO MENCIONAR EL NOMBRE, CONTINÚE CON EL CANDIDATO SIGUIENTE) </string>
+
 <string name="PREGUNTA30_1">CANDIDATO 1</string>
 <string name="PREGUNTA30_1a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
 <string name="PREGUNTA30_1b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) local del distrito (DISTRITO CORRESPONDIENTE)?</string>
@@ -168,6 +215,28 @@
 <string name="PREGUNTA30_3">CANDIDATO 3</string>
 <string name="PREGUNTA30_3a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
 <string name="PREGUNTA30_3b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) local del distrito (DISTRITO CORRESPONDIENTE)?</string>
+<string name="PREGUNTA30_4">CANDIDATO 3</string>
+<string name="PREGUNTA30_4a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA30_4b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+<string name="PREGUNTA30_5">CANDIDATO 3</string>
+<string name="PREGUNTA30_5a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+<string name="PREGUNTA30_5b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA30_6">CANDIDATO 1</string>
+    <string name="PREGUNTA30_6a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA30_6b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) local del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA30_7">CANDIDATO 2</string>
+    <string name="PREGUNTA30_7a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA30_7b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) local del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA30_8">CANDIDATO 3</string>
+    <string name="PREGUNTA30_8a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA30_8b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) local del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA30_9">CANDIDATO 3</string>
+    <string name="PREGUNTA30_9a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA30_9b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA30_10">CANDIDATO 3</string>
+    <string name="PREGUNTA30_10a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA30_10b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    
 <string name="PREGUNTA31">Si los únicos candidatos a diputado local fueran CANDIDATO 1 por el PAN, CANDIDATO 2 por el PRI, CANDIDATO 3 por MORENA, CANDIDATO 4 por el PRD, ¿por cuál votaría usted?</string>
 <string name="PREGUNTA32">Usted a quién de los siguientes candidatos prefiere que sea el candidato MORENA a diputado local? </string>
 

@@ -41,7 +41,7 @@
       android:orientation="vertical" >
       
           <RadioButton
-          android:id="@+id/radio1"
+          android:id="@+id/radio32_1"
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
             />
             
           <RadioButton
-          android:id="@+id/radio2"
+          android:id="@+id/radio32_2"
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
             />
             
           <RadioButton
-          android:id="@+id/radio3"
+          android:id="@+id/radio32_3"
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
             />
             
           <RadioButton
-          android:id="@+id/radio4"
+          android:id="@+id/radio32_4"
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
             />
             
           <RadioButton
-          android:id="@+id/radio5"
+          android:id="@+id/radio32_5"
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
             />
             
           <RadioButton
-          android:id="@+id/radio6"
+          android:id="@+id/radio32_6"
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -115,7 +115,7 @@
             />
             
           <RadioButton
-          android:id="@+id/radio7"
+          android:id="@+id/radio32_7"
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
             />
             
           <RadioButton
-          android:id="@+id/radio8"
+          android:id="@+id/radio32_8"
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
             />
             
           <RadioButton
-          android:id="@+id/radio9"
+          android:id="@+id/radio32_9"
           
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -152,7 +152,7 @@
           />
           
           <RadioButton
-          android:id="@+id/radio10"
+          android:id="@+id/radio32_10"
           
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -165,7 +165,7 @@
           />
           
           <RadioButton
-          android:id="@+id/radio11"
+          android:id="@+id/radio32_11"
           
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -178,7 +178,7 @@
           />
           
           <RadioButton
-          android:id="@+id/radio12"
+          android:id="@+id/radio32_12"
           
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
           />
           
           <RadioButton
-          android:id="@+id/radio13"
+          android:id="@+id/radio32_13"
           
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -204,7 +204,7 @@
           />
           
           <RadioButton
-          android:id="@+id/radio0"
+          android:id="@+id/radio32_0"
           
           
             android:layout_width="wrap_content"

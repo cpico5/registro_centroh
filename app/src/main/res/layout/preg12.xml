@@ -66,15 +66,14 @@
             android:visibility="gone"
             />
 
-          <Spinner
-              android:id="@+id/spinner12"
-              android:layout_width="259dp"
+          <TextView
+              android:id="@+id/textPreguntaAlcaldes"
+              android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:hint="Selecciona"
-              android:layout_marginTop="30dp"
-              android:spinnerMode="dialog"
-              android:singleLine="false"
-              android:layout_marginLeft="10dp" />
+              android:text="alcalde"
+              android:textAppearance="?android:attr/textAppearanceLarge"
+              android:textColor="#002266"
+              android:textStyle="bold" />
 
           <RadioButton
           android:id="@+id/radio4"
