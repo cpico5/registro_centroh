@@ -9,6 +9,9 @@ android {
         applicationId 'mx.gob.cdmx.estudioscdmx'
         minSdkVersion 21
         targetSdkVersion 28
+        multiDexEnabled true
+        versionName "1.0.2"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     buildTypes {

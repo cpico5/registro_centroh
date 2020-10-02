@@ -4,48 +4,53 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
+import mx.gob.cdmx.estudioscdmx.db.Anotaciones.AutoIncrement;
 import mx.gob.cdmx.estudioscdmx.db.Anotaciones.PrimaryKey;
 
 public class Usuario implements Serializable {
 
     @PrimaryKey
-    @SerializedName("id")
+    @AutoIncrement
     public int id;
-    @SerializedName("access_token")
-    public String token;
+
     @SerializedName("name")
-    public String nombre;
+    public String name;
+
     @SerializedName("paterno")
     public String paterno;
+
     @SerializedName("materno")
     public String materno;
+
     @SerializedName("email")
     public String email;
-    @SerializedName("password")
-    public int password;
-    @SerializedName("project")
-    public String proyecto;
-    @SerializedName("details")
-    public Detalle detalle;
 
-    //id push notifications
-    //@SerializedName("id")
-    public int idUsuarioPush;
+    @SerializedName("user_id")
+    public int user_id;
+
+    @SerializedName("access_token")
+    public String access_token;
+
+    @SerializedName("token_type")
+    public String token_type;
+
+    @SerializedName("cuadrante")
+    public String cuadrante;
+
 
     public Usuario() {
     }
 
-    public Usuario(int id, String token, String nombre, String paterno, String materno, String email, int password, String proyecto, Detalle detalle, int idUsuarioPush) {
+    public Usuario(int id, String name, String paterno, String materno, String email, int user_id, String access_token, String token_type, String cuadrante) {
         this.id = id;
-        this.token = token;
-        this.nombre = nombre;
+        this.name = name;
         this.paterno = paterno;
         this.materno = materno;
         this.email = email;
-        this.password = password;
-        this.proyecto = proyecto;
-        this.detalle = detalle;
-        this.idUsuarioPush = idUsuarioPush;
+        this.user_id = user_id;
+        this.access_token = access_token;
+        this.token_type = token_type;
+        this.cuadrante = cuadrante;
     }
 
     public int getId() {
@@ -56,24 +61,12 @@ public class Usuario implements Serializable {
         this.id = id;
     }
 
-    public void setPassword(int password) {
-        this.password = password;
+    public String getName() {
+        return name;
     }
 
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPaterno() {
@@ -100,27 +93,35 @@ public class Usuario implements Serializable {
         this.email = email;
     }
 
-    public String getProyecto() {
-        return proyecto;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setProyecto(String proyecto) {
-        this.proyecto = proyecto;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
-    public Detalle getDetalle() {
-        return detalle;
+    public String getAccess_token() {
+        return access_token;
     }
 
-    public void setDetalle(Detalle detalle) {
-        this.detalle = detalle;
+    public void setAccess_token(String access_token) {
+        this.access_token = access_token;
     }
 
-    public int getIdUsuarioPush() {
-        return idUsuarioPush;
+    public String getToken_type() {
+        return token_type;
     }
 
-    public void setIdUsuarioPush(int idUsuarioPush) {
-        this.idUsuarioPush = idUsuarioPush;
+    public void setToken_type(String token_type) {
+        this.token_type = token_type;
+    }
+
+    public String getCuadrante() {
+        return cuadrante;
+    }
+
+    public void setCuadrante(String cuadrante) {
+        this.cuadrante = cuadrante;
     }
 }

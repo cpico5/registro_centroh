@@ -38,17 +38,4 @@ public class WifiState {
         }
         return  result;
     }
-
-    public boolean verificaConexion() {
-        boolean bConectado = false;
-        ConnectivityManager connec = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo[] redes = connec.getAllNetworkInfo();
-        for (int i = 0; i < 2; i++) {
-            if (redes[i].getState() == NetworkInfo.State.CONNECTED) {
-                bConectado = true;
-            }
-        }
-        return bConectado;
-    }
-
 }

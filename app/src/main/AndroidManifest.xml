@@ -24,6 +24,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -86,22 +87,70 @@
             tools:ignore="LockedOrientationActivity">
         </activity>
 
-<!--        <service-->
-<!--        android:name="estudioscdmx.NotificationService"-->
-<!--        android:exported="false">-->
-<!--        <intent-filter>-->
-<!--            <action android:name="com.google.firebase.MESSAGING_EVENT" />-->
-<!--        </intent-filter>-->
-<!--    </service>-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="mx.gob.cdmx.app_territorial.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider> <!-- Aqui para la actualización -->
+        <activity
+            android:name="mx.gob.cdmx.estudioscdmx.upgradeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter android:priority="1">
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.INSTALL_PACKAGE" />
 
-<!--    <service-->
-<!--        android:name="estudioscdmx.NotificacionIDTokenService"-->
-<!--        android:exported="false">-->
-<!--        <intent-filter>-->
-<!--            <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />-->
-<!--        </intent-filter>-->
-<!--    </service>-->
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/vnd.android.package-archive" />
+            </intent-filter>
+            <intent-filter android:priority="1">
+                <action android:name="android.intent.action.INSTALL_PACKAGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file" />
+                <data android:scheme="package" />
+                <data android:scheme="content" />
+            </intent-filter>
+            <intent-filter android:priority="1">
+                <action android:name="android.content.pm.action.CONFIRM_PERMISSIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> <!-- fINLALIZA PATA LA ACTUALIZACIÓN -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCUYH089b8fx3NxdOmayHQ4Pfj7wmRzlfM" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <receiver android:name=".service.GPSWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="AUTO_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/gpswidgetinfo" />
+        </receiver>
+
+        <service
+            android:name=".service.GPSWidgetProvider$GPSWidgetService"
+            android:enabled="true" />
 
     </application>
+
+
 
 </manifest>

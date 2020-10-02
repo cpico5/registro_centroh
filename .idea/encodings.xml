@@ -3,7 +3,13 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/build.gradle" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/mx/gob/cdmx/primerelectoral/service/WifiState.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/mensaje_enviado.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/font" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/alert_personalizado.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/bienvenida.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values-v11/font_certs.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values-v11/preloaded_fonts.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/xml" charset="UTF-8" />
     <file url="PROJECT" charset="ISO-8859-1" />
   </component>
 </project>

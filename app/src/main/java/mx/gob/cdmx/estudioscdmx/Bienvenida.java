@@ -5,13 +5,18 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -22,7 +27,12 @@ import android.os.Handler;
 import android.os.Looper;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -32,10 +42,6 @@ import androidx.biometric.BiometricPrompt;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
-//import com.google.android.gms.tasks.OnCompleteListener;
-//import com.google.android.gms.tasks.Task;
-//import com.google.firebase.iid.FirebaseInstanceId;
-//import com.google.firebase.iid.InstanceIdResult;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpClient;
@@ -44,6 +50,7 @@ import com.loopj.android.http.MySSLSocketFactory;
 import com.loopj.android.http.RequestHandle;
 import com.loopj.android.http.RequestParams;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.DataOutputStream;
@@ -63,11 +70,22 @@ import java.util.concurrent.Executors;
 
 import cz.msebera.android.httpclient.Header;
 import mx.gob.cdmx.estudioscdmx.db.DaoManager;
+import mx.gob.cdmx.estudioscdmx.model.Aplicacion;
 import mx.gob.cdmx.estudioscdmx.model.candidatos_cdmx;
+import mx.gob.cdmx.estudioscdmx.service.AndroidLocationServices;
+import mx.gob.cdmx.estudioscdmx.service.GPSWidgetProvider;
+import mx.gob.cdmx.estudioscdmx.R;
 
+import static mx.gob.cdmx.estudioscdmx.Nombre.ALCALDIA;
 import static mx.gob.cdmx.estudioscdmx.Nombre.ALCALDIA;
 import static mx.gob.cdmx.estudioscdmx.Nombre.customURL;
 import static mx.gob.cdmx.estudioscdmx.Nombre.customURLcatalogos;
+import static mx.gob.cdmx.estudioscdmx.model.Nombre.APLICACION;
+
+//import com.google.android.gms.tasks.OnCompleteListener;
+//import com.google.android.gms.tasks.Task;
+//import com.google.firebase.iid.FirebaseInstanceId;
+//import com.google.firebase.iid.InstanceIdResult;
 
 public class Bienvenida extends AppCompatActivity {
 
@@ -84,6 +102,7 @@ public class Bienvenida extends AppCompatActivity {
 
     public String maximo = "";
     int elMaximo;
+    Boolean bandera = false;
 
     private View mProgressView;
 
@@ -127,6 +146,7 @@ public class Bienvenida extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,6 +159,7 @@ public class Bienvenida extends AppCompatActivity {
                 ActivityCompat.requestPermissions(Bienvenida.this,
                         new String[]{Manifest.permission.CAMERA,
                                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.FOREGROUND_SERVICE,
                                 Manifest.permission.ACCESS_COARSE_LOCATION,
                                 Manifest.permission.READ_PHONE_STATE,
                                 Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -160,6 +181,13 @@ public class Bienvenida extends AppCompatActivity {
 
             usdbh3 = new UsuariosSQLiteHelper3(this);
             db3 = usdbh3.getReadableDatabase();
+        }
+
+        int ids[] = AppWidgetManager.getInstance(this).getAppWidgetIds(new ComponentName(this, GPSWidgetProvider.class));
+
+        if (ids.length == 0) {
+            requestPinAppWidget();
+        } else {
         }
 
         mProgressView = findViewById(R.id.login_progressMain);
@@ -185,7 +213,7 @@ public class Bienvenida extends AppCompatActivity {
         sacaUsuario();
         Log.i(TAG, "cqs ------------->> Número de usuarios onCreate: " + sacaUsuario());
 
-        Thread.setDefaultUncaughtExceptionHandler(new UnCaughtException(this,this));
+        Thread.setDefaultUncaughtExceptionHandler(new UnCaughtException(this, this));
 
         ///////////////// actualiza catalogos
         elMaximo = Integer.parseInt(sacaMaximo().toString()) + 1;
@@ -203,12 +231,146 @@ public class Bienvenida extends AppCompatActivity {
 
         ////////// finaliza actualiza catalogos
 
+        bandera = pregunta(AndroidLocationServices.class);
+        if (bandera) {
+//            Toast.makeText(this, "EL SERVICIO YA EST¡ ARRRIBA", Toast.LENGTH_LONG).show();
+//
+//            finish();
+        } else {
+            startService(new Intent(this, AndroidLocationServices.class));
+
+//            finish();
+        }
+
 
         if (!verificaConexion(this)) {
-            Toast.makeText(getBaseContext(), "Sin conexión",
-                    Toast.LENGTH_LONG).show();
-            //this.finish();
+            dialogoErrorConexion();
         } else {
+
+            //limpia los token de usuario
+//            List<Usuario> listaUsuarios = daoManager.find(Usuario.class,null,null,null, null, null);
+//            if(listaUsuarios != null && !listaUsuarios.isEmpty()){
+//                for(Usuario usuario : listaUsuarios){
+//                    usuario.setToken(null);
+//                    daoManager.update(usuario,"idUsuario = " + usuario.getIdUsuario(),null);
+//                }
+//            }
+
+            String version = BuildConfig.VERSION_NAME;
+            String project = getResources().getString(R.string.app_project);
+            String sdk = String.valueOf(Build.VERSION.SDK_INT);
+
+            RequestParams params = new RequestParams();
+            params.put("version", version);
+            params.put("project", project);
+            params.put("android", sdk);
+
+            AsyncHttpClient client = new AsyncHttpClient();
+            client.setSSLSocketFactory(MySSLSocketFactory.getFixedSocketFactory());
+            client.setTimeout(20000);
+
+            RequestHandle requestHandle = client.post(getResources().getString(R.string.url_upgrade) + "/api/global/version", params, new AsyncHttpResponseHandler() {
+                String jsonHost = "";
+                String jsonLatest = "";
+                String jsonUpgrade = "";
+                String jsonCurrent = "";
+                String jsonStatus = "";
+
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                    Log.d(TAG, "Realizo la conexión");
+                    Log.d(TAG, "cqs conexión 1 -----------> " + new String(responseBody));
+                    try {
+
+                        String json = new String(responseBody);
+                        JSONObject jsonObject = new JSONObject(json);
+                        Log.d(TAG, "cqs -----------> Data: " + jsonObject.get("data"));
+
+                        jsonHost = jsonObject.getJSONObject("data").getString("host");
+                        jsonCurrent = jsonObject.getJSONObject("data").getString("current");
+                        jsonLatest = jsonObject.getJSONObject("data").getString("latest");
+                        jsonUpgrade = jsonObject.getJSONObject("data").getString("upgrade");
+                        jsonStatus = jsonObject.getJSONObject("data").getString("status");
+
+                        if (jsonLatest.toString().equals(jsonCurrent.toString())) {
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+
+                                    String dato = sacaUbicacion();
+                                    Log.i(TAG,"cqs --->> Ubicacion: "+ dato);
+
+                                    if (dato.equals("0")) {
+
+                                        showAlertDialog("AVISO", "No hay datos de Ubicacion", false);
+
+                                    } else {
+
+//
+//                                        Intent intent = new Intent(Bienvenida.this, Bienvenida.class);
+//                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                                        Bundle bundle = new Bundle();
+//                                        intent.putExtras(bundle);
+//
+//                                        finish();
+//                                        startActivity(intent);
+
+                                    }
+
+
+                                }
+                            }, 3000);
+                        } else {
+
+                            Aplicacion aplicacion = new Aplicacion();
+                            aplicacion.setUpgrade(jsonUpgrade);
+                            aplicacion.setHost(jsonHost);
+                            aplicacion.setStatus(jsonStatus);
+
+                            Intent intent = new Intent(Bienvenida.this, upgradeActivity.class);
+                            intent.putExtra(APLICACION, aplicacion);
+                            finish();
+                            startActivity(intent);
+                        }
+
+
+                    } catch (JSONException e) {
+                        Log.e(TAG, e.getMessage());
+                    }
+
+
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                    Log.e(TAG, "existe un error en la conexión on Failure ");
+                    if (responseBody != null) {
+                        Log.d(TAG, "cqs conexion on failure -----------> " + new String(responseBody));
+                    }
+
+                    String dato = sacaUbicacion();
+                    Log.i(TAG,"cqs --->> Ubicacion: "+ dato);
+
+                    if (dato.equals("0")) {
+
+                        showAlertDialog("AVISO", "No hay datos de ubicacion", false);
+
+                    } else {
+
+//                        Intent intent = new Intent(Bienvenida.this, Bienvenida.class);
+//                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                        Bundle bundle = new Bundle();
+//                        intent.putExtras(bundle);
+//
+//                        finish();
+//                        startActivity(intent);
+                    }
+
+
+                }
+            });
+
 
             new uploadData.UpdateBases().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, sacaImei());
             new uploadData.UpdateAudios().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
@@ -342,6 +504,16 @@ public class Bienvenida extends AppCompatActivity {
 
     }
 
+    private boolean pregunta(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     private String sacaUsuario() {
         String acceso = null;
@@ -469,7 +641,7 @@ public class Bienvenida extends AppCompatActivity {
     /*Saca usuario WebService*/
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void usuarioWS(final String user, final String password ) {
+    public void usuarioWS(final String user, final String password) {
 
 //        showProgress(true);
 
@@ -532,12 +704,12 @@ public class Bienvenida extends AppCompatActivity {
                                     /*si no, verifica que esté en el poligono de la alcaldia
                                     */
 
-                                    if(user.equals("1")){
+                                    if (user.equals("1")) {
                                         pasaEncuesta();
-                                    }else {
-                                        if(ALCALDIA.matches("Todas")){
+                                    } else {
+                                        if (ALCALDIA.matches("Todas")) {
                                             pasaEncuesta();
-                                        }else{
+                                        } else {
                                             seccionWS(user);
                                         }
                                     }
@@ -552,12 +724,12 @@ public class Bienvenida extends AppCompatActivity {
                                     /*si el usuario el igual con 1 de pruebas va directo a MainActivity
                                     /*si no, verifica que esté en el poligono de la alcaldia
                                     */
-                                    if(user.equals("1")){
+                                    if (user.equals("1")) {
                                         pasaEncuesta();
-                                    }else {
-                                        if(ALCALDIA.matches("Todas")){
+                                    } else {
+                                        if (ALCALDIA.matches("Todas")) {
                                             pasaEncuesta();
-                                        }else{
+                                        } else {
                                             seccionWS(user);
                                         }
                                     }
@@ -581,7 +753,7 @@ public class Bienvenida extends AppCompatActivity {
                 } catch (Exception e) {
 //                    showProgress(false);
                     String stackTrace = Log.getStackTraceString(e);
-                    Log.i("cqs ---------->> FALLA","FALLA: "+ stackTrace);
+                    Log.i("cqs ---------->> FALLA", "FALLA: " + stackTrace);
                     dialogoBaja();
                 }
             }
@@ -615,7 +787,6 @@ public class Bienvenida extends AppCompatActivity {
     }
 
 
-
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void seccionWS(final String user) {
 
@@ -643,7 +814,7 @@ public class Bienvenida extends AppCompatActivity {
 
         String strLatitud = String.valueOf(latitude);
         String strLongitud = String.valueOf(longitude);
-        String laAlcaldia=ALCALDIA;
+        String laAlcaldia = ALCALDIA;
 
         if (ALCALDIA == "Álvaro Obregón") {
             laAlcaldia = "10";
@@ -681,8 +852,8 @@ public class Bienvenida extends AppCompatActivity {
 
         RequestParams params = new RequestParams();
         params.put("api", "dentroSeccion");
-        params.put("usuario",user);
-        params.put("alcaldia",laAlcaldia);
+        params.put("usuario", user);
+        params.put("alcaldia", laAlcaldia);
         params.put("latitud", strLatitud);
         params.put("longitud", strLongitud);
         params.put("imei", sacaImei());
@@ -698,7 +869,7 @@ public class Bienvenida extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 String nombreStr = "";
                 Log.d(TAG, "cqs ----------->> Respuesta OK ");
-                Log.d(TAG, "cqs ----------->> ALCALDIA: "+ALCALDIA);
+                Log.d(TAG, "cqs ----------->> ALCALDIA: " + ALCALDIA);
                 Log.d(TAG, "cqs ----------->> ResponseBody" + new String(responseBody));
                 try {
 
@@ -767,7 +938,7 @@ public class Bienvenida extends AppCompatActivity {
     /*Saca usuario WebService*/
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void tokenWS(final String user, final String password,final String token_firebase ) {
+    public void tokenWS(final String user, final String password, final String token_firebase) {
 
 //        showProgress(true);
 
@@ -1359,7 +1530,27 @@ public class Bienvenida extends AppCompatActivity {
             } while (cursor.moveToNext());
         }
         cursor.close();
-// db.close();
+ db3.close();
+
+        return acceso;
+    }
+
+    private String sacaUbicacion() {
+        Set<String> set = new HashSet<String>();
+        String acceso = null;
+        final String F = "File dbfile";
+// Abrimos la base de datos 'DBUsuarios' en modo escritura
+        usdbh3 = new UsuariosSQLiteHelper3(this);
+        db3 = usdbh3.getReadableDatabase();
+        String selectQuery = "select count(*) from ubicacion where fecha='"+formattedDate1+"' order by id desc limit 1";
+        Cursor cursor = db3.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                acceso = cursor.getString(0);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+ db3.close();
 
         return acceso;
     }
@@ -1379,7 +1570,7 @@ public class Bienvenida extends AppCompatActivity {
             } while (cursor.moveToNext());
         }
         cursor.close();
-// db.close();
+ db3.close();
 
         return acceso;
     }
@@ -1542,8 +1733,8 @@ public class Bienvenida extends AppCompatActivity {
         Set<String> set = new HashSet<String>();
         final String F = "File dbfile";
         // Abrimos la base de datos 'DBUsuarios' en modo escritura
-        String DATABASE_NAME = Environment.getExternalStorageDirectory() +"/Mis_archivos/" +nombreEncuesta+"_"+sacaImei()+"";
-        usdbh = new UsuariosSQLiteHelper(this, "F", null, 1,DATABASE_NAME);
+        String DATABASE_NAME = Environment.getExternalStorageDirectory() + "/Mis_archivos/" + nombreEncuesta + "_" + sacaImei() + "";
+        usdbh = new UsuariosSQLiteHelper(this, "F", null, 1, DATABASE_NAME);
         db = usdbh.getReadableDatabase();
         String selectQuery = "SELECT count(*) FROM encuestas where fecha='" + formattedDate3 + "'";
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -1575,7 +1766,7 @@ public class Bienvenida extends AppCompatActivity {
     }
 
 
-    private void catalogoCandidatosWS(String laEncuesta){
+    private void catalogoCandidatosWS(String laEncuesta) {
 
         RequestParams params = new RequestParams();
         params.put("api", "candidatoscdmx");
@@ -1612,7 +1803,8 @@ public class Bienvenida extends AppCompatActivity {
                             Log.d(TAG, "cqs ----------->> Code estoy dentro Candidatos:  " + login);
                             //obtiene usuarios
                             String jsonCandidatos = jsonObject.getJSONObject("data").getJSONArray("candidatos").toString();
-                            Type collectionType = new TypeToken<List<candidatos_cdmx>>() {}.getType();
+                            Type collectionType = new TypeToken<List<candidatos_cdmx>>() {
+                            }.getType();
                             List<candidatos_cdmx> listacandidatos = gson.fromJson(jsonCandidatos, collectionType);
 
                             Log.d(TAG, "cqs ----------->> listaCandidatos:  " + listacandidatos);
@@ -1620,9 +1812,9 @@ public class Bienvenida extends AppCompatActivity {
                             usdbh2 = new UsuariosSQLiteHelper2(Bienvenida.this);
                             db2 = usdbh2.getReadableDatabase();
                             daoManager = new DaoManager(db2);
-                            if(listacandidatos != null && !listacandidatos.isEmpty()){
+                            if (listacandidatos != null && !listacandidatos.isEmpty()) {
                                 daoManager.delete(candidatos_cdmx.class);
-                                for(candidatos_cdmx candidatos_cdmx :listacandidatos ){
+                                for (candidatos_cdmx candidatos_cdmx : listacandidatos) {
                                     daoManager.insert(candidatos_cdmx);
                                 }
                             }
@@ -1637,9 +1829,8 @@ public class Bienvenida extends AppCompatActivity {
                     Log.e(TAG, e.getMessage());
                     Toast.makeText(Bienvenida.this, "Response Incorrecto", Toast.LENGTH_SHORT).show();
                     String stackTrace = Log.getStackTraceString(e);
-                    Log.i(TAG,"cqs ----------->> Response incorrecto: "+ stackTrace);
+                    Log.i(TAG, "cqs ----------->> Response incorrecto: " + stackTrace);
                 }
-
 
 
             }
@@ -1668,8 +1859,111 @@ public class Bienvenida extends AppCompatActivity {
             }
         });
 
+
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void requestPinAppWidget() {
 
+        AppWidgetManager appWidgetManager =
+                this.getSystemService(AppWidgetManager.class);
+        ComponentName myProvider =
+                new ComponentName(this, mx.gob.cdmx.estudioscdmx.service.GPSWidgetProvider.class);
+
+        if (appWidgetManager.isRequestPinAppWidgetSupported()) {
+            // Create the PendingIntent object only if your app needs to be notified
+            // that the user allowed the widget to be pinned. Note that, if the pinning
+            // operation fails, your app isn't notified.
+            Intent pinnedWidgetCallbackIntent = new Intent(this, mx.gob.cdmx.estudioscdmx.service.GPSWidgetProvider.class);
+
+            // Configure the intent so that your app's broadcast receiver gets
+            // the callback successfully. This callback receives the ID of the
+            // newly-pinned widget (EXTRA_APPWIDGET_ID).
+            PendingIntent successCallback = PendingIntent.getBroadcast(this, 0,
+                    pinnedWidgetCallbackIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            appWidgetManager.requestPinAppWidget(myProvider, null, successCallback);
+        }
+
+        finish();
+    }
+
+    public void showAlertDialog(String mensaje, String descripcion, final boolean acceder) {
+
+        //builder.setTitle("Éxito");
+        AlertDialog alertDialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(Bienvenida.this);
+        //builder.setMessage(mensaje);
+
+
+        LinearLayout diagLayout = new LinearLayout(this);
+        diagLayout.setOrientation(LinearLayout.VERTICAL);
+
+        TextView titulo = new TextView(this);
+        titulo.setText(mensaje);
+        titulo.setPadding(10, 10, 10, 10);
+        titulo.setGravity(Gravity.CENTER);
+        titulo.setTextSize(22);
+        titulo.setTextColor(Color.parseColor("#FFFFFF"));
+
+        TextView text = new TextView(this);
+        text.setText(descripcion);
+        text.setPadding(10, 60, 10, 10);
+        text.setGravity(Gravity.CENTER);
+        text.setTextSize(18);
+        text.setTextColor(Color.parseColor("#FFFFFF"));
+        //diagLayout.addView();
+        builder.setView(diagLayout);
+
+
+        LayoutInflater inflater = this.getLayoutInflater();
+
+        View titleView = inflater.inflate(R.layout.alert_personalizado, null);
+
+        ImageView imageView = titleView.findViewById(R.id.robotImageView);
+//        imageView.setImageDrawable(getResources().getDrawable(R.drawable.no_internet));
+        LinearLayout msgLinearLayout = titleView.findViewById(R.id.messageLinearLayout);
+        msgLinearLayout.setBackground(getResources().getDrawable(R.color.robot_sin_internet));
+        msgLinearLayout.addView(titulo);
+        msgLinearLayout.addView(text);
+
+        builder.setCustomTitle(titleView);
+
+
+        builder.setPositiveButton("ACEPTAR", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                finish();
+
+//                if (acceder) {
+//                    Intent intent = new Intent(Bienvenida.this, Entrada.class);
+//                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                    Bundle bundle = new Bundle();
+//                    intent.putExtras(bundle);
+//
+//                    finish();
+//                    startActivity(intent);
+//                } else {
+//
+//                    finish();
+//
+//                    //System.exit(0);
+//                }
+
+
+            }
+        });
+/*		builder.setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+
+			}
+		});*/
+        alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.show();
+
+    }
 }

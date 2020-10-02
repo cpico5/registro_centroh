@@ -311,8 +311,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_estudios" />
-                            <entry key="sourceFile" value="C:\Users\cpico\StudioProjects\semanal_20200829\app\src\main\res\drawable-xhdpi\estudios.svg" />
+                            <entry key="outputName" value="ic_e_mx" />
+                            <entry key="sourceFile" value="C:\Users\cpico\Desktop\e_mx.svg" />
                           </map>
                         </option>
                       </PersistentState>
