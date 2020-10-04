@@ -19,6 +19,7 @@
     <string name="download">Download</string>
     <string name="write_file">This app needs access to your file storage so that it can write files.</string>
     <string name="sistema_pruebas"><![CDATA[<b>Sistema de pruebas</b>]]></string>
+
     <string name="hello_world">Hello world!</string>
     <string name="zona">zona</string>
     <string name="si">Si</string>

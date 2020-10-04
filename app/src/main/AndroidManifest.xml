@@ -88,6 +88,16 @@
             tools:ignore="LockedOrientationActivity">
         </activity>
 
+<!--        <provider-->
+<!--            android:name="androidx.core.content.FileProvider"-->
+<!--            android:authorities="mx.gob.cdmx.app_territorial.fileProvider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/paths" />-->
+<!--        </provider>-->
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileProvider"
@@ -101,7 +111,8 @@
         <activity
             android:name="mx.gob.cdmx.estudioscdmx.upgradeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light">
+            android:theme="@style/Theme.AppCompat.Light"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter android:priority="1">
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.INSTALL_PACKAGE" />
