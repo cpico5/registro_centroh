@@ -1473,16 +1473,16 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
 
 
     private Integer[] mLinearLayoutIds = {
-//            R.layout.activity_pantalla1,
-//            R.layout.activity_pantalla2,
-//            R.layout.activity_pantalla3,
-//            R.layout.activity_pantalla4,
-//            R.layout.activity_pantalla5,
-//            R.layout.activity_pantalla6,
-//            R.layout.activity_pantalla7,
-//            R.layout.activity_pantalla8,
-//            R.layout.activity_pantalla9,
-//            R.layout.activity_pantalla10,
+            R.layout.activity_pantalla1,
+            R.layout.activity_pantalla2,
+            R.layout.activity_pantalla3,
+            R.layout.activity_pantalla4,
+            R.layout.activity_pantalla5,
+            R.layout.activity_pantalla6,
+            R.layout.activity_pantalla7,
+            R.layout.activity_pantalla8,
+            R.layout.activity_pantalla9,
+            R.layout.activity_pantalla10,
 ////// R.layout.activity_pantalla11,
 //// R.layout.activity_pantalla12,
 //// R.layout.activity_pantalla13,
@@ -1510,7 +1510,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
 // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla1); // COMENTAR ESTA CUANDO ES ALEATORIO
+//        setContentView(R.layout.activity_pantalla1); // COMENTAR ESTA CUANDO ES ALEATORIO
 
         Intent startingIntent = getIntent();
         if (startingIntent == null) {
@@ -1529,9 +1529,9 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         random = new Random();
 //
         /*DESCOMENTAR ESTAS 3 LINEAS CUANDO YA ESTA EL NUMERO DE HOJAS ALEATORIO */
-//        rand = random.nextInt(9);
-//        setContentView(mLinearLayoutIds[rand]);
-//        Log.i(null, "El aleatorio: " + rand); // si rand= 11 en el layoud corresponde a uno mas
+        rand = random.nextInt(9);
+        setContentView(mLinearLayoutIds[rand]);
+        Log.i(null, "El aleatorio: " + rand); // si rand= 11 en el layoud corresponde a uno mas
 
 
         /*activity_pantalla12*/
@@ -3000,6 +3000,8 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
 //    if(alcaldes.get(8) !=null){String esta="esta"; Log.i(TAG,"cqs --->> elemento 8 "+esta);}
 //    if(alcaldes.get(9) !=null){String esta="esta"; Log.i(TAG,"cqs --->> elemento 9 "+esta);}
 
+        lay17a.setVisibility(View.GONE);
+
 
         rdPregunta1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
@@ -3506,28 +3508,16 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     op16 = "16";
                 } else if (checkedId == R.id.radio3) {
                     op16 = "Sí";
-                    lay16a.setVisibility(View.VISIBLE);
-                    rdPregunta16a.clearCheck();
-                    op16a = "sin datos";
-                    lay16b.setVisibility(View.VISIBLE);
-                    rdPregunta16b.clearCheck();
-                    op16b = "No aplica";
+                    lay16a .setVisibility(View.VISIBLE);	rdPregunta16a.clearCheck();	op16a="sin datos";
+                    lay16b .setVisibility(View.GONE);	rdPregunta16b.clearCheck();	op16b="No aplica";
                 } else if (checkedId == R.id.radio4) {
                     op16 = "No";
-                    lay16a.setVisibility(View.GONE);
-                    rdPregunta16a.clearCheck();
-                    op16a = "No aplica";
-                    lay16b.setVisibility(View.VISIBLE);
-                    rdPregunta16b.clearCheck();
-                    op16b = "No aplica";
+                    lay16a .setVisibility(View.GONE);	rdPregunta16a.clearCheck();	op16a="No aplica";
+                    lay16b .setVisibility(View.VISIBLE);	rdPregunta16b.clearCheck();	op16b="No aplica";
                 } else if (checkedId == R.id.radio0) {
                     op16 = "No sabe / No contestó";
-                    lay16a.setVisibility(View.GONE);
-                    rdPregunta16a.clearCheck();
-                    op16a = "No aplica";
-                    lay16b.setVisibility(View.GONE);
-                    rdPregunta16b.clearCheck();
-                    op16b = "No aplica";
+                    lay16a .setVisibility(View.GONE);	rdPregunta16a.clearCheck();	op16a="No aplica";
+                    lay16b .setVisibility(View.GONE);	rdPregunta16b.clearCheck();	op16b="No aplica";
 
                 }
             }
@@ -3780,13 +3770,13 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 } else if (checkedId == R.id.radio2) {
                     op21 = "21";
                 } else if (checkedId == R.id.radio3) {
-                    op21 = "Muy de acuerdo";
+                    op21 = "Si";
                 } else if (checkedId == R.id.radio4) {
-                    op21 = "Algo de acuerdo";
+                    op21 = "No";
                 } else if (checkedId == R.id.radio5) {
-                    op21 = "Poco de acuerdo";
+                    op21 = "";
                 } else if (checkedId == R.id.radio6) {
-                    op21 = "Nada de acuerdo";
+                    op21 = "";
                 } else if (checkedId == R.id.radio0) {
                     op21 = "No sabe / No contestó";
                 }

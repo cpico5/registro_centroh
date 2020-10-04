@@ -11,14 +11,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.FileProvider;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -37,10 +36,6 @@ import mx.gob.cdmx.estudioscdmx.model.CheckForSDCard;
 import pub.devrel.easypermissions.EasyPermissions;
 
 import static mx.gob.cdmx.estudioscdmx.model.Nombre.APLICACION;
-
-//import android.support.annotation.NonNull;
-//import android.support.v4.content.FileProvider;
-//import android.support.v7.app.AppCompatActivity;
 
 public class upgradeActivity<apkurl> extends AppCompatActivity {
     private static final String TAG = "UPGRADE";
@@ -286,9 +281,9 @@ public class upgradeActivity<apkurl> extends AppCompatActivity {
             downloadIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             downloadIntent.setDataAndType(Uri.fromFile(fileLocation), "application/vnd.android.package-archive");
         }
-            upgradeActivity.this.startActivityForResult(downloadIntent,INSTALL);
-            int p = android.os.Process.myPid();
-            android.os.Process.killProcess(p);
+        upgradeActivity.this.startActivityForResult(downloadIntent,INSTALL);
+        int p = android.os.Process.myPid();
+        android.os.Process.killProcess(p);
 
 
 

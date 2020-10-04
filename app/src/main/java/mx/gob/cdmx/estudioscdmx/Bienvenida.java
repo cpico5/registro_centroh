@@ -1536,24 +1536,26 @@ public class Bienvenida extends AppCompatActivity {
     }
 
     private String sacaUbicacion() {
+        String maximo=null;
         Set<String> set = new HashSet<String>();
-        String acceso = null;
         final String F = "File dbfile";
-// Abrimos la base de datos 'DBUsuarios' en modo escritura
         usdbh3 = new UsuariosSQLiteHelper3(this);
         db3 = usdbh3.getReadableDatabase();
-        String selectQuery = "select count(*) from ubicacion where fecha='"+formattedDate1+"' order by id desc limit 1";
+        String selectQuery = "SELECT count(*) FROM ubicacion where " +
+                "datetime(substr(fecha,0,5)||'-'||substr(fecha,5,2) ||'-'||substr(fecha,7,2)||' '|| hora)  >= datetime('now','localtime','-1 hour')  order by hora";
         Cursor cursor = db3.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                acceso = cursor.getString(0);
+                int val = cursor.getInt(0);
+                maximo = String.valueOf(val);
             } while (cursor.moveToNext());
         }
         cursor.close();
- db3.close();
-
-        return acceso;
+        db3.close();
+        return maximo;
     }
+
+
 
     private String sacaLongitud() {
         Set<String> set = new HashSet<String>();

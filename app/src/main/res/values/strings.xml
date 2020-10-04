@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Estudios.mx v1.0.2</string>
+    <string name="app_name">Estudios.mx v1.0.3</string>
     <string name="action_settings">Settings</string>
 
-    <string name="app_version">1.0.2</string>
+    <string name="app_version">1.0.3</string>
 
     <string name="url_aplicacion">https://territorial.cdmx.gob.mx</string>
 
@@ -113,6 +113,8 @@
     <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
 
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+
+    <string name="ENTRADA">Buenos días/tardes. Me presento, mi nombre es: _____________ y vengo de Estudios.mx. En este momento estamos realizando un estudio de opinión, me permite unos minutos por favor, seré breve. En ningún momento le voy a solicitar datos personales.</string>
 
     <string name="PREGUNTA1">¿Cómo se entera Usted de las noticias regularmente?</string>
     <string name="PREGUNTA2">Sólo como información, NO le voy a solicitar datos o sus cuentas ¿Usted tiene cuenta personal en Facebook?</string>

@@ -95,7 +95,9 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/paths" />
-        </provider> <!-- Aqui para la actualización -->
+        </provider>
+
+        <!--        Aqui para la actualización-->
         <activity
             android:name="mx.gob.cdmx.estudioscdmx.upgradeActivity"
             android:screenOrientation="portrait"
@@ -124,7 +126,11 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity> <!-- fINLALIZA PATA LA ACTUALIZACIÓN -->
+        </activity>
+
+        <!--        fINLALIZA PATA LA ACTUALIZACIÓN-->
+
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCUYH089b8fx3NxdOmayHQ4Pfj7wmRzlfM" />

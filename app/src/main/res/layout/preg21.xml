@@ -75,7 +75,7 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Muy de acuerdo"
+            android:text="Si"
             />
             
           <RadioButton
@@ -87,7 +87,7 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Algo de acuerdo"
+            android:text="No"
             />
             
           <RadioButton
@@ -99,7 +99,8 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Poco de acuerdo"
+            android:text=""
+              android:visibility="gone"
             />
             
           <RadioButton
@@ -111,7 +112,8 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="Nada de acuerdo"
+              android:text=""
+              android:visibility="gone"
             />
             
           <RadioButton
