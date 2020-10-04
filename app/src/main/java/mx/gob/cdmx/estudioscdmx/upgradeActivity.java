@@ -246,8 +246,7 @@ public class upgradeActivity<apkurl> extends AppCompatActivity {
             }
 
             // Display File path after downloading
-            Toast.makeText(getApplicationContext(),
-                    message, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
 
             DownloadSuccess(newFile);
 
@@ -262,7 +261,7 @@ public class upgradeActivity<apkurl> extends AppCompatActivity {
         Intent downloadIntent;
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             File fileLocation = new File("" + newFile);
-            Uri apkUri = FileProvider.getUriForFile(upgradeActivity.this, upgradeActivity.this.getApplicationContext().getPackageName() + ".fileProvider", fileLocation);
+            Uri apkUri = FileProvider.getUriForFile(upgradeActivity.this, upgradeActivity.this.getApplicationContext() + "mx.gob.cdmx.estudioscdmx.fileProvider", fileLocation);
 
             downloadIntent = new Intent(Intent.ACTION_VIEW);
             downloadIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);

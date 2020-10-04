@@ -25,6 +25,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
     <application
         android:allowBackup="true"
@@ -89,14 +90,13 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="mx.gob.cdmx.app_territorial.fileProvider"
+            android:authorities="${applicationId}.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/paths" />
         </provider>
-
         <!--        Aqui para la actualización-->
         <activity
             android:name="mx.gob.cdmx.estudioscdmx.upgradeActivity"
