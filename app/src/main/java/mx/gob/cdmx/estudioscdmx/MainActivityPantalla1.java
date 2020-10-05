@@ -2303,7 +2303,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
             elDelegado = "José Carlos Acosta Ruiz";
         }
 
-        textPregunta12.setText("Podría decirme el nombre del alcalde/ alcaldesa de " + sacaAlcaldia(cachaSeccion()));
+        textPregunta12.setText("Podría decirme el nombre del alcalde/ alcaldesa de " + sacaAlcaldia(cachaSeccion())+" No leer el nombre del alcalde / alcaldesa");
         textPreguntaAlcaldes.setText(elDelegado);
         textPregunta16a.setText("¿Y en esas las elecciones del año 2018, por cuál partido votó para alcalde/ alcaldesa de " + sacaAlcaldia(cachaSeccion()));
         textPregunta16b.setText("Y si hubiera podido votar, ¿por cuál partido hubiera votado usted para alcalde/ alcaldesa de " + sacaAlcaldia(cachaSeccion()));
@@ -2386,6 +2386,8 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         cargaFederales(laDelegacion,cachafederal());
         cargaPartidoFederales(laDelegacion,cachafederal());
         cargaFederalesMorena(laDelegacion,cachafederal());
+
+        Log.i(TAG,"csq -->> los federales: "+federales_morena);
         
         cargaLocales(laDelegacion,cachalocal());
         cargaPartidoLocales(laDelegacion,cachalocal());
@@ -4815,7 +4817,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 } else if (checkedId == R.id.radio4) {
                     op27_3b = "Si";
                 } else if (checkedId == R.id.radio5) {
-                    op27_3b = "No sabe / No contestó";
+                    op27_3b = "";
                 } else if (checkedId == R.id.radio0) {
                     op27_3b = "No sabe / No contestó";
                 }
@@ -8295,7 +8297,7 @@ finish();*/
         usdbh2 = new UsuariosSQLiteHelper2(this);
         locales_morena = new ArrayList<String>();
         db2 = usdbh2.getWritableDatabase();
-        String selectQuery1 = "SELECT nombre_completo_local FROM candidatos_cdmx WHERE alcaldia='" + alcaldia + "' and length(nombre_completo_local)>2 and partido_federal='MORENA' and distrito_local='"+dttoLocal+"'";
+        String selectQuery1 = "SELECT nombre_completo_local FROM candidatos_cdmx WHERE alcaldia='" + alcaldia + "' and length(nombre_completo_local)>2 and partido_local='MORENA' and distrito_local='"+dttoLocal+"'";
         Cursor c = db2.rawQuery(selectQuery1, null);
         if (c.moveToFirst()) {
             do {

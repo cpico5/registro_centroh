@@ -730,6 +730,8 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
 //        try {
 
+
+        /* aqui puedo poner dtto local y dtto federal */
             seccion = autoCompleteTextView.getText().toString();
             equipo = spinnerEquipo.getSelectedItem().toString().toLowerCase();
 
@@ -1078,7 +1080,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                 "Gustavo A. Madero",
                 "Iztacalco",
                 "Iztapalapa",
-                "La Magdalena Contreras",
+                "Magdalena Contreras, La",
                 "Miguel Hidalgo",
                 "Milpa Alta",
                 "Tláhuac",
