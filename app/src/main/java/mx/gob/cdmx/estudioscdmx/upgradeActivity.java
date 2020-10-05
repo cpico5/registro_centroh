@@ -36,6 +36,7 @@ import mx.gob.cdmx.estudioscdmx.model.Aplicacion;
 import mx.gob.cdmx.estudioscdmx.model.CheckForSDCard;
 import pub.devrel.easypermissions.EasyPermissions;
 
+import static android.provider.Settings.Secure.INSTALL_NON_MARKET_APPS;
 import static mx.gob.cdmx.estudioscdmx.model.Nombre.APLICACION;
 
 public class upgradeActivity<apkurl> extends AppCompatActivity {
@@ -247,7 +248,8 @@ public class upgradeActivity<apkurl> extends AppCompatActivity {
             }
 
             // Display File path after downloading
-            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),
+                    message, Toast.LENGTH_LONG).show();
 
             DownloadSuccess(newFile);
 
@@ -257,12 +259,12 @@ public class upgradeActivity<apkurl> extends AppCompatActivity {
     }
     private void DownloadSuccess(File newFile) {
 
-        int result = Settings.Secure.getInt(getContentResolver(), Settings.Secure.INSTALL_NON_MARKET_APPS, 0);
+        int result = Settings.Secure.getInt(getContentResolver(), INSTALL_NON_MARKET_APPS, 0);
 
         Intent downloadIntent;
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             File fileLocation = new File("" + newFile);
-            Uri apkUri = FileProvider.getUriForFile(upgradeActivity.this, upgradeActivity.this.getApplicationContext() + "mx.gob.cdmx.estudioscdmx.fileProvider", fileLocation);
+            Uri apkUri = FileProvider.getUriForFile(upgradeActivity.this, upgradeActivity.this.getApplicationContext().getPackageName() + ".fileProvider", fileLocation);
 
             downloadIntent = new Intent(Intent.ACTION_VIEW);
             downloadIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);

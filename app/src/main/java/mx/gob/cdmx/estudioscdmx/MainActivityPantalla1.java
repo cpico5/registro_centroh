@@ -2303,7 +2303,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
             elDelegado = "José Carlos Acosta Ruiz";
         }
 
-        textPregunta12.setText("Podría decirme el nombre del alcalde/ alcaldesa de " + sacaAlcaldia(cachaSeccion()));
+        textPregunta12.setText("Podría decirme el nombre del alcalde/ alcaldesa de " + sacaAlcaldia(cachaSeccion()) +" (No leer el nombre del Alcalde / Alcaldesa)");
         textPreguntaAlcaldes.setText(elDelegado);
         textPregunta16a.setText("¿Y en esas las elecciones del año 2018, por cuál partido votó para alcalde/ alcaldesa de " + sacaAlcaldia(cachaSeccion()));
         textPregunta16b.setText("Y si hubiera podido votar, ¿por cuál partido hubiera votado usted para alcalde/ alcaldesa de " + sacaAlcaldia(cachaSeccion()));
@@ -2583,7 +2583,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> alcalde 1 " + "esta");
                 lay24_1.setVisibility(View.VISIBLE);
                 textPregunta24_1.setText(alcaldes.get(0).toString());
-                textPregunta24_1b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(0).toString() + " él para alcalde?");
+                textPregunta24_1b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(0).toString() + "  para alcalde?");
             }
         } catch (Exception e) {
             lay24_1.setVisibility(View.GONE);
@@ -2596,7 +2596,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> alcalde 2  " + "esta");
                 lay24_2.setVisibility(View.VISIBLE);
                 textPregunta24_2.setText(alcaldes.get(1).toString());
-                textPregunta24_2b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(1).toString() + " él para alcalde?");
+                textPregunta24_2b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(1).toString() + "  para alcalde?");
             }
         } catch (Exception e) {
             lay24_2.setVisibility(View.GONE);
@@ -2609,7 +2609,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> alcalde 3 " + "esta");
                 lay24_3.setVisibility(View.VISIBLE);
                 textPregunta24_3.setText(alcaldes.get(2).toString());
-                textPregunta24_3b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(2).toString() + " él para alcalde?");
+                textPregunta24_3b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(2).toString() + "  para alcalde?");
             }
         } catch (Exception e) {
             lay24_3.setVisibility(View.GONE);
@@ -2622,7 +2622,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> alcalde 4 " + "esta");
                 lay24_4.setVisibility(View.VISIBLE);
                 textPregunta24_4.setText(alcaldes.get(3).toString());
-                textPregunta24_4b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(3).toString() + " él para alcalde?");
+                textPregunta24_4b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(3).toString() + "  para alcalde?");
             }
         } catch (Exception e) {
             lay24_4.setVisibility(View.GONE);
@@ -2635,7 +2635,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> alcalde 5 " + "esta");
                 lay24_5.setVisibility(View.VISIBLE);
                 textPregunta24_5.setText(alcaldes.get(4).toString());
-                textPregunta24_5b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(4).toString() + " él para alcalde?");
+                textPregunta24_5b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(4).toString() + "  para alcalde?");
             }
         } catch (Exception e) {
             lay24_5.setVisibility(View.GONE);
@@ -2648,7 +2648,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> alcalde 6 " + "esta");
                 lay24_6.setVisibility(View.VISIBLE);
                 textPregunta24_6.setText(alcaldes.get(5).toString());
-                textPregunta24_6b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(5).toString() + " él para alcalde?");
+                textPregunta24_6b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(5).toString() + "  para alcalde?");
             }
         } catch (Exception e) {
             lay24_6.setVisibility(View.GONE);
@@ -2662,7 +2662,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> alcalde 7 " + "esta");
                 lay24_7.setVisibility(View.VISIBLE);
                 textPregunta24_7.setText(alcaldes.get(6).toString());
-                textPregunta24_7b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(6).toString() + " él para alcalde?");
+                textPregunta24_7b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(6).toString() + "  para alcalde?");
             }
         } catch (Exception e) {
             lay24_7.setVisibility(View.GONE);
@@ -2675,7 +2675,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> alcalde 8 " + "esta");
                 lay24_8.setVisibility(View.VISIBLE);
                 textPregunta24_8.setText(alcaldes.get(7).toString());
-                textPregunta24_8b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(7).toString() + " él para alcalde?");
+                textPregunta24_8b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(7).toString() + "  para alcalde?");
             }
         } catch (Exception e) {
             lay24_8.setVisibility(View.GONE);
@@ -2688,7 +2688,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> alcalde 9 " + "esta");
                 lay24_9.setVisibility(View.VISIBLE);
                 textPregunta24_9.setText(alcaldes.get(8).toString());
-                textPregunta24_9b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(8).toString() + " él para alcalde?");
+                textPregunta24_9b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(8).toString() + "  para alcalde?");
             }
         } catch (Exception e) {
             lay24_9.setVisibility(View.GONE);
@@ -2743,7 +2743,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> federales 3 " + "esta");
                 lay27_3.setVisibility(View.VISIBLE);
                 textPregunta27_3.setText(federales.get(2).toString());
-                textPregunta27_3b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(2).toString() + " él para diputado federal?");
+                textPregunta27_3b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(2).toString() + "  para diputado federal?");
             }
         } catch (Exception e) {
             lay27_3.setVisibility(View.GONE);
@@ -2756,7 +2756,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> federales 4 " + "esta");
                 lay27_4.setVisibility(View.VISIBLE);
                 textPregunta27_4.setText(federales.get(3).toString());
-                textPregunta27_4b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(3).toString() + " él para diputado federal?");
+                textPregunta27_4b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(3).toString() + "  para diputado federal?");
             }
         } catch (Exception e) {
             lay27_4.setVisibility(View.GONE);
@@ -2769,7 +2769,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> federales 5 " + "esta");
                 lay27_5.setVisibility(View.VISIBLE);
                 textPregunta27_5.setText(federales.get(4).toString());
-                textPregunta27_5b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(4).toString() + " él para diputado federal?");
+                textPregunta27_5b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(4).toString() + "  para diputado federal?");
             }
         } catch (Exception e) {
             lay27_5.setVisibility(View.GONE);
@@ -2782,7 +2782,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> federales 6 " + "esta");
                 lay27_6.setVisibility(View.VISIBLE);
                 textPregunta27_6.setText(federales.get(5).toString());
-                textPregunta27_6b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(5).toString() + " él para diputado federal?");
+                textPregunta27_6b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(5).toString() + "  para diputado federal?");
             }
         } catch (Exception e) {
             lay27_6.setVisibility(View.GONE);
@@ -2796,7 +2796,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> federales 7 " + "esta");
                 lay27_7.setVisibility(View.VISIBLE);
                 textPregunta27_7.setText(federales.get(6).toString());
-                textPregunta27_7b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(6).toString() + " él para diputado federal?");
+                textPregunta27_7b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(6).toString() + "  para diputado federal?");
             }
         } catch (Exception e) {
             lay27_7.setVisibility(View.GONE);
@@ -2809,7 +2809,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> federales 8 " + "esta");
                 lay27_8.setVisibility(View.VISIBLE);
                 textPregunta27_8.setText(federales.get(7).toString());
-                textPregunta27_8b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(7).toString() + " él para diputado federal?");
+                textPregunta27_8b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(7).toString() + "  para diputado federal?");
             }
         } catch (Exception e) {
             lay27_8.setVisibility(View.GONE);
@@ -2822,7 +2822,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> federales 9 " + "esta");
                 lay27_9.setVisibility(View.VISIBLE);
                 textPregunta27_9.setText(federales.get(8).toString());
-                textPregunta27_9b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(8).toString() + " él para diputado federal?");
+                textPregunta27_9b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(8).toString() + "  para diputado federal?");
             }
         } catch (Exception e) {
             lay27_9.setVisibility(View.GONE);
@@ -2835,7 +2835,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> federales 10 " + "esta");
                 lay27_6.setVisibility(View.VISIBLE);
                 textPregunta27_6.setText(federales.get(9).toString());
-                textPregunta27_6b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(9).toString() + " él para diputado federal?");
+                textPregunta27_6b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(9).toString() + "  para diputado federal?");
             }
         } catch (Exception e) {
             lay27_10.setVisibility(View.GONE);
@@ -2851,7 +2851,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> locales 1 " + "esta");
                 lay30_1.setVisibility(View.VISIBLE);
                 textPregunta30_1.setText(locales.get(0).toString());
-                textPregunta30_1b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(0).toString() + " él para diputado local?");
+                textPregunta30_1b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(0).toString() + "  para diputado local?");
             }
         } catch (Exception e) {
             lay30_1.setVisibility(View.GONE);
@@ -2864,7 +2864,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> locales 2  " + "esta");
                 lay30_2.setVisibility(View.VISIBLE);
                 textPregunta30_2.setText(locales.get(1).toString());
-                textPregunta30_2b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(1).toString() + " él para diputado local?");
+                textPregunta30_2b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(1).toString() + "  para diputado local?");
             }
         } catch (Exception e) {
             lay30_2.setVisibility(View.GONE);
@@ -2877,7 +2877,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> locales 3 " + "esta");
                 lay30_3.setVisibility(View.VISIBLE);
                 textPregunta30_3.setText(locales.get(2).toString());
-                textPregunta30_3b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(2).toString() + " él para diputado local?");
+                textPregunta30_3b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(2).toString() + "  para diputado local?");
             }
         } catch (Exception e) {
             lay30_3.setVisibility(View.GONE);
@@ -2890,7 +2890,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> locales 4 " + "esta");
                 lay30_4.setVisibility(View.VISIBLE);
                 textPregunta30_4.setText(locales.get(3).toString());
-                textPregunta30_4b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(3).toString() + " él para diputado local?");
+                textPregunta30_4b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(3).toString() + "  para diputado local?");
             }
         } catch (Exception e) {
             lay30_4.setVisibility(View.GONE);
@@ -2903,7 +2903,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> locales 5 " + "esta");
                 lay30_5.setVisibility(View.VISIBLE);
                 textPregunta30_5.setText(locales.get(4).toString());
-                textPregunta30_5b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(4).toString() + " él para diputado local?");
+                textPregunta30_5b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(4).toString() + "  para diputado local?");
             }
         } catch (Exception e) {
             lay30_5.setVisibility(View.GONE);
@@ -2916,7 +2916,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> locales 6 " + "esta");
                 lay30_6.setVisibility(View.VISIBLE);
                 textPregunta30_6.setText(locales.get(5).toString());
-                textPregunta30_6b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(5).toString() + " él para diputado local?");
+                textPregunta30_6b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(5).toString() + "  para diputado local?");
             }
         } catch (Exception e) {
             lay30_6.setVisibility(View.GONE);
@@ -2930,7 +2930,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> locales 7 " + "esta");
                 lay30_7.setVisibility(View.VISIBLE);
                 textPregunta30_7.setText(locales.get(6).toString());
-                textPregunta30_7b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(6).toString() + " él para diputado local?");
+                textPregunta30_7b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(6).toString() + "  para diputado local?");
             }
         } catch (Exception e) {
             lay30_7.setVisibility(View.GONE);
@@ -2943,7 +2943,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> locales 8 " + "esta");
                 lay30_8.setVisibility(View.VISIBLE);
                 textPregunta30_8.setText(locales.get(7).toString());
-                textPregunta30_8b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(7).toString() + " él para diputado local?");
+                textPregunta30_8b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(7).toString() + "  para diputado local?");
             }
         } catch (Exception e) {
             lay30_8.setVisibility(View.GONE);
@@ -2956,7 +2956,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> locales 9 " + "esta");
                 lay30_9.setVisibility(View.VISIBLE);
                 textPregunta30_9.setText(locales.get(8).toString());
-                textPregunta30_9b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(8).toString() + " él para diputado local?");
+                textPregunta30_9b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(8).toString() + "  para diputado local?");
             }
         } catch (Exception e) {
             lay30_9.setVisibility(View.GONE);
@@ -2969,7 +2969,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 Log.i(TAG, "cqs --->> locales 10 " + "esta");
                 lay30_6.setVisibility(View.VISIBLE);
                 textPregunta30_6.setText(locales.get(9).toString());
-                textPregunta30_6b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(9).toString() + " él para diputado local?");
+                textPregunta30_6b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(9).toString() + "  para diputado local?");
             }
         } catch (Exception e) {
             lay30_10.setVisibility(View.GONE);
@@ -2984,7 +2984,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
 //        Log.i(TAG,"cqs --->> elemento 0 "+esta);
 //        lay24_1.setVisibility(View.VISIBLE);
 //        textPregunta24_1.setText(alcaldes.get(0).toString());
-//        textPregunta24_1b.setText("¿Estaría usted dispuesto o no a votar por "+alcaldes.get(0).toString()+" él para alcalde?");
+//        textPregunta24_1b.setText("¿Estaría usted dispuesto o no a votar por "+alcaldes.get(0).toString()+"  para alcalde?");
 //    }else{
 //        lay24_1.setVisibility(View.GONE);
 //        lay24_1a.setVisibility(View.GONE);
@@ -8295,7 +8295,7 @@ finish();*/
         usdbh2 = new UsuariosSQLiteHelper2(this);
         locales_morena = new ArrayList<String>();
         db2 = usdbh2.getWritableDatabase();
-        String selectQuery1 = "SELECT nombre_completo_local FROM candidatos_cdmx WHERE alcaldia='" + alcaldia + "' and length(nombre_completo_local)>2 and partido_federal='MORENA' and distrito_local='"+dttoLocal+"'";
+        String selectQuery1 = "SELECT nombre_completo_local FROM candidatos_cdmx WHERE alcaldia='" + alcaldia + "' and length(nombre_completo_local)>2 and partido_local='MORENA' and distrito_local='"+dttoLocal+"'";
         Cursor c = db2.rawQuery(selectQuery1, null);
         if (c.moveToFirst()) {
             do {
