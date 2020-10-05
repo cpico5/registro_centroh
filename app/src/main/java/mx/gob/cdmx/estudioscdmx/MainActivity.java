@@ -296,7 +296,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
         return encuestador;
     }
 
-    private ArrayList<String> SeccionesArray(String alcaldia, String federal,String local) {
+    private ArrayList<String> SeccionesArray() {
 
         usdbh2 = new UsuariosSQLiteHelper2(this);
         ArrayList<String> set = new ArrayList<String>();
@@ -400,6 +400,31 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
         Log.i("GPS", "Longitud sin GPS: "+longitude);
 
 
+        autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.actv);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, SeccionesArray());
+
+        autoCompleteTextView.setAdapter(adapter);
+        autoCompleteTextView.setOnItemClickListener(this);
+
+        autoCompleteTextView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable s) {}
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start,int before, int count) {
+                if(s.length() != 0){
+                    btnSiguiente.setEnabled(false);
+                    btnRechazo.setEnabled(false);
+                    btnRechazo2.setEnabled(false);
+                }
+            }
+        });
+
+
+
 
         sacaChip();
 
@@ -458,7 +483,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
 
         cargaUsuario();
-        cargaEntidad();
+//        cargaEntidad();
         // SeccionesSpinner();
 
         final String F = "File dbfile";
@@ -481,7 +506,9 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
                 try {
 
-                    Log.i(TAG,"cqs ---------->> delegacion: "+delegacion());
+                    Log.i(TAG,"cqs -->> delegacion: "+delegacion());
+                    Log.i(TAG,"cqs -->> Dtto_federal: "+dtto_fed());
+                    Log.i(TAG,"cqs -->> Dtto_local: "+dtto_loc());
 
                 }catch (Exception e){
                     String stackTrace = Log.getStackTraceString(e);
@@ -727,10 +754,6 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
     // RECUPERAR UN DATO DE LA BASE DE DATOS
 
     public String delegacion() {
-
-//        try {
-
-
         /* aqui puedo poner dtto local y dtto federal */
             seccion = autoCompleteTextView.getText().toString();
             equipo = spinnerEquipo.getSelectedItem().toString().toLowerCase();
@@ -746,15 +769,42 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
             db2.close();
 
             return delegacion;
-//        }catch (Exception e){
-//            String stackTrace = Log.getStackTraceString(e);
-//            Log.i(TAG,"Error al sacar la delegación"+ stackTrace);
-//            Toast toast2 = Toast.makeText(getApplicationContext(), "No existe esta sección en la muestra",Toast.LENGTH_LONG);
-//            toast2.setGravity(Gravity.CENTER | Gravity.CENTER, 0, 0);
-//            toast2.show();
-//        }
-//
-//        return null;
+    }
+
+    public String dtto_fed() {
+        /* aqui puedo poner dtto local y dtto federal */
+        seccion = autoCompleteTextView.getText().toString();
+        equipo = spinnerEquipo.getSelectedItem().toString().toLowerCase();
+
+        db2 = usdbh2.getWritableDatabase();
+        String selectQuery1 = " SELECT distrito_federal FROM candidatos_cdmx  WHERE seccion='" + seccion + "'";
+        Cursor c = db2.rawQuery(selectQuery1, null);
+
+        c.moveToFirst();
+        // Recorremos el cursor hasta que no haya más registros
+        String dtto_fed = c.getString(0);
+        c.close();
+        db2.close();
+
+        return dtto_fed;
+    }
+
+    public String dtto_loc() {
+        /* aqui puedo poner dtto local y dtto federal */
+        seccion = autoCompleteTextView.getText().toString();
+        equipo = spinnerEquipo.getSelectedItem().toString().toLowerCase();
+
+        db2 = usdbh2.getWritableDatabase();
+        String selectQuery1 = " SELECT distrito_local FROM candidatos_cdmx  WHERE seccion='" + seccion + "'";
+        Cursor c = db2.rawQuery(selectQuery1, null);
+
+        c.moveToFirst();
+        // Recorremos el cursor hasta que no haya más registros
+        String dtto_loc = c.getString(0);
+        c.close();
+        db2.close();
+
+        return dtto_loc;
     }
 
 
@@ -984,10 +1034,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
         intent.putExtra("Seccion", autoCompleteTextView.getText().toString());
         intent.putExtra("Nombre", encuestaQuien);
         intent.putExtra("equipo", spinnerEquipo.getSelectedItem().toString());// para pasar la variable a la otra
-        intent.putExtra("entidad", spinnerEntidad.getSelectedItem().toString());// para pasar la variable a la otra
-        intent.putExtra("alcaldia", spinnerAlcaldia.getSelectedItem().toString());// para pasar la variable a la otra
-        intent.putExtra("federal", spinnerFederal.getSelectedItem().toString());// para pasar la variable a la otra
-        intent.putExtra("local", spinnerLocal.getSelectedItem().toString());// para pasar la variable a la otra
+        intent.putExtra("entidad", "Ciudad de México");
+        intent.putExtra("alcaldia", delegacion());// para pasar la variable a la otra
+        intent.putExtra("federal", dtto_fed());// para pasar la variable a la otra
+        intent.putExtra("local", dtto_loc());// para pasar la variable a la otra
         intent.putExtra("seccion", autoCompleteTextView.getText());// para pasar la variable a la otra
         // actividad
         intent.putExtra("t1", milis1);
@@ -1042,187 +1092,187 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
     }
 
-    private void cargaEntidad() {
+//    private void cargaEntidad() {
+//
+//        final String[] datos = new String[] {
+//                "Ciudad de México"
+//        };
+//
+//        // Alternativa 1: Array java
+//        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
+//
+//        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        spinnerEntidad.setAdapter(adaptador);
+//
+//        // ACCIÓN QUE SE REALIZA CUANDO ES SELECCIOANDO UN ELEMENTO DEL SPINNER
+//        spinnerEntidad.setOnItemSelectedListener(new OnItemSelectedListener() {
+//            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+//
+//                cargaAlcaldia();
+//
+//            }
+//            public void onNothingSelected(AdapterView<?> parent) {
+//            }
+//        });
+//
+//    }
 
-        final String[] datos = new String[] {
-                "Ciudad de México"
-        };
-
-        // Alternativa 1: Array java
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
-
-        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinnerEntidad.setAdapter(adaptador);
-
-        // ACCIÓN QUE SE REALIZA CUANDO ES SELECCIOANDO UN ELEMENTO DEL SPINNER
-        spinnerEntidad.setOnItemSelectedListener(new OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-
-                cargaAlcaldia();
-
-            }
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-
-    }
-
-    private void cargaAlcaldia() {
-
-        final String[] datos = new String[] {
-                "Álvaro Obregón",
-                "Azcapotzalco",
-                "Benito Juárez",
-                "Coyoacán",
-                "Cuajimalpa de Morelos",
-                "Cuauhtémoc",
-                "Gustavo A. Madero",
-                "Iztacalco",
-                "Iztapalapa",
-                "Magdalena Contreras, La",
-                "Miguel Hidalgo",
-                "Milpa Alta",
-                "Tláhuac",
-                "Tlalpan",
-                "Venustiano Carranza",
-                "Xochimilco"
-        };
-
-        // Alternativa 1: Array java
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
-
-        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinnerAlcaldia.setAdapter(adaptador);
-
-        // ACCIÓN QUE SE REALIZA CUANDO ES SELECCIOANDO UN ELEMENTO DEL SPINNER
-        spinnerAlcaldia.setOnItemSelectedListener(new OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-
-
-                String alcaldia=spinnerAlcaldia.getSelectedItem().toString();
-                cargaFederal(alcaldia);
-
-            }
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-
-    }
-
-
-        private void cargaFederal(String alcaldia) {
-        usdbh2 = new UsuariosSQLiteHelper2(this);
-        Set<String> set = new HashSet<String>();
-        db2 = usdbh2.getWritableDatabase();
-        String selectQuery1 = "SELECT distrito_federal FROM candidatos_cdmx WHERE alcaldia='" + alcaldia + "'";
-        Cursor c = db2.rawQuery(selectQuery1, null);
-        if (c.moveToFirst()) {
-            do {
-                set.add(c.getString(0));
-                String secc = c.getString(0);
-            } while (c.moveToNext());
-        }
-        c.close();
-		db2.close();
-        Set<String> set1 = set;
-        List<String> list = new ArrayList<String>(set1);
-        adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item, list);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Collections.sort(list);
-        spinnerFederal.setAdapter(adapter);
-        // ACCIÓN QUE SE REALIZA CUANDO ES SELECCIOANDO UN ELEMENTO DEL SPINNER
-        spinnerFederal.setOnItemSelectedListener(new OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-
-                String alcaldia=spinnerAlcaldia.getSelectedItem().toString();
-                String federal=spinnerFederal.getSelectedItem().toString();
-
-                cargaLocal(alcaldia,federal);
-
-            }
-
-            public void onNothingSelected(AdapterView<?> parent) {
-                // txtEquipo.setText("");
-            }
-        });
-        spinnerFederal.setWillNotDraw(false);
-
-    }
-
-
-    private void cargaLocal(String alcaldia, String federal) {
-
-        usdbh2 = new UsuariosSQLiteHelper2(this);
-
-        Set<String> set = new HashSet<String>();
-
-        db2 = usdbh2.getWritableDatabase();
-        String selectQuery1 = "SELECT distrito_local FROM candidatos_cdmx WHERE alcaldia='" + alcaldia + "' and distrito_federal='"+federal+"'";
-        Cursor c = db2.rawQuery(selectQuery1, null);
-
-        if (c.moveToFirst()) {
-            do {
-
-                set.add(c.getString(0));
-
-                String secc = c.getString(0);
-
-            } while (c.moveToNext());
-        }
-
-        c.close();
-        db2.close();
-        // here i used Set Because Set doesn't allow duplicates.
-        Set<String> set1 = set;
-        List<String> list = new ArrayList<String>(set1);
-        adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item, list);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        Collections.sort(list);
-        spinnerLocal.setAdapter(adapter);
-
-        // ACCIÓN QUE SE REALIZA CUANDO ES SELECCIOANDO UN ELEMENTO DEL SPINNER
-        spinnerLocal.setOnItemSelectedListener(new OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-
-                String alc=spinnerAlcaldia.getSelectedItem().toString();
-                String fed=spinnerFederal.getSelectedItem().toString();
-                String loc=spinnerLocal.getSelectedItem().toString();
-
-                autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.actv);
-
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, SeccionesArray(alc,fed,loc));
-
-                autoCompleteTextView.setAdapter(adapter);
-                autoCompleteTextView.setOnItemClickListener(MainActivity.this);
-
-                autoCompleteTextView.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void afterTextChanged(Editable s) {}
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start,int count, int after) {
-                    }
-                    @Override
-                    public void onTextChanged(CharSequence s, int start,int before, int count) {
-                        if(s.length() != 0){
-                            btnSiguiente.setEnabled(false);
-                            btnRechazo.setEnabled(false);
-                            btnRechazo2.setEnabled(false);
-                        }
-                    }
-                });
-
-            }
-
-            public void onNothingSelected(AdapterView<?> parent) {
-                // txtEquipo.setText("");
-            }
-        });
-        spinnerLocal.setWillNotDraw(false);
-
-    }
+//    private void cargaAlcaldia() {
+//
+//        final String[] datos = new String[] {
+//                "Álvaro Obregón",
+//                "Azcapotzalco",
+//                "Benito Juárez",
+//                "Coyoacán",
+//                "Cuajimalpa de Morelos",
+//                "Cuauhtémoc",
+//                "Gustavo A. Madero",
+//                "Iztacalco",
+//                "Iztapalapa",
+//                "Magdalena Contreras, La",
+//                "Miguel Hidalgo",
+//                "Milpa Alta",
+//                "Tláhuac",
+//                "Tlalpan",
+//                "Venustiano Carranza",
+//                "Xochimilco"
+//        };
+//
+//        // Alternativa 1: Array java
+//        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
+//
+//        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        spinnerAlcaldia.setAdapter(adaptador);
+//
+//        // ACCIÓN QUE SE REALIZA CUANDO ES SELECCIOANDO UN ELEMENTO DEL SPINNER
+//        spinnerAlcaldia.setOnItemSelectedListener(new OnItemSelectedListener() {
+//            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+//
+//
+//                String alcaldia=spinnerAlcaldia.getSelectedItem().toString();
+//                cargaFederal(alcaldia);
+//
+//            }
+//            public void onNothingSelected(AdapterView<?> parent) {
+//            }
+//        });
+//
+//    }
+//
+//
+//        private void cargaFederal(String alcaldia) {
+//        usdbh2 = new UsuariosSQLiteHelper2(this);
+//        Set<String> set = new HashSet<String>();
+//        db2 = usdbh2.getWritableDatabase();
+//        String selectQuery1 = "SELECT distrito_federal FROM candidatos_cdmx WHERE alcaldia='" + alcaldia + "'";
+//        Cursor c = db2.rawQuery(selectQuery1, null);
+//        if (c.moveToFirst()) {
+//            do {
+//                set.add(c.getString(0));
+//                String secc = c.getString(0);
+//            } while (c.moveToNext());
+//        }
+//        c.close();
+//		db2.close();
+//        Set<String> set1 = set;
+//        List<String> list = new ArrayList<String>(set1);
+//        adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item, list);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        Collections.sort(list);
+//        spinnerFederal.setAdapter(adapter);
+//        // ACCIÓN QUE SE REALIZA CUANDO ES SELECCIOANDO UN ELEMENTO DEL SPINNER
+//        spinnerFederal.setOnItemSelectedListener(new OnItemSelectedListener() {
+//            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+//
+//                String alcaldia=spinnerAlcaldia.getSelectedItem().toString();
+//                String federal=spinnerFederal.getSelectedItem().toString();
+//
+//                cargaLocal(alcaldia,federal);
+//
+//            }
+//
+//            public void onNothingSelected(AdapterView<?> parent) {
+//                // txtEquipo.setText("");
+//            }
+//        });
+//        spinnerFederal.setWillNotDraw(false);
+//
+//    }
+//
+//
+//    private void cargaLocal(String alcaldia, String federal) {
+//
+//        usdbh2 = new UsuariosSQLiteHelper2(this);
+//
+//        Set<String> set = new HashSet<String>();
+//
+//        db2 = usdbh2.getWritableDatabase();
+//        String selectQuery1 = "SELECT distrito_local FROM candidatos_cdmx WHERE alcaldia='" + alcaldia + "' and distrito_federal='"+federal+"'";
+//        Cursor c = db2.rawQuery(selectQuery1, null);
+//
+//        if (c.moveToFirst()) {
+//            do {
+//
+//                set.add(c.getString(0));
+//
+//                String secc = c.getString(0);
+//
+//            } while (c.moveToNext());
+//        }
+//
+//        c.close();
+//        db2.close();
+//        // here i used Set Because Set doesn't allow duplicates.
+//        Set<String> set1 = set;
+//        List<String> list = new ArrayList<String>(set1);
+//        adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item, list);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        Collections.sort(list);
+//        spinnerLocal.setAdapter(adapter);
+//
+//        // ACCIÓN QUE SE REALIZA CUANDO ES SELECCIOANDO UN ELEMENTO DEL SPINNER
+//        spinnerLocal.setOnItemSelectedListener(new OnItemSelectedListener() {
+//            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+//
+//                String alc=spinnerAlcaldia.getSelectedItem().toString();
+//                String fed=spinnerFederal.getSelectedItem().toString();
+//                String loc=spinnerLocal.getSelectedItem().toString();
+//
+//                autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.actv);
+//
+//                ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, SeccionesArray(alc,fed,loc));
+//
+//                autoCompleteTextView.setAdapter(adapter);
+//                autoCompleteTextView.setOnItemClickListener(MainActivity.this);
+//
+//                autoCompleteTextView.addTextChangedListener(new TextWatcher() {
+//                    @Override
+//                    public void afterTextChanged(Editable s) {}
+//                    @Override
+//                    public void beforeTextChanged(CharSequence s, int start,int count, int after) {
+//                    }
+//                    @Override
+//                    public void onTextChanged(CharSequence s, int start,int before, int count) {
+//                        if(s.length() != 0){
+//                            btnSiguiente.setEnabled(false);
+//                            btnRechazo.setEnabled(false);
+//                            btnRechazo2.setEnabled(false);
+//                        }
+//                    }
+//                });
+//
+//            }
+//
+//            public void onNothingSelected(AdapterView<?> parent) {
+//                // txtEquipo.setText("");
+//            }
+//        });
+//        spinnerLocal.setWillNotDraw(false);
+//
+//    }
 
 
 //    private void SeccionesSpinner() {
