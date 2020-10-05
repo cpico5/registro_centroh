@@ -107,7 +107,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/paths" />
         </provider>
-
         <!--        Aqui para la actualización-->
         <activity
             android:name="mx.gob.cdmx.estudioscdmx.upgradeActivity"

@@ -36,6 +36,7 @@ import mx.gob.cdmx.estudioscdmx.model.Aplicacion;
 import mx.gob.cdmx.estudioscdmx.model.CheckForSDCard;
 import pub.devrel.easypermissions.EasyPermissions;
 
+import static android.provider.Settings.Secure.INSTALL_NON_MARKET_APPS;
 import static mx.gob.cdmx.estudioscdmx.model.Nombre.APLICACION;
 
 public class upgradeActivity<apkurl> extends AppCompatActivity {
@@ -258,7 +259,7 @@ public class upgradeActivity<apkurl> extends AppCompatActivity {
     }
     private void DownloadSuccess(File newFile) {
 
-        int result = Settings.Secure.getInt(getContentResolver(), Settings.Secure.INSTALL_NON_MARKET_APPS, 0);
+        int result = Settings.Secure.getInt(getContentResolver(), INSTALL_NON_MARKET_APPS, 0);
 
         Intent downloadIntent;
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

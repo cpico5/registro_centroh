@@ -206,19 +206,20 @@
           android:text=""
           android:visibility="gone"
           />
-
+          
           <RadioButton
-              android:id="@+id/radio0"
-
-
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:button="@drawable/radiobutton_selector"
-              android:text="No sabe / No contestó"
-              android:textColor="@drawable/radiobutton_color_selector"
-              android:textSize="16sp"
-              android:theme="@style/RadioButton" />
-
+          android:id="@+id/radio0"
+          
+          
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/radiobutton_selector"
+            android:textColor="@drawable/radiobutton_color_selector"
+            android:textSize="16sp"
+            android:theme="@style/RadioButton"
+            android:text="No sabe / No contestó"
+            />
+            
       </RadioGroup>
       </LinearLayout>
       </LinearLayout>
