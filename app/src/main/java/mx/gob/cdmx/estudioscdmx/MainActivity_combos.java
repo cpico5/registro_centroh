@@ -26,7 +26,6 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.provider.Settings.Secure;
-import androidx.core.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -46,6 +45,8 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -85,7 +86,7 @@ import static mx.gob.cdmx.estudioscdmx.Nombre.customURL;
 import static mx.gob.cdmx.estudioscdmx.Nombre.customURLcatalogos;
 import static mx.gob.cdmx.estudioscdmx.Nombre.encuesta;
 
-public class MainActivity extends Activity implements OnItemSelectedListener, AdapterView.OnItemClickListener {
+public class MainActivity_combos extends Activity implements OnItemSelectedListener, AdapterView.OnItemClickListener {
 
 
     private static final String TAG = "MainActivity";
@@ -301,7 +302,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
         usdbh2 = new UsuariosSQLiteHelper2(this);
         ArrayList<String> set = new ArrayList<String>();
         db2 = usdbh2.getWritableDatabase();
-        String selectQuery1 = "SELECT DISTINCT seccion FROM candidatos_cdmx";
+        String selectQuery1 = "SELECT DISTINCT seccion FROM candidatos_cdmx where alcaldia='"+alcaldia+"' and distrito_federal='"+federal+"' and  distrito_local='"+local+"'";
         Cursor c = db2.rawQuery(selectQuery1, null);
         if (c.moveToFirst()) {
             do {
@@ -317,7 +318,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (Build.VERSION.SDK_INT >= 23) {
-            ActivityCompat.requestPermissions(MainActivity.this,
+            ActivityCompat.requestPermissions(MainActivity_combos.this,
                     new String[]{Manifest.permission.CAMERA,
                             Manifest.permission.WRITE_EXTERNAL_STORAGE,
                             Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -338,7 +339,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
         }
         setContentView(R.layout.activity_main);
 
-        sqlite_obj = new UsuariosSQLiteHelper2(MainActivity.this);
+        sqlite_obj = new UsuariosSQLiteHelper2(MainActivity_combos.this);
 
         File directory;
         File file;
@@ -1126,7 +1127,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 		db2.close();
         Set<String> set1 = set;
         List<String> list = new ArrayList<String>(set1);
-        adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item, list);
+        adapter = new ArrayAdapter<String>(MainActivity_combos.this, android.R.layout.simple_spinner_item, list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Collections.sort(list);
         spinnerFederal.setAdapter(adapter);
@@ -1175,7 +1176,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
         // here i used Set Because Set doesn't allow duplicates.
         Set<String> set1 = set;
         List<String> list = new ArrayList<String>(set1);
-        adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item, list);
+        adapter = new ArrayAdapter<String>(MainActivity_combos.this, android.R.layout.simple_spinner_item, list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         Collections.sort(list);
@@ -1191,10 +1192,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
                 autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.actv);
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, SeccionesArray(alc,fed,loc));
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity_combos.this,android.R.layout.simple_list_item_1, SeccionesArray(alc,fed,loc));
 
                 autoCompleteTextView.setAdapter(adapter);
-                autoCompleteTextView.setOnItemClickListener(MainActivity.this);
+                autoCompleteTextView.setOnItemClickListener(MainActivity_combos.this);
 
                 autoCompleteTextView.addTextChangedListener(new TextWatcher() {
                     @Override
@@ -1831,7 +1832,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 Type collectionType = new TypeToken<Usuario>() {}.getType();
 usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), MainActivity_combos.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             intent.putExtra("Nombre", encuestaQuien);
                             intent.putExtra(USUARIO,cachaNombre());
@@ -1840,14 +1841,14 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
 
                         } else {
-                            Toast.makeText(MainActivity.this, "Error al subir los datos", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity_combos.this, "Error al subir los datos", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                 } catch (Exception e) {
                     showProgress(false);
                     Log.e(TAG, e.getMessage());
-                    Toast.makeText(MainActivity.this, "Error al subir los datos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity_combos.this, "Error al subir los datos", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -1870,7 +1871,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
                 }
 
-                Toast.makeText(MainActivity.this, "Error de conexion, se guarda en la base interna", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity_combos.this, "Error de conexion, se guarda en la base interna", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -1956,14 +1957,14 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
 
                         } else {
-                            Toast.makeText(MainActivity.this, "Consulta incorrecta", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity_combos.this, "Consulta incorrecta", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                 } catch (Exception e) {
                     showProgress(false);
                     Log.e(TAG, e.getMessage());
-                    Toast.makeText(MainActivity.this, "Response Incorrecto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity_combos.this, "Response Incorrecto", Toast.LENGTH_SHORT).show();
                 }
 
 //                try {
@@ -2006,7 +2007,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
                 }
 
-                Toast.makeText(MainActivity.this, "Error de conexion al servidor", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity_combos.this, "Error de conexion al servidor", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -2056,7 +2057,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
                             Log.d(TAG, "cqs ----------->> listaCandidatos:  " + listacandidatos);
 
-                            usdbh2 = new UsuariosSQLiteHelper2(MainActivity.this);
+                            usdbh2 = new UsuariosSQLiteHelper2(MainActivity_combos.this);
                             db2 = usdbh2.getReadableDatabase();
                             daoManager = new DaoManager(db2);
                             if(listacandidatos != null && !listacandidatos.isEmpty()){
@@ -2067,14 +2068,14 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
                             }
 
                         } else {
-                            Toast.makeText(MainActivity.this, "Consulta incorrecta", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity_combos.this, "Consulta incorrecta", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                 } catch (Exception e) {
 //                    showProgress(false);
                     Log.e(TAG, e.getMessage());
-                    Toast.makeText(MainActivity.this, "Response Incorrecto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity_combos.this, "Response Incorrecto", Toast.LENGTH_SHORT).show();
                     String stackTrace = Log.getStackTraceString(e);
                     Log.i(TAG,"cqs ----------->> Response incorrecto: "+ stackTrace);
                 }
@@ -2102,7 +2103,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
                 }
 
-                Toast.makeText(MainActivity.this, "Error de conexion al servidor\n inténtelo de nuevo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity_combos.this, "Error de conexion al servidor\n inténtelo de nuevo", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -2114,7 +2115,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
     public void dialogoRechazo() {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        MainActivity.this.runOnUiThread(new Runnable() {
+        MainActivity_combos.this.runOnUiThread(new Runnable() {
             public void run() {
                 builder.setMessage("Sexo de quien rechaza")
                         .setTitle("Rechazo de Encuesta").setCancelable(false)
@@ -2122,7 +2123,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
                             public void onClick(DialogInterface dialog, int id) {
 
                                 valoresRechazoMasculino();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), MainActivity_combos.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 intent.putExtra("Nombre", encuestaQuien);
                                 // actividad
@@ -2134,7 +2135,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
                     public void onClick(DialogInterface dialog, int id) {
 
                         valoresRechazoFemenino();
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), MainActivity_combos.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         intent.putExtra("Nombre", encuestaQuien);
                         // actividad
@@ -2155,7 +2156,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
     public void dialogoRechazo2() {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        MainActivity.this.runOnUiThread(new Runnable() {
+        MainActivity_combos.this.runOnUiThread(new Runnable() {
             public void run() {
                 builder.setMessage("Sexo de quien rechaza")
                         .setTitle("Rechazo por temor de Contagio").setCancelable(false)
@@ -2163,7 +2164,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
                             public void onClick(DialogInterface dialog, int id) {
 
                                 valoresRechazoMasculino2();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), MainActivity_combos.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 intent.putExtra("Nombre", encuestaQuien);
                                 // actividad
@@ -2175,7 +2176,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
                     public void onClick(DialogInterface dialog, int id) {
 
                         valoresRechazoFemenino2();
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), MainActivity_combos.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         intent.putExtra("Nombre", encuestaQuien);
                         // actividad
@@ -2383,7 +2384,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
     public void dialogoFecha() {
         // timer.cancel();
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        MainActivity.this.runOnUiThread(new Runnable() {
+        MainActivity_combos.this.runOnUiThread(new Runnable() {
             public void run() {
                 builder.setMessage("La fecha del dispositivo es \n" + formattedDateFecha + "\n" + "Es correcto?")
                         .setTitle("IMPORTANTE...!!!").setCancelable(false)
@@ -2407,7 +2408,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            MainActivity.this.finish();
+            MainActivity_combos.this.finish();
             System.exit(0);
 
             return true;
