@@ -69,6 +69,7 @@
                     android:text="@string/ENTRADA"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textStyle="bold" />
+
             </LinearLayout>
 
 
@@ -113,30 +114,39 @@
             <include layout="@layout/preg24_1"/>
             <include layout="@layout/preg24_1a"/>
             <include layout="@layout/preg24_1b"/>
+
             <include layout="@layout/preg24_2"/>
             <include layout="@layout/preg24_2a"/>
             <include layout="@layout/preg24_2b"/>
+
             <include layout="@layout/preg24_3"/>
             <include layout="@layout/preg24_3a"/>
             <include layout="@layout/preg24_3b"/>
+
             <include layout="@layout/preg24_4"/>
             <include layout="@layout/preg24_4a"/>
             <include layout="@layout/preg24_4b"/>
+
             <include layout="@layout/preg24_5"/>
             <include layout="@layout/preg24_5a"/>
             <include layout="@layout/preg24_5b"/>
+
             <include layout="@layout/preg24_6"/>
             <include layout="@layout/preg24_6a"/>
             <include layout="@layout/preg24_6b"/>
+
             <include layout="@layout/preg24_7"/>
             <include layout="@layout/preg24_7a"/>
             <include layout="@layout/preg24_7b"/>
+
             <include layout="@layout/preg24_8"/>
             <include layout="@layout/preg24_8a"/>
             <include layout="@layout/preg24_8b"/>
+
             <include layout="@layout/preg24_9"/>
             <include layout="@layout/preg24_9a"/>
             <include layout="@layout/preg24_9b"/>
+
             <include layout="@layout/preg24_10"/>
             <include layout="@layout/preg24_10a"/>
             <include layout="@layout/preg24_10b"/>
@@ -274,6 +284,8 @@
                     </LinearLayout>
                 </HorizontalScrollView>
             </LinearLayout>
+
+            <include layout="@layout/preg01" />
         </LinearLayout>
     </ScrollView>
 

@@ -104,6 +104,9 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
     AutoCompleteTextView autoCompleteTextView;
 
+    TextView txtAlcaldia;
+    TextView txtDttoFederal;
+    TextView txtDttoLocal;
 
     private DaoManager daoManager;
     private EditText txtCodigo;
@@ -458,6 +461,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
         btnSiguiente.setEnabled(false);
 
 
+        txtAlcaldia= findViewById(R.id.txtAlcaldia);
+        txtDttoFederal= findViewById(R.id.txtDttoFederal);
+        txtDttoLocal= findViewById(R.id.txtDttoLocal);
+
 
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
         mProgressView = findViewById(R.id.login_progressMain);
@@ -509,6 +516,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                     Log.i(TAG,"cqs -->> delegacion: "+delegacion());
                     Log.i(TAG,"cqs -->> Dtto_federal: "+dtto_fed());
                     Log.i(TAG,"cqs -->> Dtto_local: "+dtto_loc());
+
+                    txtAlcaldia.setText(delegacion());
+                    txtDttoFederal.setText(dtto_fed());
+                    txtDttoLocal.setText(dtto_loc());
 
                 }catch (Exception e){
                     String stackTrace = Log.getStackTraceString(e);

@@ -218,6 +218,8 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
     private List<String> partidos_federales;
     private List<String> partidos_locales;
 
+
+
     String PAN="PAN";
     String PRI="PRI";
     String MORENA="MORENA";
@@ -3593,7 +3595,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 } else if (checkedId == R.id.radio8) {
                     op17 = "Partido Verde";
                 } else if (checkedId == R.id.radio9) {
-                    op17 = "Muy perredista";
+                    op17 = "Movimiento Ciudadano";
                 } else if (checkedId == R.id.radio10) {
                     op17 = "De ningún partido";
                 } else if (checkedId == R.id.radio0) {
@@ -7140,13 +7142,16 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
 
                 values.put("pregunta_24_1", str24_1);
                 values.put("pregunta_24_1a", str24_1a);
-                values.put("pregunta_24_1b", str24_1b);
+                values.put("pregunta_24_1b", str24_1b);//perez
+
                 values.put("pregunta_24_2", str24_2);
                 values.put("pregunta_24_2a", str24_2a);
-                values.put("pregunta_24_2b", str24_2b);
+                values.put("pregunta_24_2b", str24_2b);//sanchez
+
                 values.put("pregunta_24_3", str24_3);
                 values.put("pregunta_24_3a", str24_3a);
-                values.put("pregunta_24_3b", str24_3b);
+                values.put("pregunta_24_3b", str24_3b);//molina
+
                 values.put("pregunta_24_4", str24_4);
                 values.put("pregunta_24_4a", str24_4a);
                 values.put("pregunta_24_4b", str24_4b);
