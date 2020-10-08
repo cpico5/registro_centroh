@@ -146,6 +146,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
     private RadioButton radio26_11;
     private RadioButton radio26_12;
     private RadioButton radio26_13;
+    private RadioButton radio26_14;
     private RadioButton radio26_0;
 
     private RadioButton radio28_1;
@@ -267,6 +268,19 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
     private TextView textPregunta24_10;
     private TextView textPregunta24_10b;
     private TextView textPregunta25;
+
+    private TextView textPregunta25_1;
+    private TextView textPregunta25_2;
+    private TextView textPregunta25_3;
+    private TextView textPregunta25_4;
+    private TextView textPregunta25_5;
+    private TextView textPregunta25_6;
+    private TextView textPregunta25_7;
+    private TextView textPregunta25_8;
+    private TextView textPregunta25_9;
+    private TextView textPregunta25_10;
+
+
     private TextView textPregunta26;
     private TextView textPregunta27b;
     private TextView textPregunta27_1;
@@ -724,336 +738,61 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
     public String captura27;
     LinearLayout lay27;
 
-    public String op27_1 = "sin datos";
-    public RadioGroup rdPregunta27_1;
-    public EditText editPregunta27_1;
-    public String captura27_1;
-    LinearLayout lay27_1;
-    public String op27_1a = "sin datos";
-    public RadioGroup rdPregunta27_1a;
-    public EditText editPregunta27_1a;
-    public String captura27_1a;
-    LinearLayout lay27_1a;
-    public String op27_1b = "sin datos";
-    public RadioGroup rdPregunta27_1b;
-    public EditText editPregunta27_1b;
-    public String captura27_1b;
-    LinearLayout lay27_1b;
-    public String op27_2 = "sin datos";
-    public RadioGroup rdPregunta27_2;
-    public EditText editPregunta27_2;
-    public String captura27_2;
-    LinearLayout lay27_2;
-    public String op27_2a = "sin datos";
-    public RadioGroup rdPregunta27_2a;
-    public EditText editPregunta27_2a;
-    public String captura27_2a;
-    LinearLayout lay27_2a;
-    public String op27_2b = "sin datos";
-    public RadioGroup rdPregunta27_2b;
-    public EditText editPregunta27_2b;
-    public String captura27_2b;
-    LinearLayout lay27_2b;
-    public String op27_3 = "sin datos";
-    public RadioGroup rdPregunta27_3;
-    public EditText editPregunta27_3;
-    public String captura27_3;
-    LinearLayout lay27_3;
-    public String op27_3a = "sin datos";
-    public RadioGroup rdPregunta27_3a;
-    public EditText editPregunta27_3a;
-    public String captura27_3a;
-    LinearLayout lay27_3a;
-    public String op27_3b = "sin datos";
-    public RadioGroup rdPregunta27_3b;
-    public EditText editPregunta27_3b;
-    public String captura27_3b;
-    LinearLayout lay27_3b;
-    public String op27_4 = "sin datos";
-    public RadioGroup rdPregunta27_4;
-    public EditText editPregunta27_4;
-    public String captura27_4;
-    LinearLayout lay27_4;
-    public String op27_4a = "sin datos";
-    public RadioGroup rdPregunta27_4a;
-    public EditText editPregunta27_4a;
-    public String captura27_4a;
-    LinearLayout lay27_4a;
-    public String op27_4b = "sin datos";
-    public RadioGroup rdPregunta27_4b;
-    public EditText editPregunta27_4b;
-    public String captura27_4b;
-    LinearLayout lay27_4b;
-    public String op27_5 = "sin datos";
-    public RadioGroup rdPregunta27_5;
-    public EditText editPregunta27_5;
-    public String captura27_5;
-    LinearLayout lay27_5;
-    public String op27_5a = "sin datos";
-    public RadioGroup rdPregunta27_5a;
-    public EditText editPregunta27_5a;
-    public String captura27_5a;
-    LinearLayout lay27_5a;
-    public String op27_5b = "sin datos";
-    public RadioGroup rdPregunta27_5b;
-    public EditText editPregunta27_5b;
-    public String captura27_5b;
-    LinearLayout lay27_5b;
-    public String op27_6 = "sin datos";
-    public RadioGroup rdPregunta27_6;
-    public EditText editPregunta27_6;
-    public String captura27_6;
-    LinearLayout lay27_6;
-    public String op27_6a = "sin datos";
-    public RadioGroup rdPregunta27_6a;
-    public EditText editPregunta27_6a;
-    public String captura27_6a;
-    LinearLayout lay27_6a;
-    public String op27_6b = "sin datos";
-    public RadioGroup rdPregunta27_6b;
-    public EditText editPregunta27_6b;
-    public String captura27_6b;
-    LinearLayout lay27_6b;
-    public String op27_7 = "sin datos";
-    public RadioGroup rdPregunta27_7;
-    public EditText editPregunta27_7;
-    public String captura27_7;
-    LinearLayout lay27_7;
-    public String op27_7a = "sin datos";
-    public RadioGroup rdPregunta27_7a;
-    public EditText editPregunta27_7a;
-    public String captura27_7a;
-    LinearLayout lay27_7a;
-    public String op27_7b = "sin datos";
-    public RadioGroup rdPregunta27_7b;
-    public EditText editPregunta27_7b;
-    public String captura27_7b;
-    LinearLayout lay27_7b;
-    public String op27_8 = "sin datos";
-    public RadioGroup rdPregunta27_8;
-    public EditText editPregunta27_8;
-    public String captura27_8;
-    LinearLayout lay27_8;
-    public String op27_8a = "sin datos";
-    public RadioGroup rdPregunta27_8a;
-    public EditText editPregunta27_8a;
-    public String captura27_8a;
-    LinearLayout lay27_8a;
-    public String op27_8b = "sin datos";
-    public RadioGroup rdPregunta27_8b;
-    public EditText editPregunta27_8b;
-    public String captura27_8b;
-    LinearLayout lay27_8b;
-    public String op27_9 = "sin datos";
-    public RadioGroup rdPregunta27_9;
-    public EditText editPregunta27_9;
-    public String captura27_9;
-    LinearLayout lay27_9;
-    public String op27_9a = "sin datos";
-    public RadioGroup rdPregunta27_9a;
-    public EditText editPregunta27_9a;
-    public String captura27_9a;
-    LinearLayout lay27_9a;
-    public String op27_9b = "sin datos";
-    public RadioGroup rdPregunta27_9b;
-    public EditText editPregunta27_9b;
-    public String captura27_9b;
-    LinearLayout lay27_9b;
-    public String op27_10 = "sin datos";
-    public RadioGroup rdPregunta27_10;
-    public EditText editPregunta27_10;
-    public String captura27_10;
-    LinearLayout lay27_10;
-    public String op27_10a = "sin datos";
-    public RadioGroup rdPregunta27_10a;
-    public EditText editPregunta27_10a;
-    public String captura27_10a;
-    LinearLayout lay27_10a;
-    public String op27_10b = "sin datos";
-    public RadioGroup rdPregunta27_10b;
-    public EditText editPregunta27_10b;
-    public String captura27_10b;
-    LinearLayout lay27_10b;
 
-    public String op28 = "sin datos";
-    public RadioGroup rdPregunta28;
-    public EditText editPregunta28;
-    public String captura28;
-    LinearLayout lay28;
-    public String op29 = "sin datos";
-    public RadioGroup rdPregunta29;
-    public EditText editPregunta29;
-    public String captura29;
-    LinearLayout lay29;
-    public String op30 = "sin datos";
-    public RadioGroup rdPregunta30;
-    public EditText editPregunta30;
-    public String captura30;
-    LinearLayout lay30;
-
-    public String op30_1 = "sin datos";
-    public RadioGroup rdPregunta30_1;
-    public EditText editPregunta30_1;
-    public String captura30_1;
-    LinearLayout lay30_1;
-    public String op30_1a = "sin datos";
-    public RadioGroup rdPregunta30_1a;
-    public EditText editPregunta30_1a;
-    public String captura30_1a;
-    LinearLayout lay30_1a;
-    public String op30_1b = "sin datos";
-    public RadioGroup rdPregunta30_1b;
-    public EditText editPregunta30_1b;
-    public String captura30_1b;
-    LinearLayout lay30_1b;
-    public String op30_2 = "sin datos";
-    public RadioGroup rdPregunta30_2;
-    public EditText editPregunta30_2;
-    public String captura30_2;
-    LinearLayout lay30_2;
-    public String op30_2a = "sin datos";
-    public RadioGroup rdPregunta30_2a;
-    public EditText editPregunta30_2a;
-    public String captura30_2a;
-    LinearLayout lay30_2a;
-    public String op30_2b = "sin datos";
-    public RadioGroup rdPregunta30_2b;
-    public EditText editPregunta30_2b;
-    public String captura30_2b;
-    LinearLayout lay30_2b;
-    public String op30_3 = "sin datos";
-    public RadioGroup rdPregunta30_3;
-    public EditText editPregunta30_3;
-    public String captura30_3;
-    LinearLayout lay30_3;
-    public String op30_3a = "sin datos";
-    public RadioGroup rdPregunta30_3a;
-    public EditText editPregunta30_3a;
-    public String captura30_3a;
-    LinearLayout lay30_3a;
-    public String op30_3b = "sin datos";
-    public RadioGroup rdPregunta30_3b;
-    public EditText editPregunta30_3b;
-    public String captura30_3b;
-    LinearLayout lay30_3b;
-    public String op30_4 = "sin datos";
-    public RadioGroup rdPregunta30_4;
-    public EditText editPregunta30_4;
-    public String captura30_4;
-    LinearLayout lay30_4;
-    public String op30_4a = "sin datos";
-    public RadioGroup rdPregunta30_4a;
-    public EditText editPregunta30_4a;
-    public String captura30_4a;
-    LinearLayout lay30_4a;
-    public String op30_4b = "sin datos";
-    public RadioGroup rdPregunta30_4b;
-    public EditText editPregunta30_4b;
-    public String captura30_4b;
-    LinearLayout lay30_4b;
-    public String op30_5 = "sin datos";
-    public RadioGroup rdPregunta30_5;
-    public EditText editPregunta30_5;
-    public String captura30_5;
-    LinearLayout lay30_5;
-    public String op30_5a = "sin datos";
-    public RadioGroup rdPregunta30_5a;
-    public EditText editPregunta30_5a;
-    public String captura30_5a;
-    LinearLayout lay30_5a;
-    public String op30_5b = "sin datos";
-    public RadioGroup rdPregunta30_5b;
-    public EditText editPregunta30_5b;
-    public String captura30_5b;
-    LinearLayout lay30_5b;
-    public String op30_6 = "sin datos";
-    public RadioGroup rdPregunta30_6;
-    public EditText editPregunta30_6;
-    public String captura30_6;
-    LinearLayout lay30_6;
-    public String op30_6a = "sin datos";
-    public RadioGroup rdPregunta30_6a;
-    public EditText editPregunta30_6a;
-    public String captura30_6a;
-    LinearLayout lay30_6a;
-    public String op30_6b = "sin datos";
-    public RadioGroup rdPregunta30_6b;
-    public EditText editPregunta30_6b;
-    public String captura30_6b;
-    LinearLayout lay30_6b;
-    public String op30_7 = "sin datos";
-    public RadioGroup rdPregunta30_7;
-    public EditText editPregunta30_7;
-    public String captura30_7;
-    LinearLayout lay30_7;
-    public String op30_7a = "sin datos";
-    public RadioGroup rdPregunta30_7a;
-    public EditText editPregunta30_7a;
-    public String captura30_7a;
-    LinearLayout lay30_7a;
-    public String op30_7b = "sin datos";
-    public RadioGroup rdPregunta30_7b;
-    public EditText editPregunta30_7b;
-    public String captura30_7b;
-    LinearLayout lay30_7b;
-    public String op30_8 = "sin datos";
-    public RadioGroup rdPregunta30_8;
-    public EditText editPregunta30_8;
-    public String captura30_8;
-    LinearLayout lay30_8;
-    public String op30_8a = "sin datos";
-    public RadioGroup rdPregunta30_8a;
-    public EditText editPregunta30_8a;
-    public String captura30_8a;
-    LinearLayout lay30_8a;
-    public String op30_8b = "sin datos";
-    public RadioGroup rdPregunta30_8b;
-    public EditText editPregunta30_8b;
-    public String captura30_8b;
-    LinearLayout lay30_8b;
-    public String op30_9 = "sin datos";
-    public RadioGroup rdPregunta30_9;
-    public EditText editPregunta30_9;
-    public String captura30_9;
-    LinearLayout lay30_9;
-    public String op30_9a = "sin datos";
-    public RadioGroup rdPregunta30_9a;
-    public EditText editPregunta30_9a;
-    public String captura30_9a;
-    LinearLayout lay30_9a;
-    public String op30_9b = "sin datos";
-    public RadioGroup rdPregunta30_9b;
-    public EditText editPregunta30_9b;
-    public String captura30_9b;
-    LinearLayout lay30_9b;
-    public String op30_10 = "sin datos";
-    public RadioGroup rdPregunta30_10;
-    public EditText editPregunta30_10;
-    public String captura30_10;
-    LinearLayout lay30_10;
-    public String op30_10a = "sin datos";
-    public RadioGroup rdPregunta30_10a;
-    public EditText editPregunta30_10a;
-    public String captura30_10a;
-    LinearLayout lay30_10a;
-    public String op30_10b = "sin datos";
-    public RadioGroup rdPregunta30_10b;
-    public EditText editPregunta30_10b;
-    public String captura30_10b;
-    LinearLayout lay30_10b;
-
-    public String op31 = "sin datos";
-    public RadioGroup rdPregunta31;
-    public EditText editPregunta31;
-    public String captura31;
-    LinearLayout lay31;
-    public String op32 = "sin datos";
-    public RadioGroup rdPregunta32;
-    public EditText editPregunta32;
-    public String captura32;
-    LinearLayout lay32;
 
     public EditText editTelefono;
+
+    public String op25_1="sin datos";	public RadioGroup rdPregunta25_1;	public EditText editPregunta25_1;	public String captura25_1;	LinearLayout lay25_1;
+    public String op25_1a="sin datos";	public RadioGroup rdPregunta25_1a;	public EditText editPregunta25_1a;	public String captura25_1a;	LinearLayout lay25_1a;
+    public String op25_1b="sin datos";	public RadioGroup rdPregunta25_1b;	public EditText editPregunta25_1b;	public String captura25_1b;	LinearLayout lay25_1b;
+    public String op25_1c="sin datos";	public RadioGroup rdPregunta25_1c;	public EditText editPregunta25_1c;	public String captura25_1c;	LinearLayout lay25_1c;
+    public String op25_1d="sin datos";	public RadioGroup rdPregunta25_1d;	public EditText editPregunta25_1d;	public String captura25_1d;	LinearLayout lay25_1d;
+    public String op25_2="sin datos";	public RadioGroup rdPregunta25_2;	public EditText editPregunta25_2;	public String captura25_2;	LinearLayout lay25_2;
+    public String op25_2a="sin datos";	public RadioGroup rdPregunta25_2a;	public EditText editPregunta25_2a;	public String captura25_2a;	LinearLayout lay25_2a;
+    public String op25_2b="sin datos";	public RadioGroup rdPregunta25_2b;	public EditText editPregunta25_2b;	public String captura25_2b;	LinearLayout lay25_2b;
+    public String op25_2c="sin datos";	public RadioGroup rdPregunta25_2c;	public EditText editPregunta25_2c;	public String captura25_2c;	LinearLayout lay25_2c;
+    public String op25_2d="sin datos";	public RadioGroup rdPregunta25_2d;	public EditText editPregunta25_2d;	public String captura25_2d;	LinearLayout lay25_2d;
+    public String op25_3="sin datos";	public RadioGroup rdPregunta25_3;	public EditText editPregunta25_3;	public String captura25_3;	LinearLayout lay25_3;
+    public String op25_3a="sin datos";	public RadioGroup rdPregunta25_3a;	public EditText editPregunta25_3a;	public String captura25_3a;	LinearLayout lay25_3a;
+    public String op25_3b="sin datos";	public RadioGroup rdPregunta25_3b;	public EditText editPregunta25_3b;	public String captura25_3b;	LinearLayout lay25_3b;
+    public String op25_3c="sin datos";	public RadioGroup rdPregunta25_3c;	public EditText editPregunta25_3c;	public String captura25_3c;	LinearLayout lay25_3c;
+    public String op25_3d="sin datos";	public RadioGroup rdPregunta25_3d;	public EditText editPregunta25_3d;	public String captura25_3d;	LinearLayout lay25_3d;
+    public String op25_4="sin datos";	public RadioGroup rdPregunta25_4;	public EditText editPregunta25_4;	public String captura25_4;	LinearLayout lay25_4;
+    public String op25_4a="sin datos";	public RadioGroup rdPregunta25_4a;	public EditText editPregunta25_4a;	public String captura25_4a;	LinearLayout lay25_4a;
+    public String op25_4b="sin datos";	public RadioGroup rdPregunta25_4b;	public EditText editPregunta25_4b;	public String captura25_4b;	LinearLayout lay25_4b;
+    public String op25_4c="sin datos";	public RadioGroup rdPregunta25_4c;	public EditText editPregunta25_4c;	public String captura25_4c;	LinearLayout lay25_4c;
+    public String op25_4d="sin datos";	public RadioGroup rdPregunta25_4d;	public EditText editPregunta25_4d;	public String captura25_4d;	LinearLayout lay25_4d;
+    public String op25_5="sin datos";	public RadioGroup rdPregunta25_5;	public EditText editPregunta25_5;	public String captura25_5;	LinearLayout lay25_5;
+    public String op25_5a="sin datos";	public RadioGroup rdPregunta25_5a;	public EditText editPregunta25_5a;	public String captura25_5a;	LinearLayout lay25_5a;
+    public String op25_5b="sin datos";	public RadioGroup rdPregunta25_5b;	public EditText editPregunta25_5b;	public String captura25_5b;	LinearLayout lay25_5b;
+    public String op25_5c="sin datos";	public RadioGroup rdPregunta25_5c;	public EditText editPregunta25_5c;	public String captura25_5c;	LinearLayout lay25_5c;
+    public String op25_5d="sin datos";	public RadioGroup rdPregunta25_5d;	public EditText editPregunta25_5d;	public String captura25_5d;	LinearLayout lay25_5d;
+    public String op25_6="sin datos";	public RadioGroup rdPregunta25_6;	public EditText editPregunta25_6;	public String captura25_6;	LinearLayout lay25_6;
+    public String op25_6a="sin datos";	public RadioGroup rdPregunta25_6a;	public EditText editPregunta25_6a;	public String captura25_6a;	LinearLayout lay25_6a;
+    public String op25_6b="sin datos";	public RadioGroup rdPregunta25_6b;	public EditText editPregunta25_6b;	public String captura25_6b;	LinearLayout lay25_6b;
+    public String op25_6c="sin datos";	public RadioGroup rdPregunta25_6c;	public EditText editPregunta25_6c;	public String captura25_6c;	LinearLayout lay25_6c;
+    public String op25_6d="sin datos";	public RadioGroup rdPregunta25_6d;	public EditText editPregunta25_6d;	public String captura25_6d;	LinearLayout lay25_6d;
+    public String op25_7="sin datos";	public RadioGroup rdPregunta25_7;	public EditText editPregunta25_7;	public String captura25_7;	LinearLayout lay25_7;
+    public String op25_7a="sin datos";	public RadioGroup rdPregunta25_7a;	public EditText editPregunta25_7a;	public String captura25_7a;	LinearLayout lay25_7a;
+    public String op25_7b="sin datos";	public RadioGroup rdPregunta25_7b;	public EditText editPregunta25_7b;	public String captura25_7b;	LinearLayout lay25_7b;
+    public String op25_7c="sin datos";	public RadioGroup rdPregunta25_7c;	public EditText editPregunta25_7c;	public String captura25_7c;	LinearLayout lay25_7c;
+    public String op25_7d="sin datos";	public RadioGroup rdPregunta25_7d;	public EditText editPregunta25_7d;	public String captura25_7d;	LinearLayout lay25_7d;
+    public String op25_8="sin datos";	public RadioGroup rdPregunta25_8;	public EditText editPregunta25_8;	public String captura25_8;	LinearLayout lay25_8;
+    public String op25_8a="sin datos";	public RadioGroup rdPregunta25_8a;	public EditText editPregunta25_8a;	public String captura25_8a;	LinearLayout lay25_8a;
+    public String op25_8b="sin datos";	public RadioGroup rdPregunta25_8b;	public EditText editPregunta25_8b;	public String captura25_8b;	LinearLayout lay25_8b;
+    public String op25_8c="sin datos";	public RadioGroup rdPregunta25_8c;	public EditText editPregunta25_8c;	public String captura25_8c;	LinearLayout lay25_8c;
+    public String op25_8d="sin datos";	public RadioGroup rdPregunta25_8d;	public EditText editPregunta25_8d;	public String captura25_8d;	LinearLayout lay25_8d;
+    public String op25_9="sin datos";	public RadioGroup rdPregunta25_9;	public EditText editPregunta25_9;	public String captura25_9;	LinearLayout lay25_9;
+    public String op25_9a="sin datos";	public RadioGroup rdPregunta25_9a;	public EditText editPregunta25_9a;	public String captura25_9a;	LinearLayout lay25_9a;
+    public String op25_9b="sin datos";	public RadioGroup rdPregunta25_9b;	public EditText editPregunta25_9b;	public String captura25_9b;	LinearLayout lay25_9b;
+    public String op25_9c="sin datos";	public RadioGroup rdPregunta25_9c;	public EditText editPregunta25_9c;	public String captura25_9c;	LinearLayout lay25_9c;
+    public String op25_9d="sin datos";	public RadioGroup rdPregunta25_9d;	public EditText editPregunta25_9d;	public String captura25_9d;	LinearLayout lay25_9d;
+    public String op25_10="sin datos";	public RadioGroup rdPregunta25_10;	public EditText editPregunta25_10;	public String captura25_10;	LinearLayout lay25_10;
+    public String op25_10a="sin datos";	public RadioGroup rdPregunta25_10a;	public EditText editPregunta25_10a;	public String captura25_10a;	LinearLayout lay25_10a;
+    public String op25_10b="sin datos";	public RadioGroup rdPregunta25_10b;	public EditText editPregunta25_10b;	public String captura25_10b;	LinearLayout lay25_10b;
+    public String op25_10c="sin datos";	public RadioGroup rdPregunta25_10c;	public EditText editPregunta25_10c;	public String captura25_10c;	LinearLayout lay25_10c;
+    public String op25_10d="sin datos";	public RadioGroup rdPregunta25_10d;	public EditText editPregunta25_10d;	public String captura25_10d;	LinearLayout lay25_10d;
+
 
 
     LinearLayout laySocioE;
@@ -1785,214 +1524,60 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         captura24_10b = res.getString(R.string.PREGUNTA24_10b);
         lay24_10b = (LinearLayout) findViewById(R.id.lay24_10b);
 
-        rdPregunta25 = (RadioGroup) findViewById(R.id.rdPregunta25);
-        captura25 = res.getString(R.string.PREGUNTA25);
-        lay25 = (LinearLayout) findViewById(R.id.lay25);
-        rdPregunta26 = (RadioGroup) findViewById(R.id.rdPregunta26);
-        captura26 = res.getString(R.string.PREGUNTA26);
-        lay26 = (LinearLayout) findViewById(R.id.lay26);
-        rdPregunta27 = (RadioGroup) findViewById(R.id.rdPregunta27);
-        captura27 = res.getString(R.string.PREGUNTA27);
-        lay27 = (LinearLayout) findViewById(R.id.lay27);
 
-        rdPregunta27_1 = (RadioGroup) findViewById(R.id.rdPregunta27_1);
-        captura27_1 = res.getString(R.string.PREGUNTA27_1);
-        lay27_1 = (LinearLayout) findViewById(R.id.lay27_1);
-        rdPregunta27_1a = (RadioGroup) findViewById(R.id.rdPregunta27_1a);
-        captura27_1a = res.getString(R.string.PREGUNTA27_1a);
-        lay27_1a = (LinearLayout) findViewById(R.id.lay27_1a);
-        rdPregunta27_1b = (RadioGroup) findViewById(R.id.rdPregunta27_1b);
-        captura27_1b = res.getString(R.string.PREGUNTA27_1b);
-        lay27_1b = (LinearLayout) findViewById(R.id.lay27_1b);
-        rdPregunta27_2 = (RadioGroup) findViewById(R.id.rdPregunta27_2);
-        captura27_2 = res.getString(R.string.PREGUNTA27_2);
-        lay27_2 = (LinearLayout) findViewById(R.id.lay27_2);
-        rdPregunta27_2a = (RadioGroup) findViewById(R.id.rdPregunta27_2a);
-        captura27_2a = res.getString(R.string.PREGUNTA27_2a);
-        lay27_2a = (LinearLayout) findViewById(R.id.lay27_2a);
-        rdPregunta27_2b = (RadioGroup) findViewById(R.id.rdPregunta27_2b);
-        captura27_2b = res.getString(R.string.PREGUNTA27_2b);
-        lay27_2b = (LinearLayout) findViewById(R.id.lay27_2b);
-        rdPregunta27_3 = (RadioGroup) findViewById(R.id.rdPregunta27_3);
-        captura27_3 = res.getString(R.string.PREGUNTA27_3);
-        lay27_3 = (LinearLayout) findViewById(R.id.lay27_3);
-        rdPregunta27_3a = (RadioGroup) findViewById(R.id.rdPregunta27_3a);
-        captura27_3a = res.getString(R.string.PREGUNTA27_3a);
-        lay27_3a = (LinearLayout) findViewById(R.id.lay27_3a);
-        rdPregunta27_3b = (RadioGroup) findViewById(R.id.rdPregunta27_3b);
-        captura27_3b = res.getString(R.string.PREGUNTA27_3b);
-        lay27_3b = (LinearLayout) findViewById(R.id.lay27_3b);
-        rdPregunta27_4 = (RadioGroup) findViewById(R.id.rdPregunta27_4);
-        captura27_4 = res.getString(R.string.PREGUNTA27_4);
-        lay27_4 = (LinearLayout) findViewById(R.id.lay27_4);
-        rdPregunta27_4a = (RadioGroup) findViewById(R.id.rdPregunta27_4a);
-        captura27_4a = res.getString(R.string.PREGUNTA27_4a);
-        lay27_4a = (LinearLayout) findViewById(R.id.lay27_4a);
-        rdPregunta27_4b = (RadioGroup) findViewById(R.id.rdPregunta27_4b);
-        captura27_4b = res.getString(R.string.PREGUNTA27_4b);
-        lay27_4b = (LinearLayout) findViewById(R.id.lay27_4b);
-        rdPregunta27_5 = (RadioGroup) findViewById(R.id.rdPregunta27_5);
-        captura27_5 = res.getString(R.string.PREGUNTA27_5);
-        lay27_5 = (LinearLayout) findViewById(R.id.lay27_5);
-        rdPregunta27_5a = (RadioGroup) findViewById(R.id.rdPregunta27_5a);
-        captura27_5a = res.getString(R.string.PREGUNTA27_5a);
-        lay27_5a = (LinearLayout) findViewById(R.id.lay27_5a);
-        rdPregunta27_5b = (RadioGroup) findViewById(R.id.rdPregunta27_5b);
-        captura27_5b = res.getString(R.string.PREGUNTA27_5b);
-        lay27_5b = (LinearLayout) findViewById(R.id.lay27_5b);
-        rdPregunta27_6 = (RadioGroup) findViewById(R.id.rdPregunta27_6);
-        captura27_6 = res.getString(R.string.PREGUNTA27_6);
-        lay27_6 = (LinearLayout) findViewById(R.id.lay27_6);
-        rdPregunta27_6a = (RadioGroup) findViewById(R.id.rdPregunta27_6a);
-        captura27_6a = res.getString(R.string.PREGUNTA27_6a);
-        lay27_6a = (LinearLayout) findViewById(R.id.lay27_6a);
-        rdPregunta27_6b = (RadioGroup) findViewById(R.id.rdPregunta27_6b);
-        captura27_6b = res.getString(R.string.PREGUNTA27_6b);
-        lay27_6b = (LinearLayout) findViewById(R.id.lay27_6b);
-        rdPregunta27_7 = (RadioGroup) findViewById(R.id.rdPregunta27_7);
-        captura27_7 = res.getString(R.string.PREGUNTA27_7);
-        lay27_7 = (LinearLayout) findViewById(R.id.lay27_7);
-        rdPregunta27_7a = (RadioGroup) findViewById(R.id.rdPregunta27_7a);
-        captura27_7a = res.getString(R.string.PREGUNTA27_7a);
-        lay27_7a = (LinearLayout) findViewById(R.id.lay27_7a);
-        rdPregunta27_7b = (RadioGroup) findViewById(R.id.rdPregunta27_7b);
-        captura27_7b = res.getString(R.string.PREGUNTA27_7b);
-        lay27_7b = (LinearLayout) findViewById(R.id.lay27_7b);
-        rdPregunta27_8 = (RadioGroup) findViewById(R.id.rdPregunta27_8);
-        captura27_8 = res.getString(R.string.PREGUNTA27_8);
-        lay27_8 = (LinearLayout) findViewById(R.id.lay27_8);
-        rdPregunta27_8a = (RadioGroup) findViewById(R.id.rdPregunta27_8a);
-        captura27_8a = res.getString(R.string.PREGUNTA27_8a);
-        lay27_8a = (LinearLayout) findViewById(R.id.lay27_8a);
-        rdPregunta27_8b = (RadioGroup) findViewById(R.id.rdPregunta27_8b);
-        captura27_8b = res.getString(R.string.PREGUNTA27_8b);
-        lay27_8b = (LinearLayout) findViewById(R.id.lay27_8b);
-        rdPregunta27_9 = (RadioGroup) findViewById(R.id.rdPregunta27_9);
-        captura27_9 = res.getString(R.string.PREGUNTA27_9);
-        lay27_9 = (LinearLayout) findViewById(R.id.lay27_9);
-        rdPregunta27_9a = (RadioGroup) findViewById(R.id.rdPregunta27_9a);
-        captura27_9a = res.getString(R.string.PREGUNTA27_9a);
-        lay27_9a = (LinearLayout) findViewById(R.id.lay27_9a);
-        rdPregunta27_9b = (RadioGroup) findViewById(R.id.rdPregunta27_9b);
-        captura27_9b = res.getString(R.string.PREGUNTA27_9b);
-        lay27_9b = (LinearLayout) findViewById(R.id.lay27_9b);
-        rdPregunta27_10 = (RadioGroup) findViewById(R.id.rdPregunta27_10);
-        captura27_10 = res.getString(R.string.PREGUNTA27_10);
-        lay27_10 = (LinearLayout) findViewById(R.id.lay27_10);
-        rdPregunta27_10a = (RadioGroup) findViewById(R.id.rdPregunta27_10a);
-        captura27_10a = res.getString(R.string.PREGUNTA27_10a);
-        lay27_10a = (LinearLayout) findViewById(R.id.lay27_10a);
-        rdPregunta27_10b = (RadioGroup) findViewById(R.id.rdPregunta27_10b);
-        captura27_10b = res.getString(R.string.PREGUNTA27_10b);
-        lay27_10b = (LinearLayout) findViewById(R.id.lay27_10b);
-
-        rdPregunta28 = (RadioGroup) findViewById(R.id.rdPregunta28);
-        captura28 = res.getString(R.string.PREGUNTA28);
-        lay28 = (LinearLayout) findViewById(R.id.lay28);
-        rdPregunta29 = (RadioGroup) findViewById(R.id.rdPregunta29);
-        captura29 = res.getString(R.string.PREGUNTA29);
-        lay29 = (LinearLayout) findViewById(R.id.lay29);
-        rdPregunta30 = (RadioGroup) findViewById(R.id.rdPregunta30);
-        captura30 = res.getString(R.string.PREGUNTA30);
-        lay30 = (LinearLayout) findViewById(R.id.lay30);
-
-        rdPregunta30_1 = (RadioGroup) findViewById(R.id.rdPregunta30_1);
-        captura30_1 = res.getString(R.string.PREGUNTA30_1);
-        lay30_1 = (LinearLayout) findViewById(R.id.lay30_1);
-        rdPregunta30_1a = (RadioGroup) findViewById(R.id.rdPregunta30_1a);
-        captura30_1a = res.getString(R.string.PREGUNTA30_1a);
-        lay30_1a = (LinearLayout) findViewById(R.id.lay30_1a);
-        rdPregunta30_1b = (RadioGroup) findViewById(R.id.rdPregunta30_1b);
-        captura30_1b = res.getString(R.string.PREGUNTA30_1b);
-        lay30_1b = (LinearLayout) findViewById(R.id.lay30_1b);
-        rdPregunta30_2 = (RadioGroup) findViewById(R.id.rdPregunta30_2);
-        captura30_2 = res.getString(R.string.PREGUNTA30_2);
-        lay30_2 = (LinearLayout) findViewById(R.id.lay30_2);
-        rdPregunta30_2a = (RadioGroup) findViewById(R.id.rdPregunta30_2a);
-        captura30_2a = res.getString(R.string.PREGUNTA30_2a);
-        lay30_2a = (LinearLayout) findViewById(R.id.lay30_2a);
-        rdPregunta30_2b = (RadioGroup) findViewById(R.id.rdPregunta30_2b);
-        captura30_2b = res.getString(R.string.PREGUNTA30_2b);
-        lay30_2b = (LinearLayout) findViewById(R.id.lay30_2b);
-        rdPregunta30_3 = (RadioGroup) findViewById(R.id.rdPregunta30_3);
-        captura30_3 = res.getString(R.string.PREGUNTA30_3);
-        lay30_3 = (LinearLayout) findViewById(R.id.lay30_3);
-        rdPregunta30_3a = (RadioGroup) findViewById(R.id.rdPregunta30_3a);
-        captura30_3a = res.getString(R.string.PREGUNTA30_3a);
-        lay30_3a = (LinearLayout) findViewById(R.id.lay30_3a);
-        rdPregunta30_3b = (RadioGroup) findViewById(R.id.rdPregunta30_3b);
-        captura30_3b = res.getString(R.string.PREGUNTA30_3b);
-        lay30_3b = (LinearLayout) findViewById(R.id.lay30_3b);
-        rdPregunta30_4 = (RadioGroup) findViewById(R.id.rdPregunta30_4);
-        captura30_4 = res.getString(R.string.PREGUNTA30_4);
-        lay30_4 = (LinearLayout) findViewById(R.id.lay30_4);
-        rdPregunta30_4a = (RadioGroup) findViewById(R.id.rdPregunta30_4a);
-        captura30_4a = res.getString(R.string.PREGUNTA30_4a);
-        lay30_4a = (LinearLayout) findViewById(R.id.lay30_4a);
-        rdPregunta30_4b = (RadioGroup) findViewById(R.id.rdPregunta30_4b);
-        captura30_4b = res.getString(R.string.PREGUNTA30_4b);
-        lay30_4b = (LinearLayout) findViewById(R.id.lay30_4b);
-        rdPregunta30_5 = (RadioGroup) findViewById(R.id.rdPregunta30_5);
-        captura30_5 = res.getString(R.string.PREGUNTA30_5);
-        lay30_5 = (LinearLayout) findViewById(R.id.lay30_5);
-        rdPregunta30_5a = (RadioGroup) findViewById(R.id.rdPregunta30_5a);
-        captura30_5a = res.getString(R.string.PREGUNTA30_5a);
-        lay30_5a = (LinearLayout) findViewById(R.id.lay30_5a);
-        rdPregunta30_5b = (RadioGroup) findViewById(R.id.rdPregunta30_5b);
-        captura30_5b = res.getString(R.string.PREGUNTA30_5b);
-        lay30_5b = (LinearLayout) findViewById(R.id.lay30_5b);
-        rdPregunta30_6 = (RadioGroup) findViewById(R.id.rdPregunta30_6);
-        captura30_6 = res.getString(R.string.PREGUNTA30_6);
-        lay30_6 = (LinearLayout) findViewById(R.id.lay30_6);
-        rdPregunta30_6a = (RadioGroup) findViewById(R.id.rdPregunta30_6a);
-        captura30_6a = res.getString(R.string.PREGUNTA30_6a);
-        lay30_6a = (LinearLayout) findViewById(R.id.lay30_6a);
-        rdPregunta30_6b = (RadioGroup) findViewById(R.id.rdPregunta30_6b);
-        captura30_6b = res.getString(R.string.PREGUNTA30_6b);
-        lay30_6b = (LinearLayout) findViewById(R.id.lay30_6b);
-        rdPregunta30_7 = (RadioGroup) findViewById(R.id.rdPregunta30_7);
-        captura30_7 = res.getString(R.string.PREGUNTA30_7);
-        lay30_7 = (LinearLayout) findViewById(R.id.lay30_7);
-        rdPregunta30_7a = (RadioGroup) findViewById(R.id.rdPregunta30_7a);
-        captura30_7a = res.getString(R.string.PREGUNTA30_7a);
-        lay30_7a = (LinearLayout) findViewById(R.id.lay30_7a);
-        rdPregunta30_7b = (RadioGroup) findViewById(R.id.rdPregunta30_7b);
-        captura30_7b = res.getString(R.string.PREGUNTA30_7b);
-        lay30_7b = (LinearLayout) findViewById(R.id.lay30_7b);
-        rdPregunta30_8 = (RadioGroup) findViewById(R.id.rdPregunta30_8);
-        captura30_8 = res.getString(R.string.PREGUNTA30_8);
-        lay30_8 = (LinearLayout) findViewById(R.id.lay30_8);
-        rdPregunta30_8a = (RadioGroup) findViewById(R.id.rdPregunta30_8a);
-        captura30_8a = res.getString(R.string.PREGUNTA30_8a);
-        lay30_8a = (LinearLayout) findViewById(R.id.lay30_8a);
-        rdPregunta30_8b = (RadioGroup) findViewById(R.id.rdPregunta30_8b);
-        captura30_8b = res.getString(R.string.PREGUNTA30_8b);
-        lay30_8b = (LinearLayout) findViewById(R.id.lay30_8b);
-        rdPregunta30_9 = (RadioGroup) findViewById(R.id.rdPregunta30_9);
-        captura30_9 = res.getString(R.string.PREGUNTA30_9);
-        lay30_9 = (LinearLayout) findViewById(R.id.lay30_9);
-        rdPregunta30_9a = (RadioGroup) findViewById(R.id.rdPregunta30_9a);
-        captura30_9a = res.getString(R.string.PREGUNTA30_9a);
-        lay30_9a = (LinearLayout) findViewById(R.id.lay30_9a);
-        rdPregunta30_9b = (RadioGroup) findViewById(R.id.rdPregunta30_9b);
-        captura30_9b = res.getString(R.string.PREGUNTA30_9b);
-        lay30_9b = (LinearLayout) findViewById(R.id.lay30_9b);
-        rdPregunta30_10 = (RadioGroup) findViewById(R.id.rdPregunta30_10);
-        captura30_10 = res.getString(R.string.PREGUNTA30_10);
-        lay30_10 = (LinearLayout) findViewById(R.id.lay30_10);
-        rdPregunta30_10a = (RadioGroup) findViewById(R.id.rdPregunta30_10a);
-        captura30_10a = res.getString(R.string.PREGUNTA30_10a);
-        lay30_10a = (LinearLayout) findViewById(R.id.lay30_10a);
-        rdPregunta30_10b = (RadioGroup) findViewById(R.id.rdPregunta30_10b);
-        captura30_10b = res.getString(R.string.PREGUNTA30_10b);
-        lay30_10b = (LinearLayout) findViewById(R.id.lay30_10b);
-
-        rdPregunta31 = (RadioGroup) findViewById(R.id.rdPregunta31);
-        captura31 = res.getString(R.string.PREGUNTA31);
-        lay31 = (LinearLayout) findViewById(R.id.lay31);
-        rdPregunta32 = (RadioGroup) findViewById(R.id.rdPregunta32);
-        captura32 = res.getString(R.string.PREGUNTA32);
-        lay32 = (LinearLayout) findViewById(R.id.lay32);
+        rdPregunta25 = (RadioGroup)findViewById(R.id.rdPregunta25);	captura25 =res.getString(R.string.PREGUNTA25);	lay25 = (LinearLayout) findViewById(R.id.lay25);
+        rdPregunta25_1 = (RadioGroup)findViewById(R.id.rdPregunta25_1);	captura25_1 =res.getString(R.string.PREGUNTA25_1);	lay25_1 = (LinearLayout) findViewById(R.id.lay25_1);
+        rdPregunta25_1a = (RadioGroup)findViewById(R.id.rdPregunta25_1a);	captura25_1a =res.getString(R.string.PREGUNTA25_1a);	lay25_1a = (LinearLayout) findViewById(R.id.lay25_1a);
+        rdPregunta25_1b = (RadioGroup)findViewById(R.id.rdPregunta25_1b);	captura25_1b =res.getString(R.string.PREGUNTA25_1b);	lay25_1b = (LinearLayout) findViewById(R.id.lay25_1b);
+        rdPregunta25_1c = (RadioGroup)findViewById(R.id.rdPregunta25_1c);	captura25_1c =res.getString(R.string.PREGUNTA25_1c);	lay25_1c = (LinearLayout) findViewById(R.id.lay25_1c);
+        rdPregunta25_1d = (RadioGroup)findViewById(R.id.rdPregunta25_1d);	captura25_1d =res.getString(R.string.PREGUNTA25_1d);	lay25_1d = (LinearLayout) findViewById(R.id.lay25_1d);
+        rdPregunta25_2 = (RadioGroup)findViewById(R.id.rdPregunta25_2);	captura25_2 =res.getString(R.string.PREGUNTA25_2);	lay25_2 = (LinearLayout) findViewById(R.id.lay25_2);
+        rdPregunta25_2a = (RadioGroup)findViewById(R.id.rdPregunta25_2a);	captura25_2a =res.getString(R.string.PREGUNTA25_2a);	lay25_2a = (LinearLayout) findViewById(R.id.lay25_2a);
+        rdPregunta25_2b = (RadioGroup)findViewById(R.id.rdPregunta25_2b);	captura25_2b =res.getString(R.string.PREGUNTA25_2b);	lay25_2b = (LinearLayout) findViewById(R.id.lay25_2b);
+        rdPregunta25_2c = (RadioGroup)findViewById(R.id.rdPregunta25_2c);	captura25_2c =res.getString(R.string.PREGUNTA25_2c);	lay25_2c = (LinearLayout) findViewById(R.id.lay25_2c);
+        rdPregunta25_2d = (RadioGroup)findViewById(R.id.rdPregunta25_2d);	captura25_2d =res.getString(R.string.PREGUNTA25_2d);	lay25_2d = (LinearLayout) findViewById(R.id.lay25_2d);
+        rdPregunta25_3 = (RadioGroup)findViewById(R.id.rdPregunta25_3);	captura25_3 =res.getString(R.string.PREGUNTA25_3);	lay25_3 = (LinearLayout) findViewById(R.id.lay25_3);
+        rdPregunta25_3a = (RadioGroup)findViewById(R.id.rdPregunta25_3a);	captura25_3a =res.getString(R.string.PREGUNTA25_3a);	lay25_3a = (LinearLayout) findViewById(R.id.lay25_3a);
+        rdPregunta25_3b = (RadioGroup)findViewById(R.id.rdPregunta25_3b);	captura25_3b =res.getString(R.string.PREGUNTA25_3b);	lay25_3b = (LinearLayout) findViewById(R.id.lay25_3b);
+        rdPregunta25_3c = (RadioGroup)findViewById(R.id.rdPregunta25_3c);	captura25_3c =res.getString(R.string.PREGUNTA25_3c);	lay25_3c = (LinearLayout) findViewById(R.id.lay25_3c);
+        rdPregunta25_3d = (RadioGroup)findViewById(R.id.rdPregunta25_3d);	captura25_3d =res.getString(R.string.PREGUNTA25_3d);	lay25_3d = (LinearLayout) findViewById(R.id.lay25_3d);
+        rdPregunta25_4 = (RadioGroup)findViewById(R.id.rdPregunta25_4);	captura25_4 =res.getString(R.string.PREGUNTA25_4);	lay25_4 = (LinearLayout) findViewById(R.id.lay25_4);
+        rdPregunta25_4a = (RadioGroup)findViewById(R.id.rdPregunta25_4a);	captura25_4a =res.getString(R.string.PREGUNTA25_4a);	lay25_4a = (LinearLayout) findViewById(R.id.lay25_4a);
+        rdPregunta25_4b = (RadioGroup)findViewById(R.id.rdPregunta25_4b);	captura25_4b =res.getString(R.string.PREGUNTA25_4b);	lay25_4b = (LinearLayout) findViewById(R.id.lay25_4b);
+        rdPregunta25_4c = (RadioGroup)findViewById(R.id.rdPregunta25_4c);	captura25_4c =res.getString(R.string.PREGUNTA25_4c);	lay25_4c = (LinearLayout) findViewById(R.id.lay25_4c);
+        rdPregunta25_4d = (RadioGroup)findViewById(R.id.rdPregunta25_4d);	captura25_4d =res.getString(R.string.PREGUNTA25_4d);	lay25_4d = (LinearLayout) findViewById(R.id.lay25_4d);
+        rdPregunta25_5 = (RadioGroup)findViewById(R.id.rdPregunta25_5);	captura25_5 =res.getString(R.string.PREGUNTA25_5);	lay25_5 = (LinearLayout) findViewById(R.id.lay25_5);
+        rdPregunta25_5a = (RadioGroup)findViewById(R.id.rdPregunta25_5a);	captura25_5a =res.getString(R.string.PREGUNTA25_5a);	lay25_5a = (LinearLayout) findViewById(R.id.lay25_5a);
+        rdPregunta25_5b = (RadioGroup)findViewById(R.id.rdPregunta25_5b);	captura25_5b =res.getString(R.string.PREGUNTA25_5b);	lay25_5b = (LinearLayout) findViewById(R.id.lay25_5b);
+        rdPregunta25_5c = (RadioGroup)findViewById(R.id.rdPregunta25_5c);	captura25_5c =res.getString(R.string.PREGUNTA25_5c);	lay25_5c = (LinearLayout) findViewById(R.id.lay25_5c);
+        rdPregunta25_5d = (RadioGroup)findViewById(R.id.rdPregunta25_5d);	captura25_5d =res.getString(R.string.PREGUNTA25_5d);	lay25_5d = (LinearLayout) findViewById(R.id.lay25_5d);
+        rdPregunta25_6 = (RadioGroup)findViewById(R.id.rdPregunta25_6);	captura25_6 =res.getString(R.string.PREGUNTA25_6);	lay25_6 = (LinearLayout) findViewById(R.id.lay25_6);
+        rdPregunta25_6a = (RadioGroup)findViewById(R.id.rdPregunta25_6a);	captura25_6a =res.getString(R.string.PREGUNTA25_6a);	lay25_6a = (LinearLayout) findViewById(R.id.lay25_6a);
+        rdPregunta25_6b = (RadioGroup)findViewById(R.id.rdPregunta25_6b);	captura25_6b =res.getString(R.string.PREGUNTA25_6b);	lay25_6b = (LinearLayout) findViewById(R.id.lay25_6b);
+        rdPregunta25_6c = (RadioGroup)findViewById(R.id.rdPregunta25_6c);	captura25_6c =res.getString(R.string.PREGUNTA25_6c);	lay25_6c = (LinearLayout) findViewById(R.id.lay25_6c);
+        rdPregunta25_6d = (RadioGroup)findViewById(R.id.rdPregunta25_6d);	captura25_6d =res.getString(R.string.PREGUNTA25_6d);	lay25_6d = (LinearLayout) findViewById(R.id.lay25_6d);
+        rdPregunta25_7 = (RadioGroup)findViewById(R.id.rdPregunta25_7);	captura25_7 =res.getString(R.string.PREGUNTA25_7);	lay25_7 = (LinearLayout) findViewById(R.id.lay25_7);
+        rdPregunta25_7a = (RadioGroup)findViewById(R.id.rdPregunta25_7a);	captura25_7a =res.getString(R.string.PREGUNTA25_7a);	lay25_7a = (LinearLayout) findViewById(R.id.lay25_7a);
+        rdPregunta25_7b = (RadioGroup)findViewById(R.id.rdPregunta25_7b);	captura25_7b =res.getString(R.string.PREGUNTA25_7b);	lay25_7b = (LinearLayout) findViewById(R.id.lay25_7b);
+        rdPregunta25_7c = (RadioGroup)findViewById(R.id.rdPregunta25_7c);	captura25_7c =res.getString(R.string.PREGUNTA25_7c);	lay25_7c = (LinearLayout) findViewById(R.id.lay25_7c);
+        rdPregunta25_7d = (RadioGroup)findViewById(R.id.rdPregunta25_7d);	captura25_7d =res.getString(R.string.PREGUNTA25_7d);	lay25_7d = (LinearLayout) findViewById(R.id.lay25_7d);
+        rdPregunta25_8 = (RadioGroup)findViewById(R.id.rdPregunta25_8);	captura25_8 =res.getString(R.string.PREGUNTA25_8);	lay25_8 = (LinearLayout) findViewById(R.id.lay25_8);
+        rdPregunta25_8a = (RadioGroup)findViewById(R.id.rdPregunta25_8a);	captura25_8a =res.getString(R.string.PREGUNTA25_8a);	lay25_8a = (LinearLayout) findViewById(R.id.lay25_8a);
+        rdPregunta25_8b = (RadioGroup)findViewById(R.id.rdPregunta25_8b);	captura25_8b =res.getString(R.string.PREGUNTA25_8b);	lay25_8b = (LinearLayout) findViewById(R.id.lay25_8b);
+        rdPregunta25_8c = (RadioGroup)findViewById(R.id.rdPregunta25_8c);	captura25_8c =res.getString(R.string.PREGUNTA25_8c);	lay25_8c = (LinearLayout) findViewById(R.id.lay25_8c);
+        rdPregunta25_8d = (RadioGroup)findViewById(R.id.rdPregunta25_8d);	captura25_8d =res.getString(R.string.PREGUNTA25_8d);	lay25_8d = (LinearLayout) findViewById(R.id.lay25_8d);
+        rdPregunta25_9 = (RadioGroup)findViewById(R.id.rdPregunta25_9);	captura25_9 =res.getString(R.string.PREGUNTA25_9);	lay25_9 = (LinearLayout) findViewById(R.id.lay25_9);
+        rdPregunta25_9a = (RadioGroup)findViewById(R.id.rdPregunta25_9a);	captura25_9a =res.getString(R.string.PREGUNTA25_9a);	lay25_9a = (LinearLayout) findViewById(R.id.lay25_9a);
+        rdPregunta25_9b = (RadioGroup)findViewById(R.id.rdPregunta25_9b);	captura25_9b =res.getString(R.string.PREGUNTA25_9b);	lay25_9b = (LinearLayout) findViewById(R.id.lay25_9b);
+        rdPregunta25_9c = (RadioGroup)findViewById(R.id.rdPregunta25_9c);	captura25_9c =res.getString(R.string.PREGUNTA25_9c);	lay25_9c = (LinearLayout) findViewById(R.id.lay25_9c);
+        rdPregunta25_9d = (RadioGroup)findViewById(R.id.rdPregunta25_9d);	captura25_9d =res.getString(R.string.PREGUNTA25_9d);	lay25_9d = (LinearLayout) findViewById(R.id.lay25_9d);
+        rdPregunta25_10 = (RadioGroup)findViewById(R.id.rdPregunta25_10);	captura25_10 =res.getString(R.string.PREGUNTA25_10);	lay25_10 = (LinearLayout) findViewById(R.id.lay25_10);
+        rdPregunta25_10a = (RadioGroup)findViewById(R.id.rdPregunta25_10a);	captura25_10a =res.getString(R.string.PREGUNTA25_10a);	lay25_10a = (LinearLayout) findViewById(R.id.lay25_10a);
+        rdPregunta25_10b = (RadioGroup)findViewById(R.id.rdPregunta25_10b);	captura25_10b =res.getString(R.string.PREGUNTA25_10b);	lay25_10b = (LinearLayout) findViewById(R.id.lay25_10b);
+        rdPregunta25_10c = (RadioGroup)findViewById(R.id.rdPregunta25_10c);	captura25_10c =res.getString(R.string.PREGUNTA25_10c);	lay25_10c = (LinearLayout) findViewById(R.id.lay25_10c);
+        rdPregunta25_10d = (RadioGroup)findViewById(R.id.rdPregunta25_10d);	captura25_10d =res.getString(R.string.PREGUNTA25_10d);	lay25_10d = (LinearLayout) findViewById(R.id.lay25_10d);
+        rdPregunta26 = (RadioGroup) findViewById(R.id.rdPregunta26); captura26 = res.getString(R.string.PREGUNTA26); lay26 = (LinearLayout) findViewById(R.id.lay26);
+        rdPregunta27 = (RadioGroup)findViewById(R.id.rdPregunta27);	captura27 =res.getString(R.string.PREGUNTA27);	lay27 = (LinearLayout) findViewById(R.id.lay27);
 
         editPregunta6 = (EditText) findViewById(R.id.editPregunta6);
         editPregunta7 = (EditText) findViewById(R.id.editPregunta7);
@@ -2017,20 +1602,6 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         radio_abandono3 = (RadioButton) findViewById(R.id.radio_abandono3);
         radio_abandono4 = (RadioButton) findViewById(R.id.radio_abandono4);
 
-        radio25_1 = (RadioButton) findViewById(R.id.radio25_1);
-        radio25_2 = (RadioButton) findViewById(R.id.radio25_2);
-        radio25_3 = (RadioButton) findViewById(R.id.radio25_3);
-        radio25_4 = (RadioButton) findViewById(R.id.radio25_4);
-        radio25_5 = (RadioButton) findViewById(R.id.radio25_5);
-        radio25_6 = (RadioButton) findViewById(R.id.radio25_6);
-        radio25_7 = (RadioButton) findViewById(R.id.radio25_7);
-        radio25_8 = (RadioButton) findViewById(R.id.radio25_8);
-        radio25_9 = (RadioButton) findViewById(R.id.radio25_9);
-        radio25_10 = (RadioButton) findViewById(R.id.radio25_10);
-        radio25_11 = (RadioButton) findViewById(R.id.radio25_11);
-        radio25_12 = (RadioButton) findViewById(R.id.radio25_12);
-        radio25_13 = (RadioButton) findViewById(R.id.radio25_13);
-        radio25_0 = (RadioButton) findViewById(R.id.radio25_0);
 
         radio26_1 = (RadioButton) findViewById(R.id.radio26_1);
         radio26_2 = (RadioButton) findViewById(R.id.radio26_2);
@@ -2045,67 +1616,8 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         radio26_11 = (RadioButton) findViewById(R.id.radio26_11);
         radio26_12 = (RadioButton) findViewById(R.id.radio26_12);
         radio26_13 = (RadioButton) findViewById(R.id.radio26_13);
+        radio26_14 = (RadioButton) findViewById(R.id.radio26_14);
         radio26_0 = (RadioButton) findViewById(R.id.radio26_0);
-
-        radio28_1 = (RadioButton) findViewById(R.id.radio28_1);
-        radio28_2 = (RadioButton) findViewById(R.id.radio28_2);
-        radio28_3 = (RadioButton) findViewById(R.id.radio28_3);
-        radio28_4 = (RadioButton) findViewById(R.id.radio28_4);
-        radio28_5 = (RadioButton) findViewById(R.id.radio28_5);
-        radio28_6 = (RadioButton) findViewById(R.id.radio28_6);
-        radio28_7 = (RadioButton) findViewById(R.id.radio28_7);
-        radio28_8 = (RadioButton) findViewById(R.id.radio28_8);
-        radio28_9 = (RadioButton) findViewById(R.id.radio28_9);
-        radio28_10 = (RadioButton) findViewById(R.id.radio28_10);
-        radio28_11 = (RadioButton) findViewById(R.id.radio28_11);
-        radio28_12 = (RadioButton) findViewById(R.id.radio28_12);
-        radio28_13 = (RadioButton) findViewById(R.id.radio28_13);
-        radio28_0 = (RadioButton) findViewById(R.id.radio28_0);
-
-        radio29_1 = (RadioButton) findViewById(R.id.radio29_1);
-        radio29_2 = (RadioButton) findViewById(R.id.radio29_2);
-        radio29_3 = (RadioButton) findViewById(R.id.radio29_3);
-        radio29_4 = (RadioButton) findViewById(R.id.radio29_4);
-        radio29_5 = (RadioButton) findViewById(R.id.radio29_5);
-        radio29_6 = (RadioButton) findViewById(R.id.radio29_6);
-        radio29_7 = (RadioButton) findViewById(R.id.radio29_7);
-        radio29_8 = (RadioButton) findViewById(R.id.radio29_8);
-        radio29_9 = (RadioButton) findViewById(R.id.radio29_9);
-        radio29_10 = (RadioButton) findViewById(R.id.radio29_10);
-        radio29_11 = (RadioButton) findViewById(R.id.radio29_11);
-        radio29_12 = (RadioButton) findViewById(R.id.radio29_12);
-        radio29_13 = (RadioButton) findViewById(R.id.radio29_13);
-        radio29_0 = (RadioButton) findViewById(R.id.radio29_0);
-
-        radio31_1 = (RadioButton) findViewById(R.id.radio31_1);
-        radio31_2 = (RadioButton) findViewById(R.id.radio31_2);
-        radio31_3 = (RadioButton) findViewById(R.id.radio31_3);
-        radio31_4 = (RadioButton) findViewById(R.id.radio31_4);
-        radio31_5 = (RadioButton) findViewById(R.id.radio31_5);
-        radio31_6 = (RadioButton) findViewById(R.id.radio31_6);
-        radio31_7 = (RadioButton) findViewById(R.id.radio31_7);
-        radio31_8 = (RadioButton) findViewById(R.id.radio31_8);
-        radio31_9 = (RadioButton) findViewById(R.id.radio31_9);
-        radio31_10 = (RadioButton) findViewById(R.id.radio31_10);
-        radio31_11 = (RadioButton) findViewById(R.id.radio31_11);
-        radio31_12 = (RadioButton) findViewById(R.id.radio31_12);
-        radio31_13 = (RadioButton) findViewById(R.id.radio31_13);
-        radio31_0 = (RadioButton) findViewById(R.id.radio31_0);
-
-        radio32_1 = (RadioButton) findViewById(R.id.radio32_1);
-        radio32_2 = (RadioButton) findViewById(R.id.radio32_2);
-        radio32_3 = (RadioButton) findViewById(R.id.radio32_3);
-        radio32_4 = (RadioButton) findViewById(R.id.radio32_4);
-        radio32_5 = (RadioButton) findViewById(R.id.radio32_5);
-        radio32_6 = (RadioButton) findViewById(R.id.radio32_6);
-        radio32_7 = (RadioButton) findViewById(R.id.radio32_7);
-        radio32_8 = (RadioButton) findViewById(R.id.radio32_8);
-        radio32_9 = (RadioButton) findViewById(R.id.radio32_9);
-        radio32_10 = (RadioButton) findViewById(R.id.radio32_10);
-        radio32_11 = (RadioButton) findViewById(R.id.radio32_11);
-        radio32_12 = (RadioButton) findViewById(R.id.radio32_12);
-        radio32_13 = (RadioButton) findViewById(R.id.radio32_13);
-        radio32_0 = (RadioButton) findViewById(R.id.radio32_0);
 
 
 
@@ -2219,53 +1731,17 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         textPregunta25 = (TextView) findViewById(R.id.textPregunta25);
         textPregunta26 = (TextView) findViewById(R.id.textPregunta26);
 
-        textPregunta27_1 = (TextView) findViewById(R.id.textPregunta27_1);
-        textPregunta27_1b = (TextView) findViewById(R.id.textPregunta27_1b);
-        textPregunta27_2 = (TextView) findViewById(R.id.textPregunta27_2);
-        textPregunta27_2b = (TextView) findViewById(R.id.textPregunta27_2b);
-        textPregunta27_3 = (TextView) findViewById(R.id.textPregunta27_3);
-        textPregunta27_3b = (TextView) findViewById(R.id.textPregunta27_3b);
-        textPregunta27_4 = (TextView) findViewById(R.id.textPregunta27_4);
-        textPregunta27_4b = (TextView) findViewById(R.id.textPregunta27_4b);
-        textPregunta27_5 = (TextView) findViewById(R.id.textPregunta27_5);
-        textPregunta27_5b = (TextView) findViewById(R.id.textPregunta27_5b);
-        textPregunta27_6 = (TextView) findViewById(R.id.textPregunta27_6);
-        textPregunta27_6b = (TextView) findViewById(R.id.textPregunta27_6b);
-        textPregunta27_7 = (TextView) findViewById(R.id.textPregunta27_7);
-        textPregunta27_7b = (TextView) findViewById(R.id.textPregunta27_7b);
-        textPregunta27_8 = (TextView) findViewById(R.id.textPregunta27_8);
-        textPregunta27_8b = (TextView) findViewById(R.id.textPregunta27_8b);
-        textPregunta27_9 = (TextView) findViewById(R.id.textPregunta27_9);
-        textPregunta27_9b = (TextView) findViewById(R.id.textPregunta27_9b);
-        textPregunta27_10 = (TextView) findViewById(R.id.textPregunta27_10);
-        textPregunta27_10b = (TextView) findViewById(R.id.textPregunta27_10b);
+        textPregunta25_1 = (TextView) findViewById(R.id.textPregunta25_1);
+        textPregunta25_2 = (TextView) findViewById(R.id.textPregunta25_2);
+        textPregunta25_3 = (TextView) findViewById(R.id.textPregunta25_3);
+        textPregunta25_4 = (TextView) findViewById(R.id.textPregunta25_4);
+        textPregunta25_5 = (TextView) findViewById(R.id.textPregunta25_5);
+        textPregunta25_6 = (TextView) findViewById(R.id.textPregunta25_6);
+        textPregunta25_7 = (TextView) findViewById(R.id.textPregunta25_7);
+        textPregunta25_8 = (TextView) findViewById(R.id.textPregunta25_8);
+        textPregunta25_9 = (TextView) findViewById(R.id.textPregunta25_9);
+        textPregunta25_10 = (TextView) findViewById(R.id.textPregunta25_10);
 
-        textPregunta28 = (TextView) findViewById(R.id.textPregunta28);
-        textPregunta29 = (TextView) findViewById(R.id.textPregunta29);
-
-        textPregunta30_1 = (TextView) findViewById(R.id.textPregunta30_1);
-        textPregunta30_1b = (TextView) findViewById(R.id.textPregunta30_1b);
-        textPregunta30_2 = (TextView) findViewById(R.id.textPregunta30_2);
-        textPregunta30_2b = (TextView) findViewById(R.id.textPregunta30_2b);
-        textPregunta30_3 = (TextView) findViewById(R.id.textPregunta30_3);
-        textPregunta30_3b = (TextView) findViewById(R.id.textPregunta30_3b);
-        textPregunta30_4 = (TextView) findViewById(R.id.textPregunta30_4);
-        textPregunta30_4b = (TextView) findViewById(R.id.textPregunta30_4b);
-        textPregunta30_5 = (TextView) findViewById(R.id.textPregunta30_5);
-        textPregunta30_5b = (TextView) findViewById(R.id.textPregunta30_5b);
-        textPregunta30_6 = (TextView) findViewById(R.id.textPregunta30_6);
-        textPregunta30_6b = (TextView) findViewById(R.id.textPregunta30_6b);
-        textPregunta30_7 = (TextView) findViewById(R.id.textPregunta30_7);
-        textPregunta30_7b = (TextView) findViewById(R.id.textPregunta30_7b);
-        textPregunta30_8 = (TextView) findViewById(R.id.textPregunta30_8);
-        textPregunta30_8b = (TextView) findViewById(R.id.textPregunta30_8b);
-        textPregunta30_9 = (TextView) findViewById(R.id.textPregunta30_9);
-        textPregunta30_9b = (TextView) findViewById(R.id.textPregunta30_9b);
-        textPregunta30_10 = (TextView) findViewById(R.id.textPregunta30_10);
-        textPregunta30_10b = (TextView) findViewById(R.id.textPregunta30_10b);
-
-        textPregunta31 = (TextView) findViewById(R.id.textPregunta31);
-        textPregunta32 = (TextView) findViewById(R.id.textPregunta32);
 
 
         String laDelegacion = sacaAlcaldia(cachaSeccion());
@@ -2416,51 +1892,8 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
 
         }
 
-        for (int i=0;i<partidos_federales.size();i++){
 
-            String cand;
-            cand=partidos_federales.get(i);
 
-            if(cand.contains("PAN")){
-                candidato_1_federal=partidos_federales.get(i);
-            }
-            if(cand.contains("PRI")){
-                candidato_2_federal=partidos_federales.get(i);
-
-            }
-            if(cand.contains("MORENA")){
-                candidato_3_federal=partidos_federales.get(i);
-
-            }
-            if(cand.contains("PRD")){
-                candidato_4_federal=partidos_federales.get(i);
-
-            }
-
-        }
-
-        for (int i=0;i<partidos_locales.size();i++){
-
-            String cand;
-            cand=partidos_locales.get(i);
-
-            if(cand.contains("PAN")){
-                candidato_1_local=partidos_locales.get(i);
-            }
-            if(cand.contains("PRI")){
-                candidato_2_local=partidos_locales.get(i);
-
-            }
-            if(cand.contains("MORENA")){
-                candidato_3_local=partidos_locales.get(i);
-
-            }
-            if(cand.contains("PRD")){
-                candidato_4_local=partidos_locales.get(i);
-
-            }
-
-        }
 
 
         try {
@@ -2496,83 +1929,64 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
             radio26_6.setVisibility(View.GONE);
         }
 
-
         try {
-            if (federales_morena.get(0) != null) {
-                Log.i(TAG, "cqs --->> federal 1 " + "esta");
-                radio29_3.setText(federales_morena.get(0));
+            if (alcaldes_morena.get(4) != null) {
+                Log.i(TAG, "cqs --->> alcalde 1 " + "esta");
+                radio26_7.setText(alcaldes_morena.get(4));
             }
         } catch (Exception e) {
-            radio29_3.setVisibility(View.GONE);
-        }
-        try {
-            if (federales_morena.get(1) != null) {
-                Log.i(TAG, "cqs --->> federal 1 " + "esta");
-                radio29_4.setText(federales_morena.get(1));
-            }
-        } catch (Exception e) {
-            radio29_4.setVisibility(View.GONE);
-        }
-        try {
-            if (federales_morena.get(2) != null) {
-                Log.i(TAG, "cqs --->> federal 1 " + "esta");
-                radio29_5.setText(federales_morena.get(2));
-            }
-        } catch (Exception e) {
-            radio29_5.setVisibility(View.GONE);
-        }
-        try {
-            if (federales_morena.get(3) != null) {
-                Log.i(TAG, "cqs --->> federal 1 " + "esta");
-                radio29_6.setText(federales_morena.get(3));
-            }
-        } catch (Exception e) {
-            radio29_6.setVisibility(View.GONE);
+            radio26_7.setVisibility(View.GONE);
         }
 
         try {
-            if (locales_morena.get(0) != null) {
-                Log.i(TAG, "cqs --->> federal 1 " + "esta");
-                radio32_3.setText(locales_morena.get(0));
+            if (alcaldes_morena.get(5) != null) {
+                Log.i(TAG, "cqs --->> alcalde 1 " + "esta");
+                radio26_8.setText(alcaldes_morena.get(5));
             }
         } catch (Exception e) {
-            radio32_3.setVisibility(View.GONE);
+            radio26_8.setVisibility(View.GONE);
         }
+
         try {
-            if (locales_morena.get(1) != null) {
-                Log.i(TAG, "cqs --->> federal 1 " + "esta");
-                radio32_4.setText(locales_morena.get(1));
+            if (alcaldes_morena.get(6) != null) {
+                Log.i(TAG, "cqs --->> alcalde 1 " + "esta");
+                radio26_9.setText(alcaldes_morena.get(6));
             }
         } catch (Exception e) {
-            radio32_4.setVisibility(View.GONE);
+            radio26_9.setVisibility(View.GONE);
         }
+
         try {
-            if (locales_morena.get(2) != null) {
-                Log.i(TAG, "cqs --->> federal 1 " + "esta");
-                radio32_5.setText(locales_morena.get(2));
+            if (alcaldes_morena.get(7) != null) {
+                Log.i(TAG, "cqs --->> alcalde 1 " + "esta");
+                radio26_10.setText(alcaldes_morena.get(7));
             }
         } catch (Exception e) {
-            radio32_5.setVisibility(View.GONE);
+            radio26_10.setVisibility(View.GONE);
         }
+
         try {
-            if (locales_morena.get(3) != null) {
-                Log.i(TAG, "cqs --->> federal 1 " + "esta");
-                radio32_6.setText(locales_morena.get(3));
+            if (alcaldes_morena.get(8) != null) {
+                Log.i(TAG, "cqs --->> alcalde 1 " + "esta");
+                radio26_11.setText(alcaldes_morena.get(8));
             }
         } catch (Exception e) {
-            radio32_6.setVisibility(View.GONE);
+            radio26_11.setVisibility(View.GONE);
+        }
+
+        try {
+            if (alcaldes_morena.get(9) != null) {
+                Log.i(TAG, "cqs --->> alcalde 1 " + "esta");
+                radio26_12.setText(alcaldes_morena.get(9));
+            }
+        } catch (Exception e) {
+            radio26_12.setVisibility(View.GONE);
         }
 
 
 
-        textPregunta25.setText("Si los únicos candidatos a alcalde fueran " +(candidato_1_alcalde!=null?candidato_1_alcalde+", ":"")+(candidato_2_alcalde!=null?candidato_2_alcalde+", ":"")+(candidato_3_alcalde!=null?candidato_3_alcalde+", ":"")+(candidato_4_alcalde!=null?candidato_4_alcalde+", ":"")+" ¿por cuál votaría usted?");
-        textPregunta26.setText("Usted a quién de los siguientes candidatos prefiere que sea el candidato MORENA a la alcaldía? ");
 
-        textPregunta28.setText("Si los únicos candidatos a diputado federal fueran " +(candidato_1_federal!=null?candidato_1_federal+", ":"")+(candidato_2_federal!=null?candidato_2_federal+", ":"")+(candidato_3_federal!=null?candidato_3_federal+", ":"")+(candidato_4_federal!=null?candidato_4_federal+", ":"")+" ¿por cuál votaría usted?");
-        textPregunta29.setText("Usted a quién de los siguientes candidatos prefiere que sea el candidato MORENA a diputado federal? ");
 
-        textPregunta31.setText("Si los únicos candidatos a diputado local fueran " +(candidato_1_local!=null?candidato_1_local+", ":"")+(candidato_2_local!=null?candidato_2_local+", ":"")+(candidato_3_local!=null?candidato_3_local+", ":"")+(candidato_4_local!=null?candidato_4_local+", ":"")+" ¿por cuál votaría usted?");
-        textPregunta32.setText("Usted a quién de los siguientes candidatos prefiere que sea el candidato MORENA a dipuatdo local? ");
 
 
         Log.i(TAG, "cqs ------->> los Alcaldes: " + alcaldes);
@@ -2584,78 +1998,122 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
             if (alcaldes.get(0) != null) {
                 Log.i(TAG, "cqs --->> alcalde 1 " + "esta");
                 lay24_1.setVisibility(View.VISIBLE);
+                lay25_1.setVisibility(View.VISIBLE);
                 textPregunta24_1.setText(alcaldes.get(0).toString());
                 textPregunta24_1b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(0).toString() + "  para alcalde?");
+                textPregunta25_1.setText(alcaldes.get(0).toString());
+
             }
         } catch (Exception e) {
             lay24_1.setVisibility(View.GONE);
             lay24_1a.setVisibility(View.GONE);
             lay24_1b.setVisibility(View.GONE);
+            lay25_1.setVisibility(View.GONE);
+            lay25_1a.setVisibility(View.GONE);
+            lay25_1b.setVisibility(View.GONE);
+            lay25_1c.setVisibility(View.GONE);
+            lay25_1d.setVisibility(View.GONE);
+
         }
 
         try {
             if (alcaldes.get(1) != null) {
                 Log.i(TAG, "cqs --->> alcalde 2  " + "esta");
                 lay24_2.setVisibility(View.VISIBLE);
+                lay25_2.setVisibility(View.VISIBLE);
                 textPregunta24_2.setText(alcaldes.get(1).toString());
                 textPregunta24_2b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(1).toString() + "  para alcalde?");
+                textPregunta25_2.setText(alcaldes.get(1).toString());
             }
         } catch (Exception e) {
             lay24_2.setVisibility(View.GONE);
             lay24_2a.setVisibility(View.GONE);
             lay24_2b.setVisibility(View.GONE);
+            lay25_2.setVisibility(View.GONE);
+            lay25_2a.setVisibility(View.GONE);
+            lay25_2b.setVisibility(View.GONE);
+            lay25_2c.setVisibility(View.GONE);
+            lay25_2d.setVisibility(View.GONE);
         }
 
         try {
             if (alcaldes.get(2) != null) {
                 Log.i(TAG, "cqs --->> alcalde 3 " + "esta");
                 lay24_3.setVisibility(View.VISIBLE);
+                lay25_3.setVisibility(View.VISIBLE);
                 textPregunta24_3.setText(alcaldes.get(2).toString());
                 textPregunta24_3b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(2).toString() + "  para alcalde?");
+                textPregunta25_3.setText(alcaldes.get(2).toString());
             }
         } catch (Exception e) {
             lay24_3.setVisibility(View.GONE);
             lay24_3a.setVisibility(View.GONE);
             lay24_3b.setVisibility(View.GONE);
+            lay25_3.setVisibility(View.GONE);
+            lay25_3a.setVisibility(View.GONE);
+            lay25_3b.setVisibility(View.GONE);
+            lay25_3c.setVisibility(View.GONE);
+            lay25_3d.setVisibility(View.GONE);
         }
 
         try {
             if (alcaldes.get(3) != null) {
                 Log.i(TAG, "cqs --->> alcalde 4 " + "esta");
                 lay24_4.setVisibility(View.VISIBLE);
+                lay25_4.setVisibility(View.VISIBLE);
                 textPregunta24_4.setText(alcaldes.get(3).toString());
                 textPregunta24_4b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(3).toString() + "  para alcalde?");
+                textPregunta25_4.setText(alcaldes.get(3).toString());
             }
         } catch (Exception e) {
             lay24_4.setVisibility(View.GONE);
             lay24_4a.setVisibility(View.GONE);
             lay24_4b.setVisibility(View.GONE);
+            lay25_4.setVisibility(View.GONE);
+            lay25_4a.setVisibility(View.GONE);
+            lay25_4b.setVisibility(View.GONE);
+            lay25_4c.setVisibility(View.GONE);
+            lay25_4d.setVisibility(View.GONE);
         }
 
         try {
             if (alcaldes.get(4) != null) {
                 Log.i(TAG, "cqs --->> alcalde 5 " + "esta");
                 lay24_5.setVisibility(View.VISIBLE);
+                lay25_5.setVisibility(View.VISIBLE);
                 textPregunta24_5.setText(alcaldes.get(4).toString());
                 textPregunta24_5b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(4).toString() + "  para alcalde?");
+                textPregunta25_5.setText(alcaldes.get(4).toString());
             }
         } catch (Exception e) {
             lay24_5.setVisibility(View.GONE);
             lay24_5a.setVisibility(View.GONE);
             lay24_5b.setVisibility(View.GONE);
+            lay25_5.setVisibility(View.GONE);
+            lay25_5a.setVisibility(View.GONE);
+            lay25_5b.setVisibility(View.GONE);
+            lay25_5c.setVisibility(View.GONE);
+            lay25_5d.setVisibility(View.GONE);
         }
 
         try {
             if (alcaldes.get(5) != null) {
                 Log.i(TAG, "cqs --->> alcalde 6 " + "esta");
                 lay24_6.setVisibility(View.VISIBLE);
+                lay25_6.setVisibility(View.VISIBLE);
                 textPregunta24_6.setText(alcaldes.get(5).toString());
                 textPregunta24_6b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(5).toString() + "  para alcalde?");
+                textPregunta25_6.setText(alcaldes.get(5).toString());
             }
         } catch (Exception e) {
             lay24_6.setVisibility(View.GONE);
             lay24_6a.setVisibility(View.GONE);
             lay24_6b.setVisibility(View.GONE);
+            lay25_6.setVisibility(View.GONE);
+            lay25_6a.setVisibility(View.GONE);
+            lay25_6b.setVisibility(View.GONE);
+            lay25_6c.setVisibility(View.GONE);
+            lay25_6d.setVisibility(View.GONE);
         }
 
 
@@ -2663,321 +2121,88 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
             if (alcaldes.get(6) != null) {
                 Log.i(TAG, "cqs --->> alcalde 7 " + "esta");
                 lay24_7.setVisibility(View.VISIBLE);
+                lay25_7.setVisibility(View.VISIBLE);
                 textPregunta24_7.setText(alcaldes.get(6).toString());
                 textPregunta24_7b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(6).toString() + "  para alcalde?");
+                textPregunta25_7.setText(alcaldes.get(6).toString());
             }
         } catch (Exception e) {
             lay24_7.setVisibility(View.GONE);
             lay24_7a.setVisibility(View.GONE);
             lay24_7b.setVisibility(View.GONE);
+            lay25_7.setVisibility(View.GONE);
+            lay25_7a.setVisibility(View.GONE);
+            lay25_7b.setVisibility(View.GONE);
+            lay25_7c.setVisibility(View.GONE);
+            lay25_7d.setVisibility(View.GONE);
         }
 
         try {
             if (alcaldes.get(7) != null) {
                 Log.i(TAG, "cqs --->> alcalde 8 " + "esta");
                 lay24_8.setVisibility(View.VISIBLE);
+                lay25_8.setVisibility(View.VISIBLE);
                 textPregunta24_8.setText(alcaldes.get(7).toString());
                 textPregunta24_8b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(7).toString() + "  para alcalde?");
+                textPregunta25_8.setText(alcaldes.get(7).toString());
             }
         } catch (Exception e) {
             lay24_8.setVisibility(View.GONE);
             lay24_8a.setVisibility(View.GONE);
             lay24_8b.setVisibility(View.GONE);
+            lay25_8.setVisibility(View.GONE);
+            lay25_8a.setVisibility(View.GONE);
+            lay25_8b.setVisibility(View.GONE);
+            lay25_8c.setVisibility(View.GONE);
+            lay25_8d.setVisibility(View.GONE);
         }
 
         try {
             if (alcaldes.get(8) != null) {
                 Log.i(TAG, "cqs --->> alcalde 9 " + "esta");
                 lay24_9.setVisibility(View.VISIBLE);
+                lay25_9.setVisibility(View.VISIBLE);
                 textPregunta24_9.setText(alcaldes.get(8).toString());
                 textPregunta24_9b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(8).toString() + "  para alcalde?");
+                textPregunta25_9.setText(alcaldes.get(8).toString());
             }
         } catch (Exception e) {
             lay24_9.setVisibility(View.GONE);
             lay24_9a.setVisibility(View.GONE);
             lay24_9b.setVisibility(View.GONE);
+            lay25_9.setVisibility(View.GONE);
+            lay25_9a.setVisibility(View.GONE);
+            lay25_9b.setVisibility(View.GONE);
+            lay25_9c.setVisibility(View.GONE);
+            lay25_9d.setVisibility(View.GONE);
         }
 
         try {
             if (alcaldes.get(9) != null) {
                 Log.i(TAG, "cqs --->> alcalde 10 " + "esta");
-                lay24_6.setVisibility(View.VISIBLE);
-                textPregunta24_6.setText(alcaldes.get(9).toString());
-                textPregunta24_6b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(9).toString() + " para alcalde?");
+                lay24_10.setVisibility(View.VISIBLE);
+                lay25_10.setVisibility(View.VISIBLE);
+                textPregunta24_10.setText(alcaldes.get(9).toString());
+                textPregunta24_10b.setText("¿Estaría usted dispuesto o no a votar por " + alcaldes.get(9).toString() + " para alcalde?");
+                textPregunta25_10.setText(alcaldes.get(9).toString());
             }
         } catch (Exception e) {
             lay24_10.setVisibility(View.GONE);
             lay24_10a.setVisibility(View.GONE);
             lay24_10b.setVisibility(View.GONE);
+            lay25_10.setVisibility(View.GONE);
+            lay25_10a.setVisibility(View.GONE);
+            lay25_10b.setVisibility(View.GONE);
+            lay25_10c.setVisibility(View.GONE);
+            lay25_10d.setVisibility(View.GONE);
         }
 
 
-        //////////////  opciones federales  /////////
-
-        try {
-            if (federales.get(0) != null) {
-                Log.i(TAG, "cqs --->> federales 1 " + "esta");
-                lay27_1.setVisibility(View.VISIBLE);
-                textPregunta27_1.setText(federales.get(0).toString());
-                textPregunta27_1b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(0).toString() + " para diputado federal?");
-            }
-        } catch (Exception e) {
-            lay27_1.setVisibility(View.GONE);
-            lay27_1a.setVisibility(View.GONE);
-            lay27_1b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (federales.get(1) != null) {
-                Log.i(TAG, "cqs --->> federales 2  " + "esta");
-                lay27_2.setVisibility(View.VISIBLE);
-                textPregunta27_2.setText(federales.get(1).toString());
-                textPregunta27_2b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(1).toString() + " para diputado federal?");
-            }
-        } catch (Exception e) {
-            lay27_2.setVisibility(View.GONE);
-            lay27_2a.setVisibility(View.GONE);
-            lay27_2b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (federales.get(2) != null) {
-                Log.i(TAG, "cqs --->> federales 3 " + "esta");
-                lay27_3.setVisibility(View.VISIBLE);
-                textPregunta27_3.setText(federales.get(2).toString());
-                textPregunta27_3b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(2).toString() + "  para diputado federal?");
-            }
-        } catch (Exception e) {
-            lay27_3.setVisibility(View.GONE);
-            lay27_3a.setVisibility(View.GONE);
-            lay27_3b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (federales.get(3) != null) {
-                Log.i(TAG, "cqs --->> federales 4 " + "esta");
-                lay27_4.setVisibility(View.VISIBLE);
-                textPregunta27_4.setText(federales.get(3).toString());
-                textPregunta27_4b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(3).toString() + "  para diputado federal?");
-            }
-        } catch (Exception e) {
-            lay27_4.setVisibility(View.GONE);
-            lay27_4a.setVisibility(View.GONE);
-            lay27_4b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (federales.get(4) != null) {
-                Log.i(TAG, "cqs --->> federales 5 " + "esta");
-                lay27_5.setVisibility(View.VISIBLE);
-                textPregunta27_5.setText(federales.get(4).toString());
-                textPregunta27_5b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(4).toString() + "  para diputado federal?");
-            }
-        } catch (Exception e) {
-            lay27_5.setVisibility(View.GONE);
-            lay27_5a.setVisibility(View.GONE);
-            lay27_5b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (federales.get(5) != null) {
-                Log.i(TAG, "cqs --->> federales 6 " + "esta");
-                lay27_6.setVisibility(View.VISIBLE);
-                textPregunta27_6.setText(federales.get(5).toString());
-                textPregunta27_6b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(5).toString() + "  para diputado federal?");
-            }
-        } catch (Exception e) {
-            lay27_6.setVisibility(View.GONE);
-            lay27_6a.setVisibility(View.GONE);
-            lay27_6b.setVisibility(View.GONE);
-        }
 
 
-        try {
-            if (federales.get(6) != null) {
-                Log.i(TAG, "cqs --->> federales 7 " + "esta");
-                lay27_7.setVisibility(View.VISIBLE);
-                textPregunta27_7.setText(federales.get(6).toString());
-                textPregunta27_7b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(6).toString() + "  para diputado federal?");
-            }
-        } catch (Exception e) {
-            lay27_7.setVisibility(View.GONE);
-            lay27_7a.setVisibility(View.GONE);
-            lay27_7b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (federales.get(7) != null) {
-                Log.i(TAG, "cqs --->> federales 8 " + "esta");
-                lay27_8.setVisibility(View.VISIBLE);
-                textPregunta27_8.setText(federales.get(7).toString());
-                textPregunta27_8b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(7).toString() + "  para diputado federal?");
-            }
-        } catch (Exception e) {
-            lay27_8.setVisibility(View.GONE);
-            lay27_8a.setVisibility(View.GONE);
-            lay27_8b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (federales.get(8) != null) {
-                Log.i(TAG, "cqs --->> federales 9 " + "esta");
-                lay27_9.setVisibility(View.VISIBLE);
-                textPregunta27_9.setText(federales.get(8).toString());
-                textPregunta27_9b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(8).toString() + "  para diputado federal?");
-            }
-        } catch (Exception e) {
-            lay27_9.setVisibility(View.GONE);
-            lay27_9a.setVisibility(View.GONE);
-            lay27_9b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (federales.get(9) != null) {
-                Log.i(TAG, "cqs --->> federales 10 " + "esta");
-                lay27_6.setVisibility(View.VISIBLE);
-                textPregunta27_6.setText(federales.get(9).toString());
-                textPregunta27_6b.setText("¿Estaría usted dispuesto o no a votar por " + federales.get(9).toString() + "  para diputado federal?");
-            }
-        } catch (Exception e) {
-            lay27_10.setVisibility(View.GONE);
-            lay27_10a.setVisibility(View.GONE);
-            lay27_10b.setVisibility(View.GONE);
-        }
 
 
-        //////////////  opciones locales  /////////
 
-        try {
-            if (locales.get(0) != null) {
-                Log.i(TAG, "cqs --->> locales 1 " + "esta");
-                lay30_1.setVisibility(View.VISIBLE);
-                textPregunta30_1.setText(locales.get(0).toString());
-                textPregunta30_1b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(0).toString() + "  para diputado local?");
-            }
-        } catch (Exception e) {
-            lay30_1.setVisibility(View.GONE);
-            lay30_1a.setVisibility(View.GONE);
-            lay30_1b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (locales.get(1) != null) {
-                Log.i(TAG, "cqs --->> locales 2  " + "esta");
-                lay30_2.setVisibility(View.VISIBLE);
-                textPregunta30_2.setText(locales.get(1).toString());
-                textPregunta30_2b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(1).toString() + "  para diputado local?");
-            }
-        } catch (Exception e) {
-            lay30_2.setVisibility(View.GONE);
-            lay30_2a.setVisibility(View.GONE);
-            lay30_2b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (locales.get(2) != null) {
-                Log.i(TAG, "cqs --->> locales 3 " + "esta");
-                lay30_3.setVisibility(View.VISIBLE);
-                textPregunta30_3.setText(locales.get(2).toString());
-                textPregunta30_3b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(2).toString() + "  para diputado local?");
-            }
-        } catch (Exception e) {
-            lay30_3.setVisibility(View.GONE);
-            lay30_3a.setVisibility(View.GONE);
-            lay30_3b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (locales.get(3) != null) {
-                Log.i(TAG, "cqs --->> locales 4 " + "esta");
-                lay30_4.setVisibility(View.VISIBLE);
-                textPregunta30_4.setText(locales.get(3).toString());
-                textPregunta30_4b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(3).toString() + "  para diputado local?");
-            }
-        } catch (Exception e) {
-            lay30_4.setVisibility(View.GONE);
-            lay30_4a.setVisibility(View.GONE);
-            lay30_4b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (locales.get(4) != null) {
-                Log.i(TAG, "cqs --->> locales 5 " + "esta");
-                lay30_5.setVisibility(View.VISIBLE);
-                textPregunta30_5.setText(locales.get(4).toString());
-                textPregunta30_5b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(4).toString() + "  para diputado local?");
-            }
-        } catch (Exception e) {
-            lay30_5.setVisibility(View.GONE);
-            lay30_5a.setVisibility(View.GONE);
-            lay30_5b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (locales.get(5) != null) {
-                Log.i(TAG, "cqs --->> locales 6 " + "esta");
-                lay30_6.setVisibility(View.VISIBLE);
-                textPregunta30_6.setText(locales.get(5).toString());
-                textPregunta30_6b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(5).toString() + "  para diputado local?");
-            }
-        } catch (Exception e) {
-            lay30_6.setVisibility(View.GONE);
-            lay30_6a.setVisibility(View.GONE);
-            lay30_6b.setVisibility(View.GONE);
-        }
-
-
-        try {
-            if (locales.get(6) != null) {
-                Log.i(TAG, "cqs --->> locales 7 " + "esta");
-                lay30_7.setVisibility(View.VISIBLE);
-                textPregunta30_7.setText(locales.get(6).toString());
-                textPregunta30_7b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(6).toString() + "  para diputado local?");
-            }
-        } catch (Exception e) {
-            lay30_7.setVisibility(View.GONE);
-            lay30_7a.setVisibility(View.GONE);
-            lay30_7b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (locales.get(7) != null) {
-                Log.i(TAG, "cqs --->> locales 8 " + "esta");
-                lay30_8.setVisibility(View.VISIBLE);
-                textPregunta30_8.setText(locales.get(7).toString());
-                textPregunta30_8b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(7).toString() + "  para diputado local?");
-            }
-        } catch (Exception e) {
-            lay30_8.setVisibility(View.GONE);
-            lay30_8a.setVisibility(View.GONE);
-            lay30_8b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (locales.get(8) != null) {
-                Log.i(TAG, "cqs --->> locales 9 " + "esta");
-                lay30_9.setVisibility(View.VISIBLE);
-                textPregunta30_9.setText(locales.get(8).toString());
-                textPregunta30_9b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(8).toString() + "  para diputado local?");
-            }
-        } catch (Exception e) {
-            lay30_9.setVisibility(View.GONE);
-            lay30_9a.setVisibility(View.GONE);
-            lay30_9b.setVisibility(View.GONE);
-        }
-
-        try {
-            if (locales.get(9) != null) {
-                Log.i(TAG, "cqs --->> locales 10 " + "esta");
-                lay30_6.setVisibility(View.VISIBLE);
-                textPregunta30_6.setText(locales.get(9).toString());
-                textPregunta30_6b.setText("¿Estaría usted dispuesto o no a votar por " + locales.get(9).toString() + "  para diputado local?");
-            }
-        } catch (Exception e) {
-            lay30_10.setVisibility(View.GONE);
-            lay30_10a.setVisibility(View.GONE);
-            lay30_10b.setVisibility(View.GONE);
-        }
         
         
 
@@ -3139,13 +2364,19 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 } else if (checkedId == R.id.radio11) {
                     op6 = "Educación";
                     editPregunta6.setText("");
-                } else if (checkedId == R.id.radio12) {
-                    op6 = "Otro (registrar)";
-                    editPregunta6.setText("");
                 } else if (checkedId == R.id.radio13) {
+                    op6 = "Presidente/ Gobierno";
+                    editPregunta6.setText("");
+                }
+                else if (checkedId == R.id.radio14) {
+                    op6 = "Salud/ COVID";
+                    editPregunta6.setText("");
+                }
+                else if (checkedId == R.id.radio15) {
                     op6 = "Ninguno";
                     editPregunta6.setText("");
-                } else if (checkedId == R.id.radio0) {
+                }
+                else if (checkedId == R.id.radio0) {
                     op6 = "No sabe / No contestó";
                     editPregunta6.setText("");
                 }
@@ -3219,7 +2450,15 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 } else if (checkedId == R.id.radio13) {
                     op7 = "Ninguno";
                     editPregunta7.setText("");
-                } else if (checkedId == R.id.radio0) {
+                }
+                else if (checkedId == R.id.radio14) {
+                    op7 = "Asaltos";
+                    editPregunta7.setText("");
+                }
+                else if (checkedId == R.id.radio15) {
+                    op7 = "Drenaje";
+                    editPregunta7.setText("");
+                }else if (checkedId == R.id.radio0) {
                     op7 = "No sabe / No contestó";
                     editPregunta7.setText("");
                 }
@@ -3855,6 +3094,13 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     rdPregunta24_1b.clearCheck();
                     op24_1b = "No aplica";
 
+                    lay25_1 .setVisibility(View.GONE);	rdPregunta25_1.clearCheck();	op25_1="No aplica";
+                    lay25_1a .setVisibility(View.GONE);	rdPregunta25_1a.clearCheck();	op25_1a="No aplica";
+                    lay25_1b .setVisibility(View.GONE);	rdPregunta25_1b.clearCheck();	op25_1b="No aplica";
+                    lay25_1c .setVisibility(View.GONE);	rdPregunta25_1c.clearCheck();	op25_1c="No aplica";
+                    lay25_1d .setVisibility(View.GONE);	rdPregunta25_1d.clearCheck();	op25_1d="No aplica";
+
+
                 } else if (checkedId == R.id.radio4) {
                     op24_1 = "Si";
                     lay24_1a.setVisibility(View.VISIBLE);
@@ -3863,6 +3109,13 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_1b.setVisibility(View.VISIBLE);
                     rdPregunta24_1b.clearCheck();
                     op24_1b = "sin datos";
+
+                    lay25_1 .setVisibility(View.VISIBLE);	rdPregunta25_1.clearCheck();	op25_1="sin datos";
+                    lay25_1a .setVisibility(View.VISIBLE);	rdPregunta25_1a.clearCheck();	op25_1a="sin datos";
+                    lay25_1b .setVisibility(View.VISIBLE);	rdPregunta25_1b.clearCheck();	op25_1b="sin datos";
+                    lay25_1c .setVisibility(View.VISIBLE);	rdPregunta25_1c.clearCheck();	op25_1c="sin datos";
+                    lay25_1d .setVisibility(View.VISIBLE);	rdPregunta25_1d.clearCheck();	op25_1d="sin datos";
+
 
                 }
             }
@@ -3924,6 +3177,13 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     rdPregunta24_2b.clearCheck();
                     op24_2b = "sin datos";
 
+                    lay25_2  .setVisibility(View.GONE);	rdPregunta25_2 .clearCheck();	op25_2="No aplica";
+                    lay25_2a .setVisibility(View.GONE);	rdPregunta25_2a.clearCheck();	op25_2a="No aplica";
+                    lay25_2b .setVisibility(View.GONE);	rdPregunta25_2b.clearCheck();	op25_2b="No aplica";
+                    lay25_2c .setVisibility(View.GONE);	rdPregunta25_2c.clearCheck();	op25_2c="No aplica";
+                    lay25_2d .setVisibility(View.GONE);	rdPregunta25_2d.clearCheck();	op25_2d="No aplica";
+
+
                 } else if (checkedId == R.id.radio4) {
                     op24_2 = "Si";
                     lay24_2a.setVisibility(View.VISIBLE);
@@ -3932,6 +3192,12 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_2b.setVisibility(View.VISIBLE);
                     rdPregunta24_2b.clearCheck();
                     op24_2b = "sin datos";
+
+                    lay25_2  .setVisibility(View.VISIBLE);	rdPregunta25_2 .clearCheck();	op25_2="sin datos";
+                    lay25_2a .setVisibility(View.VISIBLE);	rdPregunta25_2a.clearCheck();	op25_2a="sin datos";
+                    lay25_2b .setVisibility(View.VISIBLE);	rdPregunta25_2b.clearCheck();	op25_2b="sin datos";
+                    lay25_2c .setVisibility(View.VISIBLE);	rdPregunta25_2c.clearCheck();	op25_2c="sin datos";
+                    lay25_2d .setVisibility(View.VISIBLE);	rdPregunta25_2d.clearCheck();	op25_2d="sin datos";
 
                 }
             }
@@ -3993,6 +3259,12 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     rdPregunta24_3b.clearCheck();
                     op24_3b = "sin datos";
 
+                    lay25_3  .setVisibility(View.GONE);	rdPregunta25_3 .clearCheck();	op25_3="No aplica";
+                    lay25_3a .setVisibility(View.GONE);	rdPregunta25_3a.clearCheck();	op25_3a="No aplica";
+                    lay25_3b .setVisibility(View.GONE);	rdPregunta25_3b.clearCheck();	op25_3b="No aplica";
+                    lay25_3c .setVisibility(View.GONE);	rdPregunta25_3c.clearCheck();	op25_3c="No aplica";
+                    lay25_3d .setVisibility(View.GONE);	rdPregunta25_3d.clearCheck();	op25_3d="No aplica";
+
                 } else if (checkedId == R.id.radio4) {
                     op24_3 = "Si";
                     lay24_3a.setVisibility(View.VISIBLE);
@@ -4001,6 +3273,12 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_3b.setVisibility(View.VISIBLE);
                     rdPregunta24_3b.clearCheck();
                     op24_3b = "sin datos";
+
+                    lay25_3  .setVisibility(View.VISIBLE);	rdPregunta25_3 .clearCheck();	op25_3="sin datos";
+                    lay25_3a .setVisibility(View.VISIBLE);	rdPregunta25_3a.clearCheck();	op25_3a="sin datos";
+                    lay25_3b .setVisibility(View.VISIBLE);	rdPregunta25_3b.clearCheck();	op25_3b="sin datos";
+                    lay25_3c .setVisibility(View.VISIBLE);	rdPregunta25_3c.clearCheck();	op25_3c="sin datos";
+                    lay25_3d .setVisibility(View.VISIBLE);	rdPregunta25_3d.clearCheck();	op25_3d="sin datos";
 
                 }
             }
@@ -4061,6 +3339,13 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_4b.setVisibility(View.GONE);
                     rdPregunta24_4b.clearCheck();
                     op24_4b = "sin datos";
+
+                    lay25_4  .setVisibility(View.GONE);	rdPregunta25_4 .clearCheck();	op25_4="No aplica";
+                    lay25_4a .setVisibility(View.GONE);	rdPregunta25_4a.clearCheck();	op25_4a="No aplica";
+                    lay25_4b .setVisibility(View.GONE);	rdPregunta25_4b.clearCheck();	op25_4b="No aplica";
+                    lay25_4c .setVisibility(View.GONE);	rdPregunta25_4c.clearCheck();	op25_4c="No aplica";
+                    lay25_4d .setVisibility(View.GONE);	rdPregunta25_4d.clearCheck();	op25_4d="No aplica";
+
                 } else if (checkedId == R.id.radio4) {
                     op24_4 = "Si";
                     lay24_4a.setVisibility(View.VISIBLE);
@@ -4069,6 +3354,13 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_4b.setVisibility(View.VISIBLE);
                     rdPregunta24_4b.clearCheck();
                     op24_4b = "sin datos";
+
+                    lay25_4  .setVisibility(View.VISIBLE);	rdPregunta25_4 .clearCheck();	op25_4="sin datos";
+                    lay25_4a .setVisibility(View.VISIBLE);	rdPregunta25_4a.clearCheck();	op25_4a="sin datos";
+                    lay25_4b .setVisibility(View.VISIBLE);	rdPregunta25_4b.clearCheck();	op25_4b="sin datos";
+                    lay25_4c .setVisibility(View.VISIBLE);	rdPregunta25_4c.clearCheck();	op25_4c="sin datos";
+                    lay25_4d .setVisibility(View.VISIBLE);	rdPregunta25_4d.clearCheck();	op25_4d="sin datos";
+
                 }
             }
         });
@@ -4128,6 +3420,13 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_5b.setVisibility(View.GONE);
                     rdPregunta24_5b.clearCheck();
                     op24_5b = "sin datos";
+
+                    lay25_5  .setVisibility(View.GONE);	rdPregunta25_5 .clearCheck();	op25_5="No aplica";
+                    lay25_5a .setVisibility(View.GONE);	rdPregunta25_5a.clearCheck();	op25_5a="No aplica";
+                    lay25_5b .setVisibility(View.GONE);	rdPregunta25_5b.clearCheck();	op25_5b="No aplica";
+                    lay25_5c .setVisibility(View.GONE);	rdPregunta25_5c.clearCheck();	op25_5c="No aplica";
+                    lay25_5d .setVisibility(View.GONE);	rdPregunta25_5d.clearCheck();	op25_5d="No aplica";
+
                 } else if (checkedId == R.id.radio4) {
                     op24_5 = "Si";
                     lay24_5a.setVisibility(View.VISIBLE);
@@ -4136,6 +3435,13 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_5b.setVisibility(View.VISIBLE);
                     rdPregunta24_5b.clearCheck();
                     op24_5b = "sin datos";
+
+                    lay25_5  .setVisibility(View.VISIBLE);	rdPregunta25_5 .clearCheck();	op25_5="sin datos";
+                    lay25_5a .setVisibility(View.VISIBLE);	rdPregunta25_5a.clearCheck();	op25_5a="sin datos";
+                    lay25_5b .setVisibility(View.VISIBLE);	rdPregunta25_5b.clearCheck();	op25_5b="sin datos";
+                    lay25_5c .setVisibility(View.VISIBLE);	rdPregunta25_5c.clearCheck();	op25_5c="sin datos";
+                    lay25_5d .setVisibility(View.VISIBLE);	rdPregunta25_5d.clearCheck();	op25_5d="sin datos";
+
                 }
             }
         });
@@ -4197,6 +3503,12 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     rdPregunta24_6b.clearCheck();
                     op24_6b = "No aplica";
 
+                    lay25_6  .setVisibility(View.GONE);	rdPregunta25_6 .clearCheck();	op25_6="No aplica";
+                    lay25_6a .setVisibility(View.GONE);	rdPregunta25_6a.clearCheck();	op25_6a="No aplica";
+                    lay25_6b .setVisibility(View.GONE);	rdPregunta25_6b.clearCheck();	op25_6b="No aplica";
+                    lay25_6c .setVisibility(View.GONE);	rdPregunta25_6c.clearCheck();	op25_6c="No aplica";
+                    lay25_6d .setVisibility(View.GONE);	rdPregunta25_6d.clearCheck();	op25_6d="No aplica";
+
                 } else if (checkedId == R.id.radio4) {
                     op24_6 = "Si";
                     lay24_6a.setVisibility(View.VISIBLE);
@@ -4205,6 +3517,12 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_6b.setVisibility(View.VISIBLE);
                     rdPregunta24_6b.clearCheck();
                     op24_6b = "sin datos";
+
+                    lay25_6  .setVisibility(View.VISIBLE);	rdPregunta25_6 .clearCheck();	op25_6="sin datos";
+                    lay25_6a .setVisibility(View.VISIBLE);	rdPregunta25_6a.clearCheck();	op25_6a="sin datos";
+                    lay25_6b .setVisibility(View.VISIBLE);	rdPregunta25_6b.clearCheck();	op25_6b="sin datos";
+                    lay25_6c .setVisibility(View.VISIBLE);	rdPregunta25_6c.clearCheck();	op25_6c="sin datos";
+                    lay25_6d .setVisibility(View.VISIBLE);	rdPregunta25_6d.clearCheck();	op25_6d="sin datos";
 
                 }
             }
@@ -4266,6 +3584,12 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     rdPregunta24_7b.clearCheck();
                     op24_7b = "sin datos";
 
+                    lay25_7  .setVisibility(View.GONE);	rdPregunta25_7 .clearCheck();	op25_7="No aplica";
+                    lay25_7a .setVisibility(View.GONE);	rdPregunta25_7a.clearCheck();	op25_7a="No aplica";
+                    lay25_7b .setVisibility(View.GONE);	rdPregunta25_7b.clearCheck();	op25_7b="No aplica";
+                    lay25_7c .setVisibility(View.GONE);	rdPregunta25_7c.clearCheck();	op25_7c="No aplica";
+                    lay25_7d .setVisibility(View.GONE);	rdPregunta25_7d.clearCheck();	op25_7d="No aplica";
+
                 } else if (checkedId == R.id.radio4) {
                     op24_7 = "Si";
                     lay24_7a.setVisibility(View.VISIBLE);
@@ -4274,6 +3598,12 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_7b.setVisibility(View.VISIBLE);
                     rdPregunta24_7b.clearCheck();
                     op24_7b = "sin datos";
+
+                    lay25_7  .setVisibility(View.VISIBLE);	rdPregunta25_7 .clearCheck();	op25_7="sin datos";
+                    lay25_7a .setVisibility(View.VISIBLE);	rdPregunta25_7a.clearCheck();	op25_7a="sin datos";
+                    lay25_7b .setVisibility(View.VISIBLE);	rdPregunta25_7b.clearCheck();	op25_7b="sin datos";
+                    lay25_7c .setVisibility(View.VISIBLE);	rdPregunta25_7c.clearCheck();	op25_7c="sin datos";
+                    lay25_7d .setVisibility(View.VISIBLE);	rdPregunta25_7d.clearCheck();	op25_7d="sin datos";
 
                 }
             }
@@ -4335,6 +3665,12 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     rdPregunta24_8b.clearCheck();
                     op24_8b = "sin datos";
 
+                    lay25_8  .setVisibility(View.GONE);	rdPregunta25_8 .clearCheck();	op25_8="No aplica";
+                    lay25_8a .setVisibility(View.GONE);	rdPregunta25_8a.clearCheck();	op25_8a="No aplica";
+                    lay25_8b .setVisibility(View.GONE);	rdPregunta25_8b.clearCheck();	op25_8b="No aplica";
+                    lay25_8c .setVisibility(View.GONE);	rdPregunta25_8c.clearCheck();	op25_8c="No aplica";
+                    lay25_8d .setVisibility(View.GONE);	rdPregunta25_8d.clearCheck();	op25_8d="No aplica";
+
                 } else if (checkedId == R.id.radio4) {
                     op24_8 = "Si";
                     lay24_8a.setVisibility(View.VISIBLE);
@@ -4343,6 +3679,12 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_8b.setVisibility(View.VISIBLE);
                     rdPregunta24_8b.clearCheck();
                     op24_8b = "sin datos";
+
+                    lay25_8  .setVisibility(View.VISIBLE);	rdPregunta25_8 .clearCheck();	op25_8="sin datos";
+                    lay25_8a .setVisibility(View.VISIBLE);	rdPregunta25_8a.clearCheck();	op25_8a="sin datos";
+                    lay25_8b .setVisibility(View.VISIBLE);	rdPregunta25_8b.clearCheck();	op25_8b="sin datos";
+                    lay25_8c .setVisibility(View.VISIBLE);	rdPregunta25_8c.clearCheck();	op25_8c="sin datos";
+                    lay25_8d .setVisibility(View.VISIBLE);	rdPregunta25_8d.clearCheck();	op25_8d="sin datos";
 
                 }
             }
@@ -4403,6 +3745,13 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_9b.setVisibility(View.GONE);
                     rdPregunta24_9b.clearCheck();
                     op24_9b = "sin datos";
+
+                    lay25_9  .setVisibility(View.GONE);	rdPregunta25_9 .clearCheck();	op25_9="No aplica";
+                    lay25_9a .setVisibility(View.GONE);	rdPregunta25_9a.clearCheck();	op25_9a="No aplica";
+                    lay25_9b .setVisibility(View.GONE);	rdPregunta25_9b.clearCheck();	op25_9b="No aplica";
+                    lay25_9c .setVisibility(View.GONE);	rdPregunta25_9c.clearCheck();	op25_9c="No aplica";
+                    lay25_9d .setVisibility(View.GONE);	rdPregunta25_9d.clearCheck();	op25_9d="No aplica";
+
                 } else if (checkedId == R.id.radio4) {
                     op24_9 = "Si";
                     lay24_9a.setVisibility(View.VISIBLE);
@@ -4411,6 +3760,13 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_9b.setVisibility(View.VISIBLE);
                     rdPregunta24_9b.clearCheck();
                     op24_9b = "sin datos";
+
+                    lay25_9  .setVisibility(View.VISIBLE);	rdPregunta25_9 .clearCheck();	op25_9="sin datos";
+                    lay25_9a .setVisibility(View.VISIBLE);	rdPregunta25_9a.clearCheck();	op25_9a="sin datos";
+                    lay25_9b .setVisibility(View.VISIBLE);	rdPregunta25_9b.clearCheck();	op25_9b="sin datos";
+                    lay25_9c .setVisibility(View.VISIBLE);	rdPregunta25_9c.clearCheck();	op25_9c="sin datos";
+                    lay25_9d .setVisibility(View.VISIBLE);	rdPregunta25_9d.clearCheck();	op25_9d="sin datos";
+
                 }
             }
         });
@@ -4470,6 +3826,13 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_10b.setVisibility(View.GONE);
                     rdPregunta24_10b.clearCheck();
                     op24_10b = "sin datos";
+
+                    lay25_10  .setVisibility(View.GONE);	rdPregunta25_10 .clearCheck();	op25_10="No aplica";
+                    lay25_10a .setVisibility(View.GONE);	rdPregunta25_10a.clearCheck();	op25_10a="No aplica";
+                    lay25_10b .setVisibility(View.GONE);	rdPregunta25_10b.clearCheck();	op25_10b="No aplica";
+                    lay25_10c .setVisibility(View.GONE);	rdPregunta25_10c.clearCheck();	op25_10c="No aplica";
+                    lay25_10d .setVisibility(View.GONE);	rdPregunta25_10d.clearCheck();	op25_10d="No aplica";
+
                 } else if (checkedId == R.id.radio4) {
                     op24_10 = "Si";
                     lay24_10a.setVisibility(View.VISIBLE);
@@ -4478,6 +3841,12 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                     lay24_10b.setVisibility(View.VISIBLE);
                     rdPregunta24_10b.clearCheck();
                     op24_10b = "sin datos";
+
+                    lay25_10  .setVisibility(View.VISIBLE);	rdPregunta25_10 .clearCheck();	op25_10="sin datos";
+                    lay25_10a .setVisibility(View.VISIBLE);	rdPregunta25_10a.clearCheck();	op25_10a="sin datos";
+                    lay25_10b .setVisibility(View.VISIBLE);	rdPregunta25_10b.clearCheck();	op25_10b="sin datos";
+                    lay25_10c .setVisibility(View.VISIBLE);	rdPregunta25_10c.clearCheck();	op25_10c="sin datos";
+                    lay25_10d .setVisibility(View.VISIBLE);	rdPregunta25_10d.clearCheck();	op25_10d="sin datos";
                 }
             }
         });
@@ -4523,60 +3892,923 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         });
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        if(candidato_1_alcalde!=null){
-            radio25_3.setText(candidato_1_alcalde);
-        }
-        if(candidato_1_alcalde==null){
-            radio25_3.setVisibility(View.GONE);
-        }
-
-        if(candidato_2_alcalde!=null){
-            radio25_4.setText(candidato_2_alcalde);
-        }
-        if(candidato_2_alcalde==null){
-            radio25_4.setVisibility(View.GONE);
-        }
-
-        if(candidato_3_alcalde!=null){
-            radio25_5.setText(candidato_3_alcalde);
-        }
-        if(candidato_3_alcalde==null){
-            radio25_5.setVisibility(View.GONE);
-        }
-
-        if(candidato_4_alcalde!=null){
-            radio25_6.setText(candidato_4_alcalde);
-        }
-        if(candidato_4_alcalde==null){
-            radio25_6.setVisibility(View.GONE);
-        }
-
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         rdPregunta25.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio25_1) {
-                    op25="0";
-                } else if (checkedId == R.id.radio25_2) {
+                if (checkedId == R.id.radio1) {
+                    op25 = "?0";
+                }
+                else if (checkedId == R.id.radio2) {
                     op25 = "25";
-                } else if (checkedId == R.id.radio25_3) {
-                    op25 = radio25_3.getText().toString();
-                } else if (checkedId == R.id.radio25_4) {
-                    op25 = radio25_4.getText().toString();
-                } else if (checkedId == R.id.radio25_5) {
-                    op25 = radio25_5.getText().toString();
-                } else if (checkedId == R.id.radio25_6) {
-                    op25 = radio25_6.getText().toString();
-                } else if (checkedId == R.id.radio25_7) {
-                    op25 = "Otro";
-                } else if (checkedId == R.id.radio25_0) {
-                    op25 = "No sabe / No contestó";
                 }
             }
         });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_1 = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_1 = "25_1";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_1 = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_1 = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_1a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_1a = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_1a = "25_1a";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_1a = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_1a = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_1b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_1b = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_1b = "25_1b";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_1b = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_1b = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_1c.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_1c = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_1c = "25_1c";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_1c = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_1c = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_1d.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_1d = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_1d = "25_1d";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_1d = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_1d = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_2.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_2 = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_2 = "25_2";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_2 = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_2 = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_2a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_2a = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_2a = "25_2a";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_2a = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_2a = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_2b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_2b = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_2b = "25_2b";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_2b = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_2b = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_2c.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_2c = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_2c = "25_2c";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_2c = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_2c = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_2d.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_2d = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_2d = "25_2d";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_2d = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_2d = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_3.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_3 = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_3 = "25_3";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_3 = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_3 = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_3a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_3a = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_3a = "25_3a";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_3a = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_3a = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_3b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_3b = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_3b = "25_3b";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_3b = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_3b = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_3c.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_3c = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_3c = "25_3c";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_3c = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_3c = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_3d.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_3d = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_3d = "25_3d";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_3d = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_3d = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_4.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_4 = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_4 = "25_4";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_4 = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_4 = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_4a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_4a = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_4a = "25_4a";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_4a = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_4a = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_4b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_4b = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_4b = "25_4b";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_4b = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_4b = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_4c.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_4c = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_4c = "25_4c";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_4c = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_4c = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_4d.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_4d = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_4d = "25_4d";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_4d = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_4d = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_5.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_5 = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_5 = "25_5";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_5 = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_5 = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_5a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_5a = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_5a = "25_5a";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_5a = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_5a = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_5b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_5b = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_5b = "25_5b";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_5b = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_5b = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_5c.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_5c = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_5c = "25_5c";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_5c = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_5c = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_5d.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_5d = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_5d = "25_5d";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_5d = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_5d = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_6.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_6 = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_6 = "25_6";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_6 = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_6 = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_6a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_6a = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_6a = "25_6a";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_6a = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_6a = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_6b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_6b = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_6b = "25_6b";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_6b = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_6b = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_6c.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_6c = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_6c = "25_6c";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_6c = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_6c = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_6d.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_6d = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_6d = "25_6d";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_6d = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_6d = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_7.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_7 = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_7 = "25_7";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_7 = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_7 = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_7a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_7a = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_7a = "25_7a";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_7a = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_7a = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_7b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_7b = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_7b = "25_7b";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_7b = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_7b = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_7c.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_7c = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_7c = "25_7c";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_7c = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_7c = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_7d.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_7d = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_7d = "25_7d";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_7d = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_7d = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_8.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_8 = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_8 = "25_8";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_8 = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_8 = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_8a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_8a = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_8a = "25_8a";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_8a = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_8a = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_8b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_8b = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_8b = "25_8b";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_8b = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_8b = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_8c.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_8c = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_8c = "25_8c";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_8c = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_8c = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_8d.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_8d = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_8d = "25_8d";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_8d = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_8d = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_9.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_9 = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_9 = "25_9";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_9 = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_9 = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_9a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_9a = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_9a = "25_9a";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_9a = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_9a = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_9b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_9b = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_9b = "25_9b";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_9b = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_9b = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_9c.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_9c = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_9c = "25_9c";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_9c = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_9c = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_9d.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_9d = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_9d = "25_9d";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_9d = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_9d = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_10.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_10 = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_10 = "25_10";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_10 = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_10 = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_10a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_10a = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_10a = "25_10a";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_10a = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_10a = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_10b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_10b = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_10b = "25_10b";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_10b = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_10b = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_10c.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_10c = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_10c = "25_10c";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_10c = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_10c = "No";
+                }
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        rdPregunta25_10d.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radio1) {
+                    op25_10d = "0";
+                }
+                else if (checkedId == R.id.radio2) {
+                    op25_10d = "25_10d";
+                }
+                else if (checkedId == R.id.radio3) {
+                    op25_10d = "Si";
+                }
+                else if (checkedId == R.id.radio4) {
+                    op25_10d = "No";
+                }
+            }
+        });
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         rdPregunta26.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
@@ -4594,1567 +4826,65 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 } else if (checkedId == R.id.radio26_6) {
                     op26 = radio26_6.getText().toString();
                 } else if (checkedId == R.id.radio26_7) {
-                    op26 = "Otro";
+                    op26 = radio26_7.getText().toString();
                 } else if (checkedId == R.id.radio26_8) {
+                    op26 = radio26_8.getText().toString();
+                } else if (checkedId == R.id.radio26_9) {
+                    op26 = radio26_9.getText().toString();
+                } else if (checkedId == R.id.radio26_10) {
+                    op26 = radio26_10.getText().toString();
+                } else if (checkedId == R.id.radio26_11) {
+                    op26 = radio26_11.getText().toString();
+                } else if (checkedId == R.id.radio26_12) {
+                    op26 = radio26_12.getText().toString();
+                } else if (checkedId == R.id.radio26_13) {
+                    op26 = "Otro";
+                } else if (checkedId == R.id.radio26_14) {
                     op26 = "Ninguno";
                 } else if (checkedId == R.id.radio26_0) {
                     op26 = "No sabe / No contestó";
                 }
             }
         });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//    rdPregunta27.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-//        @Override
-//        public void onCheckedChanged(RadioGroup group, int checkedId) {
-//            if (checkedId == R.id.radio1) {
-//                op27 = "0";
-//            }
-//            else if (checkedId == R.id.radio2) {
-//                op27 = "27";
-//            }
-//        }
-//    });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_1 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_1 = "27_1";
-                } else if (checkedId == R.id.radio3) {
-                    op27_1 = "No";
-                    lay27_1a.setVisibility(View.GONE);
-                    rdPregunta27_1a.clearCheck();
-                    op27_1a = "sin datos";
-                    lay27_1b.setVisibility(View.GONE);
-                    rdPregunta27_1b.clearCheck();
-                    op27_1b = "sin datos";
-
-                } else if (checkedId == R.id.radio4) {
-                    op27_1 = "Si";
-                    lay27_1a.setVisibility(View.VISIBLE);
-                    rdPregunta27_1a.clearCheck();
-                    op27_1a = "sin datos";
-                    lay27_1b.setVisibility(View.VISIBLE);
-                    rdPregunta27_1b.clearCheck();
-                    op27_1b = "sin datos";
-
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_1a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_1a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_1a = "27_1a";
-                } else if (checkedId == R.id.radio3) {
-                    op27_1a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op27_1a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op27_1a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op27_1a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op27_1a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op27_1a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_1b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_1b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_1b = "27_1b";
-                } else if (checkedId == R.id.radio3) {
-                    op27_1b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op27_1b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op27_1b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_2.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_2 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_2 = "27_2";
-                } else if (checkedId == R.id.radio3) {
-                    op27_2 = "No";
-                    lay27_2a.setVisibility(View.GONE);
-                    rdPregunta27_2a.clearCheck();
-                    op27_2a = "sin datos";
-                    lay27_2b.setVisibility(View.GONE);
-                    rdPregunta27_2b.clearCheck();
-                    op27_2b = "sin datos";
-
-                } else if (checkedId == R.id.radio4) {
-                    op27_2 = "Si";
-                    lay27_2a.setVisibility(View.VISIBLE);
-                    rdPregunta27_2a.clearCheck();
-                    op27_2a = "sin datos";
-                    lay27_2b.setVisibility(View.VISIBLE);
-                    rdPregunta27_2b.clearCheck();
-                    op27_2b = "sin datos";
-
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_2a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_2a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_2a = "27_2a";
-                } else if (checkedId == R.id.radio3) {
-                    op27_2a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op27_2a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op27_2a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op27_2a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op27_2a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op27_2a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_2b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_2b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_2b = "27_2b";
-                } else if (checkedId == R.id.radio3) {
-                    op27_2b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op27_2b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op27_2b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_3.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_3 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_3 = "27_3";
-                } else if (checkedId == R.id.radio3) {
-                    op27_3 = "No";
-                    lay27_3a.setVisibility(View.GONE);
-                    rdPregunta27_3a.clearCheck();
-                    op27_3a = "sin datos";
-                    lay27_3b.setVisibility(View.GONE);
-                    rdPregunta27_3b.clearCheck();
-                    op27_3b = "sin datos";
-
-                } else if (checkedId == R.id.radio4) {
-                    op27_3 = "Si";
-                    lay27_3a.setVisibility(View.VISIBLE);
-                    rdPregunta27_3a.clearCheck();
-                    op27_3a = "sin datos";
-                    lay27_3b.setVisibility(View.VISIBLE);
-                    rdPregunta27_3b.clearCheck();
-                    op27_3b = "sin datos";
-
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_3a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_3a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_3a = "27_3a";
-                } else if (checkedId == R.id.radio3) {
-                    op27_3a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op27_3a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op27_3a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op27_3a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op27_3a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op27_3a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_3b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_3b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_3b = "27_3b";
-                } else if (checkedId == R.id.radio3) {
-                    op27_3b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op27_3b = "Si";
-                } else if (checkedId == R.id.radio5) {
-                    op27_3b = "No sabe / No contestó";
-                } else if (checkedId == R.id.radio0) {
-                    op27_3b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        rdPregunta27_4.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_4 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_4 = "27_4";
-                } else if (checkedId == R.id.radio3) {
-                    op27_4 = "No";
-                    lay27_4a.setVisibility(View.GONE);
-                    rdPregunta27_4a.clearCheck();
-                    op27_4a = "sin datos";
-                    lay27_4b.setVisibility(View.GONE);
-                    rdPregunta27_4b.clearCheck();
-                    op27_4b = "sin datos";
-                } else if (checkedId == R.id.radio4) {
-                    op27_4 = "Si";
-                    lay27_4a.setVisibility(View.VISIBLE);
-                    rdPregunta27_4a.clearCheck();
-                    op27_4a = "sin datos";
-                    lay27_4b.setVisibility(View.VISIBLE);
-                    rdPregunta27_4b.clearCheck();
-                    op27_4b = "sin datos";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_4a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_4a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_4a = "27_4a";
-                } else if (checkedId == R.id.radio3) {
-                    op27_4a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op27_4a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op27_4a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op27_4a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op27_4a = "muy mala";
-                } else if (checkedId == R.id.radio0) {
-                    op27_4a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_4b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_4b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_4b = "27_4b";
-                } else if (checkedId == R.id.radio3) {
-                    op27_4b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op27_4b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op27_4b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_5.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_5 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_5 = "27_5";
-                } else if (checkedId == R.id.radio3) {
-                    op27_5 = "No";
-                    lay27_5a.setVisibility(View.GONE);
-                    rdPregunta27_5a.clearCheck();
-                    op27_5a = "sin datos";
-                    lay27_5b.setVisibility(View.GONE);
-                    rdPregunta27_5b.clearCheck();
-                    op27_5b = "sin datos";
-                } else if (checkedId == R.id.radio4) {
-                    op27_5 = "Si";
-                    lay27_5a.setVisibility(View.VISIBLE);
-                    rdPregunta27_5a.clearCheck();
-                    op27_5a = "sin datos";
-                    lay27_5b.setVisibility(View.VISIBLE);
-                    rdPregunta27_5b.clearCheck();
-                    op27_5b = "sin datos";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_5a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_5a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_5a = "27_5a";
-                } else if (checkedId == R.id.radio3) {
-                    op27_5a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op27_5a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op27_5a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op27_5a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op27_5a = "muy mala";
-                } else if (checkedId == R.id.radio0) {
-                    op27_5a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_5b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_5b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_5b = "27_5b";
-                } else if (checkedId == R.id.radio3) {
-                    op27_5b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op27_5b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op27_5b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_6.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_6 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_6 = "27_6";
-                } else if (checkedId == R.id.radio3) {
-                    op27_6 = "No";
-                    lay27_6a.setVisibility(View.GONE);
-                    rdPregunta27_6a.clearCheck();
-                    op27_6a = "No aplica";
-                    lay27_6b.setVisibility(View.GONE);
-                    rdPregunta27_6b.clearCheck();
-                    op27_6b = "No aplica";
-
-                } else if (checkedId == R.id.radio4) {
-                    op27_6 = "Si";
-                    lay27_6a.setVisibility(View.VISIBLE);
-                    rdPregunta27_6a.clearCheck();
-                    op27_6a = "sin datos";
-                    lay27_6b.setVisibility(View.VISIBLE);
-                    rdPregunta27_6b.clearCheck();
-                    op27_6b = "sin datos";
-
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_6a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_6a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_6a = "27_6a";
-                } else if (checkedId == R.id.radio3) {
-                    op27_6a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op27_6a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op27_6a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op27_6a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op27_6a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op27_6a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_6b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_6b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_6b = "27_6b";
-                } else if (checkedId == R.id.radio3) {
-                    op27_6b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op27_6b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op27_6b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_7.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_7 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_7 = "27_7";
-                } else if (checkedId == R.id.radio3) {
-                    op27_7 = "No";
-                    lay27_7a.setVisibility(View.GONE);
-                    rdPregunta27_7a.clearCheck();
-                    op27_7a = "sin datos";
-                    lay27_7b.setVisibility(View.GONE);
-                    rdPregunta27_7b.clearCheck();
-                    op27_7b = "sin datos";
-
-                } else if (checkedId == R.id.radio4) {
-                    op27_7 = "Si";
-                    lay27_7a.setVisibility(View.VISIBLE);
-                    rdPregunta27_7a.clearCheck();
-                    op27_7a = "sin datos";
-                    lay27_7b.setVisibility(View.VISIBLE);
-                    rdPregunta27_7b.clearCheck();
-                    op27_7b = "sin datos";
-
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_7a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_7a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_7a = "27_7a";
-                } else if (checkedId == R.id.radio3) {
-                    op27_7a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op27_7a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op27_7a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op27_7a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op27_7a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op27_7a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_7b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_7b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_7b = "27_7b";
-                } else if (checkedId == R.id.radio3) {
-                    op27_7b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op27_7b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op27_7b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_8.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_8 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_8 = "27_8";
-                } else if (checkedId == R.id.radio3) {
-                    op27_8 = "No";
-                    lay27_8a.setVisibility(View.GONE);
-                    rdPregunta27_8a.clearCheck();
-                    op27_8a = "sin datos";
-                    lay27_8b.setVisibility(View.GONE);
-                    rdPregunta27_8b.clearCheck();
-                    op27_8b = "sin datos";
-
-                } else if (checkedId == R.id.radio4) {
-                    op27_8 = "Si";
-                    lay27_8a.setVisibility(View.VISIBLE);
-                    rdPregunta27_8a.clearCheck();
-                    op27_8a = "sin datos";
-                    lay27_8b.setVisibility(View.VISIBLE);
-                    rdPregunta27_8b.clearCheck();
-                    op27_8b = "sin datos";
-
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_8a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_8a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_8a = "27_8a";
-                } else if (checkedId == R.id.radio3) {
-                    op27_8a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op27_8a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op27_8a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op27_8a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op27_8a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op27_8a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_8b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_8b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_8b = "27_8b";
-                } else if (checkedId == R.id.radio3) {
-                    op27_8b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op27_8b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op27_8b = "No sabe / No contestó";
-                }
-            }
-        });
-
-        rdPregunta27_9.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_9 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_9 = "27_9";
-                } else if (checkedId == R.id.radio3) {
-                    op27_9 = "No";
-                    lay27_9a.setVisibility(View.GONE);
-                    rdPregunta27_9a.clearCheck();
-                    op27_9a = "sin datos";
-                    lay27_9b.setVisibility(View.GONE);
-                    rdPregunta27_9b.clearCheck();
-                    op27_9b = "sin datos";
-                } else if (checkedId == R.id.radio4) {
-                    op27_9 = "Si";
-                    lay27_9a.setVisibility(View.VISIBLE);
-                    rdPregunta27_9a.clearCheck();
-                    op27_9a = "sin datos";
-                    lay27_9b.setVisibility(View.VISIBLE);
-                    rdPregunta27_9b.clearCheck();
-                    op27_9b = "sin datos";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_9a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_9a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_9a = "27_9a";
-                } else if (checkedId == R.id.radio3) {
-                    op27_9a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op27_9a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op27_9a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op27_9a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op27_9a = "muy mala";
-                } else if (checkedId == R.id.radio0) {
-                    op27_9a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_9b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_9b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_9b = "27_9b";
-                } else if (checkedId == R.id.radio3) {
-                    op27_9b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op27_9b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op27_9b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_10.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_10 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_10 = "27_10";
-                } else if (checkedId == R.id.radio3) {
-                    op27_10 = "No";
-                    lay27_10a.setVisibility(View.GONE);
-                    rdPregunta27_10a.clearCheck();
-                    op27_10a = "sin datos";
-                    lay27_10b.setVisibility(View.GONE);
-                    rdPregunta27_10b.clearCheck();
-                    op27_10b = "sin datos";
-                } else if (checkedId == R.id.radio4) {
-                    op27_10 = "Si";
-                    lay27_10a.setVisibility(View.VISIBLE);
-                    rdPregunta27_10a.clearCheck();
-                    op27_10a = "sin datos";
-                    lay27_10b.setVisibility(View.VISIBLE);
-                    rdPregunta27_10b.clearCheck();
-                    op27_10b = "sin datos";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_10a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_10a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_10a = "27_10a";
-                } else if (checkedId == R.id.radio3) {
-                    op27_10a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op27_10a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op27_10a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op27_10a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op27_10a = "muy mala";
-                } else if (checkedId == R.id.radio0) {
-                    op27_10a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta27_10b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op27_10b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op27_10b = "27_10b";
-                } else if (checkedId == R.id.radio3) {
-                    op27_10b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op27_10b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op27_10b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        if(candidato_1_federal!=null){
-            radio28_3.setText(candidato_1_federal);
-        }
-        if(candidato_1_federal==null){
-            radio28_3.setVisibility(View.GONE);
-        }
-
-        if(candidato_2_federal!=null){
-            radio28_4.setText(candidato_2_federal);
-        }
-        if(candidato_2_federal==null){
-            radio28_4.setVisibility(View.GONE);
-        }
-
-        if(candidato_3_federal!=null){
-            radio28_5.setText(candidato_3_federal);
-        }
-        if(candidato_3_federal==null){
-            radio28_5.setVisibility(View.GONE);
-        }
-
-        if(candidato_4_federal!=null){
-            radio28_6.setText(candidato_4_federal);
-        }
-        if(candidato_4_federal==null){
-            radio28_6.setVisibility(View.GONE);
-        }
-
-
-        rdPregunta28.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio28_1) {
-                    op28="0";
-                } else if (checkedId == R.id.radio28_2) {
-                    op28 = "28";
-                } else if (checkedId == R.id.radio28_3) {
-                    op28 = radio28_3.getText().toString();
-                } else if (checkedId == R.id.radio28_4) {
-                    op28 = radio28_4.getText().toString();
-                } else if (checkedId == R.id.radio28_5) {
-                    op28 = radio28_5.getText().toString();
-                } else if (checkedId == R.id.radio28_6) {
-                    op28 = radio28_6.getText().toString();
-                } else if (checkedId == R.id.radio28_7) {
-                    op28 = "Otro";
-                } else if (checkedId == R.id.radio28_0) {
-                    op28 = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta29.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio29_1) {
-                    op29 = "0";
-                } else if (checkedId == R.id.radio29_2) {
-                    op29 = "29";
-                } else if (checkedId == R.id.radio29_3) {
-                    op29 = radio29_3.getText().toString();
-                } else if (checkedId == R.id.radio29_4) {
-                    op29 = radio29_4.getText().toString();
-                } else if (checkedId == R.id.radio29_5) {
-                    op29 = radio29_5.getText().toString();
-                } else if (checkedId == R.id.radio29_6) {
-                    op29 = radio29_6.getText().toString();
-                } else if (checkedId == R.id.radio29_7) {
-                    op29 = "Otro";
-                } else if (checkedId == R.id.radio29_8) {
-                    op29 = "Ninguno";
-                } else if (checkedId == R.id.radio29_0) {
-                    op29 = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//    rdPregunta30.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-//        @Override
-//        public void onCheckedChanged(RadioGroup group, int checkedId) {
-//            if (checkedId == R.id.radio1) {
-//                op30 = "0";
-//            }
-//            else if (checkedId == R.id.radio2) {
-//                op30 = "30";
-//            }
-//        }
-//    });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_1 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_1 = "30_1";
-                } else if (checkedId == R.id.radio3) {
-                    op30_1 = "No";
-                    lay30_1a.setVisibility(View.GONE);
-                    rdPregunta30_1a.clearCheck();
-                    op30_1a = "sin datos";
-                    lay30_1b.setVisibility(View.GONE);
-                    rdPregunta30_1b.clearCheck();
-                    op30_1b = "sin datos";
-
-                } else if (checkedId == R.id.radio4) {
-                    op30_1 = "Si";
-                    lay30_1a.setVisibility(View.VISIBLE);
-                    rdPregunta30_1a.clearCheck();
-                    op30_1a = "sin datos";
-                    lay30_1b.setVisibility(View.VISIBLE);
-                    rdPregunta30_1b.clearCheck();
-                    op30_1b = "sin datos";
-
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_1a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_1a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_1a = "30_1a";
-                } else if (checkedId == R.id.radio3) {
-                    op30_1a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op30_1a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op30_1a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op30_1a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op30_1a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op30_1a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_1b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_1b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_1b = "30_1b";
-                } else if (checkedId == R.id.radio3) {
-                    op30_1b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op30_1b = "Si";
-                } else if (checkedId == R.id.radio5) {
-                    op30_1b = "No sabe / No contestó";
-                } else if (checkedId == R.id.radio0) {
-                    op30_1b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_2.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_2 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_2 = "30_2";
-                } else if (checkedId == R.id.radio3) {
-                    op30_2 = "No";
-                    lay30_2a.setVisibility(View.GONE);
-                    rdPregunta30_2a.clearCheck();
-                    op30_2a = "sin datos";
-                    lay30_2b.setVisibility(View.GONE);
-                    rdPregunta30_2b.clearCheck();
-                    op30_2b = "sin datos";
-
-                } else if (checkedId == R.id.radio4) {
-                    op30_2 = "Si";
-                    lay30_2a.setVisibility(View.VISIBLE);
-                    rdPregunta30_2a.clearCheck();
-                    op30_2a = "sin datos";
-                    lay30_2b.setVisibility(View.VISIBLE);
-                    rdPregunta30_2b.clearCheck();
-                    op30_2b = "sin datos";
-
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_2a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_2a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_2a = "30_2a";
-                } else if (checkedId == R.id.radio3) {
-                    op30_2a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op30_2a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op30_2a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op30_2a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op30_2a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op30_2a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_2b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_2b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_2b = "30_2b";
-                } else if (checkedId == R.id.radio3) {
-                    op30_2b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op30_2b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op30_2b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_3.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_3 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_3 = "30_3";
-                } else if (checkedId == R.id.radio3) {
-                    op30_3 = "No";
-                    lay30_3a.setVisibility(View.GONE);
-                    rdPregunta30_3a.clearCheck();
-                    op30_3a = "sin datos";
-                    lay30_3b.setVisibility(View.GONE);
-                    rdPregunta30_3b.clearCheck();
-                    op30_3b = "sin datos";
-
-                } else if (checkedId == R.id.radio4) {
-                    op30_3 = "Si";
-                    lay30_3a.setVisibility(View.VISIBLE);
-                    rdPregunta30_3a.clearCheck();
-                    op30_3a = "sin datos";
-                    lay30_3b.setVisibility(View.VISIBLE);
-                    rdPregunta30_3b.clearCheck();
-                    op30_3b = "sin datos";
-
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_3a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_3a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_3a = "30_3a";
-                } else if (checkedId == R.id.radio3) {
-                    op30_3a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op30_3a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op30_3a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op30_3a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op30_3a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op30_3a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_3b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_3b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_3b = "30_3b";
-                } else if (checkedId == R.id.radio3) {
-                    op30_3b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op30_3b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op30_3b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        rdPregunta30_4.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_4 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_4 = "30_4";
-                } else if (checkedId == R.id.radio3) {
-                    op30_4 = "No";
-                    lay30_4a.setVisibility(View.GONE);
-                    rdPregunta30_4a.clearCheck();
-                    op30_4a = "sin datos";
-                    lay30_4b.setVisibility(View.GONE);
-                    rdPregunta30_4b.clearCheck();
-                    op30_4b = "sin datos";
-                } else if (checkedId == R.id.radio4) {
-                    op30_4 = "Si";
-                    lay30_4a.setVisibility(View.VISIBLE);
-                    rdPregunta30_4a.clearCheck();
-                    op30_4a = "sin datos";
-                    lay30_4b.setVisibility(View.VISIBLE);
-                    rdPregunta30_4b.clearCheck();
-                    op30_4b = "sin datos";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_4a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_4a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_4a = "30_4a";
-                } else if (checkedId == R.id.radio3) {
-                    op30_4a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op30_4a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op30_4a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op30_4a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op30_4a = "muy mala";
-                } else if (checkedId == R.id.radio0) {
-                    op30_4a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_4b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_4b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_4b = "30_4b";
-                } else if (checkedId == R.id.radio3) {
-                    op30_4b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op30_4b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op30_4b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_5.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_5 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_5 = "30_5";
-                } else if (checkedId == R.id.radio3) {
-                    op30_5 = "No";
-                    lay30_5a.setVisibility(View.GONE);
-                    rdPregunta30_5a.clearCheck();
-                    op30_5a = "sin datos";
-                    lay30_5b.setVisibility(View.GONE);
-                    rdPregunta30_5b.clearCheck();
-                    op30_5b = "sin datos";
-                } else if (checkedId == R.id.radio4) {
-                    op30_5 = "Si";
-                    lay30_5a.setVisibility(View.VISIBLE);
-                    rdPregunta30_5a.clearCheck();
-                    op30_5a = "sin datos";
-                    lay30_5b.setVisibility(View.VISIBLE);
-                    rdPregunta30_5b.clearCheck();
-                    op30_5b = "sin datos";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_5a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_5a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_5a = "30_5a";
-                } else if (checkedId == R.id.radio3) {
-                    op30_5a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op30_5a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op30_5a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op30_5a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op30_5a = "muy mala";
-                } else if (checkedId == R.id.radio0) {
-                    op30_5a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_5b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_5b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_5b = "30_5b";
-                } else if (checkedId == R.id.radio3) {
-                    op30_5b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op30_5b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op30_5b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_6.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        rdPregunta27.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.radio1) {
-                    op30_6 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_6 = "30_6";
-                } else if (checkedId == R.id.radio3) {
-                    op30_6 = "No";
-                    lay30_6a.setVisibility(View.GONE);
-                    rdPregunta30_6a.clearCheck();
-                    op30_6a = "No aplica";
-                    lay30_6b.setVisibility(View.GONE);
-                    rdPregunta30_6b.clearCheck();
-                    op30_6b = "No aplica";
-
-                } else if (checkedId == R.id.radio4) {
-                    op30_6 = "Si";
-                    lay30_6a.setVisibility(View.VISIBLE);
-                    rdPregunta30_6a.clearCheck();
-                    op30_6a = "sin datos";
-                    lay30_6b.setVisibility(View.VISIBLE);
-                    rdPregunta30_6b.clearCheck();
-                    op30_6b = "sin datos";
-
+                    op27 = "0";
                 }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_6a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_6a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_6a = "30_6a";
-                } else if (checkedId == R.id.radio3) {
-                    op30_6a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op30_6a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op30_6a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op30_6a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op30_6a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op30_6a = "conoce sin opinión";
+                else if (checkedId == R.id.radio2) {
+                    op27 = "27";
                 }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_6b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_6b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_6b = "30_6b";
-                } else if (checkedId == R.id.radio3) {
-                    op30_6b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op30_6b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op30_6b = "No sabe / No contestó";
+                else if (checkedId == R.id.radio3) {
+                    op27 = "Morena";
                 }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_7.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_7 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_7 = "30_7";
-                } else if (checkedId == R.id.radio3) {
-                    op30_7 = "No";
-                    lay30_7a.setVisibility(View.GONE);
-                    rdPregunta30_7a.clearCheck();
-                    op30_7a = "sin datos";
-                    lay30_7b.setVisibility(View.GONE);
-                    rdPregunta30_7b.clearCheck();
-                    op30_7b = "sin datos";
-
-                } else if (checkedId == R.id.radio4) {
-                    op30_7 = "Si";
-                    lay30_7a.setVisibility(View.VISIBLE);
-                    rdPregunta30_7a.clearCheck();
-                    op30_7a = "sin datos";
-                    lay30_7b.setVisibility(View.VISIBLE);
-                    rdPregunta30_7b.clearCheck();
-                    op30_7b = "sin datos";
-
+                else if (checkedId == R.id.radio4) {
+                    op27 = "PRI";
                 }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_7a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_7a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_7a = "30_7a";
-                } else if (checkedId == R.id.radio3) {
-                    op30_7a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op30_7a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op30_7a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op30_7a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op30_7a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op30_7a = "conoce sin opinión";
+                else if (checkedId == R.id.radio5) {
+                    op27 = "PAN";
                 }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_7b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_7b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_7b = "30_7b";
-                } else if (checkedId == R.id.radio3) {
-                    op30_7b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op30_7b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op30_7b = "No sabe / No contestó";
+                else if (checkedId == R.id.radio6) {
+                    op27 = "PRD";
                 }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_8.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_8 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_8 = "30_8";
-                } else if (checkedId == R.id.radio3) {
-                    op30_8 = "No";
-                    lay30_8a.setVisibility(View.GONE);
-                    rdPregunta30_8a.clearCheck();
-                    op30_8a = "sin datos";
-                    lay30_8b.setVisibility(View.GONE);
-                    rdPregunta30_8b.clearCheck();
-                    op30_8b = "sin datos";
-
-                } else if (checkedId == R.id.radio4) {
-                    op30_8 = "Si";
-                    lay30_8a.setVisibility(View.VISIBLE);
-                    rdPregunta30_8a.clearCheck();
-                    op30_8a = "sin datos";
-                    lay30_8b.setVisibility(View.VISIBLE);
-                    rdPregunta30_8b.clearCheck();
-                    op30_8b = "sin datos";
-
+                else if (checkedId == R.id.radio7) {
+                    op27 = "PT";
                 }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_8a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_8a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_8a = "30_8a";
-                } else if (checkedId == R.id.radio3) {
-                    op30_8a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op30_8a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op30_8a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op30_8a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op30_8a = "muy mala";
-                } else if (checkedId == R.id.radio8) {
-                    op30_8a = "conoce sin opinión";
+                else if (checkedId == R.id.radio8) {
+                    op27 = "P.Verde";
                 }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_8b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_8b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_8b = "30_8b";
-                } else if (checkedId == R.id.radio3) {
-                    op30_8b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op30_8b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op30_8b = "No sabe / No contestó";
+                else if (checkedId == R.id.radio9) {
+                    op27 = "Movimiento Ciudadano";
                 }
-            }
-        });
-
-        rdPregunta30_9.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_9 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_9 = "30_9";
-                } else if (checkedId == R.id.radio3) {
-                    op30_9 = "No";
-                    lay30_9a.setVisibility(View.GONE);
-                    rdPregunta30_9a.clearCheck();
-                    op30_9a = "sin datos";
-                    lay30_9b.setVisibility(View.GONE);
-                    rdPregunta30_9b.clearCheck();
-                    op30_9b = "sin datos";
-                } else if (checkedId == R.id.radio4) {
-                    op30_9 = "Si";
-                    lay30_9a.setVisibility(View.VISIBLE);
-                    rdPregunta30_9a.clearCheck();
-                    op30_9a = "sin datos";
-                    lay30_9b.setVisibility(View.VISIBLE);
-                    rdPregunta30_9b.clearCheck();
-                    op30_9b = "sin datos";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_9a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_9a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_9a = "30_9a";
-                } else if (checkedId == R.id.radio3) {
-                    op30_9a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op30_9a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op30_9a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op30_9a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op30_9a = "muy mala";
-                } else if (checkedId == R.id.radio0) {
-                    op30_9a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_9b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_9b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_9b = "30_9b";
-                } else if (checkedId == R.id.radio3) {
-                    op30_9b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op30_9b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op30_9b = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_10.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_10 = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_10 = "30_10";
-                } else if (checkedId == R.id.radio3) {
-                    op30_10 = "No";
-                    lay30_10a.setVisibility(View.GONE);
-                    rdPregunta30_10a.clearCheck();
-                    op30_10a = "sin datos";
-                    lay30_10b.setVisibility(View.GONE);
-                    rdPregunta30_10b.clearCheck();
-                    op30_10b = "sin datos";
-                } else if (checkedId == R.id.radio4) {
-                    op30_10 = "Si";
-                    lay30_10a.setVisibility(View.VISIBLE);
-                    rdPregunta30_10a.clearCheck();
-                    op30_10a = "sin datos";
-                    lay30_10b.setVisibility(View.VISIBLE);
-                    rdPregunta30_10b.clearCheck();
-                    op30_10b = "sin datos";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_10a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_10a = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_10a = "30_10a";
-                } else if (checkedId == R.id.radio3) {
-                    op30_10a = "Muy buena";
-                } else if (checkedId == R.id.radio4) {
-                    op30_10a = "buena";
-                } else if (checkedId == R.id.radio5) {
-                    op30_10a = "regular";
-                } else if (checkedId == R.id.radio6) {
-                    op30_10a = "mala";
-                } else if (checkedId == R.id.radio7) {
-                    op30_10a = "muy mala";
-                } else if (checkedId == R.id.radio0) {
-                    op30_10a = "conoce sin opinión";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta30_10b.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio1) {
-                    op30_10b = "0";
-                } else if (checkedId == R.id.radio2) {
-                    op30_10b = "30_10b";
-                } else if (checkedId == R.id.radio3) {
-                    op30_10b = "No";
-                } else if (checkedId == R.id.radio4) {
-                    op30_10b = "Si";
-                } else if (checkedId == R.id.radio0) {
-                    op30_10b = "No sabe / No contestó";
+                else if (checkedId == R.id.radio0) {
+                    op27 = "No sabe / No contestó";
                 }
             }
         });
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        if(candidato_1_local!=null){
-            radio31_3.setText(candidato_1_local);
-        }
-        if(candidato_1_local==null){
-            radio31_3.setVisibility(View.GONE);
-        }
-
-        if(candidato_2_local!=null){
-            radio31_4.setText(candidato_2_local);
-        }
-        if(candidato_2_local==null){
-            radio31_4.setVisibility(View.GONE);
-        }
-
-        if(candidato_3_local!=null){
-            radio31_5.setText(candidato_3_local);
-        }
-        if(candidato_3_local==null){
-            radio31_5.setVisibility(View.GONE);
-        }
-
-        if(candidato_4_local!=null){
-            radio31_6.setText(candidato_4_local);
-        }
-        if(candidato_4_local==null){
-            radio31_6.setVisibility(View.GONE);
-        }
-
-        rdPregunta31.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio31_1) {
-                    op31="0";
-                } else if (checkedId == R.id.radio31_2) {
-                    op31 = "31";
-                } else if (checkedId == R.id.radio31_3) {
-                    op31 = radio31_3.getText().toString();
-                } else if (checkedId == R.id.radio31_4) {
-                    op31 = radio31_4.getText().toString();
-                } else if (checkedId == R.id.radio31_5) {
-                    op31 = radio31_5.getText().toString();
-                } else if (checkedId == R.id.radio31_6) {
-                    op31 = radio31_6.getText().toString();
-                } else if (checkedId == R.id.radio31_7) {
-                    op31 = "Otro";
-                } else if (checkedId == R.id.radio31_0) {
-                    op31 = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rdPregunta32.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radio32_1) {
-                    op32 = "0";
-                } else if (checkedId == R.id.radio32_2) {
-                    op32 = "32";
-                } else if (checkedId == R.id.radio32_3) {
-                    op32 = radio32_3.getText().toString();
-                } else if (checkedId == R.id.radio32_4) {
-                    op32 = radio32_4.getText().toString();
-                } else if (checkedId == R.id.radio32_5) {
-                    op32 = radio32_5.getText().toString();
-                } else if (checkedId == R.id.radio32_6) {
-                    op32 = radio32_6.getText().toString();
-                } else if (checkedId == R.id.radio32_7) {
-                    op32 = "Otro";
-                } else if (checkedId == R.id.radio32_8) {
-                    op32 = "Ninguno";
-                } else if (checkedId == R.id.radio32_0) {
-                    op32 = "No sabe / No contestó";
-                }
-            }
-        });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////// SOCIOECONOMICOS  ///////////////////////////////////// //////////////////////////////////////////////////////////////////////
 
@@ -6776,75 +5506,60 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         String str24_10 = op24_10;
         String str24_10a = op24_10a;
         String str24_10b = op24_10b;
+
         String str25 = op25;
+        String str25_1 = op25_1;
+        String str25_1a = op25_1a;
+        String str25_1b = op25_1b;
+        String str25_1c = op25_1c;
+        String str25_1d = op25_1d;
+        String str25_2 = op25_2;
+        String str25_2a = op25_2a;
+        String str25_2b = op25_2b;
+        String str25_2c = op25_2c;
+        String str25_2d = op25_2d;
+        String str25_3 = op25_3;
+        String str25_3a = op25_3a;
+        String str25_3b = op25_3b;
+        String str25_3c = op25_3c;
+        String str25_3d = op25_3d;
+        String str25_4 = op25_4;
+        String str25_4a = op25_4a;
+        String str25_4b = op25_4b;
+        String str25_4c = op25_4c;
+        String str25_4d = op25_4d;
+        String str25_5 = op25_5;
+        String str25_5a = op25_5a;
+        String str25_5b = op25_5b;
+        String str25_5c = op25_5c;
+        String str25_5d = op25_5d;
+        String str25_6 = op25_6;
+        String str25_6a = op25_6a;
+        String str25_6b = op25_6b;
+        String str25_6c = op25_6c;
+        String str25_6d = op25_6d;
+        String str25_7 = op25_7;
+        String str25_7a = op25_7a;
+        String str25_7b = op25_7b;
+        String str25_7c = op25_7c;
+        String str25_7d = op25_7d;
+        String str25_8 = op25_8;
+        String str25_8a = op25_8a;
+        String str25_8b = op25_8b;
+        String str25_8c = op25_8c;
+        String str25_8d = op25_8d;
+        String str25_9 = op25_9;
+        String str25_9a = op25_9a;
+        String str25_9b = op25_9b;
+        String str25_9c = op25_9c;
+        String str25_9d = op25_9d;
+        String str25_10 = op25_10;
+        String str25_10a = op25_10a;
+        String str25_10b = op25_10b;
+        String str25_10c = op25_10c;
+        String str25_10d = op25_10d;
         String str26 = op26;
         String str27 = op27;
-        String str27_1 = op27_1;
-        String str27_1a = op27_1a;
-        String str27_1b = op27_1b;
-        String str27_2 = op27_2;
-        String str27_2a = op27_2a;
-        String str27_2b = op27_2b;
-        String str27_3 = op27_3;
-        String str27_3a = op27_3a;
-        String str27_3b = op27_3b;
-        String str27_4 = op27_4;
-        String str27_4a = op27_4a;
-        String str27_4b = op27_4b;
-        String str27_5 = op27_5;
-        String str27_5a = op27_5a;
-        String str27_5b = op27_5b;
-        String str27_6 = op27_6;
-        String str27_6a = op27_6a;
-        String str27_6b = op27_6b;
-        String str27_7 = op27_7;
-        String str27_7a = op27_7a;
-        String str27_7b = op27_7b;
-        String str27_8 = op27_8;
-        String str27_8a = op27_8a;
-        String str27_8b = op27_8b;
-        String str27_9 = op27_9;
-        String str27_9a = op27_9a;
-        String str27_9b = op27_9b;
-        String str27_10 = op27_10;
-        String str27_10a = op27_10a;
-        String str27_10b = op27_10b;
-        String str28 = op28;
-        String str29 = op29;
-        String str30 = op30;
-        String str30_1 = op30_1;
-        String str30_1a = op30_1a;
-        String str30_1b = op30_1b;
-        String str30_2 = op30_2;
-        String str30_2a = op30_2a;
-        String str30_2b = op30_2b;
-        String str30_3 = op30_3;
-        String str30_3a = op30_3a;
-        String str30_3b = op30_3b;
-        String str30_4 = op30_4;
-        String str30_4a = op30_4a;
-        String str30_4b = op30_4b;
-        String str30_5 = op30_5;
-        String str30_5a = op30_5a;
-        String str30_5b = op30_5b;
-        String str30_6 = op30_6;
-        String str30_6a = op30_6a;
-        String str30_6b = op30_6b;
-        String str30_7 = op30_7;
-        String str30_7a = op30_7a;
-        String str30_7b = op30_7b;
-        String str30_8 = op30_8;
-        String str30_8a = op30_8a;
-        String str30_8b = op30_8b;
-        String str30_9 = op30_9;
-        String str30_9a = op30_9a;
-        String str30_9b = op30_9b;
-        String str30_10 = op30_10;
-        String str30_10a = op30_10a;
-        String str30_10b = op30_10b;
-        String str31 = op31;
-        String str32 = op32;
-
 
         String strAporta = opAporta;
         String strOcupacion = opOcupacion;
@@ -7174,77 +5889,61 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 values.put("pregunta_24_10a", str24_10a);
                 values.put("pregunta_24_10b", str24_10b);
 
-                values.put("pregunta_25", str25);
+                values.put("pregunta_25",str25);
+                values.put("pregunta_25_1",str25_1);
+                values.put("pregunta_25_1a",str25_1a);
+                values.put("pregunta_25_1b",str25_1b);
+                values.put("pregunta_25_1c",str25_1c);
+                values.put("pregunta_25_1d",str25_1d);
+                values.put("pregunta_25_2",str25_2);
+                values.put("pregunta_25_2a",str25_2a);
+                values.put("pregunta_25_2b",str25_2b);
+                values.put("pregunta_25_2c",str25_2c);
+                values.put("pregunta_25_2d",str25_2d);
+                values.put("pregunta_25_3",str25_3);
+                values.put("pregunta_25_3a",str25_3a);
+                values.put("pregunta_25_3b",str25_3b);
+                values.put("pregunta_25_3c",str25_3c);
+                values.put("pregunta_25_3d",str25_3d);
+                values.put("pregunta_25_4",str25_4);
+                values.put("pregunta_25_4a",str25_4a);
+                values.put("pregunta_25_4b",str25_4b);
+                values.put("pregunta_25_4c",str25_4c);
+                values.put("pregunta_25_4d",str25_4d);
+                values.put("pregunta_25_5",str25_5);
+                values.put("pregunta_25_5a",str25_5a);
+                values.put("pregunta_25_5b",str25_5b);
+                values.put("pregunta_25_5c",str25_5c);
+                values.put("pregunta_25_5d",str25_5d);
+                values.put("pregunta_25_6",str25_6);
+                values.put("pregunta_25_6a",str25_6a);
+                values.put("pregunta_25_6b",str25_6b);
+                values.put("pregunta_25_6c",str25_6c);
+                values.put("pregunta_25_6d",str25_6d);
+                values.put("pregunta_25_7",str25_7);
+                values.put("pregunta_25_7a",str25_7a);
+                values.put("pregunta_25_7b",str25_7b);
+                values.put("pregunta_25_7c",str25_7c);
+                values.put("pregunta_25_7d",str25_7d);
+                values.put("pregunta_25_8",str25_8);
+                values.put("pregunta_25_8a",str25_8a);
+                values.put("pregunta_25_8b",str25_8b);
+                values.put("pregunta_25_8c",str25_8c);
+                values.put("pregunta_25_8d",str25_8d);
+                values.put("pregunta_25_9",str25_9);
+                values.put("pregunta_25_9a",str25_9a);
+                values.put("pregunta_25_9b",str25_9b);
+                values.put("pregunta_25_9c",str25_9c);
+                values.put("pregunta_25_9d",str25_9d);
+                values.put("pregunta_25_10",str25_10);
+                values.put("pregunta_25_10a",str25_10a);
+                values.put("pregunta_25_10b",str25_10b);
+                values.put("pregunta_25_10c",str25_10c);
+                values.put("pregunta_25_10d",str25_10d);
+
+
                 values.put("pregunta_26", str26);
-                values.put("pregunta_27", str27);
-                values.put("pregunta_27_1", str27_1);
-                values.put("pregunta_27_1a", str27_1a);
-                values.put("pregunta_27_1b", str27_1b);
-                values.put("pregunta_27_2", str27_2);
-                values.put("pregunta_27_2a", str27_2a);
-                values.put("pregunta_27_2b", str27_2b);
-                values.put("pregunta_27_3", str27_3);
-                values.put("pregunta_27_3a", str27_3a);
-                values.put("pregunta_27_3b", str27_3b);
-                values.put("pregunta_27_4", str27_4);
-                values.put("pregunta_27_4a", str27_4a);
-                values.put("pregunta_27_4b", str27_4b);
-                values.put("pregunta_27_5", str27_5);
-                values.put("pregunta_27_5a", str27_5a);
-                values.put("pregunta_27_5b", str27_5b);
-                values.put("pregunta_27_6", str27_6);
-                values.put("pregunta_27_6a", str27_6a);
-                values.put("pregunta_27_6b", str27_6b);
-                values.put("pregunta_27_7", str27_7);
-                values.put("pregunta_27_7a", str27_7a);
-                values.put("pregunta_27_7b", str27_7b);
-                values.put("pregunta_27_8", str27_8);
-                values.put("pregunta_27_8a", str27_8a);
-                values.put("pregunta_27_8b", str27_8b);
-                values.put("pregunta_27_9", str27_9);
-                values.put("pregunta_27_9a", str27_9a);
-                values.put("pregunta_27_9b", str27_9b);
-                values.put("pregunta_27_10", str27_10);
-                values.put("pregunta_27_10a", str27_10a);
-                values.put("pregunta_27_10b", str27_10b);
-
-                values.put("pregunta_28", str28);
-                values.put("pregunta_29", str29);
-                values.put("pregunta_30", str30);
-                values.put("pregunta_30_1", str30_1);
-                values.put("pregunta_30_1a", str30_1a);
-                values.put("pregunta_30_1b", str30_1b);
-                values.put("pregunta_30_2", str30_2);
-                values.put("pregunta_30_2a", str30_2a);
-                values.put("pregunta_30_2b", str30_2b);
-                values.put("pregunta_30_3", str30_3);
-                values.put("pregunta_30_3a", str30_3a);
-                values.put("pregunta_30_3b", str30_3b);
-                values.put("pregunta_30_4", str30_4);
-                values.put("pregunta_30_4a", str30_4a);
-                values.put("pregunta_30_4b", str30_4b);
-                values.put("pregunta_30_5", str30_5);
-                values.put("pregunta_30_5a", str30_5a);
-                values.put("pregunta_30_5b", str30_5b);
-                values.put("pregunta_30_6", str30_6);
-                values.put("pregunta_30_6a", str30_6a);
-                values.put("pregunta_30_6b", str30_6b);
-                values.put("pregunta_30_7", str30_7);
-                values.put("pregunta_30_7a", str30_7a);
-                values.put("pregunta_30_7b", str30_7b);
-                values.put("pregunta_30_8", str30_8);
-                values.put("pregunta_30_8a", str30_8a);
-                values.put("pregunta_30_8b", str30_8b);
-                values.put("pregunta_30_9", str30_9);
-                values.put("pregunta_30_9a", str30_9a);
-                values.put("pregunta_30_9b", str30_9b);
-                values.put("pregunta_30_10", str30_10);
-                values.put("pregunta_30_10a", str30_10a);
-                values.put("pregunta_30_10b", str30_10b);
-
-                values.put("pregunta_31", str31);
-                values.put("pregunta_32", str32);
-
+                values.put("pregunta_27",str27);
 
                 values.put("aporta", strAporta);
                 values.put("ocupacion", strOcupacion);
@@ -7363,76 +6062,59 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
             System.out.println("pregunta_24_10a  " + str24_10a);
             System.out.println("pregunta_24_10b  " + str24_10b);
 
-            System.out.println("pregunta_25  " + str25);
+            System.out.println("pregunta_25  " +   str25);
+            System.out.println("pregunta_25_1  " +   str25_1);
+            System.out.println("pregunta_25_1a  " +   str25_1a);
+            System.out.println("pregunta_25_1b  " +   str25_1b);
+            System.out.println("pregunta_25_1c  " +   str25_1c);
+            System.out.println("pregunta_25_1d  " +   str25_1d);
+            System.out.println("pregunta_25_2  " +   str25_2);
+            System.out.println("pregunta_25_2a  " +   str25_2a);
+            System.out.println("pregunta_25_2b  " +   str25_2b);
+            System.out.println("pregunta_25_2c  " +   str25_2c);
+            System.out.println("pregunta_25_2d  " +   str25_2d);
+            System.out.println("pregunta_25_3  " +   str25_3);
+            System.out.println("pregunta_25_3a  " +   str25_3a);
+            System.out.println("pregunta_25_3b  " +   str25_3b);
+            System.out.println("pregunta_25_3c  " +   str25_3c);
+            System.out.println("pregunta_25_3d  " +   str25_3d);
+            System.out.println("pregunta_25_4  " +   str25_4);
+            System.out.println("pregunta_25_4a  " +   str25_4a);
+            System.out.println("pregunta_25_4b  " +   str25_4b);
+            System.out.println("pregunta_25_4c  " +   str25_4c);
+            System.out.println("pregunta_25_4d  " +   str25_4d);
+            System.out.println("pregunta_25_5  " +   str25_5);
+            System.out.println("pregunta_25_5a  " +   str25_5a);
+            System.out.println("pregunta_25_5b  " +   str25_5b);
+            System.out.println("pregunta_25_5c  " +   str25_5c);
+            System.out.println("pregunta_25_5d  " +   str25_5d);
+            System.out.println("pregunta_25_6  " +   str25_6);
+            System.out.println("pregunta_25_6a  " +   str25_6a);
+            System.out.println("pregunta_25_6b  " +   str25_6b);
+            System.out.println("pregunta_25_6c  " +   str25_6c);
+            System.out.println("pregunta_25_6d  " +   str25_6d);
+            System.out.println("pregunta_25_7  " +   str25_7);
+            System.out.println("pregunta_25_7a  " +   str25_7a);
+            System.out.println("pregunta_25_7b  " +   str25_7b);
+            System.out.println("pregunta_25_7c  " +   str25_7c);
+            System.out.println("pregunta_25_7d  " +   str25_7d);
+            System.out.println("pregunta_25_8  " +   str25_8);
+            System.out.println("pregunta_25_8a  " +   str25_8a);
+            System.out.println("pregunta_25_8b  " +   str25_8b);
+            System.out.println("pregunta_25_8c  " +   str25_8c);
+            System.out.println("pregunta_25_8d  " +   str25_8d);
+            System.out.println("pregunta_25_9  " +   str25_9);
+            System.out.println("pregunta_25_9a  " +   str25_9a);
+            System.out.println("pregunta_25_9b  " +   str25_9b);
+            System.out.println("pregunta_25_9c  " +   str25_9c);
+            System.out.println("pregunta_25_9d  " +   str25_9d);
+            System.out.println("pregunta_25_10  " +   str25_10);
+            System.out.println("pregunta_25_10a  " +   str25_10a);
+            System.out.println("pregunta_25_10b  " +   str25_10b);
+            System.out.println("pregunta_25_10c  " +   str25_10c);
+            System.out.println("pregunta_25_10d  " +   str25_10d);
             System.out.println("pregunta_26  " + str26);
-            System.out.println("pregunta_27  " + str27);
-            System.out.println("pregunta_27_1  " + str27_1);
-            System.out.println("pregunta_27_1a  " + str27_1a);
-            System.out.println("pregunta_27_1b  " + str27_1b);
-            System.out.println("pregunta_27_2  " + str27_2);
-            System.out.println("pregunta_27_2a  " + str27_2a);
-            System.out.println("pregunta_27_2b  " + str27_2b);
-            System.out.println("pregunta_27_3  " + str27_3);
-            System.out.println("pregunta_27_3a  " + str27_3a);
-            System.out.println("pregunta_27_3b  " + str27_3b);
-            System.out.println("pregunta_27_4  " + str27_4);
-            System.out.println("pregunta_27_4a  " + str27_4a);
-            System.out.println("pregunta_27_4b  " + str27_4b);
-            System.out.println("pregunta_27_5  " + str27_5);
-            System.out.println("pregunta_27_5a  " + str27_5a);
-            System.out.println("pregunta_27_5b  " + str27_5b);
-            System.out.println("pregunta_27_6  " + str27_6);
-            System.out.println("pregunta_27_6a  " + str27_6a);
-            System.out.println("pregunta_27_6b  " + str27_6b);
-            System.out.println("pregunta_27_7  " + str27_7);
-            System.out.println("pregunta_27_7a  " + str27_7a);
-            System.out.println("pregunta_27_7b  " + str27_7b);
-            System.out.println("pregunta_27_8  " + str27_8);
-            System.out.println("pregunta_27_8a  " + str27_8a);
-            System.out.println("pregunta_27_8b  " + str27_8b);
-            System.out.println("pregunta_27_9  " + str27_9);
-            System.out.println("pregunta_27_9a  " + str27_9a);
-            System.out.println("pregunta_27_9b  " + str27_9b);
-            System.out.println("pregunta_27_10  " + str27_10);
-            System.out.println("pregunta_27_10a  " + str27_10a);
-            System.out.println("pregunta_27_10b  " + str27_10b);
-
-            System.out.println("pregunta_28  " + str28);
-            System.out.println("pregunta_29  " + str29);
-            System.out.println("pregunta_30  " + str30);
-            System.out.println("pregunta_30_1  " + str30_1);
-            System.out.println("pregunta_30_1a  " + str30_1a);
-            System.out.println("pregunta_30_1b  " + str30_1b);
-            System.out.println("pregunta_30_2  " + str30_2);
-            System.out.println("pregunta_30_2a  " + str30_2a);
-            System.out.println("pregunta_30_2b  " + str30_2b);
-            System.out.println("pregunta_30_3  " + str30_3);
-            System.out.println("pregunta_30_3a  " + str30_3a);
-            System.out.println("pregunta_30_3b  " + str30_3b);
-            System.out.println("pregunta_30_4  " + str30_4);
-            System.out.println("pregunta_30_4a  " + str30_4a);
-            System.out.println("pregunta_30_4b  " + str30_4b);
-            System.out.println("pregunta_30_5  " + str30_5);
-            System.out.println("pregunta_30_5a  " + str30_5a);
-            System.out.println("pregunta_30_5b  " + str30_5b);
-            System.out.println("pregunta_30_6  " + str30_6);
-            System.out.println("pregunta_30_6a  " + str30_6a);
-            System.out.println("pregunta_30_6b  " + str30_6b);
-            System.out.println("pregunta_30_7  " + str30_7);
-            System.out.println("pregunta_30_7a  " + str30_7a);
-            System.out.println("pregunta_30_7b  " + str30_7b);
-            System.out.println("pregunta_30_8  " + str30_8);
-            System.out.println("pregunta_30_8a  " + str30_8a);
-            System.out.println("pregunta_30_8b  " + str30_8b);
-            System.out.println("pregunta_30_9  " + str30_9);
-            System.out.println("pregunta_30_9a  " + str30_9a);
-            System.out.println("pregunta_30_9b  " + str30_9b);
-            System.out.println("pregunta_30_10  " + str30_10);
-            System.out.println("pregunta_30_10a  " + str30_10a);
-            System.out.println("pregunta_30_10b  " + str30_10b);
-
-            System.out.println("pregunta_31  " + str31);
-            System.out.println("pregunta_32  " + str32);
+            System.out.println("pregunta_27  " +   str27);
 
             System.out.println(" aporta   " + strAporta);
             System.out.println(" ocupacion   " + strOcupacion);
@@ -7723,143 +6405,62 @@ finish();*/
                     Toast.makeText(getBaseContext(), "CAPTURA:  " + captura24_10a, Toast.LENGTH_LONG).show();
                 } else if (lay24_10b.getVisibility() == View.VISIBLE && op24_10b.matches("sin datos")) {
                     Toast.makeText(getBaseContext(), "CAPTURA:  " + captura24_10b, Toast.LENGTH_LONG).show();
-                } else if (lay25.getVisibility() == View.VISIBLE && op25.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura25, Toast.LENGTH_LONG).show();
-                } else if (lay26.getVisibility() == View.VISIBLE && op26.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura26, Toast.LENGTH_LONG).show();
                 }
-//            else if (lay27.getVisibility() == View.VISIBLE && op27.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura27,Toast.LENGTH_LONG).show();}
-                else if (lay27_1.getVisibility() == View.VISIBLE && op27_1.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_1, Toast.LENGTH_LONG).show();
-                } else if (lay27_1a.getVisibility() == View.VISIBLE && op27_1a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_1a, Toast.LENGTH_LONG).show();
-                } else if (lay27_1b.getVisibility() == View.VISIBLE && op27_1b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_1b, Toast.LENGTH_LONG).show();
-                } else if (lay27_2.getVisibility() == View.VISIBLE && op27_2.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_2, Toast.LENGTH_LONG).show();
-                } else if (lay27_2a.getVisibility() == View.VISIBLE && op27_2a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_2a, Toast.LENGTH_LONG).show();
-                } else if (lay27_2b.getVisibility() == View.VISIBLE && op27_2b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_2b, Toast.LENGTH_LONG).show();
-                } else if (lay27_3.getVisibility() == View.VISIBLE && op27_3.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_3, Toast.LENGTH_LONG).show();
-                } else if (lay27_3a.getVisibility() == View.VISIBLE && op27_3a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_3a, Toast.LENGTH_LONG).show();
-                } else if (lay27_3b.getVisibility() == View.VISIBLE && op27_3b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_3b, Toast.LENGTH_LONG).show();
-                } else if (lay27_4.getVisibility() == View.VISIBLE && op27_4.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_4, Toast.LENGTH_LONG).show();
-                } else if (lay27_4a.getVisibility() == View.VISIBLE && op27_4a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_4a, Toast.LENGTH_LONG).show();
-                } else if (lay27_4b.getVisibility() == View.VISIBLE && op27_4b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_4b, Toast.LENGTH_LONG).show();
-                } else if (lay27_5.getVisibility() == View.VISIBLE && op27_5.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_5, Toast.LENGTH_LONG).show();
-                } else if (lay27_5a.getVisibility() == View.VISIBLE && op27_5a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_5a, Toast.LENGTH_LONG).show();
-                } else if (lay27_5b.getVisibility() == View.VISIBLE && op27_5b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_5b, Toast.LENGTH_LONG).show();
-                } else if (lay27_6.getVisibility() == View.VISIBLE && op27_6.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_6, Toast.LENGTH_LONG).show();
-                } else if (lay27_6a.getVisibility() == View.VISIBLE && op27_6a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_6a, Toast.LENGTH_LONG).show();
-                } else if (lay27_6b.getVisibility() == View.VISIBLE && op27_6b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_6b, Toast.LENGTH_LONG).show();
-                } else if (lay27_7.getVisibility() == View.VISIBLE && op27_7.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_7, Toast.LENGTH_LONG).show();
-                } else if (lay27_7a.getVisibility() == View.VISIBLE && op27_7a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_7a, Toast.LENGTH_LONG).show();
-                } else if (lay27_7b.getVisibility() == View.VISIBLE && op27_7b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_7b, Toast.LENGTH_LONG).show();
-                } else if (lay27_8.getVisibility() == View.VISIBLE && op27_8.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_8, Toast.LENGTH_LONG).show();
-                } else if (lay27_8a.getVisibility() == View.VISIBLE && op27_8a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_8a, Toast.LENGTH_LONG).show();
-                } else if (lay27_8b.getVisibility() == View.VISIBLE && op27_8b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_8b, Toast.LENGTH_LONG).show();
-                } else if (lay27_9.getVisibility() == View.VISIBLE && op27_9.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_9, Toast.LENGTH_LONG).show();
-                } else if (lay27_9a.getVisibility() == View.VISIBLE && op27_9a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_9a, Toast.LENGTH_LONG).show();
-                } else if (lay27_9b.getVisibility() == View.VISIBLE && op27_9b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_9b, Toast.LENGTH_LONG).show();
-                } else if (lay27_10.getVisibility() == View.VISIBLE && op27_10.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_10, Toast.LENGTH_LONG).show();
-                } else if (lay27_10a.getVisibility() == View.VISIBLE && op27_10a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_10a, Toast.LENGTH_LONG).show();
-                } else if (lay27_10b.getVisibility() == View.VISIBLE && op27_10b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura27_10b, Toast.LENGTH_LONG).show();
-                } else if (lay28.getVisibility() == View.VISIBLE && op28.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura28, Toast.LENGTH_LONG).show();
-                } else if (lay29.getVisibility() == View.VISIBLE && op29.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura29, Toast.LENGTH_LONG).show();
-                }
-//            else if (lay30.getVisibility() == View.VISIBLE && op30.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura30,Toast.LENGTH_LONG).show();}
-                else if (lay30_1.getVisibility() == View.VISIBLE && op30_1.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_1, Toast.LENGTH_LONG).show();
-                } else if (lay30_1a.getVisibility() == View.VISIBLE && op30_1a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_1a, Toast.LENGTH_LONG).show();
-                } else if (lay30_1b.getVisibility() == View.VISIBLE && op30_1b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_1b, Toast.LENGTH_LONG).show();
-                } else if (lay30_2.getVisibility() == View.VISIBLE && op30_2.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_2, Toast.LENGTH_LONG).show();
-                } else if (lay30_2a.getVisibility() == View.VISIBLE && op30_2a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_2a, Toast.LENGTH_LONG).show();
-                } else if (lay30_2b.getVisibility() == View.VISIBLE && op30_2b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_2b, Toast.LENGTH_LONG).show();
-                } else if (lay30_3.getVisibility() == View.VISIBLE && op30_3.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_3, Toast.LENGTH_LONG).show();
-                } else if (lay30_3a.getVisibility() == View.VISIBLE && op30_3a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_3a, Toast.LENGTH_LONG).show();
-                } else if (lay30_3b.getVisibility() == View.VISIBLE && op30_3b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_3b, Toast.LENGTH_LONG).show();
-                } else if (lay30_4.getVisibility() == View.VISIBLE && op30_4.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_4, Toast.LENGTH_LONG).show();
-                } else if (lay30_4a.getVisibility() == View.VISIBLE && op30_4a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_4a, Toast.LENGTH_LONG).show();
-                } else if (lay30_4b.getVisibility() == View.VISIBLE && op30_4b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_4b, Toast.LENGTH_LONG).show();
-                } else if (lay30_5.getVisibility() == View.VISIBLE && op30_5.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_5, Toast.LENGTH_LONG).show();
-                } else if (lay30_5a.getVisibility() == View.VISIBLE && op30_5a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_5a, Toast.LENGTH_LONG).show();
-                } else if (lay30_5b.getVisibility() == View.VISIBLE && op30_5b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_5b, Toast.LENGTH_LONG).show();
-                } else if (lay30_6.getVisibility() == View.VISIBLE && op30_6.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_6, Toast.LENGTH_LONG).show();
-                } else if (lay30_6a.getVisibility() == View.VISIBLE && op30_6a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_6a, Toast.LENGTH_LONG).show();
-                } else if (lay30_6b.getVisibility() == View.VISIBLE && op30_6b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_6b, Toast.LENGTH_LONG).show();
-                } else if (lay30_7.getVisibility() == View.VISIBLE && op30_7.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_7, Toast.LENGTH_LONG).show();
-                } else if (lay30_7a.getVisibility() == View.VISIBLE && op30_7a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_7a, Toast.LENGTH_LONG).show();
-                } else if (lay30_7b.getVisibility() == View.VISIBLE && op30_7b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_7b, Toast.LENGTH_LONG).show();
-                } else if (lay30_8.getVisibility() == View.VISIBLE && op30_8.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_8, Toast.LENGTH_LONG).show();
-                } else if (lay30_8a.getVisibility() == View.VISIBLE && op30_8a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_8a, Toast.LENGTH_LONG).show();
-                } else if (lay30_8b.getVisibility() == View.VISIBLE && op30_8b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_8b, Toast.LENGTH_LONG).show();
-                } else if (lay30_9.getVisibility() == View.VISIBLE && op30_9.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_9, Toast.LENGTH_LONG).show();
-                } else if (lay30_9a.getVisibility() == View.VISIBLE && op30_9a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_9a, Toast.LENGTH_LONG).show();
-                } else if (lay30_9b.getVisibility() == View.VISIBLE && op30_9b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_9b, Toast.LENGTH_LONG).show();
-                } else if (lay30_10.getVisibility() == View.VISIBLE && op30_10.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_10, Toast.LENGTH_LONG).show();
-                } else if (lay30_10a.getVisibility() == View.VISIBLE && op30_10a.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_10a, Toast.LENGTH_LONG).show();
-                } else if (lay30_10b.getVisibility() == View.VISIBLE && op30_10b.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura30_10b, Toast.LENGTH_LONG).show();
-                } else if (lay31.getVisibility() == View.VISIBLE && op31.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura31, Toast.LENGTH_LONG).show();
-                } else if (lay32.getVisibility() == View.VISIBLE && op32.matches("sin datos")) {
-                    Toast.makeText(getBaseContext(), "CAPTURA:  " + captura32, Toast.LENGTH_LONG).show();
-                } else if (opAporta.matches("sin datos")) {
+//                else if (lay25.getVisibility() == View.VISIBLE && op25.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25,Toast.LENGTH_LONG).show();}
+//                else if (lay25_1.getVisibility() == View.VISIBLE && op25_1.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_1,Toast.LENGTH_LONG).show();}
+                else if (lay25_1a.getVisibility() == View.VISIBLE && op25_1a.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_1a,Toast.LENGTH_LONG).show();}
+                else if (lay25_1b.getVisibility() == View.VISIBLE && op25_1b.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_1b,Toast.LENGTH_LONG).show();}
+                else if (lay25_1c.getVisibility() == View.VISIBLE && op25_1c.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_1c,Toast.LENGTH_LONG).show();}
+                else if (lay25_1d.getVisibility() == View.VISIBLE && op25_1d.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_1d,Toast.LENGTH_LONG).show();}
+//                else if (lay25_2.getVisibility() == View.VISIBLE && op25_2.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_2,Toast.LENGTH_LONG).show();}
+                else if (lay25_2a.getVisibility() == View.VISIBLE && op25_2a.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_2a,Toast.LENGTH_LONG).show();}
+                else if (lay25_2b.getVisibility() == View.VISIBLE && op25_2b.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_2b,Toast.LENGTH_LONG).show();}
+                else if (lay25_2c.getVisibility() == View.VISIBLE && op25_2c.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_2c,Toast.LENGTH_LONG).show();}
+                else if (lay25_2d.getVisibility() == View.VISIBLE && op25_2d.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_2d,Toast.LENGTH_LONG).show();}
+//                else if (lay25_3.getVisibility() == View.VISIBLE && op25_3.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_3,Toast.LENGTH_LONG).show();}
+                else if (lay25_3a.getVisibility() == View.VISIBLE && op25_3a.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_3a,Toast.LENGTH_LONG).show();}
+                else if (lay25_3b.getVisibility() == View.VISIBLE && op25_3b.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_3b,Toast.LENGTH_LONG).show();}
+                else if (lay25_3c.getVisibility() == View.VISIBLE && op25_3c.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_3c,Toast.LENGTH_LONG).show();}
+                else if (lay25_3d.getVisibility() == View.VISIBLE && op25_3d.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_3d,Toast.LENGTH_LONG).show();}
+//                else if (lay25_4.getVisibility() == View.VISIBLE && op25_4.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_4,Toast.LENGTH_LONG).show();}
+                else if (lay25_4a.getVisibility() == View.VISIBLE && op25_4a.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_4a,Toast.LENGTH_LONG).show();}
+                else if (lay25_4b.getVisibility() == View.VISIBLE && op25_4b.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_4b,Toast.LENGTH_LONG).show();}
+                else if (lay25_4c.getVisibility() == View.VISIBLE && op25_4c.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_4c,Toast.LENGTH_LONG).show();}
+                else if (lay25_4d.getVisibility() == View.VISIBLE && op25_4d.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_4d,Toast.LENGTH_LONG).show();}
+//                else if (lay25_5.getVisibility() == View.VISIBLE && op25_5.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_5,Toast.LENGTH_LONG).show();}
+                else if (lay25_5a.getVisibility() == View.VISIBLE && op25_5a.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_5a,Toast.LENGTH_LONG).show();}
+                else if (lay25_5b.getVisibility() == View.VISIBLE && op25_5b.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_5b,Toast.LENGTH_LONG).show();}
+                else if (lay25_5c.getVisibility() == View.VISIBLE && op25_5c.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_5c,Toast.LENGTH_LONG).show();}
+                else if (lay25_5d.getVisibility() == View.VISIBLE && op25_5d.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_5d,Toast.LENGTH_LONG).show();}
+//                else if (lay25_6.getVisibility() == View.VISIBLE && op25_6.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_6,Toast.LENGTH_LONG).show();}
+                else if (lay25_6a.getVisibility() == View.VISIBLE && op25_6a.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_6a,Toast.LENGTH_LONG).show();}
+                else if (lay25_6b.getVisibility() == View.VISIBLE && op25_6b.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_6b,Toast.LENGTH_LONG).show();}
+                else if (lay25_6c.getVisibility() == View.VISIBLE && op25_6c.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_6c,Toast.LENGTH_LONG).show();}
+                else if (lay25_6d.getVisibility() == View.VISIBLE && op25_6d.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_6d,Toast.LENGTH_LONG).show();}
+//                else if (lay25_7.getVisibility() == View.VISIBLE && op25_7.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_7,Toast.LENGTH_LONG).show();}
+                else if (lay25_7a.getVisibility() == View.VISIBLE && op25_7a.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_7a,Toast.LENGTH_LONG).show();}
+                else if (lay25_7b.getVisibility() == View.VISIBLE && op25_7b.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_7b,Toast.LENGTH_LONG).show();}
+                else if (lay25_7c.getVisibility() == View.VISIBLE && op25_7c.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_7c,Toast.LENGTH_LONG).show();}
+                else if (lay25_7d.getVisibility() == View.VISIBLE && op25_7d.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_7d,Toast.LENGTH_LONG).show();}
+//                else if (lay25_8.getVisibility() == View.VISIBLE && op25_8.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_8,Toast.LENGTH_LONG).show();}
+                else if (lay25_8a.getVisibility() == View.VISIBLE && op25_8a.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_8a,Toast.LENGTH_LONG).show();}
+                else if (lay25_8b.getVisibility() == View.VISIBLE && op25_8b.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_8b,Toast.LENGTH_LONG).show();}
+                else if (lay25_8c.getVisibility() == View.VISIBLE && op25_8c.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_8c,Toast.LENGTH_LONG).show();}
+                else if (lay25_8d.getVisibility() == View.VISIBLE && op25_8d.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_8d,Toast.LENGTH_LONG).show();}
+//                else if (lay25_9.getVisibility() == View.VISIBLE && op25_9.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_9,Toast.LENGTH_LONG).show();}
+                else if (lay25_9a.getVisibility() == View.VISIBLE && op25_9a.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_9a,Toast.LENGTH_LONG).show();}
+                else if (lay25_9b.getVisibility() == View.VISIBLE && op25_9b.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_9b,Toast.LENGTH_LONG).show();}
+                else if (lay25_9c.getVisibility() == View.VISIBLE && op25_9c.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_9c,Toast.LENGTH_LONG).show();}
+                else if (lay25_9d.getVisibility() == View.VISIBLE && op25_9d.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_9d,Toast.LENGTH_LONG).show();}
+//                else if (lay25_10.getVisibility() == View.VISIBLE && op25_10.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_10,Toast.LENGTH_LONG).show();}
+                else if (lay25_10a.getVisibility() == View.VISIBLE && op25_10a.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_10a,Toast.LENGTH_LONG).show();}
+                else if (lay25_10b.getVisibility() == View.VISIBLE && op25_10b.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_10b,Toast.LENGTH_LONG).show();}
+                else if (lay25_10c.getVisibility() == View.VISIBLE && op25_10c.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_10c,Toast.LENGTH_LONG).show();}
+                else if (lay25_10d.getVisibility() == View.VISIBLE && op25_10d.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura25_10d,Toast.LENGTH_LONG).show();}
+                else if (lay26.getVisibility() == View.VISIBLE && op26.matches("sin datos")) {Toast.makeText(getBaseContext(), "CAPTURA:  " + captura26, Toast.LENGTH_LONG).show(); }
+                else if (lay27.getVisibility() == View.VISIBLE && op27.matches("sin datos")){Toast.makeText(getBaseContext(),"CAPTURA:  " +  captura27,Toast.LENGTH_LONG).show();}
+
+                else if (opAporta.matches("sin datos")) {
                     Toast.makeText(getBaseContext(), "CAPTURA:  " + capturaAporta, Toast.LENGTH_LONG).show();
                 } else if (opOcupacion.matches("sin datos")) {
                     Toast.makeText(getBaseContext(), "CAPTURA:  " + capturaOcupacion, Toast.LENGTH_LONG).show();

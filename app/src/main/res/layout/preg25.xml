@@ -41,7 +41,7 @@
       android:orientation="vertical" >
       
           <RadioButton
-          android:id="@+id/radio25_1"
+          android:id="@+id/radio1"
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,12 +49,12 @@
             android:textColor="@drawable/radiobutton_color_selector"
             android:textSize="16sp"
             android:theme="@style/RadioButton"
-            android:text="0"
+            android:text="﻿0"
             android:visibility="gone"
             />
             
           <RadioButton
-          android:id="@+id/radio25_2"
+          android:id="@+id/radio2"
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,67 +67,7 @@
             />
             
           <RadioButton
-          android:id="@+id/radio25_3"
-          
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/radiobutton_selector"
-            android:textColor="@drawable/radiobutton_color_selector"
-            android:textSize="16sp"
-            android:theme="@style/RadioButton"
-            android:text="@string/C_1_alcalde"
-            />
-            
-          <RadioButton
-          android:id="@+id/radio25_4"
-          
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/radiobutton_selector"
-            android:textColor="@drawable/radiobutton_color_selector"
-            android:textSize="16sp"
-            android:theme="@style/RadioButton"
-            android:text="@string/C_2_alcalde"
-            />
-            
-          <RadioButton
-          android:id="@+id/radio25_5"
-          
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/radiobutton_selector"
-            android:textColor="@drawable/radiobutton_color_selector"
-            android:textSize="16sp"
-            android:theme="@style/RadioButton"
-            android:text="@string/C_3_alcalde"
-            />
-            
-          <RadioButton
-          android:id="@+id/radio25_6"
-          
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/radiobutton_selector"
-            android:textColor="@drawable/radiobutton_color_selector"
-            android:textSize="16sp"
-            android:theme="@style/RadioButton"
-            android:text="@string/C_4_alcalde"
-            />
-            
-          <RadioButton
-          android:id="@+id/radio25_7"
-          
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/radiobutton_selector"
-            android:textColor="@drawable/radiobutton_color_selector"
-            android:textSize="16sp"
-            android:theme="@style/RadioButton"
-            android:text="Otro"
-            />
-            
-          <RadioButton
-          android:id="@+id/radio25_8"
+          android:id="@+id/radio3"
           
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -140,7 +80,7 @@
           />
           
           <RadioButton
-          android:id="@+id/radio25_9"
+          android:id="@+id/radio4"
           
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -153,7 +93,7 @@
           />
           
           <RadioButton
-          android:id="@+id/radio25_10"
+          android:id="@+id/radio5"
           
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -166,7 +106,7 @@
           />
           
           <RadioButton
-          android:id="@+id/radio25_11"
+          android:id="@+id/radio6"
           
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -179,7 +119,7 @@
           />
           
           <RadioButton
-          android:id="@+id/radio25_12"
+          android:id="@+id/radio7"
           
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -192,7 +132,7 @@
           />
           
           <RadioButton
-          android:id="@+id/radio25_13"
+          android:id="@+id/radio8"
           
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -205,18 +145,32 @@
           />
           
           <RadioButton
-          android:id="@+id/radio25_0"
+          android:id="@+id/radio9"
+          
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:button="@drawable/radiobutton_selector"
+          android:textColor="@drawable/radiobutton_color_selector"
+          android:textSize="16sp"
+          android:theme="@style/RadioButton"
+          android:text=""
+          android:visibility="gone"
+          />
+          
+          <RadioButton
+          android:id="@+id/radio0"
           
           
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/radiobutton_selector"
-            android:textColor="@drawable/radiobutton_color_selector"
-            android:textSize="16sp"
-            android:theme="@style/RadioButton"
-            android:text="No sabe / No contestó"
-            />
-            
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:button="@drawable/radiobutton_selector"
+          android:textColor="@drawable/radiobutton_color_selector"
+          android:textSize="16sp"
+          android:theme="@style/RadioButton"
+          android:text=""
+          android:visibility="gone"
+          />
+          
       </RadioGroup>
       </LinearLayout>
       </LinearLayout>

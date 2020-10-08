@@ -159,109 +159,75 @@
             <include layout="@layout/preg24_6a"/>
             <include layout="@layout/preg24_6b"/>
 
+
+
+
             <include layout="@layout/preg25"/>
-            <include layout="@layout/preg26"/>
+
+
+            <include layout="@layout/preg25_4"/>
+            <include layout="@layout/preg25_4a"/>
+            <include layout="@layout/preg25_4b"/>
+            <include layout="@layout/preg25_4c"/>
+            <include layout="@layout/preg25_4d"/>
+
+            <include layout="@layout/preg25_5"/>
+            <include layout="@layout/preg25_5a"/>
+            <include layout="@layout/preg25_5b"/>
+            <include layout="@layout/preg25_5c"/>
+            <include layout="@layout/preg25_5d"/>
+
+            <include layout="@layout/preg25_6"/>
+            <include layout="@layout/preg25_6a"/>
+            <include layout="@layout/preg25_6b"/>
+            <include layout="@layout/preg25_6c"/>
+            <include layout="@layout/preg25_6d"/>
+
+            <include layout="@layout/preg25_7"/>
+            <include layout="@layout/preg25_7a"/>
+            <include layout="@layout/preg25_7b"/>
+            <include layout="@layout/preg25_7c"/>
+            <include layout="@layout/preg25_7d"/>
+
+            <include layout="@layout/preg25_1"/>
+            <include layout="@layout/preg25_1a"/>
+            <include layout="@layout/preg25_1b"/>
+            <include layout="@layout/preg25_1c"/>
+            <include layout="@layout/preg25_1d"/>
+
+            <include layout="@layout/preg25_2"/>
+            <include layout="@layout/preg25_2a"/>
+            <include layout="@layout/preg25_2b"/>
+            <include layout="@layout/preg25_2c"/>
+            <include layout="@layout/preg25_2d"/>
+
+            <include layout="@layout/preg25_3"/>
+            <include layout="@layout/preg25_3a"/>
+            <include layout="@layout/preg25_3b"/>
+            <include layout="@layout/preg25_3c"/>
+            <include layout="@layout/preg25_3d"/>
+
+
+            <include layout="@layout/preg25_8"/>
+            <include layout="@layout/preg25_8a"/>
+            <include layout="@layout/preg25_8b"/>
+            <include layout="@layout/preg25_8c"/>
+            <include layout="@layout/preg25_8d"/>
+
+            <include layout="@layout/preg25_9"/>
+            <include layout="@layout/preg25_9a"/>
+            <include layout="@layout/preg25_9b"/>
+            <include layout="@layout/preg25_9c"/>
+            <include layout="@layout/preg25_9d"/>
+
+            <include layout="@layout/preg25_10"/>
+            <include layout="@layout/preg25_10a"/>
+            <include layout="@layout/preg25_10b"/>
+            <include layout="@layout/preg25_10c"/>
+            <include layout="@layout/preg25_10d"/>
+
+            <include layout="@layout/preg26b"/>
             <include layout="@layout/preg27"/>
-
-
-
-            <include layout="@layout/preg27_3"/>
-            <include layout="@layout/preg27_3a"/>
-            <include layout="@layout/preg27_3b"/>
-
-
-
-            <include layout="@layout/preg27_5"/>
-            <include layout="@layout/preg27_5a"/>
-            <include layout="@layout/preg27_5b"/>
-
-            <include layout="@layout/preg27_6"/>
-            <include layout="@layout/preg27_6a"/>
-            <include layout="@layout/preg27_6b"/>
-
-            <include layout="@layout/preg27_1"/>
-            <include layout="@layout/preg27_1a"/>
-            <include layout="@layout/preg27_1b"/>
-
-            <include layout="@layout/preg27_2"/>
-            <include layout="@layout/preg27_2a"/>
-            <include layout="@layout/preg27_2b"/>
-
-            <include layout="@layout/preg27_4"/>
-            <include layout="@layout/preg27_4a"/>
-            <include layout="@layout/preg27_4b"/>
-
-            <include layout="@layout/preg27_7"/>
-            <include layout="@layout/preg27_7a"/>
-            <include layout="@layout/preg27_7b"/>
-
-
-
-            <include layout="@layout/preg27_10"/>
-            <include layout="@layout/preg27_10a"/>
-            <include layout="@layout/preg27_10b"/>
-
-            <include layout="@layout/preg27_8"/>
-            <include layout="@layout/preg27_8a"/>
-            <include layout="@layout/preg27_8b"/>
-
-            <include layout="@layout/preg27_9"/>
-            <include layout="@layout/preg27_9a"/>
-            <include layout="@layout/preg27_9b"/>
-
-            <include layout="@layout/preg28"/>
-            <include layout="@layout/preg29"/>
-            <include layout="@layout/preg30"/>
-
-
-
-            <include layout="@layout/preg30_3"/>
-            <include layout="@layout/preg30_3a"/>
-            <include layout="@layout/preg30_3b"/>
-
-
-
-            <include layout="@layout/preg30_1"/>
-            <include layout="@layout/preg30_1a"/>
-            <include layout="@layout/preg30_1b"/>
-
-            <include layout="@layout/preg30_4"/>
-            <include layout="@layout/preg30_4a"/>
-            <include layout="@layout/preg30_4b"/>
-
-            <include layout="@layout/preg30_2"/>
-            <include layout="@layout/preg30_2a"/>
-            <include layout="@layout/preg30_2b"/>
-
-            <include layout="@layout/preg30_5"/>
-            <include layout="@layout/preg30_5a"/>
-            <include layout="@layout/preg30_5b"/>
-
-
-
-            <include layout="@layout/preg30_8"/>
-            <include layout="@layout/preg30_8a"/>
-            <include layout="@layout/preg30_8b"/>
-
-            <include layout="@layout/preg30_9"/>
-            <include layout="@layout/preg30_9a"/>
-            <include layout="@layout/preg30_9b"/>
-
-            <include layout="@layout/preg30_10"/>
-            <include layout="@layout/preg30_10a"/>
-            <include layout="@layout/preg30_10b"/>
-
-            <include layout="@layout/preg30_6"/>
-            <include layout="@layout/preg30_6a"/>
-            <include layout="@layout/preg30_6b"/>
-
-            <include layout="@layout/preg30_7"/>
-            <include layout="@layout/preg30_7a"/>
-            <include layout="@layout/preg30_7b"/>
-
-            <include layout="@layout/preg31"/>
-            <include layout="@layout/preg32"/>
-
 
             <include layout="@layout/socioeconomicos" />
             <include layout="@layout/abandono" />

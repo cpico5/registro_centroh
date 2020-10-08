@@ -446,10 +446,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
         txtEquipo = (TextView) findViewById(R.id.txtEquipo);
 
         spinnerEquipo = (Spinner) findViewById(R.id.spinnerEquipo);
-        spinnerEntidad = (Spinner) findViewById(R.id.spinnerEntidad);
-        spinnerAlcaldia = (Spinner) findViewById(R.id.spinnerAlcaldia);
-        spinnerFederal = (Spinner) findViewById(R.id.spinnerFederal);
-        spinnerLocal = (Spinner) findViewById(R.id.spinnerLocal);
+//        spinnerEntidad = (Spinner) findViewById(R.id.spinnerEntidad);
+//        spinnerAlcaldia = (Spinner) findViewById(R.id.spinnerAlcaldia);
+//        spinnerFederal = (Spinner) findViewById(R.id.spinnerFederal);
+//        spinnerLocal = (Spinner) findViewById(R.id.spinnerLocal);
 //        spinner_seccion = (Spinner) findViewById(R.id.spinner_seccion);
 
         // btnInsertar = (Button)findViewById(R.id.btnInsertar);
@@ -1480,10 +1480,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                 values.put("fecha", formattedDateFecha);
                 values.put("hora", formattedDate5);
                 values.put("imei", sacaImei());
-                values.put("entidad", spinnerEntidad.getSelectedItem().toString());
-                values.put("alcaldia", spinnerAlcaldia.getSelectedItem().toString());
-                values.put("dtto_federal", spinnerFederal.getSelectedItem().toString());
-                values.put("dtto_local", spinnerLocal.getSelectedItem().toString());
+                values.put("entidad", "Ciudad de México");
+                values.put("alcaldia", delegacion());
+                values.put("dtto_federal", dtto_fed());
+                values.put("dtto_local", dtto_loc());
                 values.put("seccion", strSecc);
                 values.put("latitud", strLatitud);
                 values.put("longitud", strLongitud);
@@ -1582,10 +1582,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                 values.put("fecha", formattedDateFecha);
                 values.put("hora", formattedDate5);
                 values.put("imei", sacaImei());
-                values.put("entidad", spinnerEntidad.getSelectedItem().toString());
-                values.put("alcaldia", spinnerAlcaldia.getSelectedItem().toString());
-                values.put("dtto_federal", spinnerFederal.getSelectedItem().toString());
-                values.put("dtto_local", spinnerLocal.getSelectedItem().toString());
+                values.put("entidad", "Ciudad de México");
+                values.put("alcaldia", delegacion());
+                values.put("dtto_federal", dtto_fed());
+                values.put("dtto_local", dtto_loc());
                 values.put("seccion", strSecc);
                 values.put("latitud", strLatitud);
                 values.put("longitud", strLongitud);
@@ -1683,10 +1683,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                 values.put("fecha", formattedDateFecha);
                 values.put("hora", formattedDate5);
                 values.put("imei", sacaImei());
-                values.put("entidad", spinnerEntidad.getSelectedItem().toString());
-                values.put("alcaldia", spinnerAlcaldia.getSelectedItem().toString());
-                values.put("dtto_federal", spinnerFederal.getSelectedItem().toString());
-                values.put("dtto_local", spinnerLocal.getSelectedItem().toString());
+                values.put("entidad", "Ciudad de México");
+                values.put("alcaldia", delegacion());
+                values.put("dtto_federal", dtto_fed());
+                values.put("dtto_local", dtto_loc());
                 values.put("seccion", strSecc);
                 values.put("latitud", strLatitud);
                 values.put("longitud", strLongitud);
@@ -1784,10 +1784,10 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                 values.put("fecha", formattedDateFecha);
                 values.put("hora", formattedDate5);
                 values.put("imei", sacaImei());
-                values.put("entidad", spinnerEntidad.getSelectedItem().toString());
-                values.put("alcaldia", spinnerAlcaldia.getSelectedItem().toString());
-                values.put("dtto_federal", spinnerFederal.getSelectedItem().toString());
-                values.put("dtto_local", spinnerLocal.getSelectedItem().toString());
+                values.put("entidad", "Ciudad de México");
+                values.put("alcaldia", delegacion());
+                values.put("dtto_federal", dtto_fed());
+                values.put("dtto_local", dtto_loc());
                 values.put("seccion", strSecc);
                 values.put("latitud", strLatitud);
                 values.put("longitud", strLongitud);
