@@ -1048,7 +1048,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         MainActivityPantalla1.this.runOnUiThread(new Runnable() {
             public void run() {
-                builder.setMessage("¿Se detendrá la grabación y \n se reiniciará la encuesta..?")
+                builder.setMessage("¿Se detendrá la grabación y \n se reiniciará la encuestas..?")
                         .setTitle("AVISO...!!!").setCancelable(false)
                         .setNegativeButton("SALIR", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -1076,7 +1076,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         MainActivityPantalla1.this.runOnUiThread(new Runnable() {
             public void run() {
-                builder.setMessage("Excediste el tiempo máximo para realizar la encuesta \n"
+                builder.setMessage("Excediste el tiempo máximo para realizar la encuestas \n"
                         + "¡¡¡ Se detendrá la grabación y se reiniciará la Aplicación..!!!").setTitle("AVISO...!!!")
                         .setCancelable(false).setNegativeButton("SALIR", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -1105,7 +1105,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         MainActivityPantalla1.this.runOnUiThread(new Runnable() {
             public void run() {
-                builder.setMessage("Deseas abandonar la encuesta?").setTitle("AVISO...!!!").setCancelable(false)
+                builder.setMessage("Deseas abandonar la encuestas?").setTitle("AVISO...!!!").setCancelable(false)
                         .setNegativeButton("SALIR", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
@@ -2444,15 +2444,12 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
                 } else if (checkedId == R.id.radio11) {
                     op7 = "Educación";
                     editPregunta7.setText("");
-                } else if (checkedId == R.id.radio12) {
-                    op7 = "Otro (registrar)";
-                    editPregunta7.setText("");
-                } else if (checkedId == R.id.radio13) {
+                }  else if (checkedId == R.id.radio13) {
                     op7 = "Ninguno";
                     editPregunta7.setText("");
                 }
                 else if (checkedId == R.id.radio14) {
-                    op7 = "Asaltos";
+                    op7 = "Alumbrado";
                     editPregunta7.setText("");
                 }
                 else if (checkedId == R.id.radio15) {
@@ -6172,10 +6169,10 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
 
         RequestParams params = new RequestParams();
         params.put("api", "guarda_encuesta");
-        params.put("encuesta", encuesta);
+        params.put("encuestas", encuesta);
         params.put("data", json);
 
-        Log.d(TAG, "pimc -----------> " + json);
+        Log.d(TAG, "cqs -----------> " + json);
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.setSSLSocketFactory(MySSLSocketFactory.getFixedSocketFactory());
@@ -6187,8 +6184,8 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 showProgress(false);
-                Log.d(TAG, "pimc -----------> Respuesta OK ");
-                Log.d(TAG, "pimc -----------> " + new String(responseBody));
+                Log.d(TAG, "cqs -----------> Respuesta OK ");
+                Log.d(TAG, "cqs -----------> " + new String(responseBody));
                 try {
 
 
@@ -6198,7 +6195,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
 
                         Gson gson = new Gson();
                         JSONObject jsonObject = new JSONObject(json);
-                        Log.d(TAG, "pimc -----------> Data: " + jsonObject.get("data"));
+                        Log.d(TAG, "cqs -----------> Data: " + jsonObject.get("data"));
 
                         String login = jsonObject.getJSONObject("response").get("code").toString();
                         if (Integer.valueOf(login) == 1) {

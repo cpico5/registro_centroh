@@ -72,11 +72,10 @@ import cz.msebera.android.httpclient.Header;
 import mx.gob.cdmx.estudioscdmx.db.DaoManager;
 import mx.gob.cdmx.estudioscdmx.model.Aplicacion;
 import mx.gob.cdmx.estudioscdmx.model.candidatos_cdmx;
+import mx.gob.cdmx.estudioscdmx.model.encuestas;
 import mx.gob.cdmx.estudioscdmx.service.AndroidLocationServices;
 import mx.gob.cdmx.estudioscdmx.service.GPSWidgetProvider;
-import mx.gob.cdmx.estudioscdmx.R;
 
-import static mx.gob.cdmx.estudioscdmx.Nombre.ALCALDIA;
 import static mx.gob.cdmx.estudioscdmx.Nombre.ALCALDIA;
 import static mx.gob.cdmx.estudioscdmx.Nombre.customURL;
 import static mx.gob.cdmx.estudioscdmx.Nombre.customURLcatalogos;
@@ -100,6 +99,8 @@ public class Bienvenida extends AppCompatActivity {
     double longitude;
     private DaoManager daoManager;
 
+    private encuestas estudiosCdmx = new encuestas();
+
     public String maximo = "";
     int elMaximo;
     Boolean bandera = false;
@@ -108,8 +109,8 @@ public class Bienvenida extends AppCompatActivity {
 
     Nombre nom = new Nombre();
     String nombreEncuesta = nom.nombreEncuesta();
-    String upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
-    String upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
+    String upLoadServerUriBase = "http://35.226.91.72/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
+    String upLoadServerUriAudio = "http://35.226.91.72/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
     int serverResponseCode = 0;
 
     String token;
@@ -192,9 +193,27 @@ public class Bienvenida extends AppCompatActivity {
 
         mProgressView = findViewById(R.id.login_progressMain);
 
+//        String DATABASE_NAME = Environment.getExternalStorageDirectory() + "/Mis_archivos/" + nombreEncuesta + "_"
+//                + sacaImei() + "";
+//
+//        usdbh = new UsuariosSQLiteHelper(this, "F", null, 1, DATABASE_NAME);
+//        db = usdbh.getReadableDatabase();
+//
+//        DaoManager daoManager = new DaoManager(db);
+//        estudiosCdmx = (encuestas) daoManager.findByNoSend(encuestas.class, "0", null) ;
+//
+//        if (estudiosCdmx != null){
+//
+//
+//
+//
+//
+//        }
+
+
 //        showProgress(true);
 
-        String SQLFprint = "CREATE TABLE fp (" +
+        String SQLFprint = "CREATE TABLE fprint (" +
                 "id integer primary key autoincrement," +
                 "user TEXT NOT NULL," +
                 "pass TEXT NOT NULL," +
@@ -203,10 +222,10 @@ public class Bienvenida extends AppCompatActivity {
         try {
 
             db3.execSQL(SQLFprint);
-            Log.i("cqs --->> Crea Tabla", "Se crea la tabla: " + "fp");
+            Log.i("cqs --->> Crea Tabla", "Se crea la tabla: " + "fprint");
         } catch (Exception e) {
             String stackTrace = Log.getStackTraceString(e);
-            Log.i("cqs --->> Crea tabla", "Error al crear la tabla fp" + stackTrace);
+            Log.i("cqs --->> Crea tabla", "Error al crear la tabla fprint" + stackTrace);
         }
 
 
@@ -221,7 +240,7 @@ public class Bienvenida extends AppCompatActivity {
 
         if (elMaximoFecha.matches("1")) {
             Log.i(TAG, " =====> El numero inicial: " + elMaximoFecha);
-            Log.i(TAG, " =====> El nombre de la encuesta: " + nombreEncuesta);
+            Log.i(TAG, " =====> El nombre de la encuestas: " + nombreEncuesta);
             Log.i(TAG, " =====> Cuantas secciones hay: " + sacaCuantosSecciones());
             int haySecciones = Integer.parseInt(sacaCuantosSecciones());
             if (haySecciones == 0) {
@@ -372,8 +391,8 @@ public class Bienvenida extends AppCompatActivity {
             });
 
 
-            new uploadData.UpdateBases().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, sacaImei());
-            new uploadData.UpdateAudios().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+            new UpdateBases().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, sacaImei());
+            new UpdateAudios().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 //            Log.i(TAG,"cqs ------------>> TOKEN A PASAR: "+ObtenerToken());
 //            ObtenerToken();
 //            NotificacionIDTokenService notificacionIDTokenService = new NotificacionIDTokenService();
@@ -520,7 +539,7 @@ public class Bienvenida extends AppCompatActivity {
         // Abrimos la base de datos 'DBUsuarios' en modo escritura
         usdbh3 = new UsuariosSQLiteHelper3(this);
         db3 = usdbh3.getReadableDatabase();
-        String selectQuery = "select count(*) from fp";
+        String selectQuery = "select count(*) from fprint";
         Cursor cursor = db3.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
@@ -539,7 +558,7 @@ public class Bienvenida extends AppCompatActivity {
         // Abrimos la base de datos 'DBUsuarios' en modo escritura
         usdbh3 = new UsuariosSQLiteHelper3(this);
         db3 = usdbh3.getReadableDatabase();
-        String selectQuery = "select user from fp limit 1";
+        String selectQuery = "select user from fprint limit 1";
         Cursor cursor = db3.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
@@ -557,7 +576,7 @@ public class Bienvenida extends AppCompatActivity {
         // Abrimos la base de datos 'DBUsuarios' en modo escritura
         usdbh3 = new UsuariosSQLiteHelper3(this);
         db3 = usdbh3.getReadableDatabase();
-        String selectQuery = "select pass from fp limit 1";
+        String selectQuery = "select pass from fprint limit 1";
         Cursor cursor = db3.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
@@ -575,7 +594,7 @@ public class Bienvenida extends AppCompatActivity {
         // Abrimos la base de datos 'DBUsuarios' en modo escritura
         usdbh3 = new UsuariosSQLiteHelper3(this);
         db3 = usdbh3.getReadableDatabase();
-        String selectQuery = "select activo from fp limit 1";
+        String selectQuery = "select activo from fprint limit 1";
         Cursor cursor = db3.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
@@ -1186,7 +1205,7 @@ public class Bienvenida extends AppCompatActivity {
 //    }
 
     public void activ() {
-        String SQLFprint = "update fp set activo='1' where activo ='0' ";
+        String SQLFprint = "update fprint set activo='1' where activo ='0' ";
 
         try {
 
@@ -1194,7 +1213,7 @@ public class Bienvenida extends AppCompatActivity {
             db3 = usdbh3.getReadableDatabase();
 
             db3.execSQL(SQLFprint);
-            Log.i("cqs --->> Actualiza", "Se Actualiza el usuario: " + "fp");
+            Log.i("cqs --->> Actualiza", "Se Actualiza el usuario: " + "fprint");
         } catch (Exception e) {
             String stackTrace = Log.getStackTraceString(e);
             Log.i("cqs --->>", "Error al actualizar el usuario" + stackTrace);
@@ -1202,7 +1221,7 @@ public class Bienvenida extends AppCompatActivity {
     }
 
     public void noActiv() {
-        String SQLFprint = "update fp set activo='0' where activo ='1' ";
+        String SQLFprint = "update fprint set activo='0' where activo ='1' ";
 
         try {
 
@@ -1210,7 +1229,7 @@ public class Bienvenida extends AppCompatActivity {
             db3 = usdbh3.getReadableDatabase();
 
             db3.execSQL(SQLFprint);
-            Log.i("cqs --->> Actualiza", "Se Actualiza el usuario: " + "fp");
+            Log.i("cqs --->> Actualiza", "Se Actualiza el usuario: " + "fprint");
         } catch (Exception e) {
             String stackTrace = Log.getStackTraceString(e);
             Log.i("cqs --->>", "Error al actualizar el usuario" + stackTrace);
@@ -1353,7 +1372,7 @@ public class Bienvenida extends AppCompatActivity {
             String sDirectorio = pathBase;
             final File f = new File(sDirectorio);
             Log.i(TAG, "lista" + pathBase);
-            final String customURL = "https://opinion.cdmx.gob.mx/cgi-bin/bases/";
+            final String customURL = "http://35.226.91.72/cgi-bin/bases/";
             Log.i(TAG, " =====> lista 1: " + pathBase);
             File F = new File(pathBase);
             try {
@@ -1422,8 +1441,7 @@ public class Bienvenida extends AppCompatActivity {
             final File f = new File(sDirectorio);
             Log.i(TAG, "lista" + pathAudios);
 
-//						final String customURL = "https://opinion.cdmx.gob.mx/cgi-bin/fotos/programas_sociales/";
-            final String customURL = "https://opinion.cdmx.gob.mx/audios/" + nombreEncuesta + "/";
+            final String customURL = "http://35.226.91.72/audios/" + nombreEncuesta + "/";
 
             Log.i(TAG, " =====> URL audios: " + customURL);
             Log.i(TAG, " =====> lista audios 1: " + pathAudios);
@@ -1772,7 +1790,7 @@ public class Bienvenida extends AppCompatActivity {
 
         RequestParams params = new RequestParams();
         params.put("api", "candidatoscdmx");
-        params.put("encuesta", laEncuesta);
+        params.put("encuestas", laEncuesta);
         params.put("tabla", "candidatos_cdmx");
 
         AsyncHttpClient client = new AsyncHttpClient();

@@ -17,7 +17,7 @@ public class Nombre {
 	static final public String URL = "https://opinion.cdmx.gob.mx/cgi-bin/php/geo/mapa_ssc.php?cuadrante=";
 	public String nombreEncuesta(){
 		
-		final String nombreEncuesta = "estudios_cdmx";
+		final String nombreEncuesta = "encuestas";
 
 
 		return nombreEncuesta;

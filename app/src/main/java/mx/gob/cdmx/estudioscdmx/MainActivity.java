@@ -97,8 +97,8 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
     Nombre nom = new Nombre();
     String nombreEncuesta = nom.nombreEncuesta();
-    String upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
-    String upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
+    String upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
+    String upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
     int serverResponseCode = 0;
     private View mProgressView;
 
@@ -367,7 +367,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
         if (elMaximoFecha.matches("1")) {
             Log.i(TAG, " =====> El numero inicial: " + elMaximoFecha);
-            Log.i(TAG, " =====> El nombre de la encuesta: " + nombreEncuesta);
+            Log.i(TAG, " =====> El nombre de la encuestas: " + nombreEncuesta);
             Log.i(TAG, " =====> DATOS EN EL ACATALOGO: " + sacaCatalogoDatos());
             if (!verificaConexion(this)) {
                 Toast.makeText(getBaseContext(), "Sin conexión\n Inténtelo de nuevo",
@@ -615,7 +615,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
     public void catalogos(View view){
 
-        Log.i(TAG, " =====> El nombre de la encuesta: " + nombreEncuesta);
+        Log.i(TAG, " =====> El nombre de la encuestas: " + nombreEncuesta);
         catalogoCandidatosWS(nombreEncuesta);
         Intent intent = new Intent(getApplicationContext(), Bienvenida.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -1488,9 +1488,149 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                 values.put("latitud", strLatitud);
                 values.put("longitud", strLongitud);
 
+                values.put("pregunta_1", "sin datos");
+                values.put("pregunta_2", "sin datos");
+                values.put("pregunta_3", "sin datos");
+                values.put("pregunta_4", "sin datos");
+                values.put("pregunta_5", "sin datos");
+                values.put("pregunta_6", "sin datos");
+                values.put("pregunta_7", "sin datos");
+                values.put("pregunta_pc", "sin datos");
+                values.put("pregunta_pc_1", "sin datos");
+                values.put("pregunta_pc_2", "sin datos");
+                values.put("pregunta_pc_3", "sin datos");
+                values.put("pregunta_pc_4", "sin datos");
+                values.put("pregunta_8", "sin datos");
+                values.put("pregunta_9", "sin datos");
+                values.put("pregunta_10", "sin datos");
+                values.put("pregunta_11", "sin datos");
+                values.put("pregunta_12", "sin datos");
+                values.put("pregunta_13", "sin datos");
+                values.put("pregunta_14", "sin datos");
+                values.put("pregunta_15", "sin datos");
+                values.put("pregunta_16", "sin datos");
+                values.put("pregunta_16a", "sin datos");
+                values.put("pregunta_16b", "sin datos");
+                values.put("pregunta_17", "sin datos");
+                values.put("pregunta_17a", "sin datos");
+                values.put("pregunta_18", "sin datos");
+                values.put("pregunta_19", "sin datos");
+                values.put("pregunta_19a", "sin datos");
+                values.put("pregunta_19b", "sin datos");
+                values.put("pregunta_20", "sin datos");
+                values.put("pregunta_21", "sin datos");
+                values.put("pregunta_22", "sin datos");
+                values.put("pregunta_23", "sin datos");
+                values.put("pregunta_24", "sin datos");
+
+                values.put("pregunta_24_1", "sin datos");
+                values.put("pregunta_24_1a", "sin datos");
+                values.put("pregunta_24_1b", "sin datos");//perez
+
+                values.put("pregunta_24_2", "sin datos");
+                values.put("pregunta_24_2a", "sin datos");
+                values.put("pregunta_24_2b", "sin datos");//sanchez
+
+                values.put("pregunta_24_3", "sin datos");
+                values.put("pregunta_24_3a", "sin datos");
+                values.put("pregunta_24_3b", "sin datos");//molina
+
+                values.put("pregunta_24_4", "sin datos");
+                values.put("pregunta_24_4a", "sin datos");
+                values.put("pregunta_24_4b", "sin datos");
+                values.put("pregunta_24_5", "sin datos");
+                values.put("pregunta_24_5a", "sin datos");
+                values.put("pregunta_24_5b", "sin datos");
+                values.put("pregunta_24_6", "sin datos");
+                values.put("pregunta_24_6a", "sin datos");
+                values.put("pregunta_24_6b", "sin datos");
+                values.put("pregunta_24_7", "sin datos");
+                values.put("pregunta_24_7a", "sin datos");
+                values.put("pregunta_24_7b", "sin datos");
+                values.put("pregunta_24_8", "sin datos");
+                values.put("pregunta_24_8a", "sin datos");
+                values.put("pregunta_24_8b", "sin datos");
+                values.put("pregunta_24_9", "sin datos");
+                values.put("pregunta_24_9a", "sin datos");
+                values.put("pregunta_24_9b", "sin datos");
+                values.put("pregunta_24_10", "sin datos");
+                values.put("pregunta_24_10a", "sin datos");
+                values.put("pregunta_24_10b", "sin datos");
+
+                values.put("pregunta_25","sin datos");
+                values.put("pregunta_25_1","sin datos");
+                values.put("pregunta_25_1a","sin datos");
+                values.put("pregunta_25_1b","sin datos");
+                values.put("pregunta_25_1c","sin datos");
+                values.put("pregunta_25_1d","sin datos");
+                values.put("pregunta_25_2","sin datos");
+                values.put("pregunta_25_2a","sin datos");
+                values.put("pregunta_25_2b","sin datos");
+                values.put("pregunta_25_2c","sin datos");
+                values.put("pregunta_25_2d","sin datos");
+                values.put("pregunta_25_3","sin datos");
+                values.put("pregunta_25_3a","sin datos");
+                values.put("pregunta_25_3b","sin datos");
+                values.put("pregunta_25_3c","sin datos");
+                values.put("pregunta_25_3d","sin datos");
+                values.put("pregunta_25_4","sin datos");
+                values.put("pregunta_25_4a","sin datos");
+                values.put("pregunta_25_4b","sin datos");
+                values.put("pregunta_25_4c","sin datos");
+                values.put("pregunta_25_4d","sin datos");
+                values.put("pregunta_25_5","sin datos");
+                values.put("pregunta_25_5a","sin datos");
+                values.put("pregunta_25_5b","sin datos");
+                values.put("pregunta_25_5c","sin datos");
+                values.put("pregunta_25_5d","sin datos");
+                values.put("pregunta_25_6","sin datos");
+                values.put("pregunta_25_6a","sin datos");
+                values.put("pregunta_25_6b","sin datos");
+                values.put("pregunta_25_6c","sin datos");
+                values.put("pregunta_25_6d","sin datos");
+                values.put("pregunta_25_7","sin datos");
+                values.put("pregunta_25_7a","sin datos");
+                values.put("pregunta_25_7b","sin datos");
+                values.put("pregunta_25_7c","sin datos");
+                values.put("pregunta_25_7d","sin datos");
+                values.put("pregunta_25_8","sin datos");
+                values.put("pregunta_25_8a","sin datos");
+                values.put("pregunta_25_8b","sin datos");
+                values.put("pregunta_25_8c","sin datos");
+                values.put("pregunta_25_8d","sin datos");
+                values.put("pregunta_25_9","sin datos");
+                values.put("pregunta_25_9a","sin datos");
+                values.put("pregunta_25_9b","sin datos");
+                values.put("pregunta_25_9c","sin datos");
+                values.put("pregunta_25_9d","sin datos");
+                values.put("pregunta_25_10","sin datos");
+                values.put("pregunta_25_10a","sin datos");
+                values.put("pregunta_25_10b","sin datos");
+                values.put("pregunta_25_10c","sin datos");
+                values.put("pregunta_25_10d","sin datos");
+
+
+                values.put("pregunta_26", "sin datos");
+                values.put("pregunta_27","sin datos");
+
+                values.put("aporta", "sin datos");
+                values.put("ocupacion", "sin datos");
+                values.put("cuantos_coches", "sin datos");
+                values.put("cuartos", "sin datos");
+                values.put("cuartos_dormir", "sin datos");
+                values.put("focos", "sin datos");
+                values.put("banos", "sin datos");
+                values.put("regadera", "sin datos");
+                values.put("estufa", "sin datos");
+                values.put("edad", "sin datos");
+                values.put("tipo_vivienda", "sin datos");
+                values.put("tipo_piso", "sin datos");
+
+
                 values.put("genero", "Masculino");
                 values.put("suma", "0");
                 values.put("status", "0");
+                values.put("abandono", "3");
 
                 values.put("tiempo", "00:00");
                 values.put("tipo_captura", "RECHAZO");
@@ -1590,9 +1730,148 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                 values.put("latitud", strLatitud);
                 values.put("longitud", strLongitud);
 
+                values.put("pregunta_1", "sin datos");
+                values.put("pregunta_2", "sin datos");
+                values.put("pregunta_3", "sin datos");
+                values.put("pregunta_4", "sin datos");
+                values.put("pregunta_5", "sin datos");
+                values.put("pregunta_6", "sin datos");
+                values.put("pregunta_7", "sin datos");
+                values.put("pregunta_pc", "sin datos");
+                values.put("pregunta_pc_1", "sin datos");
+                values.put("pregunta_pc_2", "sin datos");
+                values.put("pregunta_pc_3", "sin datos");
+                values.put("pregunta_pc_4", "sin datos");
+                values.put("pregunta_8", "sin datos");
+                values.put("pregunta_9", "sin datos");
+                values.put("pregunta_10", "sin datos");
+                values.put("pregunta_11", "sin datos");
+                values.put("pregunta_12", "sin datos");
+                values.put("pregunta_13", "sin datos");
+                values.put("pregunta_14", "sin datos");
+                values.put("pregunta_15", "sin datos");
+                values.put("pregunta_16", "sin datos");
+                values.put("pregunta_16a", "sin datos");
+                values.put("pregunta_16b", "sin datos");
+                values.put("pregunta_17", "sin datos");
+                values.put("pregunta_17a", "sin datos");
+                values.put("pregunta_18", "sin datos");
+                values.put("pregunta_19", "sin datos");
+                values.put("pregunta_19a", "sin datos");
+                values.put("pregunta_19b", "sin datos");
+                values.put("pregunta_20", "sin datos");
+                values.put("pregunta_21", "sin datos");
+                values.put("pregunta_22", "sin datos");
+                values.put("pregunta_23", "sin datos");
+                values.put("pregunta_24", "sin datos");
+
+                values.put("pregunta_24_1", "sin datos");
+                values.put("pregunta_24_1a", "sin datos");
+                values.put("pregunta_24_1b", "sin datos");//perez
+
+                values.put("pregunta_24_2", "sin datos");
+                values.put("pregunta_24_2a", "sin datos");
+                values.put("pregunta_24_2b", "sin datos");//sanchez
+
+                values.put("pregunta_24_3", "sin datos");
+                values.put("pregunta_24_3a", "sin datos");
+                values.put("pregunta_24_3b", "sin datos");//molina
+
+                values.put("pregunta_24_4", "sin datos");
+                values.put("pregunta_24_4a", "sin datos");
+                values.put("pregunta_24_4b", "sin datos");
+                values.put("pregunta_24_5", "sin datos");
+                values.put("pregunta_24_5a", "sin datos");
+                values.put("pregunta_24_5b", "sin datos");
+                values.put("pregunta_24_6", "sin datos");
+                values.put("pregunta_24_6a", "sin datos");
+                values.put("pregunta_24_6b", "sin datos");
+                values.put("pregunta_24_7", "sin datos");
+                values.put("pregunta_24_7a", "sin datos");
+                values.put("pregunta_24_7b", "sin datos");
+                values.put("pregunta_24_8", "sin datos");
+                values.put("pregunta_24_8a", "sin datos");
+                values.put("pregunta_24_8b", "sin datos");
+                values.put("pregunta_24_9", "sin datos");
+                values.put("pregunta_24_9a", "sin datos");
+                values.put("pregunta_24_9b", "sin datos");
+                values.put("pregunta_24_10", "sin datos");
+                values.put("pregunta_24_10a", "sin datos");
+                values.put("pregunta_24_10b", "sin datos");
+
+                values.put("pregunta_25","sin datos");
+                values.put("pregunta_25_1","sin datos");
+                values.put("pregunta_25_1a","sin datos");
+                values.put("pregunta_25_1b","sin datos");
+                values.put("pregunta_25_1c","sin datos");
+                values.put("pregunta_25_1d","sin datos");
+                values.put("pregunta_25_2","sin datos");
+                values.put("pregunta_25_2a","sin datos");
+                values.put("pregunta_25_2b","sin datos");
+                values.put("pregunta_25_2c","sin datos");
+                values.put("pregunta_25_2d","sin datos");
+                values.put("pregunta_25_3","sin datos");
+                values.put("pregunta_25_3a","sin datos");
+                values.put("pregunta_25_3b","sin datos");
+                values.put("pregunta_25_3c","sin datos");
+                values.put("pregunta_25_3d","sin datos");
+                values.put("pregunta_25_4","sin datos");
+                values.put("pregunta_25_4a","sin datos");
+                values.put("pregunta_25_4b","sin datos");
+                values.put("pregunta_25_4c","sin datos");
+                values.put("pregunta_25_4d","sin datos");
+                values.put("pregunta_25_5","sin datos");
+                values.put("pregunta_25_5a","sin datos");
+                values.put("pregunta_25_5b","sin datos");
+                values.put("pregunta_25_5c","sin datos");
+                values.put("pregunta_25_5d","sin datos");
+                values.put("pregunta_25_6","sin datos");
+                values.put("pregunta_25_6a","sin datos");
+                values.put("pregunta_25_6b","sin datos");
+                values.put("pregunta_25_6c","sin datos");
+                values.put("pregunta_25_6d","sin datos");
+                values.put("pregunta_25_7","sin datos");
+                values.put("pregunta_25_7a","sin datos");
+                values.put("pregunta_25_7b","sin datos");
+                values.put("pregunta_25_7c","sin datos");
+                values.put("pregunta_25_7d","sin datos");
+                values.put("pregunta_25_8","sin datos");
+                values.put("pregunta_25_8a","sin datos");
+                values.put("pregunta_25_8b","sin datos");
+                values.put("pregunta_25_8c","sin datos");
+                values.put("pregunta_25_8d","sin datos");
+                values.put("pregunta_25_9","sin datos");
+                values.put("pregunta_25_9a","sin datos");
+                values.put("pregunta_25_9b","sin datos");
+                values.put("pregunta_25_9c","sin datos");
+                values.put("pregunta_25_9d","sin datos");
+                values.put("pregunta_25_10","sin datos");
+                values.put("pregunta_25_10a","sin datos");
+                values.put("pregunta_25_10b","sin datos");
+                values.put("pregunta_25_10c","sin datos");
+                values.put("pregunta_25_10d","sin datos");
+
+
+                values.put("pregunta_26", "sin datos");
+                values.put("pregunta_27","sin datos");
+
+                values.put("aporta", "sin datos");
+                values.put("ocupacion", "sin datos");
+                values.put("cuantos_coches", "sin datos");
+                values.put("cuartos", "sin datos");
+                values.put("cuartos_dormir", "sin datos");
+                values.put("focos", "sin datos");
+                values.put("banos", "sin datos");
+                values.put("regadera", "sin datos");
+                values.put("estufa", "sin datos");
+                values.put("edad", "sin datos");
+                values.put("tipo_vivienda", "sin datos");
+                values.put("tipo_piso", "sin datos");
+
                 values.put("genero", "Femenino");
                 values.put("suma", "0");
                 values.put("status", "0");
+                values.put("abandono", "3");
 
                 values.put("tiempo", "00:00");
                 values.put("tipo_captura", "RECHAZO");
@@ -1691,9 +1970,148 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                 values.put("latitud", strLatitud);
                 values.put("longitud", strLongitud);
 
+                values.put("pregunta_1", "sin datos");
+                values.put("pregunta_2", "sin datos");
+                values.put("pregunta_3", "sin datos");
+                values.put("pregunta_4", "sin datos");
+                values.put("pregunta_5", "sin datos");
+                values.put("pregunta_6", "sin datos");
+                values.put("pregunta_7", "sin datos");
+                values.put("pregunta_pc", "sin datos");
+                values.put("pregunta_pc_1", "sin datos");
+                values.put("pregunta_pc_2", "sin datos");
+                values.put("pregunta_pc_3", "sin datos");
+                values.put("pregunta_pc_4", "sin datos");
+                values.put("pregunta_8", "sin datos");
+                values.put("pregunta_9", "sin datos");
+                values.put("pregunta_10", "sin datos");
+                values.put("pregunta_11", "sin datos");
+                values.put("pregunta_12", "sin datos");
+                values.put("pregunta_13", "sin datos");
+                values.put("pregunta_14", "sin datos");
+                values.put("pregunta_15", "sin datos");
+                values.put("pregunta_16", "sin datos");
+                values.put("pregunta_16a", "sin datos");
+                values.put("pregunta_16b", "sin datos");
+                values.put("pregunta_17", "sin datos");
+                values.put("pregunta_17a", "sin datos");
+                values.put("pregunta_18", "sin datos");
+                values.put("pregunta_19", "sin datos");
+                values.put("pregunta_19a", "sin datos");
+                values.put("pregunta_19b", "sin datos");
+                values.put("pregunta_20", "sin datos");
+                values.put("pregunta_21", "sin datos");
+                values.put("pregunta_22", "sin datos");
+                values.put("pregunta_23", "sin datos");
+                values.put("pregunta_24", "sin datos");
+
+                values.put("pregunta_24_1", "sin datos");
+                values.put("pregunta_24_1a", "sin datos");
+                values.put("pregunta_24_1b", "sin datos");//perez
+
+                values.put("pregunta_24_2", "sin datos");
+                values.put("pregunta_24_2a", "sin datos");
+                values.put("pregunta_24_2b", "sin datos");//sanchez
+
+                values.put("pregunta_24_3", "sin datos");
+                values.put("pregunta_24_3a", "sin datos");
+                values.put("pregunta_24_3b", "sin datos");//molina
+
+                values.put("pregunta_24_4", "sin datos");
+                values.put("pregunta_24_4a", "sin datos");
+                values.put("pregunta_24_4b", "sin datos");
+                values.put("pregunta_24_5", "sin datos");
+                values.put("pregunta_24_5a", "sin datos");
+                values.put("pregunta_24_5b", "sin datos");
+                values.put("pregunta_24_6", "sin datos");
+                values.put("pregunta_24_6a", "sin datos");
+                values.put("pregunta_24_6b", "sin datos");
+                values.put("pregunta_24_7", "sin datos");
+                values.put("pregunta_24_7a", "sin datos");
+                values.put("pregunta_24_7b", "sin datos");
+                values.put("pregunta_24_8", "sin datos");
+                values.put("pregunta_24_8a", "sin datos");
+                values.put("pregunta_24_8b", "sin datos");
+                values.put("pregunta_24_9", "sin datos");
+                values.put("pregunta_24_9a", "sin datos");
+                values.put("pregunta_24_9b", "sin datos");
+                values.put("pregunta_24_10", "sin datos");
+                values.put("pregunta_24_10a", "sin datos");
+                values.put("pregunta_24_10b", "sin datos");
+
+                values.put("pregunta_25","sin datos");
+                values.put("pregunta_25_1","sin datos");
+                values.put("pregunta_25_1a","sin datos");
+                values.put("pregunta_25_1b","sin datos");
+                values.put("pregunta_25_1c","sin datos");
+                values.put("pregunta_25_1d","sin datos");
+                values.put("pregunta_25_2","sin datos");
+                values.put("pregunta_25_2a","sin datos");
+                values.put("pregunta_25_2b","sin datos");
+                values.put("pregunta_25_2c","sin datos");
+                values.put("pregunta_25_2d","sin datos");
+                values.put("pregunta_25_3","sin datos");
+                values.put("pregunta_25_3a","sin datos");
+                values.put("pregunta_25_3b","sin datos");
+                values.put("pregunta_25_3c","sin datos");
+                values.put("pregunta_25_3d","sin datos");
+                values.put("pregunta_25_4","sin datos");
+                values.put("pregunta_25_4a","sin datos");
+                values.put("pregunta_25_4b","sin datos");
+                values.put("pregunta_25_4c","sin datos");
+                values.put("pregunta_25_4d","sin datos");
+                values.put("pregunta_25_5","sin datos");
+                values.put("pregunta_25_5a","sin datos");
+                values.put("pregunta_25_5b","sin datos");
+                values.put("pregunta_25_5c","sin datos");
+                values.put("pregunta_25_5d","sin datos");
+                values.put("pregunta_25_6","sin datos");
+                values.put("pregunta_25_6a","sin datos");
+                values.put("pregunta_25_6b","sin datos");
+                values.put("pregunta_25_6c","sin datos");
+                values.put("pregunta_25_6d","sin datos");
+                values.put("pregunta_25_7","sin datos");
+                values.put("pregunta_25_7a","sin datos");
+                values.put("pregunta_25_7b","sin datos");
+                values.put("pregunta_25_7c","sin datos");
+                values.put("pregunta_25_7d","sin datos");
+                values.put("pregunta_25_8","sin datos");
+                values.put("pregunta_25_8a","sin datos");
+                values.put("pregunta_25_8b","sin datos");
+                values.put("pregunta_25_8c","sin datos");
+                values.put("pregunta_25_8d","sin datos");
+                values.put("pregunta_25_9","sin datos");
+                values.put("pregunta_25_9a","sin datos");
+                values.put("pregunta_25_9b","sin datos");
+                values.put("pregunta_25_9c","sin datos");
+                values.put("pregunta_25_9d","sin datos");
+                values.put("pregunta_25_10","sin datos");
+                values.put("pregunta_25_10a","sin datos");
+                values.put("pregunta_25_10b","sin datos");
+                values.put("pregunta_25_10c","sin datos");
+                values.put("pregunta_25_10d","sin datos");
+
+
+                values.put("pregunta_26", "sin datos");
+                values.put("pregunta_27","sin datos");
+
+                values.put("aporta", "sin datos");
+                values.put("ocupacion", "sin datos");
+                values.put("cuantos_coches", "sin datos");
+                values.put("cuartos", "sin datos");
+                values.put("cuartos_dormir", "sin datos");
+                values.put("focos", "sin datos");
+                values.put("banos", "sin datos");
+                values.put("regadera", "sin datos");
+                values.put("estufa", "sin datos");
+                values.put("edad", "sin datos");
+                values.put("tipo_vivienda", "sin datos");
+                values.put("tipo_piso", "sin datos");
+
                 values.put("genero", "Masculino");
                 values.put("suma", "0");
                 values.put("status", "0");
+                values.put("abandono", "3");
 
                 values.put("tiempo", "00:00");
                 values.put("tipo_captura", "RECHAZO TEMOR A CONTAGIO");
@@ -1792,9 +2210,148 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                 values.put("latitud", strLatitud);
                 values.put("longitud", strLongitud);
 
+                values.put("pregunta_1", "sin datos");
+                values.put("pregunta_2", "sin datos");
+                values.put("pregunta_3", "sin datos");
+                values.put("pregunta_4", "sin datos");
+                values.put("pregunta_5", "sin datos");
+                values.put("pregunta_6", "sin datos");
+                values.put("pregunta_7", "sin datos");
+                values.put("pregunta_pc", "sin datos");
+                values.put("pregunta_pc_1", "sin datos");
+                values.put("pregunta_pc_2", "sin datos");
+                values.put("pregunta_pc_3", "sin datos");
+                values.put("pregunta_pc_4", "sin datos");
+                values.put("pregunta_8", "sin datos");
+                values.put("pregunta_9", "sin datos");
+                values.put("pregunta_10", "sin datos");
+                values.put("pregunta_11", "sin datos");
+                values.put("pregunta_12", "sin datos");
+                values.put("pregunta_13", "sin datos");
+                values.put("pregunta_14", "sin datos");
+                values.put("pregunta_15", "sin datos");
+                values.put("pregunta_16", "sin datos");
+                values.put("pregunta_16a", "sin datos");
+                values.put("pregunta_16b", "sin datos");
+                values.put("pregunta_17", "sin datos");
+                values.put("pregunta_17a", "sin datos");
+                values.put("pregunta_18", "sin datos");
+                values.put("pregunta_19", "sin datos");
+                values.put("pregunta_19a", "sin datos");
+                values.put("pregunta_19b", "sin datos");
+                values.put("pregunta_20", "sin datos");
+                values.put("pregunta_21", "sin datos");
+                values.put("pregunta_22", "sin datos");
+                values.put("pregunta_23", "sin datos");
+                values.put("pregunta_24", "sin datos");
+
+                values.put("pregunta_24_1", "sin datos");
+                values.put("pregunta_24_1a", "sin datos");
+                values.put("pregunta_24_1b", "sin datos");//perez
+
+                values.put("pregunta_24_2", "sin datos");
+                values.put("pregunta_24_2a", "sin datos");
+                values.put("pregunta_24_2b", "sin datos");//sanchez
+
+                values.put("pregunta_24_3", "sin datos");
+                values.put("pregunta_24_3a", "sin datos");
+                values.put("pregunta_24_3b", "sin datos");//molina
+
+                values.put("pregunta_24_4", "sin datos");
+                values.put("pregunta_24_4a", "sin datos");
+                values.put("pregunta_24_4b", "sin datos");
+                values.put("pregunta_24_5", "sin datos");
+                values.put("pregunta_24_5a", "sin datos");
+                values.put("pregunta_24_5b", "sin datos");
+                values.put("pregunta_24_6", "sin datos");
+                values.put("pregunta_24_6a", "sin datos");
+                values.put("pregunta_24_6b", "sin datos");
+                values.put("pregunta_24_7", "sin datos");
+                values.put("pregunta_24_7a", "sin datos");
+                values.put("pregunta_24_7b", "sin datos");
+                values.put("pregunta_24_8", "sin datos");
+                values.put("pregunta_24_8a", "sin datos");
+                values.put("pregunta_24_8b", "sin datos");
+                values.put("pregunta_24_9", "sin datos");
+                values.put("pregunta_24_9a", "sin datos");
+                values.put("pregunta_24_9b", "sin datos");
+                values.put("pregunta_24_10", "sin datos");
+                values.put("pregunta_24_10a", "sin datos");
+                values.put("pregunta_24_10b", "sin datos");
+
+                values.put("pregunta_25","sin datos");
+                values.put("pregunta_25_1","sin datos");
+                values.put("pregunta_25_1a","sin datos");
+                values.put("pregunta_25_1b","sin datos");
+                values.put("pregunta_25_1c","sin datos");
+                values.put("pregunta_25_1d","sin datos");
+                values.put("pregunta_25_2","sin datos");
+                values.put("pregunta_25_2a","sin datos");
+                values.put("pregunta_25_2b","sin datos");
+                values.put("pregunta_25_2c","sin datos");
+                values.put("pregunta_25_2d","sin datos");
+                values.put("pregunta_25_3","sin datos");
+                values.put("pregunta_25_3a","sin datos");
+                values.put("pregunta_25_3b","sin datos");
+                values.put("pregunta_25_3c","sin datos");
+                values.put("pregunta_25_3d","sin datos");
+                values.put("pregunta_25_4","sin datos");
+                values.put("pregunta_25_4a","sin datos");
+                values.put("pregunta_25_4b","sin datos");
+                values.put("pregunta_25_4c","sin datos");
+                values.put("pregunta_25_4d","sin datos");
+                values.put("pregunta_25_5","sin datos");
+                values.put("pregunta_25_5a","sin datos");
+                values.put("pregunta_25_5b","sin datos");
+                values.put("pregunta_25_5c","sin datos");
+                values.put("pregunta_25_5d","sin datos");
+                values.put("pregunta_25_6","sin datos");
+                values.put("pregunta_25_6a","sin datos");
+                values.put("pregunta_25_6b","sin datos");
+                values.put("pregunta_25_6c","sin datos");
+                values.put("pregunta_25_6d","sin datos");
+                values.put("pregunta_25_7","sin datos");
+                values.put("pregunta_25_7a","sin datos");
+                values.put("pregunta_25_7b","sin datos");
+                values.put("pregunta_25_7c","sin datos");
+                values.put("pregunta_25_7d","sin datos");
+                values.put("pregunta_25_8","sin datos");
+                values.put("pregunta_25_8a","sin datos");
+                values.put("pregunta_25_8b","sin datos");
+                values.put("pregunta_25_8c","sin datos");
+                values.put("pregunta_25_8d","sin datos");
+                values.put("pregunta_25_9","sin datos");
+                values.put("pregunta_25_9a","sin datos");
+                values.put("pregunta_25_9b","sin datos");
+                values.put("pregunta_25_9c","sin datos");
+                values.put("pregunta_25_9d","sin datos");
+                values.put("pregunta_25_10","sin datos");
+                values.put("pregunta_25_10a","sin datos");
+                values.put("pregunta_25_10b","sin datos");
+                values.put("pregunta_25_10c","sin datos");
+                values.put("pregunta_25_10d","sin datos");
+
+
+                values.put("pregunta_26", "sin datos");
+                values.put("pregunta_27","sin datos");
+
+                values.put("aporta", "sin datos");
+                values.put("ocupacion", "sin datos");
+                values.put("cuantos_coches", "sin datos");
+                values.put("cuartos", "sin datos");
+                values.put("cuartos_dormir", "sin datos");
+                values.put("focos", "sin datos");
+                values.put("banos", "sin datos");
+                values.put("regadera", "sin datos");
+                values.put("estufa", "sin datos");
+                values.put("edad", "sin datos");
+                values.put("tipo_vivienda", "sin datos");
+                values.put("tipo_piso", "sin datos");
+
                 values.put("genero", "Femenino");
                 values.put("suma", "0");
                 values.put("status", "0");
+                values.put("abandono", "3");
 
                 values.put("tiempo", "00:00");
                 values.put("tipo_captura", "RECHAZO TEMOR A CONTAGIO");
@@ -1859,7 +2416,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
 
         RequestParams params = new RequestParams();
         params.put("api", "guarda_encuesta");
-        params.put("encuesta", encuesta);
+        params.put("encuestas", encuesta);
         params.put("data", json);
 
         Log.d(TAG, "pimc -----------> " + json);
@@ -1890,9 +2447,6 @@ public class MainActivity extends Activity implements OnItemSelectedListener, Ad
                         String login = jsonObject.getJSONObject("response").get("code").toString();
                         if (Integer.valueOf(login) == 1) {
 
-/*JSONObject jsonUser = jsonObject.getJSONObject("data").getJSONObject("respuesta");
-Type collectionType = new TypeToken<Usuario>() {}.getType();
-usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -1945,7 +2499,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
         RequestParams params = new RequestParams();
         params.put("api", "usuarios");
-        params.put("encuesta", encuesta);
+        params.put("encuestas", encuesta);
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.setSSLSocketFactory(MySSLSocketFactory.getFixedSocketFactory());
@@ -2081,7 +2635,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
         RequestParams params = new RequestParams();
         params.put("api", "candidatoscdmx");
-        params.put("encuesta", laEncuesta);
+        params.put("encuestas", laEncuesta);
         params.put("tabla", "candidatos_cdmx");
 
         AsyncHttpClient client = new AsyncHttpClient();

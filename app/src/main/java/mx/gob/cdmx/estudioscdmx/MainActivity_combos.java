@@ -98,8 +98,8 @@ public class MainActivity_combos extends Activity implements OnItemSelectedListe
 
     Nombre nom = new Nombre();
     String nombreEncuesta = nom.nombreEncuesta();
-    String upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
-    String upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
+    String upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
+    String upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
     int serverResponseCode = 0;
     private View mProgressView;
 
@@ -365,7 +365,7 @@ public class MainActivity_combos extends Activity implements OnItemSelectedListe
 
         if (elMaximoFecha.matches("1")) {
             Log.i(TAG, " =====> El numero inicial: " + elMaximoFecha);
-            Log.i(TAG, " =====> El nombre de la encuesta: " + nombreEncuesta);
+            Log.i(TAG, " =====> El nombre de la encuestas: " + nombreEncuesta);
             Log.i(TAG, " =====> DATOS EN EL ACATALOGO: " + sacaCatalogoDatos());
             if (!verificaConexion(this)) {
                 Toast.makeText(getBaseContext(), "Sin conexión\n Inténtelo de nuevo",
@@ -578,7 +578,7 @@ public class MainActivity_combos extends Activity implements OnItemSelectedListe
 
     public void catalogos(View view){
 
-        Log.i(TAG, " =====> El nombre de la encuesta: " + nombreEncuesta);
+        Log.i(TAG, " =====> El nombre de la encuestas: " + nombreEncuesta);
         catalogoCandidatosWS(nombreEncuesta);
         Intent intent = new Intent(getApplicationContext(), Bienvenida.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -1797,7 +1797,7 @@ public class MainActivity_combos extends Activity implements OnItemSelectedListe
 
         RequestParams params = new RequestParams();
         params.put("api", "guarda_encuesta");
-        params.put("encuesta", encuesta);
+        params.put("encuestas", encuesta);
         params.put("data", json);
 
         Log.d(TAG, "pimc -----------> " + json);
@@ -1883,7 +1883,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
         RequestParams params = new RequestParams();
         params.put("api", "usuarios");
-        params.put("encuesta", encuesta);
+        params.put("encuestas", encuesta);
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.setSSLSocketFactory(MySSLSocketFactory.getFixedSocketFactory());
@@ -2019,7 +2019,7 @@ usuario = gson.fromJson(jsonUser.toString(), collectionType);*/
 
         RequestParams params = new RequestParams();
         params.put("api", "candidatoscdmx");
-        params.put("encuesta", laEncuesta);
+        params.put("encuestas", laEncuesta);
         params.put("tabla", "candidatos_cdmx");
 
         AsyncHttpClient client = new AsyncHttpClient();

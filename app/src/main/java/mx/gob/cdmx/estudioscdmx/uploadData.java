@@ -20,8 +20,8 @@ public class uploadData {
 
 	static Nombre nom = new Nombre();
 	static String nombreEncuesta = nom.nombreEncuesta();
-	static String upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
-	static String upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
+	static String upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
+	static String upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
 	static int serverResponseCode = 0;
 
 	static Calendar c = Calendar.getInstance();

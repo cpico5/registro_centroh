@@ -675,8 +675,8 @@ Calendar c = Calendar.getInstance();
         dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         dialog.setCancelable(false);
 
-		upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
-		upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases"+nombreEncuesta+".php?encuesta="+nombreEncuesta+"";
+		upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
+		upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases"+nombreEncuesta+".php?encuestas="+nombreEncuesta+"";
 //		upLoadServerUriFoto = "https://censo19s.mx/cgi-bin/php/recibeFotos.php";
 //		upLoadServerUriFirma = "https://censo19s.mx/cgi-bin/php/recibeFirmas.php";
 		

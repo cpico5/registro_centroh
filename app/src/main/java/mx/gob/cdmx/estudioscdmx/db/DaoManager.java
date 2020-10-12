@@ -140,7 +140,7 @@ public class DaoManager {
     }
 
     public <T> Object findOne(Class aClass, String selection,
-                              String[] selectionArgs, String groupBy, String having, String orderBy, String limit) {
+                                     String[] selectionArgs, String groupBy, String having, String orderBy, String limit) {
         Cursor cursor = db.query(aClass.getSimpleName(), null, selection, selectionArgs, groupBy, having, orderBy, limit);
         Object a = null;
         int id = 0;
@@ -299,6 +299,49 @@ public class DaoManager {
 
         Cursor cursor =  db.rawQuery("SELECT * " + " FROM " + aClass.getSimpleName()+
                 " WHERE email = '" + email + "' and password='" + password + "' ", null);
+        Object a = null;
+        if (cursor.moveToFirst()) {
+            try {
+                Object o = Class.forName(aClass.getName()).getConstructor().newInstance();
+
+                Field[] fields = aClass.getFields();
+                for (int i = 0; i < fields.length; i++) {
+
+                    String name = fields[i].getName();
+
+                    if(!name.equals("$change")){
+                        if(!name.equals("serialVersionUID")){
+                            if (fields[i].getType() == int.class)
+                                fields[i].set(o, cursor.getInt(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == String.class)
+                                fields[i].set(o, cursor.getString(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == float.class)
+                                fields[i].set(o, cursor.getFloat(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == double.class)
+                                fields[i].set(o, cursor.getDouble(cursor.getColumnIndex(fields[i].getName())));
+                            else{
+                                fields[i].set(o, null);
+                            }
+                        }
+                    }
+                }
+                a = o;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if(cursor != null && !cursor.isClosed())
+            cursor.close();
+
+        return a;
+    }
+
+    public Object findByNoSend(Class aClass, String enviado, String[] args){
+
+        Log.i("TAG", "SELECT * " + " FROM " + aClass.getSimpleName()+ " WHERE enviado = '" + enviado + "' limit 1");
+        Cursor cursor =  db.rawQuery("SELECT * " + " FROM " + aClass.getSimpleName()+ " WHERE enviado = '0' limit 1", args);
+
         Object a = null;
         if (cursor.moveToFirst()) {
             try {

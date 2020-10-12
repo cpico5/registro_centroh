@@ -179,7 +179,7 @@ public class Registro extends Activity {
             values.put("user", user);
             values.put("pass", pass);
             values.put("activo", "1");
-            db3.insert("fp", null, values);
+            db3.insert("fprint", null, values);
         }
         db3.close();
 
@@ -344,15 +344,15 @@ public class Registro extends Activity {
                         .setPositiveButton("Cerrar", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
-                                String SQLFprint = "update fp set activo='0' where activo ='1' ";
+                                String SQLFprint = "update fprint set activo='0' where activo ='1' ";
 
                                 try {
 
                                     db3.execSQL(SQLFprint);
-                                    Log.i("cqs --->> Crea Tabla", "Se crea la tabla: " + "fp");
+                                    Log.i("cqs --->> Crea Tabla", "Se crea la tabla: " + "fprint");
                                 } catch (Exception e) {
                                     String stackTrace = Log.getStackTraceString(e);
-                                    Log.i("cqs --->> Crea tabla", "Error al crear la tabla fp" + stackTrace);
+                                    Log.i("cqs --->> Crea tabla", "Error al crear la tabla fprint" + stackTrace);
                                 }
 
 

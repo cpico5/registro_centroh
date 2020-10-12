@@ -94,8 +94,8 @@ public class Entrada extends Activity {
     Nombre nom = new Nombre();
     String nombreEncuesta = nom.nombreEncuesta();
 
-    String upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
-    String upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
+    String upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
+    String upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
     int serverResponseCode = 0;
 
     public static String getHostName(String defValue) {
@@ -444,7 +444,7 @@ public class Entrada extends Activity {
 
         RequestParams params = new RequestParams();
         params.put("api", "loginSemanal");
-        params.put("encuesta", nombreEncuesta);
+        params.put("encuestas", nombreEncuesta);
         params.put("usuario", user);
         params.put("pass",password);
         params.put("latitud", latitude);
@@ -539,7 +539,7 @@ public class Entrada extends Activity {
 
         RequestParams params = new RequestParams();
         params.put("api", "catalogoUsuarios");
-        params.put("encuesta", encuesta);
+        params.put("encuestas", encuesta);
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.setSSLSocketFactory(MySSLSocketFactory.getFixedSocketFactory());
