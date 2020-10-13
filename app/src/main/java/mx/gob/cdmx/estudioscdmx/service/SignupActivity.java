@@ -455,7 +455,7 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 			try {
 
-				Log.i("log_tag", "connection: " + url + "/api/location/set?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+				Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 				RequestParams params = new RequestParams();
 				params.put("api", "guarda_ubicacion");
@@ -472,29 +472,13 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 					@Override
 					public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 
-						Log.d(TAG, "pimc -----------> " + new String(responseBody));
+						Log.d(TAG, "log_tag" + new String(responseBody));
 						String json = new String(responseBody);
 						try {
 
 							Log.i("log_tag", "Borrando Ubicacion anterior");
 
 							Log.i("log_tag", "Insertando ubicacion actual");
-
-							//ejecuta el background
-
-							if(usuario !=  null){
-								String[] enviado = {"0"};
-
-								//encuestas = (Encuesta) objectRepository.findOne(Encuesta.class,"enviado=?",
-								//      enviado,null,null,null,null);
-
-							}
-
-							if(json != null && !json.equals("")){
-
-								//cacha el msj del alerta
-
-							}
 
 
 						} catch (Exception ex) {
@@ -509,7 +493,7 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 						if (statusCode != 200) {
 							Log.e(TAG, "existe un error en la conexión -----> " + error.getMessage());
 							if(responseBody != null){
-								Log.d(TAG, "e2lira -----------> " + new String(responseBody));
+								Log.d(TAG, "cqs -----------> " + new String(responseBody));
 								String json = new String(responseBody);
 							}
 
@@ -521,14 +505,14 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 
 				HttpClient httpclient = new DefaultHttpClient();
-				HttpPost httppost = new HttpPost(url + "/api/location/set?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+				HttpPost httppost = new HttpPost(URLApi + "ubicaciones.php?latitud=" + latitud + "&longitud=" + longitud + "&direccion=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 				HttpResponse response2 = httpclient.execute(httppost);
 				HttpEntity entity2 = response2.getEntity();
 				is2 = entity2.getContent();
 
 				Log.i("log_tag", "connection success ");
-				Log.i("log_tag", "connection: " + url + "/api/location/set?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+				Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 
 				if (db3 != null) {
@@ -628,7 +612,7 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 						try {
 
-							Log.i("log_tag", "connection: " + url + "/api/location/set?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+							Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 							RequestParams params = new RequestParams();
 							params.put("latitude", latitud);
@@ -639,7 +623,7 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 							params.put("project", project);
 
 							AsyncHttpClient client = new AsyncHttpClient();
-							RequestHandle requestHandle = client.post(url + "/api/location/set", params, new AsyncHttpResponseHandler(Looper.getMainLooper()) {
+							RequestHandle requestHandle = client.post(URLApi + "ubicaciones.php", params, new AsyncHttpResponseHandler(Looper.getMainLooper()) {
 
 								@Override
 								public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -693,14 +677,14 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 
 							HttpClient httpclient = new DefaultHttpClient();
-							HttpPost httppost = new HttpPost(url + "/api/location/set?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+							HttpPost httppost = new HttpPost(URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 							HttpResponse response2 = httpclient.execute(httppost);
 							HttpEntity entity2 = response2.getEntity();
 							is2 = entity2.getContent();
 
 							Log.i("log_tag", "---------->> connection success ");
-							Log.i("log_tag", "---------->> connection: " + url + "/api/location/set?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+							Log.i("log_tag", "---------->> connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 
 							if (db3 != null) {
@@ -744,7 +728,7 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 					try {
 
-						Log.i("log_tag", "connection: " + url + "/api/location/set?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+						Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 						RequestParams params = new RequestParams();
 						params.put("latitude", latitud);
@@ -755,7 +739,7 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 						params.put("project", project);
 
 						AsyncHttpClient client = new AsyncHttpClient();
-						RequestHandle requestHandle = client.post(url + "/api/location/set", params, new AsyncHttpResponseHandler(Looper.getMainLooper()) {
+						RequestHandle requestHandle = client.post(URLApi + "ubicaciones.php", params, new AsyncHttpResponseHandler(Looper.getMainLooper()) {
 
 							@Override
 							public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -809,14 +793,14 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 
 						HttpClient httpclient = new DefaultHttpClient();
-						HttpPost httppost = new HttpPost(url + "/api/location/set?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+						HttpPost httppost = new HttpPost(URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 						HttpResponse response2 = httpclient.execute(httppost);
 						HttpEntity entity2 = response2.getEntity();
 						is2 = entity2.getContent();
 
 						Log.i("log_tag", "connection success ");
-						Log.i("log_tag", "connection: " + url + "/api/location/set?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+						Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 
 						if (db3 != null) {
