@@ -20,8 +20,8 @@ public class uploadData {
 
 	static Nombre nom = new Nombre();
 	static String nombreEncuesta = nom.nombreEncuesta();
-	static String upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
-	static String upLoadServerUriAudio = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
+	static String upLoadServerUriBase = "http://35.226.91.72/encuestas/recibeBases" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
+	static String upLoadServerUriAudio = "http://35.226.91.72/encuestas/recibeAudios" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
 	static int serverResponseCode = 0;
 
 	static Calendar c = Calendar.getInstance();
@@ -249,7 +249,7 @@ public class uploadData {
 			Log.i(TAG,"lista"+pathAudios);
 
 //						final String customURL = "https://opinion.cdmx.gob.mx/cgi-bin/fotos/programas_sociales/";
-			final String customURL = "https://opinion.cdmx.gob.mx/audios/"+nombreEncuesta+ "/";
+			final String customURL = "http://35.226.91.72/audios/"+nombreEncuesta+ "/";
 
 			Log.i(TAG, " =====> URL audios: " + customURL);
 			Log.i(TAG, " =====> lista audios 1: " + pathAudios);
@@ -411,6 +411,7 @@ public class uploadData {
 
 				if(serverResponseCode == 200){
 
+					Log.i(TAG, " =====> archivo:  El Archivo si existe... :");
 				}
 
 				//close the streams //

@@ -99,7 +99,6 @@ public class Bienvenida extends AppCompatActivity {
     double longitude;
     private DaoManager daoManager;
 
-    private encuestas estudiosCdmx = new encuestas();
 
     public String maximo = "";
     int elMaximo;
@@ -109,8 +108,9 @@ public class Bienvenida extends AppCompatActivity {
 
     Nombre nom = new Nombre();
     String nombreEncuesta = nom.nombreEncuesta();
-    String upLoadServerUriBase = "http://35.226.91.72/cgi-bin/php/recibeBases" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
-    String upLoadServerUriAudio = "http://35.226.91.72/cgi-bin/php/recibeAudios" + nombreEncuesta + ".php?encuestas=" + nombreEncuesta + "";
+    String upLoadServerUriBase = "http://35.226.91.72/encuestas/recibeBases" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
+    String upLoadServerUriAudio = "http://35.226.91.72/encuestas/recibeAudios" + nombreEncuesta + ".php?encuesta=" + nombreEncuesta + "";
+
     int serverResponseCode = 0;
 
     String token;
@@ -192,6 +192,8 @@ public class Bienvenida extends AppCompatActivity {
         }
 
         mProgressView = findViewById(R.id.login_progressMain);
+
+        Log.i(TAG,"cqs -->> UploadServerUriAudio: "+upLoadServerUriAudio);
 
 //        String DATABASE_NAME = Environment.getExternalStorageDirectory() + "/Mis_archivos/" + nombreEncuesta + "_"
 //                + sacaImei() + "";
@@ -391,8 +393,15 @@ public class Bienvenida extends AppCompatActivity {
             });
 
 
-            new UpdateBases().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, sacaImei());
-            new UpdateAudios().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+//            new UpdateBases().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, sacaImei());
+
+            try {
+                new uploadData.UpdateAudios().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+            }catch (Exception e){
+                String stackTrace = Log.getStackTraceString(e);
+                Log.i(TAG,"Error Manda Audios"+ stackTrace);
+            }
+
 //            Log.i(TAG,"cqs ------------>> TOKEN A PASAR: "+ObtenerToken());
 //            ObtenerToken();
 //            NotificacionIDTokenService notificacionIDTokenService = new NotificacionIDTokenService();
