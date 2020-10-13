@@ -966,7 +966,7 @@ public class Entrada extends Activity {
 
     }
 
-    //Enviar Fotos
+    //Enviar audios
     class UpdateAudios extends AsyncTask<String, Float, String> {
 
         protected void onPreExecute() {

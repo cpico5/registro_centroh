@@ -450,7 +450,7 @@ public void onCreate(Bundle savedInstanceState) {
 
 //		upLoadServerUriFoto = "http://censo19s.mx/cgi-bin/php/recibeFotos.php";
 //		upLoadServerUriFirma = "http://censo19s.mx/cgi-bin/php/recibeFirmas.php";
-	upLoadServerUriBase = "https://opinion.cdmx.gob.mx/cgi-bin/php/recibeBases"+nombreEncuesta+".php?encuestas="+nombreEncuesta+"";
+	upLoadServerUriBase = "http://35.226.91.72/encuestas/recibeBases"+nombreEncuesta+".php?encuestas="+nombreEncuesta+"";
 
 	Log.i(null,"URI BASE =================>: "+ upLoadServerUriBase );
 

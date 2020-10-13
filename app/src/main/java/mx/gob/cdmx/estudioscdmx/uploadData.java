@@ -344,8 +344,6 @@ public class uploadData {
 
 		File sdCard;
 		sdCard = Environment.getExternalStorageDirectory();
-		//final String pathFotos = sdCard.getAbsolutePath() + "/"+ nombreEncuesta+"-Audio"+fech;
-		final String pathAudios = sdCard.getAbsolutePath() + nombreEncuesta +"-Audio" + formattedDateFecha + "/";
 
 		String fileName = sourceFileUri;
 
