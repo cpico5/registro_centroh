@@ -455,10 +455,11 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 			try {
 
-				Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+				Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?hora="+sacaHora()+"&latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 				RequestParams params = new RequestParams();
 				params.put("api", "guarda_ubicacion");
+				params.put("hora", sacaHora());
 				params.put("latitude", latitud);
 				params.put("longitude", longitud);
 				params.put("data", laDireccion);
@@ -505,14 +506,14 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 
 				HttpClient httpclient = new DefaultHttpClient();
-				HttpPost httppost = new HttpPost(URLApi + "ubicaciones.php?latitud=" + latitud + "&longitud=" + longitud + "&direccion=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+				HttpPost httppost = new HttpPost(URLApi + "ubicaciones.php?hora="+sacaHora()+"&latitud=" + latitud + "&longitud=" + longitud + "&direccion=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 				HttpResponse response2 = httpclient.execute(httppost);
 				HttpEntity entity2 = response2.getEntity();
 				is2 = entity2.getContent();
 
 				Log.i("log_tag", "connection success ");
-				Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+				Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?hora="+sacaHora()+"&latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 
 				if (db3 != null) {
@@ -612,9 +613,10 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 						try {
 
-							Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+							Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?hora="+sacaHora()+"&latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 							RequestParams params = new RequestParams();
+							params.put("api", "guarda_ubicacion");
 							params.put("latitude", latitud);
 							params.put("longitude", longitud);
 							params.put("data", laDireccion);
@@ -677,14 +679,14 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 
 							HttpClient httpclient = new DefaultHttpClient();
-							HttpPost httppost = new HttpPost(URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+							HttpPost httppost = new HttpPost(URLApi + "ubicaciones.php?hora="+sacaHora()+"&latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 							HttpResponse response2 = httpclient.execute(httppost);
 							HttpEntity entity2 = response2.getEntity();
 							is2 = entity2.getContent();
 
 							Log.i("log_tag", "---------->> connection success ");
-							Log.i("log_tag", "---------->> connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+							Log.i("log_tag", "---------->> connection: " + URLApi + "ubicaciones.php?hora="+sacaHora()+"&latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 
 							if (db3 != null) {
@@ -728,9 +730,10 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 					try {
 
-						Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+						Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?hora="+sacaHora()+"&latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 						RequestParams params = new RequestParams();
+						params.put("api", "guarda_ubicacion");
 						params.put("latitude", latitud);
 						params.put("longitude", longitud);
 						params.put("data", laDireccion);
@@ -793,14 +796,14 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 
 
 						HttpClient httpclient = new DefaultHttpClient();
-						HttpPost httppost = new HttpPost(URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+						HttpPost httppost = new HttpPost(URLApi + "ubicaciones.php?hora="+sacaHora()+"&latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 						HttpResponse response2 = httpclient.execute(httppost);
 						HttpEntity entity2 = response2.getEntity();
 						is2 = entity2.getContent();
 
 						Log.i("log_tag", "connection success ");
-						Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
+						Log.i("log_tag", "connection: " + URLApi + "ubicaciones.php?hora="+sacaHora()+"&latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 
 						if (db3 != null) {
