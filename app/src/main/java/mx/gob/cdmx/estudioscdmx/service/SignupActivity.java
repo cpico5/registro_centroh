@@ -55,6 +55,7 @@ import mx.gob.cdmx.estudioscdmx.UsuariosSQLiteHelper3;
 import mx.gob.cdmx.estudioscdmx.R;
 import mx.gob.cdmx.estudioscdmx.model.encuestas;
 
+import static mx.gob.cdmx.estudioscdmx.Nombre.URLApi;
 import static mx.gob.cdmx.estudioscdmx.Nombre.customURL;
 import static mx.gob.cdmx.estudioscdmx.Nombre.encuesta;
 
@@ -457,6 +458,7 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 				Log.i("log_tag", "connection: " + url + "/api/location/set?latitude=" + latitud + "&longitude=" + longitud + "&data=" + laDireccion + "&imei=" + elImei + "&token=" + token + "&project=" + project);
 
 				RequestParams params = new RequestParams();
+				params.put("api", "guarda_ubicacion");
 				params.put("latitude", latitud);
 				params.put("longitude", longitud);
 				params.put("data", laDireccion);
@@ -465,7 +467,7 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 				params.put("project", project);
 
 				AsyncHttpClient client = new AsyncHttpClient();
-				RequestHandle requestHandle = client.post(url + "/api/location/set", params, new AsyncHttpResponseHandler(Looper.getMainLooper()) {
+				RequestHandle requestHandle = client.post(URLApi, params, new AsyncHttpResponseHandler(Looper.getMainLooper()) {
 
 					@Override
 					public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {

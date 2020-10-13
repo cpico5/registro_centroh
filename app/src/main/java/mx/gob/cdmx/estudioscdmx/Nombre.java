@@ -24,6 +24,7 @@ public class Nombre  {
 //    public static final String customURL = "https://opinion.cdmx.gob.mx/encuestas/";
 //    public static final String customURLcatalogos = "https://opinion.cdmx.gob.mx/encuestas/catalogos/";
     public static final String customURL = "http://35.226.91.72/encuestas/";
+    public static final String URLApi = "http://35.226.91.72/encuestas/";
     public static final String customURLcatalogos = "http://35.226.91.72/encuestas/catalogos/";
     public static final String encuesta = "estudios_cdmx";
     public static final String USUARIO = "usuario";
