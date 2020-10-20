@@ -31,7 +31,7 @@
             android:paddingStart="20dp"
             android:text="AUTORIDAD DEL CENTRO HISTÓRICO  PRESENTE "
             android:textAlignment="center"
-            android:textColor="#4CAF50"
+            android:textColor="#D15611"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -69,7 +69,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:background="#ACACAC"
             android:orientation="horizontal">
 
             <EditText
@@ -81,7 +80,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:inputType="date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/BLANCO"
+                android:textColor="@color/NEGRO"
                 android:textSize="18sp" />
 
         </LinearLayout>
@@ -118,11 +117,11 @@
         android:paddingEnd="10dp">
 
         <EditText
-            android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand"
-            android:text="Escribe aquí"
+            android:hint="Escribe aquí..."
+            android:paddingStart="15dp"
             android:textSize="16sp" />
 
     </LinearLayout>
@@ -155,12 +154,107 @@
         android:paddingEnd="10dp">
 
         <EditText
-            android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand"
-            android:text="Escribe aquí"
+            android:hint="Escribe aquí..."
+            android:paddingStart="15dp"
             android:textSize="16sp" />
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="DEL INMUEBLE UBICADO EN LA CALLE"
+            android:textColor="#4CAF50"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand"
+            android:hint="Escribe aquí..."
+            android:paddingStart="15dp"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="No. OFICIAL"
+                android:textColor="#4CAF50"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:fontFamily="@font/quicksand"
+                android:hint="Número"
+                android:paddingStart="5dp"
+                android:textColor="#454545" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="No. INTERIOR"
+                android:textColor="#4CAF50"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:hint="Número" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
