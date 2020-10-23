@@ -101,7 +101,8 @@
             <include layout="@layout/preg16a"/>
             <include layout="@layout/preg16b"/>
             <include layout="@layout/preg17"/>
-            <include layout="@layout/preg17a"/>
+            <include layout="@layout/preg17a" />
+
             <include layout="@layout/preg18"/>
             <include layout="@layout/preg19"/>
             <include layout="@layout/preg19a"/>
