@@ -276,5 +276,7 @@ Su respuesta se usa solamente en esta encuesta</string>
     <string name="ns">No sabe / No Contestó</string>
     <string name="nc">No contestó</string>
     <string name="title_activity_activity__datos">Activity_Datos</string>
+    <string name="textview">TextView</string>
+    <string name="button">Button</string>
 
 </resources>
