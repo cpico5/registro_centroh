@@ -17,13 +17,13 @@
 
             <LinearLayout
                 android:id="@+id/OnClickListener"
-                android:layout_width="124dp"
-                android:layout_height="121dp"
+                android:layout_width="291dp"
+                android:layout_height="190dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
-                android:background="@drawable/logo_ee"
+                android:background="@drawable/ic_inicioapp"
                 android:orientation="horizontal" />
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -119,7 +119,7 @@
                         android:layout_marginTop="30dp"
                         android:layout_marginEnd="30dp"
                         android:layout_marginBottom="20dp"
-                        android:background="#3F9602"
+                        android:background="#24B29A"
                         android:gravity="center|center_horizontal|center_vertical"
                         android:text="CONTINUAR"
                         android:textColor="@android:color/background_light"
@@ -136,9 +136,9 @@
                         android:layout_marginStart="30dp"
                         android:layout_marginEnd="30dp"
                         android:layout_marginBottom="20dp"
-                        android:background="#8FCE1A"
-                        android:onClick="salir"
+                        android:background="#0C6D5F"
                         android:gravity="center|center_horizontal|center_vertical"
+                        android:onClick="salir"
                         android:text="SALIR"
                         android:textColor="@android:color/background_light"
                         android:textSize="18sp" />
