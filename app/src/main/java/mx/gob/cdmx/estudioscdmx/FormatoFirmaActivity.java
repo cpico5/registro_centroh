@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import mx.gob.cdmx.estudioscdmx.model.Entrevista;
 import mx.gob.cdmx.estudioscdmx.model.Usuario;
@@ -20,6 +21,8 @@ public class FormatoFirmaActivity extends AppCompatActivity {
     Entrevista entrevista;
 
     private static final String TAG  = "FormatoFirmaActivity";
+
+    TextView textNombre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,10 @@ public class FormatoFirmaActivity extends AppCompatActivity {
             usuario = (Usuario) startingIntent.getSerializableExtra(USUARIO);
             entrevista = (Entrevista) startingIntent.getSerializableExtra(ENTREVISTA);
         }
+
+        textNombre = findViewById(R.id.textNombre);
+
+        textNombre.setText(entrevista.getSuscribe());
 
     }
 }
