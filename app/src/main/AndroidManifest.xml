@@ -39,6 +39,7 @@
         <activity android:name=".FirmaActivity" />
         <activity android:name=".TextoActivity" />
         <activity android:name=".FormatoFirmaActivity" />
+        <activity android:name=".CapturaFirma" />
         <activity
             android:name=".FormatoActivity">
             <intent-filter>

@@ -40,6 +40,7 @@
             android:orientation="horizontal">
 
             <pl.droidsonroids.gif.GifImageView
+                android:onClick="leermas"
                 android:id="@+id/src_anim"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -119,7 +120,8 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:onClick="firma"
+                    android:id="@+id/imageButtonFirma"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
