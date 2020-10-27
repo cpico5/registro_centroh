@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/registro_centroh.iml" filepath="$PROJECT_DIR$/.idea/modules/registro_centroh.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/registro_centroh.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/registro_centroh.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/registro_centrohh3.iml" filepath="$PROJECT_DIR$/.idea/modules/registro_centrohh3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/registro_centrohh3.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/registro_centrohh3.app.iml" />
     </modules>
   </component>
 </project>
