@@ -12,7 +12,8 @@ import mx.gob.cdmx.estudioscdmx.service.SimpleNotification;
 
 public class FormatoActivity extends AppCompatActivity {
 
-    EditText editTextDate, editSuscribe, editCaracter;
+    EditText editTextDate, editSuscribe, editCaracter, editInmueble, editNoOficial, editNoInterior,
+            editColonia, editAlcaldia, editCP, editCuentaPredial, editTelefono;
 
     Calendar c = Calendar.getInstance();
 
@@ -25,14 +26,19 @@ public class FormatoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_formato);
 
 
-        SimpleNotification simpleNotification = new SimpleNotification();
-
-        simpleNotification.simpleNotification(FormatoActivity.class, FormatoActivity.this, "simple", "simplename","Notification","Message", "Details", 1, false);
-
         editTextDate = findViewById(R.id.editTextDate);
         editSuscribe = findViewById(R.id.editSuscribe);
-
         editCaracter = findViewById(R.id.editCaracter);
+        editInmueble = findViewById(R.id.editInmueble);
+        editNoOficial = findViewById(R.id.editNoOficial);
+        editNoInterior = findViewById(R.id.editNoInterior);
+        editColonia = findViewById(R.id.editColonia);
+        editAlcaldia = findViewById(R.id.editAlcaldia);
+        editCP = findViewById(R.id.editCP);
+        editCuentaPredial = findViewById(R.id.editCuentaPredial);
+        editTelefono = findViewById(R.id.editTelefono);
+
+
 
         editTextDate.setEnabled(false);
         editTextDate.setText(formattedDate3);
