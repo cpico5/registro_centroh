@@ -2,8 +2,10 @@ package mx.gob.cdmx.estudioscdmx;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,8 +24,15 @@ import cz.msebera.android.httpclient.util.TextUtils;
 import mx.gob.cdmx.estudioscdmx.db.Anotaciones.AutoIncrement;
 import mx.gob.cdmx.estudioscdmx.db.Anotaciones.PrimaryKey;
 import mx.gob.cdmx.estudioscdmx.model.Entrevista;
+import mx.gob.cdmx.estudioscdmx.model.Usuario;
+
+import static mx.gob.cdmx.estudioscdmx.Nombre.ENTREVISTA;
+import static mx.gob.cdmx.estudioscdmx.Nombre.USUARIO;
 
 public class FormatoActivity extends AppCompatActivity {
+
+    Usuario usuario;
+
 
     EditText editTextDate, editSuscribe, editCaracter, editInmueble, editNoOficial, editNoInterior,
             editColonia, editAlcaldia, editCP, editCuentaPredial, editTelefono;
@@ -35,10 +44,33 @@ public class FormatoActivity extends AppCompatActivity {
     SimpleDateFormat df3 = new SimpleDateFormat("dd/MM/yyyy");
     String formattedDate3 = df3.format(c.getTime());
 
+    private static final String TAG  = "FormatoActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formato);
+
+
+
+        Intent startingIntent = getIntent();
+        if(startingIntent == null) {
+            Log.e(TAG,"No Intent?  We're not supposed to be here...");
+            finish();
+            return;
+        }
+        /*
+         * Paso de parametros entre Intent
+         */
+        if (savedInstanceState != null) {
+            // Restore value of members from saved state
+            usuario = (Usuario) savedInstanceState.getSerializable(USUARIO);
+
+
+        } else {
+            // Probably initialize members with default values for a new instance
+            usuario = (Usuario) startingIntent.getSerializableExtra(USUARIO);
+        }
 
 
         editTextDate = findViewById(R.id.editTextDate);
@@ -114,6 +146,15 @@ public class FormatoActivity extends AppCompatActivity {
             entrevista.setCp(Integer.parseInt(editCP.getText().toString()));
             entrevista.setCuentaPredial(editCuentaPredial.getText().toString());
             entrevista.setTelefono(Integer.parseInt(editTelefono.getText().toString()));
+
+            Intent intent = new Intent(FormatoActivity.this, FormatoFirmaActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.putExtra(USUARIO, usuario);
+            intent.putExtra(ENTREVISTA, entrevista);
+            finish();
+            startActivity(intent);
+
+
         }catch (Exception e){
             new AestheticDialog.Builder(FormatoActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
                     .setTitle("Error")
