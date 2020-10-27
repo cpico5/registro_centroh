@@ -44,7 +44,7 @@ public class Entrevista implements Serializable {
     public String cuentaPredial;
 
     @SerializedName("telefono")
-    public int telefono;
+    public String telefono;
 
     @SerializedName("firma")
     public Firma firma;
@@ -55,7 +55,7 @@ public class Entrevista implements Serializable {
     public Entrevista() {
     }
 
-    public Entrevista(int id, String fecha, String suscribe, String caracter, String inmueble, String noOficial, String noInterior, String colonia, String alcaldia, int cp, String cuentaPredial, int telefono, Firma firma, Foto foto) {
+    public Entrevista(int id, String fecha, String suscribe, String caracter, String inmueble, String noOficial, String noInterior, String colonia, String alcaldia, int cp, String cuentaPredial, String telefono, Firma firma, Foto foto) {
         this.id = id;
         this.fecha = fecha;
         this.suscribe = suscribe;
@@ -160,11 +160,11 @@ public class Entrevista implements Serializable {
         this.cuentaPredial = cuentaPredial;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

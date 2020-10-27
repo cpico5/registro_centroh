@@ -2,9 +2,11 @@ package mx.gob.cdmx.estudioscdmx;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import mx.gob.cdmx.estudioscdmx.model.Entrevista;
@@ -54,5 +56,11 @@ public class FormatoFirmaActivity extends AppCompatActivity {
 
         textNombre.setText(entrevista.getSuscribe());
 
+    }
+
+    public void leermas(View v){
+        Dialog dialog=new Dialog(this,android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+        dialog.setContentView(R.layout.activity_texto);
+        dialog.show();
     }
 }
