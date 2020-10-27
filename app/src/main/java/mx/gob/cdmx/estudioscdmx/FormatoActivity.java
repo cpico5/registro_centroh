@@ -145,7 +145,7 @@ public class FormatoActivity extends AppCompatActivity {
             entrevista.setAlcaldia(editAlcaldia.getText().toString());
             entrevista.setCp(Integer.parseInt(editCP.getText().toString()));
             entrevista.setCuentaPredial(editCuentaPredial.getText().toString());
-            entrevista.setTelefono(Integer.parseInt(editTelefono.getText().toString()));
+            entrevista.setTelefono(editTelefono.getText().toString());
 
             Intent intent = new Intent(FormatoActivity.this, FormatoFirmaActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
