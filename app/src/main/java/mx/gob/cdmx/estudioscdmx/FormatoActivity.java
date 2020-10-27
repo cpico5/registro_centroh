@@ -115,7 +115,7 @@ public class FormatoActivity extends AppCompatActivity {
         });
 
         editTextDate.setEnabled(false);
-        editTextDate.setText(formattedDate3);
+        editTextDate.setText(formattedDate3); 
 
     }
 
