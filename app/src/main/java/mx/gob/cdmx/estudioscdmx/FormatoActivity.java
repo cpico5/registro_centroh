@@ -115,7 +115,7 @@ public class FormatoActivity extends AppCompatActivity {
         });
 
         editTextDate.setEnabled(false);
-        editTextDate.setText(formattedDate3); 
+        editTextDate.setText(formattedDate3);
 
     }
 
@@ -158,7 +158,7 @@ public class FormatoActivity extends AppCompatActivity {
         }catch (Exception e){
             new AestheticDialog.Builder(FormatoActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
                     .setTitle("Error")
-                    .setMessage("Existió un error al capturar los datos")
+                    .setMessage("Existió un error al capturar los datos" + e.getMessage())
                     .show();
         }
 
