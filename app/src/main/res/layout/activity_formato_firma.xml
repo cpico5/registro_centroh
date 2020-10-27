@@ -97,13 +97,14 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <EditText
+                <TextView
+                    android:id="@+id/textNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/quicksand_medium"
                     android:gravity="center"
                     android:padding="15dp"
-                    android:text="NOMBRE AQUÍ"
+                    android:hint="NOMBRE AQUÍ"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
