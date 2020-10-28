@@ -1,114 +1,232 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/r1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:onClick="Salir"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".FormatoActivity">
 
-    <ScrollView
-        android:id="@+id/scrollView1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="176dp"
+            android:background="#19BCA9"
+            app:srcCompat="@drawable/ic_registro" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1075dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:paddingStart="20dp"
+                android:text="AUTORIDAD DEL CENTRO HISTÓRICO  PRESENTE "
+                android:textAlignment="center"
+                android:textColor="#D15611"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
 
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0A318C84">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp" >
+                android:orientation="vertical">
 
-                   <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="0.2"
+                    android:background="#ECECEC"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal" >
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView1"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sección"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textSize="16sp" />
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="FECHA:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:orientation="horizontal">
 
                         <EditText
-                            android:id="@+id/txtSeccion"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
+                            android:id="@+id/editTextDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="number"
-                            android:maxLength="4"
-                            android:textSize="16sp" />
-
+                            android:fontFamily="@font/quicksand_medium"
+                            android:inputType="date"
+                            android:textColor="@color/NEGRO"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
 
-            </LinearLayout>
+                </LinearLayout>
 
-            <!-- /////////////////////////////////////// Desde aquí empiezan las preguntas -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/textPreguntaEntrada"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|end"
-                    android:text="@string/ENTRADA"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold" />
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="EL QUE SUSCRIBE C."
+                        android:textColor="#4CAF50"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
+                </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
 
-            <!-- /////////////////////////////////////// -->
+                    <EditText
+                        android:id="@+id/editSuscribe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand"
+                        android:hint="Escribe aquí..."
+                        android:paddingStart="15dp"
+                        android:textSize="18sp" />
 
-            <include layout="@layout/preg01"/>
-            <include layout="@layout/preg02"/>
-            <include layout="@layout/preg03"/>
-            <include layout="@layout/preg04"/>
-            <include layout="@layout/preg05"/>
-<!--            <include layout="@layout/abandono" />-->
+                </LinearLayout>
 
-            <ProgressBar
-                android:id="@+id/login_progressMain"
-                style="?android:attr/progressBarStyleLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:foregroundGravity="center"
-                android:textAlignment="center"
-                android:layout_marginBottom="8dp"
-                android:visibility="gone" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="EN MI CARÁCTER DE "
+                        android:textColor="#4CAF50"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-            <!-- //////////////////////////////////////  BOTONES  /////////////// -->
+                </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
 
-                <HorizontalScrollView
-                    android:id="@+id/horizontalScrollView15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/editCaracter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand"
+                        android:hint="Escribe aquí..."
+                        android:paddingStart="15dp"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="DEL INMUEBLE UBICADO EN LA CALLE"
+                        android:textColor="#4CAF50"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <EditText
+                        android:id="@+id/editInmueble"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:hint="AV. JOSÉ MARÍA IZAZAGA"
+                        android:paddingStart="15dp"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+<<<<<<< HEAD
                         android:orientation="horizontal">
 
                         <Button
@@ -145,3 +263,227 @@
     </ScrollView>
 
 </RelativeLayout>
+=======
+                        android:layout_weight="0.2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="No. OFICIAL"
+                            android:textColor="#4CAF50"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/editNoOficial"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:hint="20"
+                            android:paddingStart="5dp"
+                            android:textColor="#454545" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="No. INTERIOR"
+                            android:textColor="#4CAF50"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/editNoInterior"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:hint="7" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="COLONIA"
+                            android:textColor="#4CAF50"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/editColonia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:hint="Centro"
+                            android:paddingStart="5dp"
+                            android:textColor="#454545" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="ALCALDÍA"
+                            android:textColor="#4CAF50"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/editAlcaldia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:hint="Cuauhtémoc" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="C.P."
+                            android:textColor="#4CAF50"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/editCP"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:hint="00000"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:paddingStart="5dp"
+                            android:textColor="#454545" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:gravity="center"
+                            android:text="CUENTA PREDIAL"
+                            android:textColor="#4CAF50"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/editCuentaPredial"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:hint="001065120105" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:gravity="center"
+                            android:text="TELÉFONO"
+                            android:textColor="#4CAF50"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/editTelefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:hint="5555555555"
+                            android:paddingStart="5dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/buttonContinuar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#D8640A"
+                        android:fontFamily="@font/quicksand_medium"
+                        android:text="CONTINUAR Y FIRMAR"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
+>>>>>>> 348701d76000b37ea22df4e9c8192c3126f5db1c

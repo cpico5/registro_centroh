@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".TextoActivity">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#009688"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="25dp"
+                    android:foreground="@drawable/ic_entre"
+                    android:foregroundGravity="top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:fontFamily="@font/quicksand_medium"
+                        android:text="LO ANTERIOR PARA EFECTOS DE OBTENER LA CONSTANCIA SEÑALADA EN EL ARTÍCULO OCTAVO TRANSITORIO DEL CÓDIGO FISCAL DEL DISTRITO FEDERAL, ASIMISMO, ACEPTO QUE DURANTE EL PRESENTE EJERCICIO FISCAL, LA AUTORIDAD DEL CENTRO HISTÓRICO REALICE UNA VISITA AL INMUEBLE REFERIDO PARA CORROBORAR SU USO."
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/NARANJA">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#09786E"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#09786E"
+                    android:foreground="@drawable/ic_entre"
+                    android:foregroundGravity="top"
+                    android:orientation="vertical"
+                    android:padding="25dp">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:text="ESTOY ENTERADO QUE CONFORME A LO ESTABLECIDO POR EL ARTÍCULO 495 DEL CÓDIGO FISCAL DEL DISTRITO FEDERAL, COMETE EL DELITO DE DEFRAUDACIÓN FISCAL QUIEN, MEDIANTE EL USO DE ENGAÑOS O APROVECHAMIENTO DE ERRORES, OMITA TOTAL O PARCIALMENTE EL PAGO DE ALGUNA CONTRIBUCIÓN PREVISTA EN EL CÓDIGO U OBTENGA, PARA SÍ O PARA UN TERCERO, UN BENEFICIO INDEBIDO EN PERJUICIO DE LA HACIENDA PÚBLICA DEL DISTRITO FEDERAL.	"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>

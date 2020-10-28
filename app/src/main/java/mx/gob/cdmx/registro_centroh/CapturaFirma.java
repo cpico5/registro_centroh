@@ -1,4 +1,4 @@
-package mx.gob.cdmx.registro_centroh;
+package mx.gob.cdmx.estudioscdmx;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 import android.Manifest;
 import android.app.Activity;
@@ -54,7 +55,21 @@ import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 
+import mx.gob.cdmx.estudioscdmx.model.Entrevista;
+import mx.gob.cdmx.estudioscdmx.model.Firma;
+import mx.gob.cdmx.estudioscdmx.model.Usuario;
+import mx.gob.cdmx.estudioscdmx.service.GPSTracker;
+
+import static mx.gob.cdmx.estudioscdmx.Nombre.ENTREVISTA;
+import static mx.gob.cdmx.estudioscdmx.Nombre.USUARIO;
+import static mx.gob.cdmx.estudioscdmx.NotificationService.TAG;
+
 public class CapturaFirma extends Activity {
+
+
+	Usuario usuario;
+
+	Entrevista entrevista;
 
 	Calendar c = Calendar.getInstance();
 
@@ -233,7 +248,7 @@ public class CapturaFirma extends Activity {
 
 		Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sin_firma);
 		directory = new File(Environment.getExternalStorageDirectory() + "/Fotos/Firmas_CentroH_"+formattedDate3+"N");
-		nombreImagen = getTodaysDate() + "_" + formattedHora + "_" + formattedAno + "_" + cachaUsuario() + "_"+ diario + "_4";
+		nombreImagen = getTodaysDate() + "_" + "_" + cachaUsuario() + "_"+ diario + "_4";
 		current = nombreImagen + ".jpg";
 
 		String fileName = current;
@@ -359,6 +374,25 @@ public class CapturaFirma extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.firma);
 
+		Intent startingIntent = getIntent();
+		if(startingIntent == null) {
+			Log.e(TAG,"No Intent?  We're not supposed to be here...");
+			finish();
+			return;
+		}
+
+		if (savedInstanceState != null) {
+			// Restore value of members from saved state
+			usuario = (Usuario) savedInstanceState.getSerializable(USUARIO);
+			entrevista = (Entrevista) savedInstanceState.getSerializable(ENTREVISTA);
+
+
+		} else {
+			// Probably initialize members with default values for a new instance
+			usuario = (Usuario) startingIntent.getSerializableExtra(USUARIO);
+			entrevista = (Entrevista) startingIntent.getSerializableExtra(ENTREVISTA);
+		}
+
 		if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
 
 			if (Build.VERSION.SDK_INT >= 23) {
@@ -390,7 +424,7 @@ public class CapturaFirma extends Activity {
 		File sdCard, directory, file = null;
 		sdCard = Environment.getExternalStorageDirectory();
 		// Obtenemos el direcorio donde se encuentra nuestro archivo a leer
-		dialogoObservaciones();
+		//dialogoObservaciones();
 		elMaximo = Integer.parseInt(sacaMaximo().toString()) + 1;
 		String diario = String.valueOf(elMaximo);
 		Log.i("consulta", "el Maximo: " + elMaximo);
@@ -417,7 +451,7 @@ public class CapturaFirma extends Activity {
 		}
 
 		sacaImei();
-		nombreImagen = getTodaysDate() + "_" + formattedHora + "_" + formattedAno + "_" + cachaUsuario() + "_"
+		nombreImagen = getTodaysDate() + "_" +"_" + cachaUsuario() + "_"
 				+ diario + "_Firma";
 		uniqueId = getTodaysDate() + "_" + getCurrentTime() + "_" + Math.random();
 		current = nombreImagen + ".jpg";
@@ -430,7 +464,7 @@ public class CapturaFirma extends Activity {
 		}
 
 		mypath = new File(directory, current);
-		mContent = (LinearLayout) findViewById(R.id.linearLayout);
+		mContent = (LinearLayout) findViewById(R.id.linearLayoutFirma);
 		mSignature = new signature(this, null);
 		mSignature.setBackgroundColor(Color.WHITE);
 		mContent.addView(mSignature, LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
@@ -456,10 +490,23 @@ public class CapturaFirma extends Activity {
 					mView.setDrawingCacheEnabled(true);
 					mSignature.save(mView);
 
-					Intent intent = new Intent(getApplicationContext(), null);
-					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-					intent.putExtra("Nombre2", cachaUsuario());
+					GPSTracker gpsTracker = new GPSTracker(CapturaFirma.this);
 
+					UUID uuid = UUID.randomUUID();
+
+					Firma firma = new Firma();
+
+					firma.setUuid(uuid);
+					firma.setLatitude(gpsTracker.getLatitude());
+					firma.setLongitude(gpsTracker.getLongitude());
+					firma.setFirmaPath(String.valueOf(mypath));
+
+					entrevista.setFirma(firma);
+					entrevista.setObservaciones(Observaciones);
+					Intent intent = new Intent(getApplicationContext(), FormatoFirmaActivity.class);
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					intent.putExtra(USUARIO, usuario);
+					intent.putExtra(ENTREVISTA, entrevista);
 					startActivity(intent);
 
 					finish();

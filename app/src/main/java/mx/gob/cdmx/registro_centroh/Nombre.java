@@ -28,6 +28,7 @@ public class Nombre  {
     public static final String customURLcatalogos = "http://35.226.91.72/encuestas/catalogos/";
     public static final String encuesta = "estudios_cdmx";
     public static final String USUARIO = "usuario";
+    public static final String ENTREVISTA = "entrevista";
     public static final String ALCALDIA = "Todas";
     public static final String PADRON = "padron";
     public static final String LATITUDE = "latitude";

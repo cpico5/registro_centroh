@@ -11,13 +11,12 @@
         android:layout_height="wrap_content" >
 
 
-
         <Button
             android:id="@+id/clear"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight=".35"
-            android:background="@drawable/gradient_box_color_cesac"
+            android:background="#FF9800"
             android:text="Limpiar Panel"
             android:textColor="@color/BLANCO" />
 
@@ -26,7 +25,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight=".35"
-            android:background="@drawable/gradient_box_color_cesac"
+            android:background="#009688"
             android:text="Guardar"
             android:textColor="@color/BLANCO" />
     </LinearLayout>
@@ -45,20 +44,16 @@
         <TableRow
             android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:maxLength="30"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:maxLength="30"
                 android:text="Firme en el siguiente espacio"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -66,9 +61,9 @@
     </TableLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="357dp"
-        android:layout_height="237dp"
+        android:id="@+id/linearLayoutFirma"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="0.61"
         android:background="@color/GRIS"
         android:orientation="horizontal" />
