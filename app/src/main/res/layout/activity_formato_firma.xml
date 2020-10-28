@@ -133,10 +133,12 @@
                     android:id="@+id/textView13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FBFAFA"
+                    android:background="#FF9800"
                     android:fontFamily="@font/quicksand_bold"
                     android:gravity="center"
-                    android:text="FIRMA AQUÍ"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="GUARDAR Y CONTINUAR"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>

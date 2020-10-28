@@ -332,8 +332,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_notificacion" />
-                            <entry key="sourceFile" value="C:\Users\Ulises\Documents\notificacion.svg" />
+                            <entry key="outputName" value="ic_firmaico" />
+                            <entry key="sourceFile" value="C:\Users\Ulises\Documents\registro\firmaico.svg" />
                           </map>
                         </option>
                       </PersistentState>
