@@ -119,7 +119,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:onClick="firma"
                     android:id="@+id/imageButtonFirma"
                     android:layout_width="match_parent"

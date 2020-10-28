@@ -46,6 +46,9 @@ public class Entrevista implements Serializable {
     @SerializedName("telefono")
     public String telefono;
 
+    @SerializedName("observaciones")
+    public String observaciones;
+
     @SerializedName("firma")
     public Firma firma;
 
@@ -55,7 +58,7 @@ public class Entrevista implements Serializable {
     public Entrevista() {
     }
 
-    public Entrevista(int id, String fecha, String suscribe, String caracter, String inmueble, String noOficial, String noInterior, String colonia, String alcaldia, int cp, String cuentaPredial, String telefono, Firma firma, Foto foto) {
+    public Entrevista(int id, String fecha, String suscribe, String caracter, String inmueble, String noOficial, String noInterior, String colonia, String alcaldia, int cp, String cuentaPredial, String telefono, String observaciones, Firma firma, Foto foto) {
         this.id = id;
         this.fecha = fecha;
         this.suscribe = suscribe;
@@ -68,6 +71,7 @@ public class Entrevista implements Serializable {
         this.cp = cp;
         this.cuentaPredial = cuentaPredial;
         this.telefono = telefono;
+        this.observaciones = observaciones;
         this.firma = firma;
         this.foto = foto;
     }
@@ -166,6 +170,14 @@ public class Entrevista implements Serializable {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
 
     public Firma getFirma() {

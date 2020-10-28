@@ -502,6 +502,7 @@ public class CapturaFirma extends Activity {
 					firma.setFirmaPath(nombreImagen);
 
 					entrevista.setFirma(firma);
+					entrevista.setObservaciones(Observaciones);
 					Intent intent = new Intent(getApplicationContext(), FormatoFirmaActivity.class);
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					intent.putExtra(USUARIO, usuario);

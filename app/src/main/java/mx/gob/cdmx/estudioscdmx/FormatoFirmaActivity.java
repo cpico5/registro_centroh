@@ -7,14 +7,20 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.thecode.aestheticdialogs.AestheticDialog;
 import com.thecode.aestheticdialogs.DialogStyle;
 import com.thecode.aestheticdialogs.DialogType;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import mx.gob.cdmx.estudioscdmx.model.Entrevista;
 import mx.gob.cdmx.estudioscdmx.model.Usuario;
@@ -33,7 +39,11 @@ public class FormatoFirmaActivity extends AppCompatActivity {
 
     TextView textNombre;
 
-    ImageButton firma;
+    ImageView firma;
+
+    Calendar c = Calendar.getInstance();
+    SimpleDateFormat df3 = new SimpleDateFormat("yyyMMdd");
+    String formattedDate3 = df3.format(c.getTime());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,25 +80,9 @@ public class FormatoFirmaActivity extends AppCompatActivity {
         if (entrevista.getFirma() != null){
 
             try {
-                int targetW = firma.getWidth()/2;
-                int targetH = firma.getHeight()/2;
-
-                BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-                bmOptions.inJustDecodeBounds = true;
-                BitmapFactory.decodeFile(entrevista.getFirma().getFirmaPath(), bmOptions);
-                int photoW = bmOptions.outWidth;
-                int photoH = bmOptions.outHeight;
-
-                // Determine how much to scale down the image
-                int scaleFactor = Math.min(photoW/targetW, photoH/targetH);
-
-                // Decode the image file into a Bitmap sized to fill the View
-                bmOptions.inJustDecodeBounds = false;
-                bmOptions.inSampleSize = scaleFactor;
-                bmOptions.inPurgeable = true;
-
-                Bitmap bitmap = BitmapFactory.decodeFile(entrevista.getFirma().getFirmaPath(), bmOptions);
-                firma.setImageBitmap(bitmap);
+                File directory = new File(Environment.getExternalStorageDirectory() + "/Fotos/Firmas_CentroH_" + formattedDate3 + "N" + "/");
+                File mypath = new File(directory, entrevista.getFirma().getFirmaPath()+".jpg");
+                firma.setImageBitmap(BitmapFactory.decodeFile(String.valueOf(mypath)));
             }catch (Exception e){
                 new AestheticDialog.Builder(FormatoFirmaActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
                         .setTitle("Error")
