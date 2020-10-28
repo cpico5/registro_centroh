@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,9 +38,10 @@ public class FormatoFirmaActivity extends AppCompatActivity {
 
     private static final String TAG  = "FormatoFirmaActivity";
 
-    TextView textNombre;
+    TextView textNombre, continuar;
 
     ImageView firma;
+
 
     Calendar c = Calendar.getInstance();
     SimpleDateFormat df3 = new SimpleDateFormat("yyyMMdd");
@@ -77,6 +79,8 @@ public class FormatoFirmaActivity extends AppCompatActivity {
 
         firma = findViewById(R.id.imageButtonFirma);
 
+        continuar = findViewById(R.id.continuar);
+
         if (entrevista.getFirma() != null){
 
             try {
@@ -88,6 +92,18 @@ public class FormatoFirmaActivity extends AppCompatActivity {
                         .setMessage("Existió un error cargar la firma" + e.getMessage())
                         .show();
             }
+
+            continuar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(FormatoFirmaActivity.this, FotoActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.putExtra(USUARIO, usuario);
+                    intent.putExtra(ENTREVISTA, entrevista);
+                    finish();
+                    startActivity(intent);
+                }
+            });
 
 
         }
