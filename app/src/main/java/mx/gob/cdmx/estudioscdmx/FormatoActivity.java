@@ -129,7 +129,7 @@ public class FormatoActivity extends AppCompatActivity {
     private boolean validations(List<EditText> editTextList){
 
         for (EditText editText : editTextList){
-            if(TextUtils.isEmpty(editText.getText().toString())) {
+            if(Utils.isEmpty(editText.getText().toString())) {
 
                 editText.setError("Este campo es obligatorio");
                 editText.requestFocus();
