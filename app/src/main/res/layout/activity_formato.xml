@@ -361,6 +361,7 @@
                             android:layout_weight="0.2"
                             android:fontFamily="@font/quicksand_bold"
                             android:hint="00000"
+                            android:inputType="number"
                             android:maxLength="6"
                             android:paddingStart="5dp"
                             android:textColor="#454545" />

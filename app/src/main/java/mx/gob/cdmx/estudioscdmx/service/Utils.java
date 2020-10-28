@@ -137,4 +137,14 @@ public class Utils {
         }
         return bConectado;
     }
+
+    public static boolean isShort(final CharSequence s, int i) {
+        if (s == null) {
+            return true;
+        }
+        if (s.length() < i){
+         return false;
+        }
+        return true;
+    }
 }

@@ -25,6 +25,7 @@ import mx.gob.cdmx.estudioscdmx.db.Anotaciones.AutoIncrement;
 import mx.gob.cdmx.estudioscdmx.db.Anotaciones.PrimaryKey;
 import mx.gob.cdmx.estudioscdmx.model.Entrevista;
 import mx.gob.cdmx.estudioscdmx.model.Usuario;
+import mx.gob.cdmx.estudioscdmx.service.Utils;
 
 import static mx.gob.cdmx.estudioscdmx.Nombre.ENTREVISTA;
 import static mx.gob.cdmx.estudioscdmx.Nombre.USUARIO;
@@ -38,6 +39,8 @@ public class FormatoActivity extends AppCompatActivity {
             editColonia, editAlcaldia, editCP, editCuentaPredial, editTelefono;
 
     Button buttonContinuar;
+
+    int id1,id2;
 
     Calendar c = Calendar.getInstance();
 
@@ -86,6 +89,10 @@ public class FormatoActivity extends AppCompatActivity {
         editTelefono = findViewById(R.id.editTelefono);
 
 
+        id1 = editCP.getId();
+        id2 = editTelefono.getId();
+
+
 
         buttonContinuar = findViewById(R.id.buttonContinuar);
 
@@ -123,9 +130,27 @@ public class FormatoActivity extends AppCompatActivity {
 
         for (EditText editText : editTextList){
             if(TextUtils.isEmpty(editText.getText().toString())) {
+
                 editText.setError("Este campo es obligatorio");
                 editText.requestFocus();
                 return false;
+
+            }
+            if (editText.getId() == id1){
+
+                if (!Utils.isShort(editText.getText().toString(),6)){
+                    editText.setError("Este campo de 6 digitos");
+                    editText.requestFocus();
+                    return false;
+                }
+            }
+            if (editText.getId() == id2){
+
+                if (!Utils.isShort(editText.getText().toString(), 10)){
+                    editText.setError("Este campo de 10 digitos");
+                    editText.requestFocus();
+                    return false;
+                }
             }
         }
         return true;

@@ -424,7 +424,7 @@ public class CapturaFirma extends Activity {
 		File sdCard, directory, file = null;
 		sdCard = Environment.getExternalStorageDirectory();
 		// Obtenemos el direcorio donde se encuentra nuestro archivo a leer
-		dialogoObservaciones();
+		//dialogoObservaciones();
 		elMaximo = Integer.parseInt(sacaMaximo().toString()) + 1;
 		String diario = String.valueOf(elMaximo);
 		Log.i("consulta", "el Maximo: " + elMaximo);
@@ -499,7 +499,7 @@ public class CapturaFirma extends Activity {
 					firma.setUuid(uuid);
 					firma.setLatitude(gpsTracker.getLatitude());
 					firma.setLongitude(gpsTracker.getLongitude());
-					firma.setFirmaPath(nombreImagen);
+					firma.setFirmaPath(String.valueOf(mypath));
 
 					entrevista.setFirma(firma);
 					entrevista.setObservaciones(Observaciones);

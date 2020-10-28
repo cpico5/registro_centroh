@@ -80,13 +80,12 @@ public class FormatoFirmaActivity extends AppCompatActivity {
         if (entrevista.getFirma() != null){
 
             try {
-                File directory = new File(Environment.getExternalStorageDirectory() + "/Fotos/Firmas_CentroH_" + formattedDate3 + "N" + "/");
-                File mypath = new File(directory, entrevista.getFirma().getFirmaPath()+".jpg");
+                File mypath = new File(entrevista.getFirma().getFirmaPath());
                 firma.setImageBitmap(BitmapFactory.decodeFile(String.valueOf(mypath)));
             }catch (Exception e){
                 new AestheticDialog.Builder(FormatoFirmaActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
                         .setTitle("Error")
-                        .setMessage("Existió un error cargar la imagen" + e.getMessage())
+                        .setMessage("Existió un error cargar la firma" + e.getMessage())
                         .show();
             }
 
