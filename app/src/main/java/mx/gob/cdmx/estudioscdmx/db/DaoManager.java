@@ -9,6 +9,7 @@ import android.util.Log;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import mx.gob.cdmx.estudioscdmx.db.Anotaciones.AutoIncrement;
 import mx.gob.cdmx.estudioscdmx.db.Anotaciones.PrimaryKey;
@@ -23,8 +24,10 @@ public class DaoManager {
         db = dbs;
     }
 
-    public static String generateCreateQueryString(Class aClass) {
 
+    public static void createTable(Class aClass){
+
+        String addtable = "";
         String query = "CREATE TABLE " + aClass.getSimpleName() + " (";
         Field[] fields = aClass.getFields();
 
@@ -47,6 +50,80 @@ public class DaoManager {
                         query += "INTEGER";
                     } else if (type == Double.class) {
                         query += "TEXT";
+                    }else if (type == UUID.class) {
+                        query += "TEXT";
+                    } else if (type == List.class) {
+                        //String list  = " ";
+                        //try {
+                        //  DaoManager.createTable(Class.forName(BuildConfig.APPLICATION_ID+ ".model."+ fields[i].getName()));
+                        //} catch (ClassNotFoundException e) {
+                        //    e.printStackTrace();
+                        //}
+
+                        //db.execSQL(list);
+                        query += "INTEGER";
+                    }
+
+                    if(fields[i].isAnnotationPresent(PrimaryKey.class))
+                        query += " PRIMARY KEY ";
+
+                    if(fields[i].isAnnotationPresent(AutoIncrement.class))
+                        query += " AUTOINCREMENT ";
+
+                    query += ",";
+
+                }
+            }
+        }
+
+
+        if(query.length()>0)
+            query = query.substring(0,query.length()-1);
+
+        query += ")";
+        try {
+            db.execSQL(query);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public static String generateCreateQueryString(Class aClass) {
+
+        String addtable = "";
+        String query = "CREATE TABLE " + aClass.getSimpleName() + " (";
+        Field[] fields = aClass.getFields();
+
+        for (int i = 0; i < fields.length ; i++) {
+
+            Class<?> type = fields[i].getType();
+            String name = fields[i].getName();
+
+
+            if(!name.equals("$change")){
+                if(!name.equals("serialVersionUID")){
+                        query += name + " ";
+                    if (type == int.class) {
+                        query += "INTEGER";
+                    } else if (type == float.class) {
+                        query += "REAL";
+                    } else if (type == String.class) {
+                        query += "TEXT";
+                    } else if (type == Boolean.class) {
+                        query += "INTEGER";
+                    } else if (type == Double.class) {
+                        query += "TEXT";
+                    }else if (type == UUID.class) {
+                        query += "TEXT";
+                    } else if (type == List.class) {
+                        String list  = " ";
+                        //list += DaoManager.generateCreateQueryString(Class.forName(BuildConfig.APPLICATION_ID+ ".model."+ fields[i].getName()));
+                        //usdbh = new UsuariosSQLiteHelper3(this);
+                        //usdbh.onCreate(db);
+                        //db.execSQL(list);
+                        query += "INTEGER";
                     }
 
                     if(fields[i].isAnnotationPresent(PrimaryKey.class))
@@ -139,8 +216,178 @@ public class DaoManager {
         return a;
     }
 
+    public Object findbyUuid(Class aClass, String string, String[] selectionArgs){
+
+        Cursor cursor =  db.rawQuery("SELECT * " + " FROM " + aClass.getSimpleName()+
+                " WHERE uuid = '" + string + "'", null);
+        Object a = null;
+        if (cursor.moveToFirst()) {
+            try {
+                Object o = Class.forName(aClass.getName()).getConstructor().newInstance();
+
+                Field[] fields = aClass.getFields();
+                for (int i = 0; i < fields.length; i++) {
+
+                    String name = fields[i].getName();
+
+                    if(!name.equals("$change")){
+                        if(!name.equals("serialVersionUID")){
+                            if (fields[i].getType() == int.class)
+                                fields[i].set(o, cursor.getInt(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == String.class)
+                                fields[i].set(o, cursor.getString(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == float.class)
+                                fields[i].set(o, cursor.getFloat(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == Double.class)
+                                fields[i].set(o, cursor.getDouble(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == boolean.class)
+                                fields[i].set(o, cursor.getInt(cursor.getColumnIndex(fields[i].getName())) == 1 ? true : false );
+                            else if (fields[i].getType() == UUID.class)
+                                fields[i].set(o, UUID.fromString(cursor.getString( cursor.getColumnIndex(fields[i].getName()))));
+                            else{
+                                fields[i].set(o, null);
+                            }
+                        }
+                    }
+                }
+                a = o;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if(cursor != null && !cursor.isClosed())
+            cursor.close();
+
+        return a;
+    }
+
+    public Object findByEmail(Class aClass, String email, String[] selectionArgs ){
+
+        Cursor cursor =  db.rawQuery("SELECT * " + " FROM " + aClass.getSimpleName()+
+                " WHERE email = '" + email + "'", null);
+        Object a = null;
+        if (cursor.moveToFirst()) {
+            try {
+                Object o = Class.forName(aClass.getName()).getConstructor().newInstance();
+
+                Field[] fields = aClass.getFields();
+                for (int i = 0; i < fields.length; i++) {
+
+                    String name = fields[i].getName();
+
+                    if(!name.equals("$change")){
+                        if(!name.equals("serialVersionUID")){
+                            if (fields[i].getType() == int.class)
+                                fields[i].set(o, cursor.getInt(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == String.class)
+                                fields[i].set(o, cursor.getString(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == float.class)
+                                fields[i].set(o, cursor.getFloat(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == double.class)
+                                fields[i].set(o, cursor.getDouble(cursor.getColumnIndex(fields[i].getName())));
+                            else{
+                                fields[i].set(o, null);
+                            }
+                        }
+                    }
+                }
+                a = o;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if(cursor != null && !cursor.isClosed())
+            cursor.close();
+
+        return a;
+    }
+
+    public Object findOne(Class aClass){
+
+        Cursor cursor =  db.rawQuery("SELECT * " + " FROM " + aClass.getSimpleName()+ " limit 1 ", null);
+        Object a = null;
+        if (cursor.moveToFirst()) {
+            try {
+                Object o = Class.forName(aClass.getName()).getConstructor().newInstance();
+
+                Field[] fields = aClass.getFields();
+                for (int i = 0; i < fields.length; i++) {
+
+                    String name = fields[i].getName();
+
+                    if(!name.equals("$change")){
+                        if(!name.equals("serialVersionUID")){
+                            if (fields[i].getType() == int.class)
+                                fields[i].set(o, cursor.getInt(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == String.class)
+                                fields[i].set(o, cursor.getString(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == float.class)
+                                fields[i].set(o, cursor.getFloat(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == double.class)
+                                fields[i].set(o, cursor.getDouble(cursor.getColumnIndex(fields[i].getName())));
+                            else{
+                                fields[i].set(o, null);
+                            }
+                        }
+                    }
+                }
+                a = o;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if(cursor != null && !cursor.isClosed())
+            cursor.close();
+
+        return a;
+    }
+
+    public Object findOneNoSend(Class aClass){
+
+        Cursor cursor =  db.rawQuery("SELECT * " + " FROM " + aClass.getSimpleName()+ " fotoEnviado=0 limit 1 ", null);
+        Object a = null;
+        if (cursor.moveToFirst()) {
+            try {
+                Object o = Class.forName(aClass.getName()).getConstructor().newInstance();
+
+                Field[] fields = aClass.getFields();
+                for (int i = 0; i < fields.length; i++) {
+
+                    String name = fields[i].getName();
+
+                    if(!name.equals("$change")){
+                        if(!name.equals("serialVersionUID")){
+                            if (fields[i].getType() == int.class)
+                                fields[i].set(o, cursor.getInt(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == String.class)
+                                fields[i].set(o, cursor.getString(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == float.class)
+                                fields[i].set(o, cursor.getFloat(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == double.class)
+                                fields[i].set(o, cursor.getDouble(cursor.getColumnIndex(fields[i].getName())));
+                            else{
+                                fields[i].set(o, null);
+                            }
+                        }
+                    }
+                }
+                a = o;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if(cursor != null && !cursor.isClosed())
+            cursor.close();
+
+        return a;
+    }
+
     public <T> Object findOne(Class aClass, String selection,
-                                     String[] selectionArgs, String groupBy, String having, String orderBy, String limit) {
+                              String[] selectionArgs, String groupBy, String having, String orderBy, String limit) {
         Cursor cursor = db.query(aClass.getSimpleName(), null, selection, selectionArgs, groupBy, having, orderBy, limit);
         Object a = null;
         int id = 0;
@@ -209,11 +456,13 @@ public class DaoManager {
                                 c.put(fields[i].getName(), fields[i].get(object).toString());
                             if (fields[i].getType() == float.class && fields[i].get(object) != null)
                                 c.put(fields[i].getName(), fields[i].getFloat(object));
-                            if (fields[i].getType() == double.class && fields[i].get(object) != null)
-                                c.put(fields[i].getName(), fields[i].getDouble(object));
+                            if (fields[i].getType() == Double.class && fields[i].get(object) != null)
+                                c.put(fields[i].getName(), fields[i].get(object).toString());
                             if (fields[i].getType() == boolean.class && fields[i].get(object) != null)
                                 c.put(fields[i].getName(), fields[i].getBoolean(object) == false ? 0 : 1);
                             if (fields[i].getType() == Long.class && fields[i].get(object) != null)
+                                c.put(fields[i].getName(), fields[i].get(object).toString());
+                            if (fields[i].getType() == UUID.class && fields[i].get(object) != null)
                                 c.put(fields[i].getName(), fields[i].get(object).toString());
                         }
                     }
@@ -227,7 +476,7 @@ public class DaoManager {
         return -1;
     }
 
-    public long update(Object object,String clausula,  String[] id) {
+    public long update(Object object, String clausula, String[] uuid) {
         try {
             ContentValues c = new ContentValues();
             Field[] fields = object.getClass().getFields();
@@ -248,12 +497,14 @@ public class DaoManager {
                                 c.put(fields[i].getName(), fields[i].getDouble(object));
                             if (fields[i].getType() == boolean.class && fields[i].get(object) != null)
                                 c.put(fields[i].getName(), fields[i].getBoolean(object) == false ? 0 : 1);
+                            if (fields[i].getType() == UUID.class && fields[i].get(object) != null)
+                                c.put(fields[i].getName(), fields[i].get(object).toString());
                         }
 
                     }
                 }
             }
-            return db.update(object.getClass().getSimpleName(),c, clausula, id);
+            return db.update(object.getClass().getSimpleName(),c, clausula, uuid);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -337,11 +588,10 @@ public class DaoManager {
         return a;
     }
 
-    public Object findByNoSend(Class aClass, String enviado, String[] args){
+    public Object findDeleteby(Class aClass, String string , String colum, String[] selectionArgs ){
 
-        Log.i("TAG", "SELECT * " + " FROM " + aClass.getSimpleName()+ " WHERE enviado = '" + enviado + "' limit 1");
-        Cursor cursor =  db.rawQuery("SELECT * " + " FROM " + aClass.getSimpleName()+ " WHERE enviado = '0' limit 1", args);
-
+        Cursor cursor =  db.rawQuery("DELETE " + " FROM " + aClass.getSimpleName()+
+                " WHERE " + colum + " = '" + string + "' ", null);
         Object a = null;
         if (cursor.moveToFirst()) {
             try {

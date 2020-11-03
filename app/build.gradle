@@ -6,11 +6,11 @@ android {
     compileOptions.encoding = 'iso-8859-1' // write your encoding here
 
     defaultConfig {
-        applicationId 'mx.gob.cdmx.estudioscdmx'
+        applicationId 'mx.gob.cdmx.centroh'
         minSdkVersion 21
         targetSdkVersion 28
         multiDexEnabled true
-        versionName "1.1.1"
+        versionName "0.0.1"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
