@@ -5,6 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="center"
+    android:background="#F3F3F3"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:scaleType="centerCrop"
@@ -13,16 +14,16 @@
     <!-- Login progress -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imageView5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginEnd="35dp" />
+            android:layout_height="180dp"
+            app:srcCompat="@drawable/ic_inicioapp" />
+
     </LinearLayout>
 
     <ProgressBar
@@ -55,16 +56,17 @@
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
                 android:layout_weight="0.2"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
                     android:layout_weight="0.2"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Apoyo Alimentario Único Emergente COVID-19"
+                    android:gravity="center"
+                    android:text="ACH PREDIAL"
                     android:textAlignment="center"
                     android:textColor="#00AE42"
                     android:textSize="24sp"
@@ -89,8 +91,8 @@
                     android:drawableLeft="@drawable/ic_usuario"
                     android:drawablePadding="10dp"
                     android:hint="@string/prompt_email"
-                    android:maxLines="1"
                     android:inputType="textEmailAddress"
+                    android:maxLines="1"
                     android:singleLine="true"
                     android:textColor="#17700D"
                     android:textStyle="bold" />
@@ -106,19 +108,18 @@
                         android:orientation="vertical">
 
 
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
                             android:layout_marginStart="20dp"
-                            >
+                            android:orientation="horizontal">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
 
                             </ImageView>
+
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/etPasswordLayout"
                                 android:layout_width="match_parent"
@@ -138,8 +139,8 @@
                                     android:maxLines="1"
                                     android:singleLine="true"
                                     android:textColor="#17700D"
-                                    android:textSize="18sp"
                                     android:textColorLink="#17700D"
+                                    android:textSize="18sp"
                                     android:textStyle="bold" />
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -149,6 +150,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <Button
                                 android:id="@+id/email_sign_in_button"
                                 style="@style/Widget.AppCompat.Button.Borderless"
