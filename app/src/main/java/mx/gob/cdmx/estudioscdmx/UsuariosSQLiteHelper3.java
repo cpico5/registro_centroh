@@ -7,6 +7,9 @@ import android.os.Environment;
 
 import java.io.InputStream;
 
+import mx.gob.cdmx.estudioscdmx.db.DaoManager;
+import mx.gob.cdmx.estudioscdmx.model.Usuario;
+
 public class UsuariosSQLiteHelper3 extends SQLiteOpenHelper {
 
 	private static final String ENCODING = "ISO-8859-1";
@@ -16,8 +19,8 @@ public class UsuariosSQLiteHelper3 extends SQLiteOpenHelper {
 
 
 
-	private static final String DATABASE_NAME = Environment.getExternalStorageDirectory() +"/loc/ubicacion_ZJvI7PooUhZogIarOp8v";
-	private static final int DATABASE_VERSION = 4;
+	private static final String DATABASE_NAME = Environment.getExternalStorageDirectory() +"/loc/ubicacion_ZJvI7PooUhZogIarOp8vs";
+	private static final int DATABASE_VERSION = 1;
 	public UsuariosSQLiteHelper3(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 // TODO Auto-generated constructor stub
@@ -49,7 +52,9 @@ public class UsuariosSQLiteHelper3 extends SQLiteOpenHelper {
 // TODO Auto-generated method stub
 		db.execSQL(DATABASE_UBICACION);
 //	        cargaUbicacion(db);
+		DaoManager daoManager = new DaoManager(db);
 
+		daoManager.createTable(Usuario.class);
 	}
 
 
@@ -58,6 +63,7 @@ public class UsuariosSQLiteHelper3 extends SQLiteOpenHelper {
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 // TODO Auto-generated method stub
 		db.execSQL("drop table if exists " + TablaUbicacion.TABLA_UBICACION);
+		db.execSQL(DaoManager.generateDropIfExistsQueryString(Usuario.class));
 		onCreate(db);
 	}
 }

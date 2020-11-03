@@ -54,6 +54,9 @@ import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 import mx.gob.cdmx.estudioscdmx.CapturaFirma;
+import mx.gob.cdmx.estudioscdmx.FirmaActivity;
+import mx.gob.cdmx.estudioscdmx.FormatoActivity;
+import mx.gob.cdmx.estudioscdmx.FormatoFirmaActivity;
 import mx.gob.cdmx.estudioscdmx.R;
 import mx.gob.cdmx.estudioscdmx.UsuariosSQLiteHelper3;
 import mx.gob.cdmx.estudioscdmx.db.DaoManager;
@@ -251,8 +254,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private void attemptLogin() {
 
         // Reset errors.
-        //mEmailView.setText("admin@territorial.cdmx.gob.mx");
-        //mPasswordView.setText("admin");
+        mEmailView.setText("admin@territorial.cdmx.gob.mx");
+        mPasswordView.setText("admin");
         mEmailView.setError(null);
         mPasswordView.setError(null);
 
@@ -369,7 +372,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         Log.e(TAG, e.getMessage());
                     }
 
-                    Intent intent = new Intent(LoginActivity.this, CapturaFirma.class);
+                    Intent intent = new Intent(LoginActivity.this, FormatoActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     Bundle bundle = new Bundle();
                     intent.putExtras(bundle);
