@@ -51,6 +51,8 @@
             android:layout_marginEnd="25dp"
             android:orientation="vertical">
 
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -75,27 +77,60 @@
             </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:passwordToggleEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_usuario"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:hint="@string/prompt_email"
+                    android:inputType="textEmailAddress"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:hint="@string/prompt_password"
+                    android:imeActionId="6"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#17700D"
-                app:hintEnabled="true"
-                app:passwordToggleEnabled="false">
+                app:hintEnabled="true">
 
                 <AutoCompleteTextView
-                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="#F8F8F8"
-                    android:drawableLeft="@drawable/ic_usuario"
-                    android:drawablePadding="10dp"
-                    android:hint="@string/prompt_email"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textColor="#17700D"
-                    android:textStyle="bold" />
+                    android:id="@+id/email"
+                    />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -111,44 +146,6 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                            </ImageView>
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:id="@+id/etPasswordLayout"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                app:passwordToggleEnabled="true">
-
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/password"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="#F8F8F8"
-                                    android:hint="@string/prompt_password"
-                                    android:imeActionId="6"
-                                    android:imeActionLabel="@string/action_sign_in_short"
-                                    android:imeOptions="actionUnspecified"
-                                    android:inputType="textPassword"
-                                    android:maxLines="1"
-                                    android:singleLine="true"
-                                    android:textColor="#17700D"
-                                    android:textColorLink="#17700D"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-                            </com.google.android.material.textfield.TextInputLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
                             <Button
@@ -156,16 +153,13 @@
                                 style="@style/Widget.AppCompat.Button.Borderless"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="20dp"
                                 android:layout_marginTop="16dp"
-                                android:layout_marginEnd="20dp"
                                 android:background="@drawable/ic_boton_v"
                                 android:text="@string/action_sign_in"
                                 android:textColor="#FFFFFF"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
-                        Z
                     </LinearLayout>
 
                     <TextView
