@@ -3,7 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/build.gradle" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/mx/gob/cdmx/estudioscdmx/centroh/BienvenidaActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/mx/gob/cdmx/estudioscdmx/centroh/LoginActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/mx/gob/cdmx/estudioscdmx/centroh/LoginActivity.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/mx/gob/cdmx/estudioscdmx/service/SimpleNotification.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/mx/gob/cdmx/primerelectoral/service/WifiState.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/mensaje_enviado.png" charset="UTF-8" />

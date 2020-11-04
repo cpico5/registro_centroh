@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.Log;
@@ -38,8 +39,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.MySSLSocketFactory;
 import com.loopj.android.http.RequestHandle;
 import com.loopj.android.http.RequestParams;
+import com.thecode.aestheticdialogs.AestheticDialog;
+import com.thecode.aestheticdialogs.DialogStyle;
+import com.thecode.aestheticdialogs.DialogType;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -60,6 +65,7 @@ import mx.gob.cdmx.estudioscdmx.FormatoFirmaActivity;
 import mx.gob.cdmx.estudioscdmx.R;
 import mx.gob.cdmx.estudioscdmx.UsuariosSQLiteHelper3;
 import mx.gob.cdmx.estudioscdmx.db.DaoManager;
+import mx.gob.cdmx.estudioscdmx.model.Catalogos;
 import mx.gob.cdmx.estudioscdmx.model.Usuario;
 import mx.gob.cdmx.estudioscdmx.service.GPSTracker;
 import mx.gob.cdmx.estudioscdmx.service.Imei;
@@ -107,6 +113,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private TextView versionTextView;
 
     private ImageView imageView;
+
+    private SQLiteDatabase dbs;
+    private UsuariosSQLiteHelper3 usdbhs;
+
+    List<Catalogos> catalogosList = new ArrayList<>();
+
+    List<Catalogos> List = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -210,13 +223,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "¬°Permisos autorizados!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "°Permisos autorizados!", Toast.LENGTH_SHORT).show();
                     //Intent i = new Intent(this, MainActivity.class); //start activity
                     //startActivity(i);
                     //startService(new Intent(this, AndroidLocationServices.class));
 /*                    bandera=    pregunta(AndroidLocationServices.class);
                     if(bandera){
-                        Toast.makeText(this, "EL SERVICIO YA EST√Å ARRRIBA", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "EL SERVICIO YA EST¡ ARRRIBA", Toast.LENGTH_LONG).show();
 
                         finish();
                     }
@@ -331,7 +344,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                     String nombreStr = "";
-                    Log.d(TAG, "Realizo la conexi√≥n");
+                    Log.d(TAG, "Realizo la conexiÛn");
 
                     Log.d(TAG, "e2lira -----------> " + new String(responseBody));
                     String json = new String(responseBody);
@@ -358,32 +371,30 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         Log.d(TAG, "e2lira -----------> Token: " + jsonToken );
                         Log.d(TAG, "e2lira ----------->  id: " + id_user);
 
-                        showProgress(false);
+                        usdbhs = new UsuariosSQLiteHelper3(LoginActivity.this);
+                        dbs = usdbhs.getWritableDatabase();
+                        DaoManager daoManager = new DaoManager(dbs);
+
                         Usuario usuarioext = new Usuario();
                         usuarioext = (Usuario) daoManager.findByEmail(Usuario.class,usuario.getEmail(),null);
 
                         if (usuarioext != null){
                             daoManager.findDeleteby(Usuario.class,usuario.getEmail(), "email", null);
-                            daoManager.insert(usuario);
+
                         }
+                        daoManager.insert(usuario);
 
 
                     } catch (JSONException e){
                         Log.e(TAG, e.getMessage());
                     }
 
-                    Intent intent = new Intent(LoginActivity.this, FormatoActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    intent.putExtras(bundle);
-                    intent.putExtra(USUARIO, usuario);
-                    finish();
-                    startActivity(intent);
+                    catalogos();
                 }
 
                 @Override
                 public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                    Log.e(TAG, "existe un error en la conexi√≥n status code: " + statusCode);
+                    Log.e(TAG, "existe un error en la conexiÛn status code: " + statusCode);
                     try {
                         String json = new String(responseBody);
                     }catch (Exception e){
@@ -393,12 +404,114 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     AlertDialog.Builder bd = new AlertDialog.Builder(LoginActivity.this);
                     AlertDialog ad = bd.create();
                     ad.setTitle(getString(R.string.app_name));
-                    ad.setMessage("Existe un error en la conexi√≥n con el sistema central, o la contrase√±a esta incorrecta");
+                    ad.setMessage("Existe un error en la conexiÛn con el sistema central, o la contraseÒa esta incorrecta");
                     ad.show();
                 }
             });
 
         }
+    }
+
+    public void catalogos(){
+
+        catalogosList.clear();
+
+        Imei imei = new Imei(this);
+        String device_info = imei.getDeviceInof();
+
+        Log.d(TAG, device_info);
+
+        RequestParams params = new RequestParams();
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.setSSLSocketFactory(MySSLSocketFactory.getFixedSocketFactory());
+        client.addHeader("Authorization", usuario.getToken_type()+usuario.getAccess_token());
+
+        RequestHandle requestHandle = client.get(getResources().getString(R.string.url_aplicacion) + "/api/achpredial/catalogs", params, new AsyncHttpResponseHandler() {
+            String jsonToken = "";
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+                Log.d(TAG, "Realizo la conexiÛn");
+                Log.d(TAG, "e2lira -----------> " + new String(responseBody));
+                try {
+
+                    String json = new String(responseBody);
+                    JSONObject jsonObject = new JSONObject(json);
+                    //String jsonUsuarios = jsonObject.getJSONObject("data").getJSONObject("usuarios").toString();
+                    String jsonCatalogos = jsonObject.getJSONObject("data").getJSONArray("catalogs").toString();
+
+                    Gson gson  = new Gson();
+                    Type collectionType = new TypeToken<List<Catalogos>>() { }.getType();
+                    List<Catalogos> listaCatalogo = gson.fromJson(jsonCatalogos, collectionType);
+
+
+                    //arraylist = new ArrayList<>();
+
+
+                    usdbhs = new UsuariosSQLiteHelper3(LoginActivity.this);
+                    dbs = usdbhs.getWritableDatabase();
+                    DaoManager daoManager = new DaoManager(dbs);
+
+                    if (!listaCatalogo.isEmpty() || listaCatalogo.size() > 0 || listaCatalogo != null){
+
+                        daoManager.delete(Catalogos.class);
+
+                        for (Catalogos catalogos : listaCatalogo){
+
+                            daoManager.insert(catalogos);
+
+                        }
+
+                        showProgress(false);
+                        Intent intent = new Intent(LoginActivity.this, FormatoActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        Bundle bundle = new Bundle();
+                        intent.putExtras(bundle);
+                        intent.putExtra(USUARIO, usuario);
+                        finish();
+                        startActivity(intent);
+                    }else{
+                        new AestheticDialog.Builder(LoginActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
+                                .setTitle("Error de servidor")
+                                .setMessage("Error al cargar los catalogos")
+                                .show();
+                    }
+
+                } catch (JSONException e){
+                    Log.e(TAG, e.getMessage());
+                    new AestheticDialog.Builder(LoginActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
+                            .setTitle("Error de servidor")
+                            .setMessage("Error de servidor, contacte con el administrador")
+                            .show();
+                }
+
+
+                showProgress(false);
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Log.e(TAG, "existe un error en la conexiÛn");
+                if(responseBody != null){
+                    Log.d(TAG, "e2lira -----------> " + new String(responseBody));
+                }
+                try {
+                    String json = new String(responseBody);
+                }catch (Exception e){
+
+                }
+
+                showProgress(false);
+                new AestheticDialog.Builder(LoginActivity.this, DialogStyle.CONNECTIFY, DialogType.ERROR)
+                        .setTitle("Error")
+                        .setMessage("Existe un error de conexiÛn, intente mas tarde")
+                        .show();
+
+            }
+        });
+
     }
 
     private boolean isEmailValid(String email) {

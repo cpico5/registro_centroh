@@ -3,12 +3,20 @@ package mx.gob.cdmx.estudioscdmx;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.thecode.aestheticdialogs.AestheticDialog;
 import com.thecode.aestheticdialogs.DialogStyle;
@@ -21,8 +29,11 @@ import java.util.Calendar;
 import java.util.List;
 
 import cz.msebera.android.httpclient.util.TextUtils;
+import mx.gob.cdmx.estudioscdmx.centroh.LoginActivity;
 import mx.gob.cdmx.estudioscdmx.db.Anotaciones.AutoIncrement;
 import mx.gob.cdmx.estudioscdmx.db.Anotaciones.PrimaryKey;
+import mx.gob.cdmx.estudioscdmx.db.DaoManager;
+import mx.gob.cdmx.estudioscdmx.model.Catalogos;
 import mx.gob.cdmx.estudioscdmx.model.Entrevista;
 import mx.gob.cdmx.estudioscdmx.model.Usuario;
 import mx.gob.cdmx.estudioscdmx.service.Utils;
@@ -35,10 +46,16 @@ public class FormatoActivity extends AppCompatActivity {
     Usuario usuario;
 
 
-    EditText editTextDate, editSuscribe, editCaracter, editInmueble, editNoOficial, editNoInterior,
-            editColonia, editAlcaldia, editCP, editCuentaPredial, editTelefono;
+    private SQLiteDatabase dbs;
+    private UsuariosSQLiteHelper3 usdbhs;
+
+
+
+    EditText editTextDate, editSuscribe, editCaracter, editInmueble, editNoOficial, editNoInterior, editCP, editCuentaPredial, editTelefono;
 
     Button buttonContinuar;
+
+    Spinner spinnerColonia, spinnerAlcaldia;
 
     int id1,id2;
 
@@ -82,8 +99,8 @@ public class FormatoActivity extends AppCompatActivity {
         editInmueble = findViewById(R.id.editInmueble);
         editNoOficial = findViewById(R.id.editNoOficial);
         editNoInterior = findViewById(R.id.editNoInterior);
-        editColonia = findViewById(R.id.editColonia);
-        editAlcaldia = findViewById(R.id.editAlcaldia);
+        spinnerColonia = findViewById(R.id.spinnerColonia);
+        spinnerAlcaldia = findViewById(R.id.spinnerAlcaldia);
         editCP = findViewById(R.id.editCP);
         editCuentaPredial = findViewById(R.id.editCuentaPredial);
         editTelefono = findViewById(R.id.editTelefono);
@@ -108,13 +125,16 @@ public class FormatoActivity extends AppCompatActivity {
                 editTextList.add(editInmueble);
                 editTextList.add(editNoOficial);
                 editTextList.add(editNoInterior);
-                editTextList.add(editColonia);
-                editTextList.add(editAlcaldia);
                 editTextList.add(editCP);
                 editTextList.add(editCuentaPredial);
                 editTextList.add(editTelefono);
 
-                if (validations(editTextList)){
+                List<Spinner> spinnerList = new ArrayList<>();
+
+                spinnerList.add(spinnerAlcaldia);
+                spinnerList.add(spinnerColonia);
+
+                if (validations(editTextList, spinnerList)){
                    data();
                 };
 
@@ -124,9 +144,11 @@ public class FormatoActivity extends AppCompatActivity {
         editTextDate.setEnabled(false);
         editTextDate.setText(formattedDate3);
 
+        loadSpinners();
+
     }
 
-    private boolean validations(List<EditText> editTextList){
+    private boolean validations(List<EditText> editTextList, List<Spinner> spinnerList){
 
         for (EditText editText : editTextList){
             if(Utils.isEmpty(editText.getText().toString())) {
@@ -153,6 +175,15 @@ public class FormatoActivity extends AppCompatActivity {
                 }
             }
         }
+
+        for (Spinner spinner : spinnerList){
+
+            if (spinner.getSelectedItemPosition() == 0){
+                ((TextView)spinner.getSelectedView()).setError("Seleccione una opción");
+                spinner.requestFocus();
+                return false;
+            }
+        }
         return true;
     }
 
@@ -166,8 +197,6 @@ public class FormatoActivity extends AppCompatActivity {
             entrevista.setInmueble(editInmueble.getText().toString());
             entrevista.setNoOficial(editNoOficial.getText().toString());
             entrevista.setNoInterior(editNoInterior.getText().toString());
-            entrevista.setColonia(editColonia.getText().toString());
-            entrevista.setAlcaldia(editAlcaldia.getText().toString());
             entrevista.setCp(Integer.parseInt(editCP.getText().toString()));
             entrevista.setCuentaPredial(editCuentaPredial.getText().toString());
             entrevista.setTelefono(editTelefono.getText().toString());
@@ -185,6 +214,98 @@ public class FormatoActivity extends AppCompatActivity {
                     .setTitle("Error")
                     .setMessage("Existió un error al capturar los datos" + e.getMessage())
                     .show();
+        }
+
+    }
+
+    private void loadSpinners(){
+        fillAlcaldia("Alcaldía");
+        fillColonia("Colonia");
+    }
+
+    private void fillAlcaldia(final String first){
+
+        usdbhs = new UsuariosSQLiteHelper3(FormatoActivity.this);
+        dbs = usdbhs.getWritableDatabase();
+        DaoManager daoManager = new DaoManager(dbs);
+
+        List<Catalogos> catalogosList = new ArrayList<>();
+
+        try {
+
+            catalogosList = daoManager.find(Catalogos.class, "catalog=?", new String[]{"municipalities"},null,null,null,null);
+
+            List<String> datos = new ArrayList<String>();
+            datos.add(first);
+
+            for (Catalogos catalogosAlcaldia : catalogosList){
+                datos.add(catalogosAlcaldia.getName());
+            }
+
+            ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
+            adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerAlcaldia.setAdapter(adaptador);
+            spinnerAlcaldia.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    //Toast.makeText(FormatoActivity.this,spinnerAlcaldia.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
+                    if (!spinnerAlcaldia.getSelectedItem().toString().equals(first)){
+
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+
+            });
+
+        }catch (SQLException E){
+
+        }
+
+    }
+
+    private void fillColonia(String first){
+
+        usdbhs = new UsuariosSQLiteHelper3(FormatoActivity.this);
+        dbs = usdbhs.getWritableDatabase();
+        DaoManager daoManager = new DaoManager(dbs);
+
+        List<Catalogos> catalogosList = new ArrayList<>();
+
+        try {
+
+            catalogosList = daoManager.find(Catalogos.class, "catalog=?", new String[]{"settlements"},null,null,null,null);
+
+            List<String> datos = new ArrayList<String>();
+            datos.add(first);
+
+            for (Catalogos catalogosAlcaldia : catalogosList){
+                datos.add(catalogosAlcaldia.getName());
+            }
+
+            ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
+            adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerColonia.setAdapter(adaptador);
+            spinnerColonia.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    Toast.makeText(FormatoActivity.this,spinnerColonia.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+
+            });
+
+        }catch (SQLException E){
+
         }
 
     }

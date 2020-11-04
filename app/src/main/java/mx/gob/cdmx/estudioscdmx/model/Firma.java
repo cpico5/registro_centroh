@@ -7,11 +7,17 @@ import java.util.UUID;
 
 public class Firma implements Serializable {
 
+    @SerializedName("id")
+    public int id;
+
     @SerializedName("uuid")
     public UUID uuid;
 
     @SerializedName("firmaPath")
     public String firmaPath;
+
+    @SerializedName("type_photo")
+    public String type_photo;
 
     @SerializedName("latitude")
     public Double latitude;
@@ -22,11 +28,21 @@ public class Firma implements Serializable {
     public Firma() {
     }
 
-    public Firma(UUID uuid, String firmaPath, Double latitude, Double longitude) {
+    public Firma(int id, UUID uuid, String firmaPath, String type_photo, Double latitude, Double longitude) {
+        this.id = id;
         this.uuid = uuid;
         this.firmaPath = firmaPath;
+        this.type_photo = type_photo;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public UUID getUuid() {
@@ -43,6 +59,14 @@ public class Firma implements Serializable {
 
     public void setFirmaPath(String firmaPath) {
         this.firmaPath = firmaPath;
+    }
+
+    public String getType_photo() {
+        return type_photo;
+    }
+
+    public void setType_photo(String type_photo) {
+        this.type_photo = type_photo;
     }
 
     public Double getLatitude() {

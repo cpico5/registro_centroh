@@ -9,6 +9,7 @@ import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
 
@@ -496,6 +497,7 @@ public class CapturaFirma extends Activity {
 
 					Firma firma = new Firma();
 
+					firma.setId(1);
 					firma.setUuid(uuid);
 					firma.setLatitude(gpsTracker.getLatitude());
 					firma.setLongitude(gpsTracker.getLongitude());
