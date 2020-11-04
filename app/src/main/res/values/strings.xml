@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Estudios.mx v1.1.1</string>
+    <string name="app_name">Predial</string>
     <string name="action_settings">Settings</string>
 
-    <string name="app_version">1.1.1</string>
+    <string name="app_version">0.0.1</string>
 
-    <string name="url_aplicacion">https://territorial.cdmx.gob.mx</string>
+    <string name="url_aplicacion">https://developer.predialach.cdmx.gob.mx</string>
 
     <string name="developer_api">https://developer.territorial.cdmx.gob.mx</string>
     <string name="url_gps">https://territorial.cdmx.gob.mx</string>
     <!--<string name="url_aplicacion">http://10.2.69.141</string>-->
-    <string name="project_object">EstudiosCDMX</string>
-    <string name="app_project">EstudiosCDMX</string>
+    <string name="project_object">Predial</string>
+    <string name="app_project">Predial</string>
     <string name="urls_gps">https://territorial.cdmx.gob.mx</string>
 
     <string name="url_upgrade">https://territorial.cdmx.gob.mx</string>
@@ -276,5 +276,27 @@ Su respuesta se usa solamente en esta encuesta</string>
     <string name="ns">No sabe / No Contestó</string>
     <string name="nc">No contestó</string>
     <string name="title_activity_activity__datos">Activity_Datos</string>
+    <string name="textview">TextView</string>
+    <string name="button">Button</string>
+
+    <string name="title_dialog">Apoyo Alimentario</string>
+    <string name="prompt_email">Usuario</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Ingresar</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">El email es invalido</string>
+    <string name="error_invalid_password">La contraseña es muy corta</string>
+    <string name="error_incorrect_password">La contraseña es incorrecta</string>
+    <string name="error_field_required">Este campo es obligatorio</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="visita_menu_button">Visita</string>
+    <string name="incidente_menu_button">Incidente Urbano</string>
+    <string name="title_activity_chip">Chip</string>
+    <string name="usuario_login">Bienvenido Edgar</string>
+    <string name="button_salir">Salir</string>
+    <string name="tipo_vivienda">Tipo vivienda:</string>
+    <string name="title_activity_apertura__dos">AperturaActivity_Dos</string>
 
 </resources>

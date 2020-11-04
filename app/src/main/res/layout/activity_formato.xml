@@ -52,368 +52,400 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
                     android:layout_marginTop="15dp"
-                    android:layout_weight="0.2"
-                    android:background="#ECECEC"
-                    android:orientation="horizontal"
-                    android:paddingStart="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="10dp"
-                    android:paddingBottom="10dp">
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="60dp"
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:text="FECHA:"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2"
-                        android:orientation="horizontal">
-
-                        <EditText
-                            android:id="@+id/editTextDate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:fontFamily="@font/quicksand_medium"
-                            android:inputType="date"
-                            android:textColor="@color/NEGRO"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:orientation="horizontal"
-                    android:paddingStart="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="10dp">
-
-                    <TextView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.8"
-                        android:fontFamily="@font/quicksand_bold"
-                        android:text="EL QUE SUSCRIBE C."
-                        android:textColor="#4CAF50"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
 
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="25dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="30dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:orientation="horizontal"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                android:background="@drawable/ic_calendario"
+                                app:cardBackgroundColor="@color/NARANJA"
+                                app:cardCornerRadius="12dp">
 
-                    <EditText
+                                <ImageView
+                                    android:id="@+id/imageView7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/ic_calendario" />
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:lineSpacingExtra="7sp"
+                                    android:text="Fecha"
+                                    android:textColor="#FF5722"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:ems="10"
+                                    android:fontFamily="@font/quicksand_medium"
+                                    android:inputType="date"
+                                    android:textColor="@color/NEGRO"
+                                    android:textSize="18sp" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/quicksand"
-                        android:hint="Escribe aquí..."
-                        android:paddingStart="15dp"
-                        android:textSize="18sp" />
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
 
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="25dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="30dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:orientation="horizontal"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                app:cardBackgroundColor="#15BC91"
+                                app:cardCornerRadius="12dp">
 
-                    <TextView
+                                <ImageView
+                                    android:id="@+id/imageView8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/ic_user" />
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:lineSpacingExtra="7sp"
+                                    android:text="EL QUE SUSCRIBE C."
+                                    android:textColor="#0E6E31"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editSuscribe"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/quicksand"
+                                    android:hint="Escribe aquí..."
+                                    android:paddingStart="15dp"
+                                    android:textColor="#393939"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:text="EN MI CARÁCTER DE "
+                                    android:textColor="#4CAF50"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <EditText
+                                    android:id="@+id/editCaracter"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/quicksand"
+                                    android:hint="Escribe aquí..."
+                                    android:paddingStart="15dp"
+                                    android:textSize="18sp" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/quicksand_bold"
-                        android:text="EN MI CARÁCTER DE "
-                        android:textColor="#4CAF50"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:orientation="horizontal"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/quicksand"
-                        android:hint="Escribe aquí..."
-                        android:paddingStart="15dp"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:orientation="horizontal"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/quicksand_bold"
-                        android:text="DEL INMUEBLE UBICADO EN LA CALLE"
-                        android:textColor="#4CAF50"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:orientation="horizontal"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/quicksand_bold"
-                        android:hint="AV. JOSÉ MARÍA IZAZAGA"
-                        android:paddingStart="15dp"
-                        android:textSize="16sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.2"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView9"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.3"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:text="No. OFICIAL"
-                            android:textColor="#4CAF50"
-                            android:textSize="14sp" />
+                            android:orientation="horizontal"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="25dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="30dp">
 
-                        <EditText
-                            android:id="@+id/textView7"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.3"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:hint="20"
-                            android:paddingStart="5dp"
-                            android:textColor="#454545" />
-                    </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.2"
-                        android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:text="DEL INMUEBLE UBICADO EN LA CALLE"
+                                    android:textColor="#4CAF50"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/textView8"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.3"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:text="No. INTERIOR"
-                            android:textColor="#4CAF50"
-                            android:textSize="14sp" />
+                                <EditText
+                                    android:id="@+id/editInmueble"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:hint="AV. JOSÉ MARÍA IZAZAGA"
+                                    android:paddingStart="15dp"
+                                    android:textSize="16sp" />
 
-                        <EditText
-                            android:id="@+id/textView10"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.3"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:hint="7" />
-                    </LinearLayout>
-                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.2"
+                                    android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:orientation="horizontal">
+                                    <TextView
+                                        android:id="@+id/textView9"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.3"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:text="No. OFICIAL"
+                                        android:textColor="#4CAF50"
+                                        android:textSize="14sp" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.2"
-                        android:orientation="horizontal">
+                                    <EditText
+                                        android:id="@+id/editNoOficial"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.3"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:hint="20"
+                                        android:paddingStart="5dp"
+                                        android:textColor="#454545" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.2"
+                                    android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.6"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:text="COLONIA"
-                            android:textColor="#4CAF50"
-                            android:textSize="14sp" />
+                                    <TextView
+                                        android:id="@+id/textView8"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.3"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:text="No. INTERIOR"
+                                        android:textColor="#4CAF50"
+                                        android:textSize="14sp" />
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.3"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:hint="Centro"
-                            android:paddingStart="5dp"
-                            android:textColor="#454545" />
-                    </LinearLayout>
+                                    <EditText
+                                        android:id="@+id/editNoInterior"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.3"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:hint="7" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.2"
-                        android:orientation="horizontal">
+                                </LinearLayout>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:text="ALCALDÍA"
-                            android:textColor="#4CAF50"
-                            android:textSize="14sp" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="0.2"
+                                    android:orientation="horizontal">
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.3"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:hint="Cuauhtémoc" />
-                    </LinearLayout>
-                </LinearLayout>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.6"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:text="COLONIA"
+                                        android:textColor="#4CAF50"
+                                        android:textSize="14sp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:orientation="horizontal">
+                                    <Spinner
+                                        android:id="@+id/spinnerColonia"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.3"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:hint="Centro"
+                                        android:paddingStart="5dp"
+                                        android:textColor="#454545" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.2"
-                        android:orientation="horizontal">
+                                </LinearLayout>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.6"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:text="C.P."
-                            android:textColor="#4CAF50"
-                            android:textSize="14sp" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="0.2"
+                                    android:orientation="horizontal">
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.2"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:hint="06080"
-                            android:paddingStart="5dp"
-                            android:textColor="#454545" />
-                    </LinearLayout>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:text="ALCALDÍA"
+                                        android:textColor="#4CAF50"
+                                        android:textSize="14sp" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.1"
-                        android:orientation="horizontal">
+                                    <Spinner
+                                        android:id="@+id/spinnerAlcaldia"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.2"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:gravity="center"
+                                        android:textSize="14sp"
+                                        android:hint="Cuauhtémoc" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.2"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:gravity="center"
-                            android:text="CUENTA PREDIAL"
-                            android:textColor="#4CAF50"
-                            android:textSize="14sp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="0.2"
+                                    android:orientation="horizontal">
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.2"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:hint="001065120105" />
-                    </LinearLayout>
-                </LinearLayout>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.6"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:text="C.P."
+                                        android:textColor="#4CAF50"
+                                        android:textSize="14sp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:orientation="horizontal">
+                                    <EditText
+                                        android:id="@+id/editCP"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.2"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:hint="00000"
+                                        android:inputType="number"
+                                        android:maxLength="6"
+                                        android:paddingStart="5dp"
+                                        android:textColor="#454545" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.1"
-                        android:orientation="horizontal">
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="0.2"
+                                    android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.2"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:gravity="center"
-                            android:text="TELÉFONO"
-                            android:textColor="#4CAF50"
-                            android:textSize="14sp" />
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="0.2"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:gravity="start|center_vertical"
+                                        android:text="CUENTA PREDIAL"
+                                        android:textColor="#4CAF50"
+                                        android:textSize="14sp" />
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.2"
-                            android:fontFamily="@font/quicksand_bold"
-                            android:hint="5555555555"
-                            android:paddingStart="5dp" />
-                    </LinearLayout>
+                                    <EditText
+                                        android:id="@+id/editCuentaPredial"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.2"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:hint="001065120105"
+                                        android:textSize="18sp" />
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="0.2"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="0.2"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:gravity="start|center_vertical"
+                                        android:text="TELÉFONO"
+                                        android:textColor="#4CAF50"
+                                        android:textSize="14sp" />
+
+                                    <EditText
+                                        android:id="@+id/editTelefono"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.2"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:hint="5555555555"
+                                        android:inputType="number"
+                                        android:maxLength="10"
+                                        android:paddingStart="5dp"
+                                        android:textSize="18sp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
                 </LinearLayout>
 
                 <LinearLayout
@@ -422,7 +454,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/buttonContinuar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

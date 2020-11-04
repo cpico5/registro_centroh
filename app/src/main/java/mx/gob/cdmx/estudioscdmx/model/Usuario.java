@@ -34,14 +34,14 @@ public class Usuario implements Serializable {
     @SerializedName("token_type")
     public String token_type;
 
-    @SerializedName("cuadrante")
-    public String cuadrante;
+    @SerializedName("role")
+    public String role;
 
 
     public Usuario() {
     }
 
-    public Usuario(int id, String name, String paterno, String materno, String email, int user_id, String access_token, String token_type, String cuadrante) {
+    public Usuario(int id, String name, String paterno, String materno, String email, int user_id, String access_token, String token_type, String role) {
         this.id = id;
         this.name = name;
         this.paterno = paterno;
@@ -50,7 +50,7 @@ public class Usuario implements Serializable {
         this.user_id = user_id;
         this.access_token = access_token;
         this.token_type = token_type;
-        this.cuadrante = cuadrante;
+        this.role = role;
     }
 
     public int getId() {
@@ -117,11 +117,11 @@ public class Usuario implements Serializable {
         this.token_type = token_type;
     }
 
-    public String getCuadrante() {
-        return cuadrante;
+    public String getRole() {
+        return role;
     }
 
-    public void setCuadrante(String cuadrante) {
-        this.cuadrante = cuadrante;
+    public void setRole(String role) {
+        this.role = role;
     }
 }

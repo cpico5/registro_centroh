@@ -7,21 +7,6 @@
     tools:context=".FotoActivity">
 
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:background="@color/NARANJA"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -32,10 +17,28 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075"
+        app:layout_constraintVertical_bias="0.186"
         app:srcCompat="@drawable/ic_edificio" />
 
-    <EditText
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="85dp"
+        android:background="@drawable/ic_boton_v"
+        android:backgroundTint="@color/NARANJA"
+        android:clickable="true"
+        android:foreground="@drawable/ic_camm"
+        android:foregroundGravity="top|center"
+        android:foregroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.677" />
+
+    <TextView
         android:id="@+id/editTextTextPersonName3"
         android:layout_width="211dp"
         android:layout_height="61dp"
@@ -52,15 +55,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
+        app:layout_constraintVertical_bias="0.786" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:background="#009688"
+        android:layout_margin="25dp"
+        android:background="@drawable/ic_boton_v"
+        android:backgroundTint="#009688"
         android:clickable="true"
         android:text="Guardar y continuar"
         android:textColor="@color/BLANCO"
@@ -77,12 +80,15 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:max="100"
+        android:progress="70"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        android:progress="70"
-        android:max="100"/>
+        app:layout_constraintVertical_bias="0.935" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

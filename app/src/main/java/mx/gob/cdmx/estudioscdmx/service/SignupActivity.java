@@ -190,7 +190,7 @@ public class SignupActivity extends AsyncTask<String, Void, String> {
 			db = usdbh.getReadableDatabase();
 
 			final DaoManager daoManager = new DaoManager(db);
-			estudiosCdmx = (encuestas) daoManager.findByNoSend(encuestas.class, "0", null) ;
+			//estudiosCdmx = (encuestas) daoManager.findByNoSend(encuestas.class, "0", null) ;
 
 			if (estudiosCdmx != null){
 

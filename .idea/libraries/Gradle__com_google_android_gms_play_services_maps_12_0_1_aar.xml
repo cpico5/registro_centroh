@@ -4,9 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9fed28f2510b77ed5c1deb4324f52c4d/jetified-play-services-maps-12.0.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9fed28f2510b77ed5c1deb4324f52c4d/jetified-play-services-maps-12.0.1/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9fed28f2510b77ed5c1deb4324f52c4d/jetified-play-services-maps-12.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/90f83b03fabb7802a72f9e3d9dfb79b4/jetified-play-services-maps-12.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/90f83b03fabb7802a72f9e3d9dfb79b4/jetified-play-services-maps-12.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/90f83b03fabb7802a72f9e3d9dfb79b4/jetified-play-services-maps-12.0.1/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75e308f568eeb61469e64c56e3c2ee59/jetified-play-services-maps-12.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75e308f568eeb61469e64c56e3c2ee59/jetified-play-services-maps-12.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75e308f568eeb61469e64c56e3c2ee59/jetified-play-services-maps-12.0.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -36,16 +36,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2"
+            android:gravity="center"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView6"
+            <pl.droidsonroids.gif.GifImageView
+                android:onClick="leermas"
+                android:id="@+id/src_anim"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_weight="0.6"
-                app:srcCompat="@drawable/leermas" />
+                android:background="@drawable/leermas" />
+
 
         </LinearLayout>
 
@@ -53,16 +54,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
+            android:onClick="leermas"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.6"
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="Leer más"
-                android:textColor="@color/BLANCO" />
+                android:textColor="@color/BLANCO"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -97,13 +100,14 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <EditText
+                <TextView
+                    android:id="@+id/textNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/quicksand_medium"
                     android:gravity="center"
                     android:padding="15dp"
-                    android:text="NOMBRE AQUÍ"
+                    android:hint="NOMBRE AQUÍ"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -115,8 +119,9 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/imageButton"
+                <ImageView
+                    android:onClick="firma"
+                    android:id="@+id/imageButtonFirma"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
@@ -125,13 +130,15 @@
                     app:srcCompat="@drawable/ic_firmaico" />
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/continuar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FBFAFA"
+                    android:background="#FF9800"
                     android:fontFamily="@font/quicksand_bold"
                     android:gravity="center"
-                    android:text="FIRMA AQUÍ"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="GUARDAR Y CONTINUAR"
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
