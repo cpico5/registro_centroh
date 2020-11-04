@@ -32,10 +32,10 @@ public class Entrevista implements Serializable {
     public String noInterior;
 
     @SerializedName("colonia")
-    public String colonia;
+    public int colonia;
 
     @SerializedName("alcaldia")
-    public String alcaldia;
+    public int alcaldia;
 
     @SerializedName("cp")
     public int cp;
@@ -58,7 +58,7 @@ public class Entrevista implements Serializable {
     public Entrevista() {
     }
 
-    public Entrevista(int id, String fecha, String suscribe, String caracter, String inmueble, String noOficial, String noInterior, String colonia, String alcaldia, int cp, String cuentaPredial, String telefono, String observaciones, Firma firma, Foto foto) {
+    public Entrevista(int id, String fecha, String suscribe, String caracter, String inmueble, String noOficial, String noInterior, int colonia, int alcaldia, int cp, String cuentaPredial, String telefono, String observaciones, Firma firma, Foto foto) {
         this.id = id;
         this.fecha = fecha;
         this.suscribe = suscribe;
@@ -132,19 +132,19 @@ public class Entrevista implements Serializable {
         this.noInterior = noInterior;
     }
 
-    public String getColonia() {
+    public int getColonia() {
         return colonia;
     }
 
-    public void setColonia(String colonia) {
+    public void setColonia(int colonia) {
         this.colonia = colonia;
     }
 
-    public String getAlcaldia() {
+    public int getAlcaldia() {
         return alcaldia;
     }
 
-    public void setAlcaldia(String alcaldia) {
+    public void setAlcaldia(int alcaldia) {
         this.alcaldia = alcaldia;
     }
 

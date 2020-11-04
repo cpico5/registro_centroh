@@ -2,6 +2,7 @@ package mx.gob.cdmx.estudioscdmx;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -44,7 +45,7 @@ import static mx.gob.cdmx.estudioscdmx.Nombre.USUARIO;
 public class FormatoActivity extends AppCompatActivity {
 
     Usuario usuario;
-
+    Entrevista entrevista = new Entrevista();
 
     private SQLiteDatabase dbs;
     private UsuariosSQLiteHelper3 usdbhs;
@@ -180,7 +181,7 @@ public class FormatoActivity extends AppCompatActivity {
 
             if (spinner.getSelectedItemPosition() == 0){
                 ((TextView)spinner.getSelectedView()).setError("Seleccione una opción");
-                spinner.requestFocus();
+                spinner.requestFocusFromTouch();
                 return false;
             }
         }
@@ -189,7 +190,6 @@ public class FormatoActivity extends AppCompatActivity {
 
     public void data() {
 
-        Entrevista entrevista = new Entrevista();
         try {
             entrevista.setFecha(editTextDate.getText().toString());
             entrevista.setSuscribe(editSuscribe.getText().toString());
@@ -220,8 +220,8 @@ public class FormatoActivity extends AppCompatActivity {
 
     private void loadSpinners(){
         fillAlcaldia("Alcaldía");
-        fillColonia("Colonia");
     }
+
 
     private void fillAlcaldia(final String first){
 
@@ -245,13 +245,20 @@ public class FormatoActivity extends AppCompatActivity {
             ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
             adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerAlcaldia.setAdapter(adaptador);
+            final List<Catalogos> finalCatalogosList = catalogosList;
             spinnerAlcaldia.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                     //Toast.makeText(FormatoActivity.this,spinnerAlcaldia.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
                     if (!spinnerAlcaldia.getSelectedItem().toString().equals(first)){
+                        for (Catalogos catalogos: finalCatalogosList){
 
+                            if (spinnerAlcaldia.getSelectedItem().toString() == catalogos.getName()){
+                                entrevista.setAlcaldia(catalogos.getId());
+                                fillColonia("Colonia",catalogos.getId());
+                            }
+                        }
                     }
                 }
 
@@ -268,7 +275,7 @@ public class FormatoActivity extends AppCompatActivity {
 
     }
 
-    private void fillColonia(String first){
+    private void fillColonia(final String first, int Municipality){
 
         usdbhs = new UsuariosSQLiteHelper3(FormatoActivity.this);
         dbs = usdbhs.getWritableDatabase();
@@ -290,11 +297,20 @@ public class FormatoActivity extends AppCompatActivity {
             ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
             adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerColonia.setAdapter(adaptador);
+            final List<Catalogos> finalCatalogosList = catalogosList;
             spinnerColonia.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    Toast.makeText(FormatoActivity.this,spinnerColonia.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(FormatoActivity.this,spinnerColonia.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
+                    if (!spinnerAlcaldia.getSelectedItem().toString().equals(first)){
+                        for (Catalogos catalogos: finalCatalogosList){
+
+                            if (spinnerAlcaldia.getSelectedItem().toString() == catalogos.getName()){
+                                entrevista.setColonia(catalogos.getId());
+                            }
+                        }
+                    }
                 }
 
                 @Override
@@ -305,7 +321,7 @@ public class FormatoActivity extends AppCompatActivity {
             });
 
         }catch (SQLException E){
-
+            System.console().printf("SQLException-------------->", E.getMessage().toString());
         }
 
     }
