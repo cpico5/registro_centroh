@@ -145,8 +145,13 @@ public class DaoManager {
         return query;
     }
 
-    public static String generateDropIfExistsQueryString(Class aClass) {
-        return "DROP TABLE IF EXISTS " + aClass.getSimpleName();
+    public void generateDropIfExistsQueryString(Class aClass) {
+        String drop =  "DROP TABLE IF EXISTS " + aClass.getSimpleName();
+        try {
+            db.execSQL(drop);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
 
@@ -653,7 +658,7 @@ public class DaoManager {
     public void delete(Class aClass){
         long resp = db.delete(aClass.getSimpleName(), null, null);
         if(resp == -1){
-            Log.d(TAG_LOG, "pimc -----------> Error al actualizar el token de usuario: " + aClass.getSimpleName());
+            Log.d(TAG_LOG, "pimc -----------> Error al borrar: " + aClass.getSimpleName());
         }
     }
 

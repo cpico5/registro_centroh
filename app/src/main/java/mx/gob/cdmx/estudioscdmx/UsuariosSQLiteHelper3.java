@@ -6,8 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 
 import mx.gob.cdmx.estudioscdmx.db.DaoManager;
+import mx.gob.cdmx.estudioscdmx.model.Catalogos;
 import mx.gob.cdmx.estudioscdmx.model.Usuario;
 
 public class UsuariosSQLiteHelper3 extends SQLiteOpenHelper {
@@ -17,13 +19,16 @@ public class UsuariosSQLiteHelper3 extends SQLiteOpenHelper {
 	public String telefono;
 	InputStream ubicacion= null;
 
+	private ArrayList<Class> classArrayList = new ArrayList<>();
 
-
-	private static final String DATABASE_NAME = Environment.getExternalStorageDirectory() +"/loc/ubicacion_ZJvI7PooUhZogIarOp8vs";
-	private static final int DATABASE_VERSION = 1;
+	private static final String DATABASE_NAME = Environment.getExternalStorageDirectory() +"/loc/registro_centroh_ZJvI7PooUhZogIarOp8vs";
+	private static final int DATABASE_VERSION = 3;
 	public UsuariosSQLiteHelper3(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 // TODO Auto-generated constructor stub
+
+		classArrayList.add(Usuario.class);
+		classArrayList.add(Catalogos.class);
 
 
 	}
@@ -53,8 +58,14 @@ public class UsuariosSQLiteHelper3 extends SQLiteOpenHelper {
 		db.execSQL(DATABASE_UBICACION);
 //	        cargaUbicacion(db);
 		DaoManager daoManager = new DaoManager(db);
+		try {
+			for (Class aClass : classArrayList){
+				daoManager.createTable(aClass);
+			}
+		}catch (Exception e){
 
-		daoManager.createTable(Usuario.class);
+		}
+
 	}
 
 
@@ -63,7 +74,15 @@ public class UsuariosSQLiteHelper3 extends SQLiteOpenHelper {
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 // TODO Auto-generated method stub
 		db.execSQL("drop table if exists " + TablaUbicacion.TABLA_UBICACION);
-		db.execSQL(DaoManager.generateDropIfExistsQueryString(Usuario.class));
+
+		DaoManager daoManager = new DaoManager(db);
+		try {
+			for (Class aClass : classArrayList){
+				daoManager.generateDropIfExistsQueryString(aClass);
+			}
+		}catch (Exception e){
+
+		}
 		onCreate(db);
 	}
 }
