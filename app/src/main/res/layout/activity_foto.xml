@@ -7,88 +7,100 @@
     tools:context=".FotoActivity">
 
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_marginEnd="9dp"
+        android:background="#F2F1F0"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|left"
+            android:layout_weight="1"
+            android:foregroundGravity="left"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/ic_verde_b" />
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:background="#009688"
+        android:cropToPadding="false"
+        android:hapticFeedbackEnabled="true"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186"
-        app:srcCompat="@drawable/ic_edificio" />
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@drawable/ic_foto_2" />
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
         android:layout_marginEnd="85dp"
-        android:background="@drawable/ic_boton_v"
-        android:backgroundTint="@color/NARANJA"
+        android:background="@drawable/ic_camera"
         android:clickable="true"
-        android:foreground="@drawable/ic_camm"
         android:foregroundGravity="top|center"
         android:foregroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677" />
+        app:layout_constraintVertical_bias="0.722" />
 
     <TextView
         android:id="@+id/editTextTextPersonName3"
-        android:layout_width="211dp"
-        android:layout_height="61dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:clickable="false"
         android:ems="10"
         android:fontFamily="@font/quicksand_bold"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:text="Tomar fotografía"
         android:textAlignment="center"
-        android:textColor="#4CAF50"
-        android:textSize="24sp"
+        android:textColor="#F76E08"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.786" />
+        app:layout_constraintVertical_bias="0.84000003" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
+        android:layout_margin="50dp"
         android:background="@drawable/ic_boton_v"
-        android:backgroundTint="#009688"
+        android:backgroundTint="#F76E08"
         android:clickable="true"
         android:text="Guardar y continuar"
         android:textColor="@color/BLANCO"
-        android:textSize="24sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.931" />
-
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:max="100"
-        android:progress="70"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.935" />
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
