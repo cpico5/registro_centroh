@@ -1,15 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-dynamic-links:12.0.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec725b614138f8b39bd62b1a89cf2e04/jetified-firebase-dynamic-links-12.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec725b614138f8b39bd62b1a89cf2e04/jetified-firebase-dynamic-links-12.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec725b614138f8b39bd62b1a89cf2e04/jetified-firebase-dynamic-links-12.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/57ac22dda0308e1b82e2673f3073ea85/jetified-firebase-dynamic-links-12.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/57ac22dda0308e1b82e2673f3073ea85/jetified-firebase-dynamic-links-12.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/57ac22dda0308e1b82e2673f3073ea85/jetified-firebase-dynamic-links-12.0.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/57ac22dda0308e1b82e2673f3073ea85/jetified-firebase-dynamic-links-12.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/57ac22dda0308e1b82e2673f3073ea85/jetified-firebase-dynamic-links-12.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/57ac22dda0308e1b82e2673f3073ea85/jetified-firebase-dynamic-links-12.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/869f2c5abadfba3ec97586451c7b4ce0/jetified-firebase-dynamic-links-12.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/577ad5bea2bef02162679d24986ef7ec/jetified-firebase-dynamic-links-12.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/577ad5bea2bef02162679d24986ef7ec/jetified-firebase-dynamic-links-12.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/577ad5bea2bef02162679d24986ef7ec/jetified-firebase-dynamic-links-12.0.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
