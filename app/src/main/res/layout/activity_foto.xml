@@ -32,7 +32,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/foto"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:cropToPadding="false"

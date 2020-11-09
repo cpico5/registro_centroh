@@ -1,26 +1,39 @@
 package mx.gob.cdmx.estudioscdmx;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.thecode.aestheticdialogs.AestheticDialog;
+import com.thecode.aestheticdialogs.DialogStyle;
+import com.thecode.aestheticdialogs.DialogType;
+
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
 import mx.gob.cdmx.estudioscdmx.model.Entrevista;
+import mx.gob.cdmx.estudioscdmx.model.Foto;
 import mx.gob.cdmx.estudioscdmx.model.Usuario;
 
+import static android.os.Environment.getExternalStorageDirectory;
 import static mx.gob.cdmx.estudioscdmx.Nombre.ENTREVISTA;
 import static mx.gob.cdmx.estudioscdmx.Nombre.USUARIO;
 
@@ -32,10 +45,18 @@ public class FotoActivity extends AppCompatActivity {
     Entrevista entrevista;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    static final int REQUEST_IMAGE_CODE = 0;
+    static final int REQUEST_TAKE_PHOTO = 1;
 
     ImageView foto;
 
     ImageButton imageButton2;
+
+    File directory;
+
+    File file;
+
+    String currentPhotoPath;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,11 +90,6 @@ public class FotoActivity extends AppCompatActivity {
         imageButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
-                    createImageFile();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
                 dispatchTakePictureIntent();
 
             }
@@ -83,10 +99,52 @@ public class FotoActivity extends AppCompatActivity {
 
 
 
-    private void dispatchTakePictureIntent() {
+    private void ssdispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, REQUEST_IMAGE_CODE);
+        }
+    }
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                // Error occurred while creating the File
+
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                try {
+                    Uri output = Uri.fromFile(new File(photoFile.toURI()));
+
+                    //StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+                    //StrictMode.setVmPolicy(builder.build());
+                    //Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                    //intent.putExtra(MediaStore.EXTRA_OUTPUT, output);
+                    //startActivityForResult(intent, 0);
+
+
+
+                    Uri photoURI = FileProvider.getUriForFile(this,
+                            BuildConfig.APPLICATION_ID + ".fileProvider",
+                            photoFile);
+                    //startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+                    //takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                    takePictureIntent.putExtras(Intent.getIntent(MediaStore.ACTION_IMAGE_CAPTURE));
+                    startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
         }
     }
 
@@ -94,20 +152,93 @@ public class FotoActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            foto.setImageBitmap(imageBitmap);
+
+            // Get the dimensions of the bitmap
+
+            File exit = new File(currentPhotoPath);
+
+            if (exit.exists()){
+                Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath);
+
+                int width=640;
+                int heigth=640;
+
+                Bitmap imageScaled = Bitmap.createScaledBitmap(bitmap, width, heigth, false);
+
+                UUID uuid = UUID.randomUUID();
+                convertBitmapToFile(imageScaled, uuid.toString());
+
+                foto.setImageBitmap(imageScaled);
+
+
+
+                try {
+                    new File(currentPhotoPath).delete();
+                } catch (Exception e) {
+                    new AestheticDialog.Builder(FotoActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
+                            .setTitle("Error")
+                            .setMessage("Error al eliminar foto original")
+                            .show();
+                }
+            }else {
+                new AestheticDialog.Builder(FotoActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
+                        .setTitle("Error")
+                        .setMessage("No se pudo tomar la fotografía")
+                        .show();
+            }
+
+
+
+
         }
     }
 
-    String currentPhotoPath;
+    private static void convertBitmapToFile(Bitmap bitmap, String name) {
 
-    private File createImageFile() throws IOException {
+
+        File sdCard;
+        sdCard = getExternalStorageDirectory();
+        FileOutputStream fout = null;
+        try {
+            sdCard = new File(sdCard.getAbsolutePath()+ "/Fotos/CentroH");
+            sdCard.mkdirs();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        File imageFile = new File(sdCard, name + ".jpg");
+
+        OutputStream os;
+        try {
+            os = new FileOutputStream(imageFile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, os);
+            os.flush();
+            os.close();
+        } catch (Exception e) {
+            Log.e(String.valueOf(FotoActivity.class), "Error writing bitmap", e);
+        }
+    }
+
+
+
+    public File createImageFile() throws IOException {
         // Create an image file name
+        File sdCard;
+        sdCard = getExternalStorageDirectory();
+        FileOutputStream fout = null;
+        try {
+            sdCard = new File(sdCard.getAbsolutePath()+ "/Fotos/CentroH");
+            sdCard.mkdirs();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
         UUID uuid = UUID.randomUUID();
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = uuid.toString();
-        File storageDir = getExternalFilesDir(String.valueOf(Environment.getExternalStorageDirectory()));
+        File storageDir = sdCard;
         File image = File.createTempFile(
                 imageFileName,  /* prefix */
                 ".jpg",         /* suffix */
