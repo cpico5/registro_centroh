@@ -307,6 +307,34 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:text="ALCALDÍA"
+                                        android:textColor="#4CAF50"
+                                        android:textSize="14sp" />
+
+                                    <Spinner
+                                        android:id="@+id/spinnerAlcaldia"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.2"
+                                        android:fontFamily="@font/quicksand_bold"
+                                        android:gravity="center"
+                                        android:textSize="14sp"
+                                        android:hint="Cuauhtémoc" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="0.2"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_weight="0.6"
                                         android:fontFamily="@font/quicksand_bold"
                                         android:text="COLONIA"
@@ -325,33 +353,7 @@
 
                                 </LinearLayout>
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginTop="15dp"
-                                    android:layout_weight="0.2"
-                                    android:orientation="horizontal">
 
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="0.5"
-                                        android:fontFamily="@font/quicksand_bold"
-                                        android:text="ALCALDÍA"
-                                        android:textColor="#4CAF50"
-                                        android:textSize="14sp" />
-
-                                    <Spinner
-                                        android:id="@+id/spinnerAlcaldia"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="0.2"
-                                        android:fontFamily="@font/quicksand_bold"
-                                        android:gravity="center"
-                                        android:textSize="14sp"
-                                        android:hint="Cuauhtémoc" />
-
-                                </LinearLayout>
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
