@@ -468,7 +468,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         Bundle bundle = new Bundle();
                         intent.putExtras(bundle);
-                        intent.putExtra(USUARIO, usuario);
                         finish();
                         startActivity(intent);
                     }else{

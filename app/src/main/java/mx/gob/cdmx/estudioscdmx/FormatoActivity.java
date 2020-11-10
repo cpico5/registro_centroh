@@ -44,12 +44,11 @@ import static mx.gob.cdmx.estudioscdmx.Nombre.USUARIO;
 
 public class FormatoActivity extends AppCompatActivity {
 
-    Usuario usuario;
+    Usuario usuario = new Usuario();
     Entrevista entrevista = new Entrevista();
 
     private SQLiteDatabase dbs;
     private UsuariosSQLiteHelper3 usdbhs;
-
 
 
     EditText editTextDate, editSuscribe, editCaracter, editInmueble, editNoOficial, editNoInterior, editCP, editCuentaPredial, editTelefono;
@@ -61,6 +60,10 @@ public class FormatoActivity extends AppCompatActivity {
     int id1,id2;
 
     Calendar c = Calendar.getInstance();
+    SQLiteHelper3 sqLiteHelper3;
+    SQLiteDatabase sqLiteDatabase;
+
+    DaoManager daoManager;
 
     SimpleDateFormat df3 = new SimpleDateFormat("dd/MM/yyyy");
     String formattedDate3 = df3.format(c.getTime());
@@ -71,27 +74,6 @@ public class FormatoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formato);
-
-
-
-        Intent startingIntent = getIntent();
-        if(startingIntent == null) {
-            Log.e(TAG,"No Intent?  We're not supposed to be here...");
-            finish();
-            return;
-        }
-        /*
-         * Paso de parametros entre Intent
-         */
-        if (savedInstanceState != null) {
-            // Restore value of members from saved state
-            usuario = (Usuario) savedInstanceState.getSerializable(USUARIO);
-
-
-        } else {
-            // Probably initialize members with default values for a new instance
-            usuario = (Usuario) startingIntent.getSerializableExtra(USUARIO);
-        }
 
 
         editTextDate = findViewById(R.id.editTextDate);
@@ -201,10 +183,16 @@ public class FormatoActivity extends AppCompatActivity {
             entrevista.setCuentaPredial(editCuentaPredial.getText().toString());
             entrevista.setTelefono(editTelefono.getText().toString());
 
+
+            sqLiteHelper3 = new SQLiteHelper3(this);
+            sqLiteDatabase = sqLiteHelper3.getWritableDatabase();
+
+            daoManager = new DaoManager(sqLiteDatabase);
+
+            daoManager.insert(entrevista);
+
             Intent intent = new Intent(FormatoActivity.this, FormatoFirmaActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.putExtra(USUARIO, usuario);
-            intent.putExtra(ENTREVISTA, entrevista);
             finish();
             startActivity(intent);
 

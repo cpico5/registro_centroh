@@ -95,6 +95,11 @@ public class Bienvenida extends AppCompatActivity {
     private SQLiteDatabase db2;
     UsuariosSQLiteHelper3 usdbh3;
     private SQLiteDatabase db3;
+
+    SQLiteHelper3 sqLiteHelper3;
+    SQLiteDatabase sqLiteDatabase;
+
+
     double latitude;
     double longitude;
     private DaoManager daoManager;
@@ -182,6 +187,9 @@ public class Bienvenida extends AppCompatActivity {
 
             usdbh3 = new UsuariosSQLiteHelper3(this);
             db3 = usdbh3.getReadableDatabase();
+
+            sqLiteHelper3 = new SQLiteHelper3(this);
+            sqLiteDatabase = sqLiteHelper3.getReadableDatabase();
         }
 
         int ids[] = AppWidgetManager.getInstance(this).getAppWidgetIds(new ComponentName(this, GPSWidgetProvider.class));

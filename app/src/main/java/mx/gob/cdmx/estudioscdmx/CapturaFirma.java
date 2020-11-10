@@ -56,6 +56,7 @@ import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 
+import mx.gob.cdmx.estudioscdmx.db.DaoManager;
 import mx.gob.cdmx.estudioscdmx.model.Entrevista;
 import mx.gob.cdmx.estudioscdmx.model.Firma;
 import mx.gob.cdmx.estudioscdmx.model.Usuario;
@@ -68,9 +69,10 @@ import static mx.gob.cdmx.estudioscdmx.NotificationService.TAG;
 public class CapturaFirma extends Activity {
 
 
-	Usuario usuario;
+	SQLiteHelper3 sqLiteHelper3;
+	SQLiteDatabase sqLiteDatabase;
 
-	Entrevista entrevista;
+	DaoManager daoManager;
 
 	Calendar c = Calendar.getInstance();
 
@@ -375,24 +377,6 @@ public class CapturaFirma extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.firma);
 
-		Intent startingIntent = getIntent();
-		if(startingIntent == null) {
-			Log.e(TAG,"No Intent?  We're not supposed to be here...");
-			finish();
-			return;
-		}
-
-		if (savedInstanceState != null) {
-			// Restore value of members from saved state
-			usuario = (Usuario) savedInstanceState.getSerializable(USUARIO);
-			entrevista = (Entrevista) savedInstanceState.getSerializable(ENTREVISTA);
-
-
-		} else {
-			// Probably initialize members with default values for a new instance
-			usuario = (Usuario) startingIntent.getSerializableExtra(USUARIO);
-			entrevista = (Entrevista) startingIntent.getSerializableExtra(ENTREVISTA);
-		}
 
 		if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
 
@@ -503,14 +487,27 @@ public class CapturaFirma extends Activity {
 					firma.setLongitude(gpsTracker.getLongitude());
 					firma.setFirmaPath(String.valueOf(mypath));
 
+
+					sqLiteHelper3 = new SQLiteHelper3(CapturaFirma.this);
+					sqLiteDatabase = sqLiteHelper3.getWritableDatabase();
+
+					daoManager = new DaoManager(sqLiteDatabase);
+
+					Entrevista entrevista;
+
+					entrevista = (Entrevista) daoManager.findOne(Entrevista.class);
+
+					daoManager.delete(Entrevista.class);
+
+					daoManager.delete(Firma.class);
+
 					entrevista.setFirma(firma);
 					entrevista.setObservaciones(Observaciones);
+
+					daoManager.insert(entrevista);
 					Intent intent = new Intent(getApplicationContext(), FormatoFirmaActivity.class);
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-					intent.putExtra(USUARIO, usuario);
-					intent.putExtra(ENTREVISTA, entrevista);
 					startActivity(intent);
-
 					finish();
 
 				}

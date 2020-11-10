@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -29,7 +30,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
+import mx.gob.cdmx.estudioscdmx.db.DaoManager;
 import mx.gob.cdmx.estudioscdmx.model.Entrevista;
+import mx.gob.cdmx.estudioscdmx.model.Firma;
 import mx.gob.cdmx.estudioscdmx.model.Foto;
 import mx.gob.cdmx.estudioscdmx.model.Usuario;
 
@@ -56,32 +59,19 @@ public class FotoActivity extends AppCompatActivity {
 
     File file;
 
+    String imagescale;
+
+    SQLiteHelper3 sqLiteHelper3;
+    SQLiteDatabase sqLiteDatabase;
+
+    DaoManager daoManager;
+
     String currentPhotoPath;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foto);
         Intent startingIntent = getIntent();
-
-        if(startingIntent == null) {
-            Log.e(TAG,"No Intent?  We're not supposed to be here...");
-            finish();
-            return;
-        }
-        /*
-         * Paso de parametros entre Intent
-         */
-        if (savedInstanceState != null) {
-            // Restore value of members from saved state
-            usuario = (Usuario) savedInstanceState.getSerializable(USUARIO);
-            entrevista = (Entrevista) savedInstanceState.getSerializable(ENTREVISTA);
-
-
-        } else {
-            // Probably initialize members with default values for a new instance
-            usuario = (Usuario) startingIntent.getSerializableExtra(USUARIO);
-            entrevista = (Entrevista) startingIntent.getSerializableExtra(ENTREVISTA);
-        }
 
         foto = findViewById(R.id.foto);
 
@@ -168,6 +158,29 @@ public class FotoActivity extends AppCompatActivity {
                 UUID uuid = UUID.randomUUID();
                 convertBitmapToFile(imageScaled, uuid.toString());
 
+
+                Foto foto1 = new Foto();
+
+
+
+                sqLiteHelper3 = new SQLiteHelper3(this);
+                sqLiteDatabase = sqLiteHelper3.getWritableDatabase();
+
+                daoManager = new DaoManager(sqLiteDatabase);
+
+                daoManager.delete(Foto.class);
+
+                foto1.setFotoPath(imagescale);
+
+                foto1.setUuid(uuid);
+
+                GPSTracker gps = new GPSTracker(FotoActivity.this);
+
+                foto1.setLatitude(gps.getLatitude());
+                foto1.setLongitude(gps.getLongitude());
+
+                daoManager.insert(foto1);
+
                 foto.setImageBitmap(imageScaled);
 
 
@@ -193,7 +206,7 @@ public class FotoActivity extends AppCompatActivity {
         }
     }
 
-    private static void convertBitmapToFile(Bitmap bitmap, String name) {
+    private void convertBitmapToFile(Bitmap bitmap, String name) {
 
 
         File sdCard;
@@ -209,12 +222,16 @@ public class FotoActivity extends AppCompatActivity {
 
         File imageFile = new File(sdCard, name + ".jpg");
 
+
+
         OutputStream os;
         try {
             os = new FileOutputStream(imageFile);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, os);
             os.flush();
             os.close();
+
+            imagescale = imageFile.getAbsolutePath();
         } catch (Exception e) {
             Log.e(String.valueOf(FotoActivity.class), "Error writing bitmap", e);
         }

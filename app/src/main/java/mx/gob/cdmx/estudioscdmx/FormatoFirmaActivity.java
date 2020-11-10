@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -23,7 +24,9 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import mx.gob.cdmx.estudioscdmx.db.DaoManager;
 import mx.gob.cdmx.estudioscdmx.model.Entrevista;
+import mx.gob.cdmx.estudioscdmx.model.Firma;
 import mx.gob.cdmx.estudioscdmx.model.Usuario;
 
 import static mx.gob.cdmx.estudioscdmx.Nombre.ENTREVISTA;
@@ -32,16 +35,19 @@ import static mx.gob.cdmx.estudioscdmx.Nombre.USUARIO;
 
 public class FormatoFirmaActivity extends AppCompatActivity {
 
-    Usuario usuario;
-
-    Entrevista entrevista;
-
     private static final String TAG  = "FormatoFirmaActivity";
 
     TextView textNombre, continuar;
 
     ImageView firma;
 
+    SQLiteHelper3 sqLiteHelper3;
+    SQLiteDatabase sqLiteDatabase;
+
+    DaoManager daoManager;
+
+    Entrevista entrevista = new Entrevista();
+    Firma frima = new Firma();
 
     Calendar c = Calendar.getInstance();
     SimpleDateFormat df3 = new SimpleDateFormat("yyyMMdd");
@@ -52,25 +58,19 @@ public class FormatoFirmaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formato_firma);
 
-        Intent startingIntent = getIntent();
-        if(startingIntent == null) {
-            Log.e(TAG,"No Intent?  We're not supposed to be here...");
-            finish();
-            return;
-        }
-        /*
-         * Paso de parametros entre Intent
-         */
-        if (savedInstanceState != null) {
-            // Restore value of members from saved state
-            usuario = (Usuario) savedInstanceState.getSerializable(USUARIO);
-            entrevista = (Entrevista) savedInstanceState.getSerializable(ENTREVISTA);
 
+        sqLiteHelper3 = new SQLiteHelper3(this);
+        sqLiteDatabase = sqLiteHelper3.getWritableDatabase();
 
-        } else {
-            // Probably initialize members with default values for a new instance
-            usuario = (Usuario) startingIntent.getSerializableExtra(USUARIO);
-            entrevista = (Entrevista) startingIntent.getSerializableExtra(ENTREVISTA);
+        daoManager = new DaoManager(sqLiteDatabase);
+
+        entrevista = (Entrevista) daoManager.findOne(Entrevista.class);
+
+        frima = (Firma) daoManager.findOne(Firma.class);
+
+        if (entrevista != null && frima != null ){
+            entrevista.setFirma(frima);
+
         }
 
         textNombre = findViewById(R.id.textNombre);
@@ -98,8 +98,6 @@ public class FormatoFirmaActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent intent = new Intent(FormatoFirmaActivity.this, FotoActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    intent.putExtra(USUARIO, usuario);
-                    intent.putExtra(ENTREVISTA, entrevista);
                     finish();
                     startActivity(intent);
                 }
@@ -119,8 +117,6 @@ public class FormatoFirmaActivity extends AppCompatActivity {
     public void firma(View v){
         Intent intent = new Intent(FormatoFirmaActivity.this, CapturaFirma.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.putExtra(USUARIO, usuario);
-        intent.putExtra(ENTREVISTA, entrevista);
         finish();
         startActivity(intent);
     }

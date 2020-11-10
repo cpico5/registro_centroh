@@ -13,6 +13,8 @@ import java.util.UUID;
 
 import mx.gob.cdmx.estudioscdmx.db.Anotaciones.AutoIncrement;
 import mx.gob.cdmx.estudioscdmx.db.Anotaciones.PrimaryKey;
+import mx.gob.cdmx.estudioscdmx.model.Firma;
+import mx.gob.cdmx.estudioscdmx.model.Foto;
 
 
 public class DaoManager {
@@ -160,6 +162,103 @@ public class DaoManager {
         return find(aClass, selection, selectionArgs, groupBy, having, orderBy, null);
     }
 
+    public List getCursorBuscadores(Class aClass, String word, String alcaldia, String escuela, String[] selectionArgs ){
+
+        Cursor cursor =  db.rawQuery("select (nombre || ' ' || primerApellido || ' ' || segundoApellido) as nombres from ApoyosWSQSL where municipalityId='1'  and nombres like '%ZAMUDIO%' OR escuelaNombre LIKE '%ESTADO DE%' LIMIT 5" , null);
+        List a = new ArrayList();
+        while (cursor.moveToNext()) {
+            try {
+                Object o = Class.forName(aClass.getName()).getConstructor().newInstance();
+
+                Field[] fields = aClass.getFields();
+                for (int i = 0; i < fields.length; i++) {
+                    if (fields[i].getType() == int.class)
+                        fields[i].set(o, cursor.getInt(cursor.getColumnIndex(fields[i].getName())));
+                    else if (fields[i].getType() == String.class)
+                        fields[i].set(o, cursor.getString(cursor.getColumnIndex(fields[i].getName())));
+                    else if (fields[i].getType() == float.class)
+                        fields[i].set(o, cursor.getFloat(cursor.getColumnIndex(fields[i].getName())));
+                    else if (fields[i].getType() == double.class)
+                        fields[i].set(o, cursor.getDouble(cursor.getColumnIndex(fields[i].getName())));
+                    else{
+                        fields[i].set(o, null);
+                    }
+                }
+                a.add(o);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if(cursor != null && !cursor.isClosed())
+            cursor.close();
+
+        return a;
+    }
+
+    public <T> List<T> findDisting(Class aClass, String selection,
+                            String[] selectionArgs, String groupBy, String having, String orderBy, String limit){
+        Cursor cursor = db.query(true,aClass.getSimpleName(), null, selection, selectionArgs, groupBy, having, orderBy, limit);
+        List a = new ArrayList();
+        int id = 0;
+
+        while (cursor.moveToNext()) {
+            try {
+                Object o = Class.forName(aClass.getName()).getConstructor().newInstance();
+
+                Field[] fields = aClass.getFields();
+
+                for (int i = 0; i < fields.length; i++) {
+
+                    String name = fields[i].getName();
+
+                    if(!name.equals("$change")) {
+                        if (!name.equals("serialVersionUID")) {
+
+                            if (fields[i].getType() == int.class)
+                                fields[i].set(o, cursor.getInt(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == String.class)
+                                fields[i].set(o, cursor.getString(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == boolean.class)
+                                fields[i].set(o, cursor.getInt(cursor.getColumnIndex(fields[i].getName())) == 1 ? true : false );
+                            else if (fields[i].getType() == float.class)
+                                fields[i].set(o, cursor.getFloat(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == double.class)
+                                fields[i].set(o, cursor.getDouble(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == UUID.class)
+                                fields[i].set(o, UUID.fromString(cursor.getString( cursor.getColumnIndex(fields[i].getName()))));
+                            else if(fields[i].getType() == List.class){
+
+                                /*String nombreLista = fields[i].getName();
+                                if(nombreLista.equals(LISTA_BITACORA)){
+                                    List<Usuario> listaAux = find(BitacoraVisita.class,"idVisita=?",ids,null,null,null);
+                                    if(listaAux != null && !listaAux.isEmpty()){
+                                        fields[i].set(o, listaAux);
+                                    }
+                                }  */
+
+
+                            }else{
+                                fields[i].set(o, null);
+                            }
+
+                        }
+                    }
+                }
+
+                a.add(o);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if(cursor != null && !cursor.isClosed())
+            cursor.close();
+
+        return a;
+    }
+
     public <T> List<T> find(Class aClass, String selection,
                             String[] selectionArgs, String groupBy, String having, String orderBy, String limit) {
         Cursor cursor = db.query(aClass.getSimpleName(), null, selection, selectionArgs, groupBy, having, orderBy, limit);
@@ -189,6 +288,71 @@ public class DaoManager {
                                 fields[i].set(o, cursor.getFloat(cursor.getColumnIndex(fields[i].getName())));
                             else if (fields[i].getType() == double.class)
                                 fields[i].set(o, cursor.getDouble(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == UUID.class)
+                                fields[i].set(o, UUID.fromString(cursor.getString( cursor.getColumnIndex(fields[i].getName()))));
+                            else if(fields[i].getType() == List.class){
+
+                                /*String nombreLista = fields[i].getName();
+                                if(nombreLista.equals(LISTA_BITACORA)){
+                                    List<Usuario> listaAux = find(BitacoraVisita.class,"idVisita=?",ids,null,null,null);
+                                    if(listaAux != null && !listaAux.isEmpty()){
+                                        fields[i].set(o, listaAux);
+                                    }
+                                }  */
+
+
+                            }else{
+                                fields[i].set(o, null);
+                            }
+
+                        }
+                    }
+                }
+
+                a.add(o);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if(cursor != null && !cursor.isClosed())
+            cursor.close();
+
+        return a;
+    }
+
+    public <T> List<T> findlike(Class aClass, String selection,
+                            String[] selectionArgs, String groupBy, String having, String orderBy, String limit) {
+        Cursor cursor = db.query(aClass.getSimpleName(), null, selection, selectionArgs, groupBy, having, orderBy, limit);
+        List a = new ArrayList();
+        int id = 0;
+
+        while (cursor.moveToNext()) {
+            try {
+                Object o = Class.forName(aClass.getName()).getConstructor().newInstance();
+
+                Field[] fields = aClass.getFields();
+
+                for (int i = 0; i < fields.length; i++) {
+
+                    String name = fields[i].getName();
+
+                    if(!name.equals("$change")) {
+                        if (!name.equals("serialVersionUID")) {
+
+                            if (fields[i].getType() == int.class)
+                                fields[i].set(o, cursor.getInt(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == String.class)
+                                fields[i].set(o, cursor.getString(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == boolean.class)
+                                fields[i].set(o, cursor.getInt(cursor.getColumnIndex(fields[i].getName())) == 1 ? true : false );
+                            else if (fields[i].getType() == float.class)
+                                fields[i].set(o, cursor.getFloat(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == double.class)
+                                fields[i].set(o, cursor.getDouble(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == UUID.class)
+                                fields[i].set(o, UUID.fromString(cursor.getString( cursor.getColumnIndex(fields[i].getName()))));
                             else if(fields[i].getType() == List.class){
 
                                 /*String nombreLista = fields[i].getName();
@@ -468,7 +632,12 @@ public class DaoManager {
                             if (fields[i].getType() == Long.class && fields[i].get(object) != null)
                                 c.put(fields[i].getName(), fields[i].get(object).toString());
                             if (fields[i].getType() == UUID.class && fields[i].get(object) != null)
-                                c.put(fields[i].getName(), fields[i].get(object).toString());
+                                c.put(fields[i].getName(), String.valueOf(UUID.fromString(fields[i].get(object).toString())));
+                            if (fields[i].getType() == Firma.class && fields[i].get(object) != null)
+                                insert(fields[i].get(object));
+                                //c.put(fields[i].getName(), String.valueOf(UUID.fromString(fields[i].get(object).toString())));
+                            if (fields[i].getType() == Foto.class && fields[i].get(object) != null)
+                                insert(fields[i].get(object));
                         }
                     }
                 }
@@ -658,7 +827,7 @@ public class DaoManager {
     public void delete(Class aClass){
         long resp = db.delete(aClass.getSimpleName(), null, null);
         if(resp == -1){
-            Log.d(TAG_LOG, "pimc -----------> Error al borrar: " + aClass.getSimpleName());
+            Log.d(TAG_LOG, "pimc -----------> Error al actualizar el token de usuario: " + aClass.getSimpleName());
         }
     }
 
