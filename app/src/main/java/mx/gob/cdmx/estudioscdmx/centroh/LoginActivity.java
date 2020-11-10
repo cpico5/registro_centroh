@@ -58,6 +58,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
+import mx.gob.cdmx.estudioscdmx.BuildConfig;
 import mx.gob.cdmx.estudioscdmx.CapturaFirma;
 import mx.gob.cdmx.estudioscdmx.FirmaActivity;
 import mx.gob.cdmx.estudioscdmx.FormatoActivity;
@@ -322,6 +323,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             params.put("password", password);
             params.put("project", getString(R.string.project_object));
             params.put("imei", imei.getImei());
+            params.put("app_version", BuildConfig.VERSION_NAME);
             params.put("device_info", imei.getDeviceInof()); // adicionar de la clase IMEI
             GPSTracker gps = new GPSTracker(LoginActivity.this);
             double latitud = gps.getLatitude();
@@ -375,13 +377,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         dbs = usdbhs.getWritableDatabase();
                         DaoManager daoManager = new DaoManager(dbs);
 
-                        Usuario usuarioext = new Usuario();
-                        usuarioext = (Usuario) daoManager.findByEmail(Usuario.class,usuario.getEmail(),null);
+                        daoManager.delete(Usuario.class);
 
-                        if (usuarioext != null){
-                            daoManager.findDeleteby(Usuario.class,usuario.getEmail(), "email", null);
-
-                        }
                         daoManager.insert(usuario);
 
 
@@ -394,8 +391,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                 @Override
                 public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                    Log.e(TAG, "existe un error en la conexión status code: " + statusCode);
+
                     try {
+                        Log.e(TAG, "existe un error en la conexión status code: " + statusCode);
                         String json = new String(responseBody);
                     }catch (Exception e){
 

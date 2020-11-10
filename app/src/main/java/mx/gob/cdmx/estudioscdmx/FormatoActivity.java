@@ -143,8 +143,8 @@ public class FormatoActivity extends AppCompatActivity {
             }
             if (editText.getId() == id1){
 
-                if (!Utils.isShort(editText.getText().toString(),6)){
-                    editText.setError("Este campo de 6 digitos");
+                if (!Utils.isShort(editText.getText().toString(),5)){
+                    editText.setError("Este campo de 5 digitos");
                     editText.requestFocus();
                     return false;
                 }
@@ -291,10 +291,10 @@ public class FormatoActivity extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                     //Toast.makeText(FormatoActivity.this,spinnerColonia.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
-                    if (!spinnerAlcaldia.getSelectedItem().toString().equals(first)){
+                    if (!spinnerColonia.getSelectedItem().toString().equals(first)){
                         for (Catalogos catalogos: finalCatalogosList){
 
-                            if (spinnerAlcaldia.getSelectedItem().toString() == catalogos.getName()){
+                            if (spinnerColonia.getSelectedItem().toString().equals(catalogos.getName())){
                                 entrevista.setColonia(catalogos.getId());
                             }
                         }
