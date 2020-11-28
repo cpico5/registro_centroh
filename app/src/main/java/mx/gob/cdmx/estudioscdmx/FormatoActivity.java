@@ -273,7 +273,7 @@ public class FormatoActivity extends AppCompatActivity {
 
         try {
 
-            catalogosList = daoManager.find(Catalogos.class, "catalog=?", new String[]{"settlements"},null,null,null,null);
+            catalogosList = daoManager.find(Catalogos.class, "catalog=? AND municipality_id=?", new String[]{"settlements", String.valueOf(Municipality)},null,null,null,null);
 
             List<String> datos = new ArrayList<String>();
             datos.add(first);

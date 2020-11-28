@@ -115,7 +115,7 @@ public class FotoActivity extends AppCompatActivity {
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!foto1.getFotoPath().isEmpty() || foto1.getFotoPath() != null){
+                if (foto1.getFotoPath() != null){
                     guardaws();
                 }else{
                     new AestheticDialog.Builder(FotoActivity.this, DialogStyle.FLAT, DialogType.WARNING)
@@ -208,6 +208,8 @@ public class FotoActivity extends AppCompatActivity {
 
                 foto1.setFotoPath(imagescale);
                 foto1.setUuid(uuid);
+                foto1.setType_photo("Firma");
+                foto1.setId_type_photo(1);
                 GPSTracker gps = new GPSTracker(FotoActivity.this);
                 foto1.setLatitude(gps.getLatitude());
                 foto1.setLongitude(gps.getLongitude());

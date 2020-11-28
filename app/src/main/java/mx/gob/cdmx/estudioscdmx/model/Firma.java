@@ -5,9 +5,13 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.UUID;
 
+import mx.gob.cdmx.estudioscdmx.db.Anotaciones.AutoIncrement;
+import mx.gob.cdmx.estudioscdmx.db.Anotaciones.PrimaryKey;
+
 public class Firma implements Serializable {
 
-    @SerializedName("id")
+    @AutoIncrement
+    @PrimaryKey
     public int id;
 
     @SerializedName("uuid")
@@ -19,6 +23,9 @@ public class Firma implements Serializable {
     @SerializedName("type_photo")
     public String type_photo;
 
+    @SerializedName("id_type_photo")
+    public int id_type_photo;
+
     @SerializedName("latitude")
     public Double latitude;
 
@@ -28,11 +35,12 @@ public class Firma implements Serializable {
     public Firma() {
     }
 
-    public Firma(int id, UUID uuid, String firmaPath, String type_photo, Double latitude, Double longitude) {
+    public Firma(int id, UUID uuid, String firmaPath, String type_photo, int id_type_photo, Double latitude, Double longitude) {
         this.id = id;
         this.uuid = uuid;
         this.firmaPath = firmaPath;
         this.type_photo = type_photo;
+        this.id_type_photo = id_type_photo;
         this.latitude = latitude;
         this.longitude = longitude;
     }
@@ -67,6 +75,14 @@ public class Firma implements Serializable {
 
     public void setType_photo(String type_photo) {
         this.type_photo = type_photo;
+    }
+
+    public int getId_type_photo() {
+        return id_type_photo;
+    }
+
+    public void setId_type_photo(int id_type_photo) {
+        this.id_type_photo = id_type_photo;
     }
 
     public Double getLatitude() {

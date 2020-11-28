@@ -485,6 +485,8 @@ public class CapturaFirma extends Activity {
 					firma.setUuid(uuid);
 					firma.setLatitude(gpsTracker.getLatitude());
 					firma.setLongitude(gpsTracker.getLongitude());
+					firma.setType_photo("Firma");
+					firma.setId_type_photo(2);
 					firma.setFirmaPath(String.valueOf(mypath));
 
 

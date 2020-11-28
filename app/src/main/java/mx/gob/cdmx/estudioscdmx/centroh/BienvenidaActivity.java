@@ -60,6 +60,7 @@ import java.util.Set;
 import cz.msebera.android.httpclient.Header;
 import mx.gob.cdmx.estudioscdmx.BuildConfig;
 import mx.gob.cdmx.estudioscdmx.R;
+import mx.gob.cdmx.estudioscdmx.SQLiteHelper3;
 import mx.gob.cdmx.estudioscdmx.db.DaoManager;
 import mx.gob.cdmx.estudioscdmx.model.Aplicacion;
 import mx.gob.cdmx.estudioscdmx.service.AndroidLocationServices;
@@ -93,7 +94,7 @@ public class BienvenidaActivity extends Activity {
     Boolean bandera=false;
 
     private SQLiteDatabase db;
-    private UsuariosSQLiteHelper3 usdbh;
+    private SQLiteHelper3 usdbh;
 
     Calendar c = Calendar.getInstance();
 
@@ -258,6 +259,10 @@ public class BienvenidaActivity extends Activity {
             usdbh3 = new UsuariosSQLiteHelper3(this);
             db3 = usdbh3.getReadableDatabase();
             daoManager = new DaoManager(db3);
+
+            usdbh = new SQLiteHelper3(this);
+            db = usdbh.getReadableDatabase();
+            daoManager = new DaoManager(db);
 
             //usdbh.onUpgrade(db,8,8);
 
