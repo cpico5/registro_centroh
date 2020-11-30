@@ -1,12 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-appindexing:12.0.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1540b46cccd5fa1134b48bb3da0caad/jetified-firebase-appindexing-12.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1540b46cccd5fa1134b48bb3da0caad/jetified-firebase-appindexing-12.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1540b46cccd5fa1134b48bb3da0caad/jetified-firebase-appindexing-12.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/72474f700d28efb19a473c918b698e56/jetified-firebase-appindexing-12.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/72474f700d28efb19a473c918b698e56/jetified-firebase-appindexing-12.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/72474f700d28efb19a473c918b698e56/jetified-firebase-appindexing-12.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec4ab9cbaf348f7f03890d09c3cced19/jetified-firebase-appindexing-12.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec4ab9cbaf348f7f03890d09c3cced19/jetified-firebase-appindexing-12.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ec4ab9cbaf348f7f03890d09c3cced19/jetified-firebase-appindexing-12.0.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
