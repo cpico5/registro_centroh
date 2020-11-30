@@ -226,44 +226,6 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-<<<<<<< HEAD
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/btnGuardar"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:background="@drawable/gradient_box"
-                            android:minWidth="80dp"
-                            android:minHeight="60dp"
-                            android:onClick="guardar"
-                            android:text="    Guardar    "
-                            android:textColor="@color/BLANCO" />
-
-                        <Button
-                            android:id="@+id/btnSalir"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:background="@drawable/gradient_box"
-                            android:minWidth="80dp"
-                            android:minHeight="60dp"
-                            android:onClick="Salir"
-                            android:text="Salir"
-                            android:textColor="@color/BLANCO" />
-
-
-                    </LinearLayout>
-                </HorizontalScrollView>
-            </LinearLayout>
-
-            <include layout="@layout/preg01" />
-        </LinearLayout>
-    </ScrollView>
-
-</RelativeLayout>
-=======
                         android:layout_weight="0.2"
                         android:orientation="horizontal">
 
@@ -486,4 +448,4 @@
         </ScrollView>
     </LinearLayout>
 </LinearLayout>
->>>>>>> 348701d76000b37ea22df4e9c8192c3126f5db1c
+
