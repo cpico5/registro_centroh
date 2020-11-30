@@ -408,7 +408,8 @@
                                         android:layout_weight="0.2"
                                         android:fontFamily="@font/quicksand_bold"
                                         android:gravity="center_horizontal|center_vertical"
-                                        android:hint="001065120105"
+                                        android:inputType="number"
+                                        android:hint="000000000"
                                         android:textSize="18sp" />
 
                                 </LinearLayout>

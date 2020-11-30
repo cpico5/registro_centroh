@@ -13,6 +13,9 @@ public class Entrevista implements Serializable {
     @PrimaryKey
     public int id;
 
+    @SerializedName("document_id")
+    public int document_id;
+
     @SerializedName("fecha")
     public String fecha;
 
@@ -58,8 +61,9 @@ public class Entrevista implements Serializable {
     public Entrevista() {
     }
 
-    public Entrevista(int id, String fecha, String suscribe, String caracter, String inmueble, String noOficial, String noInterior, int colonia, int alcaldia, int cp, String cuentaPredial, String telefono, String observaciones, Firma firma, Foto foto) {
+    public Entrevista(int id, int document_id, String fecha, String suscribe, String caracter, String inmueble, String noOficial, String noInterior, int colonia, int alcaldia, int cp, String cuentaPredial, String telefono, String observaciones, Firma firma, Foto foto) {
         this.id = id;
+        this.document_id = document_id;
         this.fecha = fecha;
         this.suscribe = suscribe;
         this.caracter = caracter;
@@ -82,6 +86,14 @@ public class Entrevista implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getDocument_id() {
+        return document_id;
+    }
+
+    public void setDocument_id(int document_id) {
+        this.document_id = document_id;
     }
 
     public String getFecha() {

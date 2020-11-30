@@ -259,10 +259,6 @@ public class FotoActivity extends AppCompatActivity {
 
         entrevista = (Entrevista) daoManager.findOne(Entrevista.class);
 
-        firma = (Firma) daoManager.findOne(Firma.class);
-
-        foto1 = (Foto) daoManager.findOne(Foto.class);
-
         Imei imei = new Imei(this);
         String device_info = imei.getDeviceInof();
         Log.d(TAG, device_info);
@@ -305,12 +301,43 @@ public class FotoActivity extends AppCompatActivity {
             int id_user;
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                int id = 0;
                 String nombreStr = "";
                 Log.d(TAG, "Realizo la conexión");
 
                 Log.d(TAG, "e2lira -----------> " + new String(responseBody));
                 String json = new String(responseBody);
+
+                JSONObject jsonObject = null;
+                try {
+                    jsonObject = new JSONObject(json);
+                    id = jsonObject.getJSONObject("data").getInt("id");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
                 dialog.dismiss();
+
+                sqLiteHelper3 = new SQLiteHelper3(FotoActivity.this);
+                sqLiteDatabase = sqLiteHelper3.getWritableDatabase();
+                daoManager = new DaoManager(sqLiteDatabase);
+
+                entrevista.setDocument_id(id);
+
+                daoManager.update(entrevista,"id=?", new String[]{String.valueOf(entrevista.getId())});
+
+                firma = (Firma) daoManager.findOne(Firma.class);
+
+                firma.setDocument_id(id);
+
+                daoManager.update(firma,"id=?", new String[]{String.valueOf(firma.getId())});
+
+                foto1 = (Foto) daoManager.findOne(Foto.class);
+
+                foto1.setDocument_id(id);
+
+                daoManager.update(foto1,"id=?",new String[]{String.valueOf(foto1.getId())});
 
                 imageswsFirma(firma);
 
@@ -322,6 +349,7 @@ public class FotoActivity extends AppCompatActivity {
                 try {
                     Log.e(TAG, "existe un error en la conexión status code: " + statusCode);
                     String json = new String(responseBody);
+                    Log.d(TAG, "e2lira -----------> " + new String(responseBody));
                     if(!((Activity) FotoActivity.this).isFinishing()) {
                         try {
                             new AestheticDialog.Builder(FotoActivity.this, DialogStyle.CONNECTIFY, DialogType.ERROR)
@@ -358,7 +386,9 @@ public class FotoActivity extends AppCompatActivity {
 
         GPSTracker gpsTracker = new GPSTracker(FotoActivity.this);
 
-        params.put("uuid", firma.getUuid());
+        params.put("uuid", firma.getUuid().toString());
+
+        params.put("document_id",firma.getDocument_id());
 
         try{
             File file = new File(firma.getFirmaPath());
@@ -419,6 +449,7 @@ public class FotoActivity extends AppCompatActivity {
                 dialog.dismiss();
                 try {
                     Log.e(TAG, "existe un error en la conexión status code: " + statusCode);
+                    Log.d(TAG, "e2lira -----------> " + new String(responseBody));
                     String json = new String(responseBody);
                     if(!((Activity) FotoActivity.this).isFinishing()) {
                         try {
@@ -456,7 +487,9 @@ public class FotoActivity extends AppCompatActivity {
 
         GPSTracker gpsTracker = new GPSTracker(FotoActivity.this);
 
-        params.put("uuid", foto2.getUuid());
+        params.put("uuid", foto2.getUuid().toString());
+
+        params.put("document_id",foto2.getDocument_id());
 
         try{
             File file = new File(foto2.getFotoPath());
@@ -530,6 +563,7 @@ public class FotoActivity extends AppCompatActivity {
                 dialog.dismiss();
                 try {
                     Log.e(TAG, "existe un error en la conexión status code: " + statusCode);
+                    Log.d(TAG, "e2lira -----------> " + new String(responseBody));
                     String json = new String(responseBody);
                     if(!((Activity) FotoActivity.this).isFinishing()) {
                         try {

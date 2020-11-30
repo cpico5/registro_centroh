@@ -494,8 +494,10 @@ public class DaoManager {
                                 fields[i].set(o, cursor.getString(cursor.getColumnIndex(fields[i].getName())));
                             else if (fields[i].getType() == float.class)
                                 fields[i].set(o, cursor.getFloat(cursor.getColumnIndex(fields[i].getName())));
-                            else if (fields[i].getType() == double.class)
+                            else if (fields[i].getType() == Double.class)
                                 fields[i].set(o, cursor.getDouble(cursor.getColumnIndex(fields[i].getName())));
+                            else if (fields[i].getType() == UUID.class)
+                                fields[i].set(o, UUID.fromString(cursor.getString( cursor.getColumnIndex(fields[i].getName()))));
                             else{
                                 fields[i].set(o, null);
                             }
@@ -672,7 +674,7 @@ public class DaoManager {
                             if (fields[i].getType() == boolean.class && fields[i].get(object) != null)
                                 c.put(fields[i].getName(), fields[i].getBoolean(object) == false ? 0 : 1);
                             if (fields[i].getType() == UUID.class && fields[i].get(object) != null)
-                                c.put(fields[i].getName(), fields[i].get(object).toString());
+                                c.put(fields[i].getName(), String.valueOf(UUID.fromString(fields[i].get(object).toString())));
                         }
 
                     }

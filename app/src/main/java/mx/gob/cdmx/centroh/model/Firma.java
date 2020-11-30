@@ -14,6 +14,9 @@ public class Firma implements Serializable {
     @PrimaryKey
     public int id;
 
+    @SerializedName("document_id")
+    public int document_id;
+
     @SerializedName("uuid")
     public UUID uuid;
 
@@ -35,8 +38,9 @@ public class Firma implements Serializable {
     public Firma() {
     }
 
-    public Firma(int id, UUID uuid, String firmaPath, String type_photo, int id_type_photo, Double latitude, Double longitude) {
+    public Firma(int id, int document_id, UUID uuid, String firmaPath, String type_photo, int id_type_photo, Double latitude, Double longitude) {
         this.id = id;
+        this.document_id = document_id;
         this.uuid = uuid;
         this.firmaPath = firmaPath;
         this.type_photo = type_photo;
@@ -51,6 +55,14 @@ public class Firma implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getDocument_id() {
+        return document_id;
+    }
+
+    public void setDocument_id(int document_id) {
+        this.document_id = document_id;
     }
 
     public UUID getUuid() {
