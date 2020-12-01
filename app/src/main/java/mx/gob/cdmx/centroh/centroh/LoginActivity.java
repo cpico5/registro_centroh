@@ -1,5 +1,6 @@
 package mx.gob.cdmx.centroh.centroh;
 
+import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -32,6 +33,7 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
@@ -121,6 +123,25 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        if (Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            ActivityCompat.requestPermissions(LoginActivity.this,
+                    new String[]{
+                            Manifest.permission.CAMERA,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE ,
+                            Manifest.permission.ACCESS_COARSE_LOCATION,
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                            Manifest.permission.CAMERA,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.INTERNET,
+                            Manifest.permission.ACCESS_NETWORK_STATE,
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.RECORD_AUDIO,
+                            Manifest.permission.RECEIVE_BOOT_COMPLETED,
+                            Manifest.permission.LOCATION_HARDWARE,
+                            Manifest.permission.ACCESS_WIFI_STATE},
+                    1);
+        }
         usdbh = new UsuariosSQLiteHelper3(LoginActivity.this);
         db = usdbh.getWritableDatabase();
         // Set up the login form.

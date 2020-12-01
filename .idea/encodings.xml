@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/build.gradle" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/mx/gob/cdmx/centroh/centroh/BienvenidaActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/mx/gob/cdmx/centroh/centroh/LoginActivity.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/mx/gob/cdmx/centroh/service/SimpleNotification.java" charset="UTF-8" />
