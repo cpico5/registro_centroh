@@ -58,15 +58,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 import cz.msebera.android.httpclient.Header;
-import mx.gob.cdmx.centroh.BuildConfig;
+import mx.gob.cdmx.estudioscdmx.BuildConfig;
 import mx.gob.cdmx.centroh.R;
 import mx.gob.cdmx.centroh.SQLiteHelper3;
+import mx.gob.cdmx.centroh.SQLiteHelper4;
 import mx.gob.cdmx.centroh.db.DaoManager;
 import mx.gob.cdmx.centroh.model.Aplicacion;
 import mx.gob.cdmx.centroh.service.AndroidLocationServices;
 import mx.gob.cdmx.centroh.service.GPSWidgetProvider;
 import mx.gob.cdmx.centroh.UsuariosSQLiteHelper3;
 import mx.gob.cdmx.centroh.upgradeActivity;
+
 
 import static mx.gob.cdmx.centroh.model.Nombre.APLICACION;
 
@@ -93,6 +95,9 @@ public class BienvenidaActivity extends Activity {
 
     private SQLiteDatabase db;
     private SQLiteHelper3 usdbh;
+
+    private SQLiteDatabase db4;
+    private SQLiteHelper4 usdbh4;
 
     Calendar c = Calendar.getInstance();
 
@@ -261,6 +266,10 @@ public class BienvenidaActivity extends Activity {
             usdbh = new SQLiteHelper3(this);
             db = usdbh.getReadableDatabase();
             daoManager = new DaoManager(db);
+
+            usdbh4 = new SQLiteHelper4(this);
+            db4 = usdbh4.getReadableDatabase();
+            daoManager = new DaoManager(db4);
 
             //usdbh.onUpgrade(db,8,8);
 
