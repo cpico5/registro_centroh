@@ -343,6 +343,25 @@ public class FotoActivity extends AppCompatActivity {
 
                 daoManager.update(foto1,"id=?",new String[]{String.valueOf(foto1.getId())});
 
+
+                sqLiteHelper4 = new SQLiteHelper4(FotoActivity.this);
+                sqLiteDatabase4 = sqLiteHelper4.getWritableDatabase();
+                DaoManager daoManagers = new DaoManager(sqLiteDatabase4);
+
+                try {
+                    daoManagers.insert(entrevista);
+                    daoManagers.insert(foto1);
+                    daoManagers.insert(firma);
+                }catch (SQLException e){
+                    if(!((Activity) FotoActivity.this).isFinishing()) {
+                        new AestheticDialog.Builder(FotoActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
+                                .setTitle("Error")
+                                .setMessage(e.getMessage())
+                                .show();
+                        return;
+                    }
+                }
+
                 imageswsFirma(firma);
 
             }
@@ -600,24 +619,6 @@ public class FotoActivity extends AppCompatActivity {
         sqLiteDatabase = sqLiteHelper3.getWritableDatabase();
         daoManager = new DaoManager(sqLiteDatabase);
 
-
-        sqLiteHelper4 = new SQLiteHelper4(this);
-        sqLiteDatabase4 = sqLiteHelper4.getWritableDatabase();
-        DaoManager daoManagers = new DaoManager(sqLiteDatabase4);
-
-        try {
-            daoManagers.insert(entrevista);
-            daoManagers.insert(foto1);
-            daoManagers.insert(firma);
-        }catch (SQLException e){
-            if(!((Activity) FotoActivity.this).isFinishing()) {
-                new AestheticDialog.Builder(FotoActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
-                        .setTitle("Error")
-                        .setMessage(e.getMessage())
-                        .show();
-                return;
-            }
-        }
 
 
         try {
