@@ -23,6 +23,7 @@ import android.widget.ImageView;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.BuildConfig;
 import com.loopj.android.http.MySSLSocketFactory;
 import com.loopj.android.http.RequestHandle;
 import com.loopj.android.http.RequestParams;
@@ -78,6 +79,9 @@ public class FotoActivity extends AppCompatActivity {
 
     SQLiteHelper3 sqLiteHelper3;
     SQLiteDatabase sqLiteDatabase;
+
+    SQLiteHelper4 sqLiteHelper4;
+    SQLiteDatabase sqLiteDatabase4;
 
     private SQLiteDatabase dbs;
     private UsuariosSQLiteHelper3 usdbhs;
@@ -597,10 +601,29 @@ public class FotoActivity extends AppCompatActivity {
         daoManager = new DaoManager(sqLiteDatabase);
 
 
+        sqLiteHelper4 = new SQLiteHelper4(this);
+        sqLiteDatabase4 = sqLiteHelper4.getWritableDatabase();
+        DaoManager daoManagers = new DaoManager(sqLiteDatabase4);
+
         try {
-            daoManager.deleteClausule(Entrevista.class,"id", new String[]{String.valueOf(entrevista.getId())});
-            daoManager.deleteClausule(Firma.class,"id", new String[]{String.valueOf(entrevista.getId())});
-            daoManager.deleteClausule(Foto.class,"id", new String[]{String.valueOf(entrevista.getId())});
+            daoManagers.insert(entrevista);
+            daoManagers.insert(foto1);
+            daoManagers.insert(firma);
+        }catch (SQLException e){
+            if(!((Activity) FotoActivity.this).isFinishing()) {
+                new AestheticDialog.Builder(FotoActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
+                        .setTitle("Error")
+                        .setMessage(e.getMessage())
+                        .show();
+                return;
+            }
+        }
+
+
+        try {
+            daoManager.deleteClausule(Entrevista.class,"document_id=?", new String[]{String.valueOf(entrevista.getDocument_id())});
+            daoManager.deleteClausule(Firma.class,"document_id=?", new String[]{String.valueOf(entrevista.getDocument_id())});
+            daoManager.deleteClausule(Foto.class,"document_id=?", new String[]{String.valueOf(entrevista.getDocument_id())});
         }catch (SQLException e){
             if(!((Activity) FotoActivity.this).isFinishing()) {
                 new AestheticDialog.Builder(FotoActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)

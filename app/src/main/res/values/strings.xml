@@ -9,11 +9,11 @@
     <string name="url_aplicacion">https://developer.predialach.cdmx.gob.mx</string>
 
     <string name="developer_api">https://developer.territorial.cdmx.gob.mx</string>
-    <string name="url_gps">https://territorial.cdmx.gob.mx</string>
     <!--<string name="url_aplicacion">http://10.2.69.141</string>-->
     <string name="project_object">Predial</string>
     <string name="app_project">Predial</string>
     <string name="urls_gps">https://territorial.cdmx.gob.mx</string>
+    <string name="url_gps">http://territorial.cdmx.gob.mx</string>
 
     <string name="url_upgrade">https://territorial.cdmx.gob.mx</string>
     <string name="download">Download</string>
