@@ -58,7 +58,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import cz.msebera.android.httpclient.Header;
-import mx.gob.cdmx.estudioscdmx.BuildConfig;
+import mx.gob.cdmx.centroh.BuildConfig;
 import mx.gob.cdmx.centroh.R;
 import mx.gob.cdmx.centroh.SQLiteHelper3;
 import mx.gob.cdmx.centroh.SQLiteHelper4;
