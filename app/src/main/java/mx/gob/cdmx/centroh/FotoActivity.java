@@ -59,8 +59,8 @@ public class FotoActivity extends AppCompatActivity {
     private static final String TAG  = "FotoActivity";
 
     Usuario usuario;
-    Entrevista entrevista;
-    Firma firma;
+    Entrevista entrevista = new Entrevista();
+    Firma firma = new Firma();
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     static final int REQUEST_IMAGE_CODE = 0;
@@ -121,7 +121,12 @@ public class FotoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (foto1.getFotoPath() != null){
-                    guardaws();
+                    if (entrevista.getDocument_id() == 0){
+                        guardaws();
+                    }else if (firma.getDocument_id() != 0 && foto1.getDocument_id() != 0){
+                        imageswsFirma(firma);
+                    }
+
                 }else{
                     new AestheticDialog.Builder(FotoActivity.this, DialogStyle.FLAT, DialogType.WARNING)
                             .setTitle("Foto")
