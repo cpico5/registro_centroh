@@ -29,10 +29,6 @@ public class SQLiteHelper4 extends SQLiteOpenHelper {
 // TODO Auto-generated constructor stub
 
 		classArrayList.add(Entrevista.class);
-		classArrayList.add(Foto.class);
-		classArrayList.add(Firma.class);
-
-
 	}
 
 

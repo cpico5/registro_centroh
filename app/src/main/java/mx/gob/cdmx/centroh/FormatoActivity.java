@@ -226,6 +226,8 @@ public class FormatoActivity extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                     //Toast.makeText(FormatoActivity.this,spinnerAlcaldia.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
+                    spinnerAlcaldia.setSelection(1);
+                    spinnerAlcaldia.setEnabled(false);
                     if (!spinnerAlcaldia.getSelectedItem().toString().equals(first)){
                         for (Catalogos catalogos: finalCatalogosList){
 

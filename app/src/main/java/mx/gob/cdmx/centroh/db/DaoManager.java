@@ -11,10 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import mx.gob.cdmx.centroh.BuildConfig;
 import mx.gob.cdmx.centroh.db.Anotaciones.AutoIncrement;
 import mx.gob.cdmx.centroh.db.Anotaciones.PrimaryKey;
 import mx.gob.cdmx.centroh.model.Firma;
 import mx.gob.cdmx.centroh.model.Foto;
+import mx.gob.cdmx.centroh.service.Utils;
 
 
 public class DaoManager {
@@ -55,16 +57,20 @@ public class DaoManager {
                     }else if (type == UUID.class) {
                         query += "TEXT";
                     } else if (type == List.class) {
-                        //String list  = " ";
-                        //try {
-                        //  DaoManager.createTable(Class.forName(BuildConfig.APPLICATION_ID+ ".model."+ fields[i].getName()));
-                        //} catch (ClassNotFoundException e) {
-                        //    e.printStackTrace();
-                        //}
-
-                        //db.execSQL(list);
+                        try {
+                            DaoManager.createTable(Class.forName(BuildConfig.APPLICATION_ID+ ".model."+ Utils.capitalize(fields[i].getName())));
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        }
                         query += "INTEGER";
+                    }else if (type.toString().contains(BuildConfig.APPLICATION_ID+ ".model.")){
+                        try {
+                            DaoManager.createTable(Class.forName(BuildConfig.APPLICATION_ID+ ".model."+ Utils.capitalize(fields[i].getName())));
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        }
                     }
+
 
                     if(fields[i].isAnnotationPresent(PrimaryKey.class))
                         query += " PRIMARY KEY ";
