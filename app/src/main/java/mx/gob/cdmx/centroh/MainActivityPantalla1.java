@@ -1215,15 +1215,15 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
 
     private Integer[] mLinearLayoutIds = {
             R.layout.activity_pantalla1,
-            R.layout.activity_pantalla2,
-            R.layout.activity_pantalla3,
-            R.layout.activity_pantalla4,
-            R.layout.activity_pantalla5,
-            R.layout.activity_pantalla6,
-            R.layout.activity_pantalla7,
-            R.layout.activity_pantalla8,
-            R.layout.activity_pantalla9,
-            R.layout.activity_pantalla10,
+//            R.layout.activity_pantalla2,
+//            R.layout.activity_pantalla3,
+//            R.layout.activity_pantalla4,
+//            R.layout.activity_pantalla5,
+//            R.layout.activity_pantalla6,
+//            R.layout.activity_pantalla7,
+//            R.layout.activity_pantalla8,
+//            R.layout.activity_pantalla9,
+//            R.layout.activity_pantalla10,
 ////// R.layout.activity_pantalla11,
 //// R.layout.activity_pantalla12,
 //// R.layout.activity_pantalla13,
@@ -1251,7 +1251,7 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
 // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_pantalla1); // COMENTAR ESTA CUANDO ES ALEATORIO
+        setContentView(R.layout.activity_pantalla1); // COMENTAR ESTA CUANDO ES ALEATORIO
 
         Intent startingIntent = getIntent();
         if (startingIntent == null) {
@@ -1270,9 +1270,9 @@ public class MainActivityPantalla1 extends Activity implements AdapterView.OnIte
         random = new Random();
 //
         /*DESCOMENTAR ESTAS 3 LINEAS CUANDO YA ESTA EL NUMERO DE HOJAS ALEATORIO */
-        rand = random.nextInt(9);
-        setContentView(mLinearLayoutIds[rand]);
-        Log.i(null, "El aleatorio: " + rand); // si rand= 11 en el layoud corresponde a uno mas
+//        rand = random.nextInt(9);
+//        setContentView(mLinearLayoutIds[rand]);
+//        Log.i(null, "El aleatorio: " + rand); // si rand= 11 en el layoud corresponde a uno mas
 
 
         /*activity_pantalla12*/
