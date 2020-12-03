@@ -27,12 +27,7 @@ public class SQLiteHelper3 extends SQLiteOpenHelper {
 	public SQLiteHelper3(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 // TODO Auto-generated constructor stub
-
 		classArrayList.add(Entrevista.class);
-		classArrayList.add(Foto.class);
-		classArrayList.add(Firma.class);
-
-
 	}
 
 
