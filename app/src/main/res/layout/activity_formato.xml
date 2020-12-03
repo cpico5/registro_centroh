@@ -409,7 +409,8 @@
                                         android:fontFamily="@font/quicksand_bold"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:inputType="number"
-                                        android:hint="000000000"
+                                        android:maxLength="11"
+                                        android:hint="123456789"
                                         android:textSize="18sp" />
 
                                 </LinearLayout>
