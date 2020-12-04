@@ -602,7 +602,7 @@ public class FotoActivity extends AppCompatActivity {
                                                     startActivity(intent);
                                                 }
                                             })
-                                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                            .setNegativeButton("Salir", new DialogInterface.OnClickListener() {
                                                 public void onClick(DialogInterface dialog, int id) {
                                                     Intent intent = new Intent(FotoActivity.this, LoginActivity.class);
                                                     startActivity(intent);
