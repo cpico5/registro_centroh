@@ -87,7 +87,7 @@
                     android:drawableLeft="@drawable/ic_usuario"
                     android:fontFamily="@font/quicksand_bold"
                     android:hint="@string/prompt_email"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textEmailAddress" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
