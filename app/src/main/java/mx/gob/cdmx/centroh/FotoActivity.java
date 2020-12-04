@@ -567,6 +567,23 @@ public class FotoActivity extends AppCompatActivity {
                 String json = new String(responseBody);
                 try {
                     JSONObject jsonObject = new JSONObject(json);
+                    sqLiteHelper3 = new SQLiteHelper3(FotoActivity.this);
+                    sqLiteDatabase = sqLiteHelper3.getWritableDatabase();
+                    daoManager = new DaoManager(sqLiteDatabase);
+
+                    try {
+                        daoManager.deleteClausule(Entrevista.class,"document_id=?", new String[]{String.valueOf(entrevista.getDocument_id())});
+                        daoManager.deleteClausule(Firma.class,"document_id=?", new String[]{String.valueOf(entrevista.getDocument_id())});
+                        daoManager.deleteClausule(Foto.class,"document_id=?", new String[]{String.valueOf(entrevista.getDocument_id())});
+                    }catch (SQLException e){
+                        if(!((Activity) FotoActivity.this).isFinishing()) {
+                            new AestheticDialog.Builder(FotoActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
+                                    .setTitle("Error")
+                                    .setMessage(e.getMessage())
+                                    .show();
+                            return;
+                        }
+                    }
                     new AestheticDialog.Builder(FotoActivity.this, DialogStyle.FLAT, DialogType.SUCCESS)
                             .setTitle("Éxito")
                             .setMessage("Registrado correctamente")
@@ -581,7 +598,8 @@ public class FotoActivity extends AppCompatActivity {
                                     builderDialog.setMessage("¿Desea hacer un nuevo registro?")
                                             .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                                                 public void onClick(DialogInterface dialog, int id) {
-                                                  back();
+                                                    Intent intent = new Intent(FotoActivity.this, FormatoActivity.class);
+                                                    startActivity(intent);
                                                 }
                                             })
                                             .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -632,33 +650,6 @@ public class FotoActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    private void back(){
-
-        sqLiteHelper3 = new SQLiteHelper3(this);
-        sqLiteDatabase = sqLiteHelper3.getWritableDatabase();
-        daoManager = new DaoManager(sqLiteDatabase);
-
-
-
-        try {
-            daoManager.deleteClausule(Entrevista.class,"document_id=?", new String[]{String.valueOf(entrevista.getDocument_id())});
-            daoManager.deleteClausule(Firma.class,"document_id=?", new String[]{String.valueOf(entrevista.getDocument_id())});
-            daoManager.deleteClausule(Foto.class,"document_id=?", new String[]{String.valueOf(entrevista.getDocument_id())});
-        }catch (SQLException e){
-            if(!((Activity) FotoActivity.this).isFinishing()) {
-                new AestheticDialog.Builder(FotoActivity.this, DialogStyle.RAINBOW, DialogType.ERROR)
-                        .setTitle("Error")
-                        .setMessage(e.getMessage())
-                        .show();
-                return;
-            }
-        }
-
-
-        Intent intent = new Intent(FotoActivity.this, FormatoActivity.class);
-        startActivity(intent);
     }
 
     private void convertBitmapToFile(Bitmap bitmap, String name) {
