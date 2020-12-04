@@ -1,10 +1,12 @@
 package mx.gob.cdmx.centroh;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -45,6 +47,7 @@ import java.util.Date;
 import java.util.UUID;
 
 import cz.msebera.android.httpclient.Header;
+import mx.gob.cdmx.centroh.centroh.LoginActivity;
 import mx.gob.cdmx.centroh.db.DaoManager;
 import mx.gob.cdmx.centroh.model.Entrevista;
 import mx.gob.cdmx.centroh.model.Firma;
@@ -574,7 +577,21 @@ public class FotoActivity extends AppCompatActivity {
                             .setOnClickListener(new OnDialogClickListener() {
                                 @Override
                                 public void onClick(AestheticDialog.Builder builder) {
-                                    back();
+                                    AlertDialog.Builder builderDialog = new AlertDialog.Builder(FotoActivity.this);
+                                    builderDialog.setMessage("¿Desea hacer un nuevo registro?")
+                                            .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                                                public void onClick(DialogInterface dialog, int id) {
+                                                  back();
+                                                }
+                                            })
+                                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                                public void onClick(DialogInterface dialog, int id) {
+                                                    Intent intent = new Intent(FotoActivity.this, LoginActivity.class);
+                                                    startActivity(intent);
+                                                }
+                                            });
+                                    builderDialog.create();
+                                    builderDialog.show();
                                 }
                             }).show();
 
