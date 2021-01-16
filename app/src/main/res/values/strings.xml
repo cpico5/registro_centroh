@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Estudios.mx v1.1.1</string>
+    <string name="app_name">Predial</string>
     <string name="action_settings">Settings</string>
 
-    <string name="app_version">1.1.1</string>
+    <string name="app_version">1.0.2</string>
 
-    <string name="url_aplicacion">https://territorial.cdmx.gob.mx</string>
+    <string name="url_aplicacion">https://predialach.cdmx.gob.mx</string>
 
     <string name="developer_api">https://developer.territorial.cdmx.gob.mx</string>
-    <string name="url_gps">https://territorial.cdmx.gob.mx</string>
     <!--<string name="url_aplicacion">http://10.2.69.141</string>-->
-    <string name="project_object">EstudiosCDMX</string>
-    <string name="app_project">EstudiosCDMX</string>
+    <string name="project_object">Predial_2021</string>
+    <string name="app_project">Predial_2021</string>
     <string name="urls_gps">https://territorial.cdmx.gob.mx</string>
+    <string name="url_gps">http://territorial.cdmx.gob.mx</string>
 
     <string name="url_upgrade">https://territorial.cdmx.gob.mx</string>
     <string name="download">Download</string>
@@ -130,43 +130,43 @@
     <string name="PREGUNTApc_3">Gobierno de la Ciudad de México</string>
     <string name="PREGUNTApc_4">Su alcaldé</string>
     <string name="PREGUNTA8">Con lo que usted sabe ¿está de acuerdo, o en desacuerdo con el trabajo realizado hasta ahora por el Presidente de la República, Andrés Manuel López Obrador? (no leer ni de acuerdo ni en desacuerdo)</string>
-<string name="PREGUNTA9">Hablando ahora de la Ciudad de México y de su gobierno, con lo que Ud. sabe, ¿está de acuerdo o en desacuerdo con el trabajo realizado hasta ahora por la Jefa de Gobierno, Claudia Sheinbaum?  ( no leer ni de acuerdo ni en desacuerdo)</string>
-<string name="PREGUNTA10">Con lo que Ud. sabe, ¿está de acuerdo o en desacuerdo con el trabajo realizado hasta ahora por su Alcalde (antes delegado)? (no leer ni de acuerdo ni en desacuerdo)</string>
-<string name="PREGUNTA11">Con lo que Ud. sabe, ¿está de acuerdo o en desacuerdo con el trabajo realizado hasta ahora por sus Diputados en este distrito electoral? (no leer ni de acuerdo ni en desacuerdo)</string>
-<string name="PREGUNTA12">Podría decirme el nombre del alcalde/ alcaldesa de</string>
-<string name="PREGUNTA13">Actualmente ¿tiene usted credencial de elector vigente?</string>
-<string name="PREGUNTA14">En junio próximo habrá elecciones para elegir alcalde, diputados locales y federales. ¿Qué tan interesado está usted de ir a votar en estas elecciones: totalmente interesado, bastante interesado, poco interesado o nada interesado?</string>
-<string name="PREGUNTA15">Y dígame, ¿qué tan seguro está usted de ir a votar en estas elecciones: totalmente seguro, bastante seguro, poco seguro o nada seguro?</string>
-<string name="PREGUNTA16">Solamente para las estadísticas ¿Usted votó en las pasadas elecciones del 2018?</string>
-<string name="PREGUNTA16a">¿Y en esas las elecciones del año 2018, por cuál partido votó para alcalde/ alcaldesa de (ALCALDÍA CORRESPONDIENTE)? (ESPONTÁNEA) </string>
-<string name="PREGUNTA16b">Y si hubiera podido votar, ¿por cuál partido hubiera votado usted para alcalde/ alcaldesa de… (ALCALDÍA CORRESPONDIENTE) en julio del 2018?</string>
-<string name="PREGUNTA17">Independientemente del partido por el que usted vota, ¿usted normalmente se considera panista, priísta, perredista, morenista o de otro partido?</string>
-<string name="PREGUNTA17a">¿Está usted completamente seguro de que votará por ese partido o cree que pudiera cambiar de opción de aquí a la elección?</string>
-<string name="PREGUNTA18">¿Por cuál partido nunca votaría? (registrar primera mención)</string>
-<string name="PREGUNTA19">Solo para estadística, ¿me podría decir por quien voto para Jefe de Gobierno en las elecciones de 2018? (espontánea)</string>
-<string name="PREGUNTA19a">A dos años de la elección ¿sigue pensando que fue la mejor elección para la Jefatura de Gobierno? (espontáneo)</string>
-<string name="PREGUNTA19b">Después de dos años de la elección ¿cómo cree que está haciendo su trabajo la Jefa de Gobierno, Claudia Sheinbaum, bien o mal? (no leer regular)</string>
-<string name="PREGUNTA20">A usted que cree que beneficie más a su alcaldía (INSERTAR ALCALDÍA CORRESPODIENTE), ¿qué continúe el mismo partido tres años más o que cambie el partido que gobierna la alcaldía?</string>
-<string name="PREGUNTA21">La ley electoral vigente actualmente permite que alcaldes y/o diputados locales tengan oportunidad de reelegirse. Antes de que se lo mencionara ¿Usted ya lo sabía?</string>
-<string name="PREGUNTA22">¿Qué tan de acuerdo está usted con esta disposición que permite que alcaldes y/o diputados locales tengan oportunidad de reelegirse?</string>
-<string name="PREGUNTA23">Si su alcalde actual (Insertar nombre por sistema)  buscara la reelección en el 2021 por un periodo de tres años más en su puesto  ¿Qué tan dispuesto estaría a votar por él (ella)?</string>
-<string name="PREGUNTA24">Le voy a leer una lista de personas. ¿Ha oído mencionar a...? (ENCUESTADOR: SI NO HA OÍDO MENCIONAR EL NOMBRE, CONTINÚE CON EL CANDIDATO SIGUIENTE) </string>
+    <string name="PREGUNTA9">Hablando ahora de la Ciudad de México y de su gobierno, con lo que Ud. sabe, ¿está de acuerdo o en desacuerdo con el trabajo realizado hasta ahora por la Jefa de Gobierno, Claudia Sheinbaum?  ( no leer ni de acuerdo ni en desacuerdo)</string>
+    <string name="PREGUNTA10">Con lo que Ud. sabe, ¿está de acuerdo o en desacuerdo con el trabajo realizado hasta ahora por su Alcalde (antes delegado)? (no leer ni de acuerdo ni en desacuerdo)</string>
+    <string name="PREGUNTA11">Con lo que Ud. sabe, ¿está de acuerdo o en desacuerdo con el trabajo realizado hasta ahora por sus Diputados en este distrito electoral? (no leer ni de acuerdo ni en desacuerdo)</string>
+    <string name="PREGUNTA12">Podría decirme el nombre del alcalde/ alcaldesa de</string>
+    <string name="PREGUNTA13">Actualmente ¿tiene usted credencial de elector vigente?</string>
+    <string name="PREGUNTA14">En junio próximo habrá elecciones para elegir alcalde, diputados locales y federales. ¿Qué tan interesado está usted de ir a votar en estas elecciones: totalmente interesado, bastante interesado, poco interesado o nada interesado?</string>
+    <string name="PREGUNTA15">Y dígame, ¿qué tan seguro está usted de ir a votar en estas elecciones: totalmente seguro, bastante seguro, poco seguro o nada seguro?</string>
+    <string name="PREGUNTA16">Solamente para las estadísticas ¿Usted votó en las pasadas elecciones del 2018?</string>
+    <string name="PREGUNTA16a">¿Y en esas las elecciones del año 2018, por cuál partido votó para alcalde/ alcaldesa de (ALCALDÍA CORRESPONDIENTE)? (ESPONTÁNEA) </string>
+    <string name="PREGUNTA16b">Y si hubiera podido votar, ¿por cuál partido hubiera votado usted para alcalde/ alcaldesa de… (ALCALDÍA CORRESPONDIENTE) en julio del 2018?</string>
+    <string name="PREGUNTA17">Independientemente del partido por el que usted vota, ¿usted normalmente se considera panista, priísta, perredista, morenista o de otro partido?</string>
+    <string name="PREGUNTA17a">¿Está usted completamente seguro de que votará por ese partido o cree que pudiera cambiar de opción de aquí a la elección?</string>
+    <string name="PREGUNTA18">¿Por cuál partido nunca votaría? (registrar primera mención)</string>
+    <string name="PREGUNTA19">Solo para estadística, ¿me podría decir por quien voto para Jefe de Gobierno en las elecciones de 2018? (espontánea)</string>
+    <string name="PREGUNTA19a">A dos años de la elección ¿sigue pensando que fue la mejor elección para la Jefatura de Gobierno? (espontáneo)</string>
+    <string name="PREGUNTA19b">Después de dos años de la elección ¿cómo cree que está haciendo su trabajo la Jefa de Gobierno, Claudia Sheinbaum, bien o mal? (no leer regular)</string>
+    <string name="PREGUNTA20">A usted que cree que beneficie más a su alcaldía (INSERTAR ALCALDÍA CORRESPODIENTE), ¿qué continúe el mismo partido tres años más o que cambie el partido que gobierna la alcaldía?</string>
+    <string name="PREGUNTA21">La ley electoral vigente actualmente permite que alcaldes y/o diputados locales tengan oportunidad de reelegirse. Antes de que se lo mencionara ¿Usted ya lo sabía?</string>
+    <string name="PREGUNTA22">¿Qué tan de acuerdo está usted con esta disposición que permite que alcaldes y/o diputados locales tengan oportunidad de reelegirse?</string>
+    <string name="PREGUNTA23">Si su alcalde actual (Insertar nombre por sistema)  buscara la reelección en el 2021 por un periodo de tres años más en su puesto  ¿Qué tan dispuesto estaría a votar por él (ella)?</string>
+    <string name="PREGUNTA24">Le voy a leer una lista de personas. ¿Ha oído mencionar a...? (ENCUESTADOR: SI NO HA OÍDO MENCIONAR EL NOMBRE, CONTINÚE CON EL CANDIDATO SIGUIENTE) </string>
 
-<string name="PREGUNTA24_1">CANDIDATO 1</string>
-<string name="PREGUNTA24_1a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
-<string name="PREGUNTA24_1b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para alcalde/ alcaldesa de...(ALCALDÍA CORRESPONDIENTE) ?</string>
-<string name="PREGUNTA24_2">CANDIDATO 2</string>
-<string name="PREGUNTA24_2a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
-<string name="PREGUNTA24_2b">¿Estaría usted dispuesto o no a votar por él para... alcalde?</string>
-<string name="PREGUNTA24_3">CANDIDATO 3</string>
-<string name="PREGUNTA24_3a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
-<string name="PREGUNTA24_3b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para alcalde/ alcaldesa de...(ALCALDÍA CORRESPONDIENTE) ?</string>
-<string name="PREGUNTA24_4">CANDIDATO 3</string>
-<string name="PREGUNTA24_4a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
-<string name="PREGUNTA24_4b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
-<string name="PREGUNTA24_5">CANDIDATO 3</string>
-<string name="PREGUNTA24_5a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
-<string name="PREGUNTA24_5b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA24_1">CANDIDATO 1</string>
+    <string name="PREGUNTA24_1a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA24_1b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para alcalde/ alcaldesa de...(ALCALDÍA CORRESPONDIENTE) ?</string>
+    <string name="PREGUNTA24_2">CANDIDATO 2</string>
+    <string name="PREGUNTA24_2a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA24_2b">¿Estaría usted dispuesto o no a votar por él para... alcalde?</string>
+    <string name="PREGUNTA24_3">CANDIDATO 3</string>
+    <string name="PREGUNTA24_3a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA24_3b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para alcalde/ alcaldesa de...(ALCALDÍA CORRESPONDIENTE) ?</string>
+    <string name="PREGUNTA24_4">CANDIDATO 3</string>
+    <string name="PREGUNTA24_4a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA24_4b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
+    <string name="PREGUNTA24_5">CANDIDATO 3</string>
+    <string name="PREGUNTA24_5a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
+    <string name="PREGUNTA24_5b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para diputado(a) federal del distrito (DISTRITO CORRESPONDIENTE)?</string>
     <string name="PREGUNTA24_6">CANDIDATO 1</string>
     <string name="PREGUNTA24_6a">¿Qué opinión tiene de él (ella) muy buena, buena, mala o muy mala? </string>
     <string name="PREGUNTA24_6b">¿Estaría usted dispuesto o no a votar por (INSERTAR NOMBRE DE CADA CANDIDATO) para alcalde/ alcaldesa de...(ALCALDÍA CORRESPONDIENTE) ?</string>
@@ -244,17 +244,16 @@
     <string name="PREGUNTA25_10b">HABLA CON LA VERDAD</string>
     <string name="PREGUNTA25_10c">DISPUESTO A COMBATIR LA CORRUPCIÓN</string>
     <string name="PREGUNTA25_10d">CAPACIDAD PARA ATENDER LOS PROBLEMAS DE LA ALCALDÍA</string>
-    
 
-<string name="PREGUNTA26">Usted a quién de los siguientes candidatos prefiere que sea el candidato MORENA a la alcaldía? </string>
-<string name="PREGUNTA27">El próximo 6 de junio se llevarán a cabo también las elecciones para elegir Diputados Federales y Locales. \n
+
+    <string name="PREGUNTA26">Usted a quién de los siguientes candidatos prefiere que sea el candidato MORENA a la alcaldía? </string>
+    <string name="PREGUNTA27">El próximo 6 de junio se llevarán a cabo también las elecciones para elegir Diputados Federales y Locales. \n
     Si hoy fueran las elecciones para elegir Diputados, ¿por cuál partido votaría usted para diputados? (REGISTRARPRIMERA RESPUESTA ESPONTÁNEA) \n\n
  Le repito que su respuesta es anónima, confidencial y secreta.\n
 Su respuesta se usa solamente en esta encuesta</string>
 
 
-
-<string name="PREGUNTAATRIBUTOS">De los siguientes atributos personales, ¿cuáles cree usted que sí o que no tiene la Jefa de Gobierno, Claudia Sheinbaum?</string>
+    <string name="PREGUNTAATRIBUTOS">De los siguientes atributos personales, ¿cuáles cree usted que sí o que no tiene la Jefa de Gobierno, Claudia Sheinbaum?</string>
     <string name="PREGUNTAEST">Para terminar le voy a realizar algunas preguntas para la estadística</string>
     <string name="PREGUNTAHIJOS">Tiene hijos</string>
     <string name="PREGUNTAAPORTA">Pensando en el jefe o jefa de hogar, ¿cuál fue el último año de estudios que aprobó en la escuela?</string>
@@ -277,5 +276,27 @@ Su respuesta se usa solamente en esta encuesta</string>
     <string name="ns">No sabe / No Contestó</string>
     <string name="nc">No contestó</string>
     <string name="title_activity_activity__datos">Activity_Datos</string>
+    <string name="textview">TextView</string>
+    <string name="button">Button</string>
+
+    <string name="title_dialog">Apoyo Alimentario</string>
+    <string name="prompt_email">Usuario</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Ingresar</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">El email es invalido</string>
+    <string name="error_invalid_password">La contraseña es muy corta</string>
+    <string name="error_incorrect_password">La contraseña es incorrecta</string>
+    <string name="error_field_required">Este campo es obligatorio</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="visita_menu_button">Visita</string>
+    <string name="incidente_menu_button">Incidente Urbano</string>
+    <string name="title_activity_chip">Chip</string>
+    <string name="usuario_login">Bienvenido Edgar</string>
+    <string name="button_salir">Salir</string>
+    <string name="tipo_vivienda">Tipo vivienda:</string>
+    <string name="title_activity_apertura__dos">AperturaActivity_Dos</string>
 
 </resources>

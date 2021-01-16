@@ -6,11 +6,12 @@ android {
     compileOptions.encoding = 'iso-8859-1' // write your encoding here
 
     defaultConfig {
-        applicationId 'mx.gob.cdmx.estudioscdmx'
+        applicationId 'mx.gob.cdmx.centroh'
         minSdkVersion 21
         targetSdkVersion 28
         multiDexEnabled true
-        versionName "1.1.1"
+        versionCode 3
+        versionName "1.0.2"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
@@ -69,6 +70,8 @@ dependencies {
 //
 //    implementation 'com.google.android.gms:play-services-location:16.0.0'
 //    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+
+    implementation 'com.github.gabriel-TheCode:AestheticDialogs:1.3.3'
 
 }
 //apply plugin: 'com.google.gms.google-services'
