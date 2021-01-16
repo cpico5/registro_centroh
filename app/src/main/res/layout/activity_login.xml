@@ -81,7 +81,8 @@
                 android:layout_marginTop="30dp"
                 app:passwordToggleEnabled="false">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <AutoCompleteTextView
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_usuario"
@@ -124,11 +125,6 @@
                 android:textColorHint="#17700D"
                 app:hintEnabled="true">
 
-                <AutoCompleteTextView
-                    android:id="@+id/email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"

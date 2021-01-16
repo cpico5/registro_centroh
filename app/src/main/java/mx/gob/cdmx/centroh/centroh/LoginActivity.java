@@ -284,8 +284,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private void attemptLogin() {
 
         // Reset errors.
-        mEmailView.setText("admin@territorial.cdmx.gob.mx");
-        mPasswordView.setText("admin");
+        //mEmailView.setText("admin@territorial.cdmx.gob.mx");
+        //mPasswordView.setText("admin");
         mEmailView.setError(null);
         mPasswordView.setError(null);
 

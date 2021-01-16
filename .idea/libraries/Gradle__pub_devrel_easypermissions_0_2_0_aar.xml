@@ -1,12 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: pub.devrel:easypermissions:0.2.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31aed8e44718dc951c7c8d2527ef938c/jetified-easypermissions-0.2.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31aed8e44718dc951c7c8d2527ef938c/jetified-easypermissions-0.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31aed8e44718dc951c7c8d2527ef938c/jetified-easypermissions-0.2.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31aad9d296d213196ca25b06a8687a81/jetified-easypermissions-0.2.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31aad9d296d213196ca25b06a8687a81/jetified-easypermissions-0.2.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31aad9d296d213196ca25b06a8687a81/jetified-easypermissions-0.2.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e656a3525bec9cccae51555152334336/jetified-easypermissions-0.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e656a3525bec9cccae51555152334336/jetified-easypermissions-0.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e656a3525bec9cccae51555152334336/jetified-easypermissions-0.2.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
